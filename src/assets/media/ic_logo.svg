@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:#fff}.cls-2{opacity:0}
+        </style>
+    </defs>
+    <g id="ic_logo" transform="translate(-14 -92)">
+        <g id="logo" transform="translate(19 96)">
+            <g id="Group_3" data-name="Group 3">
+                <path id="Path_5" d="M1667.143 1516.665l-4.951 10.32a.549.549 0 0 0 .495.786h9.744a.549.549 0 0 0 .5-.78l-4.793-10.319a.549.549 0 0 0-.995-.007z" class="cls-1" data-name="Path 5" transform="translate(-1657.422 -1516.354)"/>
+                <path id="Path_6" d="M1587.328 1744.145l8.185-.022a.549.549 0 0 1 .274 1.025l-11.273 6.452a.549.549 0 0 1-.767-.714l3.089-6.43a.549.549 0 0 1 .492-.311z" class="cls-1" data-name="Path 6" transform="translate(-1583.689 -1730.433)"/>
+                <path id="Path_7" d="M1633.93 1760.3l3.835 8.259a.549.549 0 0 1-.5.78l-18.245-.024a.549.549 0 0 1-.272-1.026l14.41-8.234a.548.548 0 0 1 .772.245z" class="cls-1" data-name="Path 7" transform="translate(-1616.382 -1745.336)"/>
+            </g>
+        </g>
+        <path id="border" d="M0 0h32v32H0z" class="cls-2" transform="translate(14 92)"/>
+    </g>
+</svg>
