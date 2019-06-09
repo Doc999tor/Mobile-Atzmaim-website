@@ -5,12 +5,14 @@ var config = {
 	navigation: [
 		{ name: 'App info', icon: "ic_smartphone.svg", link: '/' },
 		{ name: 'Features', icon: "ic_features.svg", link: '/features' },
-		{ name: 'For whom', icon: "ic_business .svg", link: '/for_whom' },
+		{ name: 'For whom', icon: "business .svg", link: '/for_whom' },
 		{ name: 'Pricing', icon: "ic_pricing.svg", link: '/pricing'},
 		{ name: 'Reviews', icon: "ic_reviews.svg", link: '/reviews' }
 	],
 	modules: {
-		hero: {},
+		hero: {
+			features: ['business', 'subscriptions', 'appointments', ]
+		},
 		features: {
 			internal_link: {
 				name: 'features',
@@ -163,6 +165,10 @@ var config = {
 		media_business_types: './dist/business_types/'
 	},
 	translations: {
+		home_page: {
+			title: 'Calendar App for Business',
+			button_text: 'Try for Free!'
+		},
 		head: {
 			title: 'title',
 			description: 'description',
