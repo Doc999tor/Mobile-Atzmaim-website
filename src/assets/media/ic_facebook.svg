@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+    <defs>
+        <style>
+            .cls-1,.cls-3{fill:#fff}.cls-1{opacity:.1}.cls-2{fill:none}.cls-3{fill-rule:evenodd}
+        </style>
+    </defs>
+    <g id="ic_facebook" transform="translate(-52 -493)">
+        <circle id="Ellipse_422" cx="19" cy="19" r="19" class="cls-1" data-name="Ellipse 422" transform="translate(52 493)"/>
+        <g id="Symbol_11_2" data-name="Symbol 11 – 2" transform="translate(61.5 502.5)">
+            <path id="Rectangle_547" d="M0 0h19v19H0z" class="cls-2" data-name="Rectangle 547"/>
+            <path id="Path_1" d="M86.439 19v-8.656h2.956l.422-3.378h-3.378v-2.11c0-.95.317-1.689 1.689-1.689h1.794V.106C89.5.106 88.444 0 87.283 0a4.075 4.075 0 0 0-4.328 4.433v2.534H80v3.378h2.956V19z" class="cls-3" data-name="Path 1" transform="translate(-75.25)"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <style>
+            .cls-1{fill:none;opacity:0}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="ic_menu" transform="translate(-313 -94)">
+        <path id="border" d="M0 0h28v28H0z" class="cls-1" transform="translate(313 94)"/>
+        <g id="ic_menu-2" data-name="ic_menu" transform="rotate(180 321.925 81.632)">
+            <rect id="Rectangle_3034" width="20" height="3.001" class="cls-2" data-name="Rectangle 3034" rx="1.5" transform="rotate(-135 174.38 -35.415)"/>
+            <rect id="Rectangle_3036" width="20" height="3.001" class="cls-2" data-name="Rectangle 3036" rx="1.5" transform="rotate(135 152.251 91.84)"/>
+        </g>
+    </g>
+</svg>

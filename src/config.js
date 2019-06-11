@@ -9,6 +9,13 @@ var config = {
 		{ name: 'Pricing', icon: "ic_pricing.svg", link: '/pricing'},
 		{ name: 'Reviews', icon: "ic_reviews.svg", link: '/reviews' }
 	],
+	menu: [
+		{ name: 'about_us', link: '/he/about_us' },
+		{ name: 'contact_us', link: '/he/contact_us' },
+		{ name: 'support', link: '/he/support'},
+		{ name: 'faq', link: '/he/faq'},
+		{ name: 'terms_of_use', link: '/he/terms_of_use' }
+	],
 	modules: {
 		hero: {
 			features: ['business', 'subscriptions', 'appointments', ]
@@ -153,9 +160,9 @@ var config = {
 	},
 	urls: {
 		social_networks: [
-			{ name: 'twitter', url: 'https://twitter', icon: 'ic_twitter.svg' },
-			{ name: 'facebook', url: 'https://facebook', icon: 'ic_facebook.svg' },
-			{ name: 'instagram', url: 'https://instagram', icon: 'ic_instagram.svg' }
+			{ name: 'twitter', url: 'https://twitter.com', icon: 'ic_twitter.svg' },
+			{ name: 'facebook', url: 'https://facebook.com', icon: 'ic_facebook.svg' },
+			{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' }
 		],
 		login: '/login',
 		signup: '/signup',
@@ -165,6 +172,13 @@ var config = {
 		media_business_types: './dist/business_types/'
 	},
 	translations: {
+		menu: {
+      about_us: 'About Us',
+      contact_us: 'Contact Us',
+      support: 'Support',
+      faq: 'FAQ',
+      terms_of_use: 'Terms of Use'
+    },
 		home_page: {
 			title: 'Calendar App for Business',
 			button_text: 'Try for Free!'
