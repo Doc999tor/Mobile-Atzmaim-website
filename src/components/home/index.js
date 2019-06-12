@@ -2,12 +2,12 @@ import { h } from 'preact';
 import style from './style.less';
 
 export default () => {
-	const background = {'backgroundImage': 'url(' + config.urls.static + 'pic_bg.jpg' + ')'}
+	const background = {'backgroundImage': 'url(' + config.urls.static + 'pic_bg.jpg' + ')'};
 	const features = config.modules.features.data.filter(i => {
 		if (config.modules.hero.features.includes(i.name)) {
-			return i
+			return i;
 		}
-	})
+	});
 	return (
 		<div class={style.home} style={background}>
 			<div class={style.shadow} >

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-var
 var config = {
 	locale: 'en',
-	isRTL: false,
+	isRTL: true,
 	navigation: [
 		{ name: 'App info', icon: "ic_smartphone.svg", link: '/' },
 		{ name: 'Features', icon: "ic_features.svg", link: '/features' },
@@ -15,6 +15,14 @@ var config = {
 		{ name: 'support', link: '/he/support'},
 		{ name: 'faq', link: '/he/faq'},
 		{ name: 'terms_of_use', link: '/he/terms_of_use' }
+	],
+	features: [
+		{name: 'business', icon: 'ic_sync.svg'},
+		{name: 'subscriptions',	icon: 'ic_phone_message_feature.svg'},
+		{name: 'appointments', icon: 'ic_calendar_feature.svg'},
+		{name: 'management', icon: 'ic_management.svg'},
+		{name: 'notifications', icon: 'ic_phone_message_feature.svg'},
+		{name: 'reminders', icon: 'ic_group_feature.svg'}
 	],
 	modules: {
 		hero: {
@@ -173,12 +181,12 @@ var config = {
 	},
 	translations: {
 		menu: {
-      about_us: 'About Us',
-      contact_us: 'Contact Us',
-      support: 'Support',
-      faq: 'FAQ',
-      terms_of_use: 'Terms of Use'
-    },
+			about_us: 'About Us',
+			contact_us: 'Contact Us',
+			support: 'Support',
+			faq: 'FAQ',
+			terms_of_use: 'Terms of Use'
+		},
 		home_page: {
 			title: 'Calendar App for Business',
 			button_text: 'Try for Free!'
@@ -202,7 +210,7 @@ var config = {
 		features: {
 			internal_link_name: 'WHY',
 			content: {
-				title: 'features Atzmaim',
+				title: 'Powerful Features & Simple to Use',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
 				data: {
 					business: { name: 'Business Management', description: 'Business Management' },

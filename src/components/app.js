@@ -14,6 +14,9 @@ export default class App extends Component {
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
 	 */
+	componentDidMount = () => {
+    if (config.isRTL) document.getElementsByTagName('body')[0].style.direction = 'rtl';
+  }
 	handleRoute = e => {
 		this.currentUrl = e.url;
 	};

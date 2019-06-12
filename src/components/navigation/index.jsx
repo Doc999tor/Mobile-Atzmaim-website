@@ -8,4 +8,4 @@ export default () => (
 			<Link class={style.link} href={link.link}><img src={config.urls.static + link.icon} alt={link.name}/>{link.name}</Link>
 		))}
 	</nav>
-)
+);
