@@ -208,17 +208,18 @@ var config = {
 			calendar_icon: 'Calendar picture'
 		},
 		features: {
+			back_to_features: 'Discover all',
 			internal_link_name: 'WHY',
 			content: {
 				title: 'Powerful Features & Simple to Use',
 				description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
 				data: {
-					business: { name: 'Business Management', description: 'Business Management' },
-					appointments: { name: 'Appointments Calendar', description: 'Appointments Calendar' },
-					notifications: { name: 'SMS Notifications', description: 'SMS Notifications' },
-					subscriptions: { name: 'Client’s Subscriptions', description: 'Client’s Subscriptions' },
-					management: { name: 'Client’s Management', description: 'Client’s Management' },
-					reminders: { name: 'Tasks and Reminders', description: 'Tasks and Reminders' }
+					business: { name: 'Business Management', description: 'Voluptate autem unde voluptatum. Enim voluptatem voluptas.' },
+					appointments: { name: 'Appointments Calendar', description: 'Et voluptate sapiente. Ratione ror praesentium.' },
+					notifications: { name: 'SMS Notifications', description: 'Delectus fugiat voluptatem explicabo atque harum. Quis quae alias consequuntur.' },
+					subscriptions: { name: 'Client’s Subscriptions', description: 'Est perspiciatis veniam. Rerum aspernatur debitis ut deserunt quam aperiam.' },
+					management: { name: 'Client’s Management', description: 'Voluptate inventore quia necessitatibus. Vitae et quae quae. Doloribus tenetur sunt et ut.' },
+					reminders: { name: 'Tasks and Reminders', description: 'Sint qui et nihil praesentium adipisci tempore. Exercitationem in ut.' }
 				}
 			}
 		},

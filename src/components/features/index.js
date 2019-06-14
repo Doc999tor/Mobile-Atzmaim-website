@@ -1,20 +1,35 @@
-import { h } from 'preact';
-import Feature from './components';
+import { h, Component } from 'preact';
+import AllFeatures from './component/allFeatures/index.jsx';
+import Details from './component/details/index.jsx';
 import style from './style.less';
 
-export default () => {
-	return (
-		<div class={style.features}>
-			<section class={style.top_section}>
-				<h2>{config.translations.features.content.title}</h2>
-				<div class={style.background_top}>
-					<img class={config.isRTL ? style.inner_rtl : style.inner_ltr} src={config.urls.static + 'bg_top.svg'}/>
-					<img class={config.isRTL ? style.outer_rtl : style.outer_ltr} src={config.urls.static + 'ill_features.svg'}/>
-				</div>
-			</section>
-			<div class={style.features_container}>
-				{config.features.map(item => <Feature feature={item} />)}
+export default class Features extends Component {
+	state = {
+		selectedFeature: '',
+		showDetail: false
+	}
+	selectFeature = item => {
+		const selectedFeature = config.features.find(i => i.name === item.name);
+		this.setState({
+			showDetail: true,
+			selectedFeature
+		});
+
+	}
+	backToAll = () => {
+		this.setState({
+			showDetail: false
+		});
+	}
+	render() {
+		const { showDetail, selectedFeature } =this.state
+		return (
+			<div class={style.features}>
+				{!showDetail
+					?	<AllFeatures selectFeature={this.selectFeature} />
+					: <Details backToAll={this.backToAll} selectedFeature={selectedFeature}/>}
 			</div>
-		</div>
-	);
-};
+		);
+	}
+}
+
