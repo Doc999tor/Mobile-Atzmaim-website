@@ -110,6 +110,8 @@ module.exports = {
 		}),
 		new CopyWebpackPlugin([
 			{ from: './manifest.json', to: './' },
+			{ from: './config.js', to: './' },
+			{ from: './assets', to: './assets' },
 			{ from: './favicon.ico', to: './' }
 		])
 	]).concat(ENV==='production' ? [
