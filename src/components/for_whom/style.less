@@ -1,7 +1,70 @@
 @import '~style/helpers';
-
-.home {
-	padding: 56px 20px;
-	min-height: 100%;
+.for_whom {
+	padding: 3.5rem 0 3.75rem;
+	height: 100%;
 	width: 100%;
+	background-image: linear-gradient(160deg, #ffffff, #ffffff 31%, #f6f5fd 38%, #f1e8ff);
+}
+.title {
+	padding: 1.2rem 0 2.5rem;
+	width: 44%;
+	min-height: 14rem;
+	-moz-padding-start: 1rem;
+	-webkit-padding-start: 1rem;
+	padding-inline-start: 1rem;
+	h2 {
+		font-size: 2rem;
+		font-weight: 900;
+		width: auto;
+		padding: 0;
+		min-height: auto;
+	}
+}
+.actions {
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	p {
+		font-size: 0.9em;
+		font-weight: 500;
+		-moz-padding-start: 0.5rem;
+		-webkit-padding-start: 0.5rem;
+		padding-inline-start: 0.5rem;
+	}
+}
+.tap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75em;
+	min-width: 2.75em;
+	border-radius: 50px;
+  box-shadow: 0 8px 12px 0 rgba(255, 0, 170, 0.35);
+  background-image: linear-gradient(133deg, #ff00aa, #ff00aa);
+}
+.outer_ltr {
+	position: absolute;
+	top: 1.5rem;
+	right: -4rem;
+	z-index: 2;
+}
+.outer_rtl {
+	transform: scale(-1, 1);
+	position: absolute;
+	top: 1.5rem;
+	left: -4rem;
+	z-index: 2;
+}
+.subtitle {
+	-moz-padding-start: 1rem;
+	-webkit-padding-start: 1rem;
+	padding-inline-start: 1rem;
+}
+.business_type {
+	padding: 1.3rem 0 1rem;
+	-moz-padding-start: 1rem;
+	-webkit-padding-start: 1rem;
+	padding-inline-start: 1rem;
+	overflow-x: auto;
+	display: flex;
 }

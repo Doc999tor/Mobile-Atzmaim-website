@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-var
 var config = {
 	locale: 'en',
-	isRTL: true,
+	isRTL: false,
 	navigation: [
 		{ name: 'App info', icon: "ic_smartphone.svg", link: '/' },
 		{ name: 'Features', icon: "ic_features.svg", link: '/features' },
@@ -22,11 +22,17 @@ var config = {
 		{name: 'appointments', icon: 'ic_calendar_feature.svg'},
 		{name: 'management', icon: 'ic_management.svg'},
 		{name: 'notifications', icon: 'ic_phone_message_feature.svg'},
+		{name: 'reminders', icon: 'ic_group_feature.svg'},
+		{name: 'business', icon: 'ic_sync.svg'},
+		{name: 'subscriptions',	icon: 'ic_phone_message_feature.svg'},
+		{name: 'appointments', icon: 'ic_calendar_feature.svg'},
+		{name: 'management', icon: 'ic_management.svg'},
+		{name: 'notifications', icon: 'ic_phone_message_feature.svg'},
 		{name: 'reminders', icon: 'ic_group_feature.svg'}
 	],
 	modules: {
 		hero: {
-			features: ['business', 'subscriptions', 'appointments', ]
+			features: ['business', 'subscriptions', 'appointments' ]
 		},
 		features: {
 			internal_link: {
@@ -80,15 +86,19 @@ var config = {
 			data: [
 				{
 					name: 'hair_salons',
-					icon: 'pic_mask'
+					icon: 'pic_hair_salons.jpg'
 				},
 				{
 					name: 'nail_and_makeup_artists',
-					icon: 'nail_and_makeup_artists'
+					icon: 'pic_nail_makeup.jpg'
 				},
 				{
-					name: 'installers_and_technicians',
-					icon: 'installers_and_technicians'
+					name: 'cosmetics',
+					icon: 'pic_cosmetics.jpg'
+				},
+				{
+					name: 'massage_centers',
+					icon: 'pic_massage_centers.jpg'
 				}
 			]
 		},
@@ -233,25 +243,30 @@ var config = {
 		},
 		business_types: {
 			internal_link_name: 'BUSINESS TYPES',
-			main_title: 'Business Types',
-			subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
+			main_title: 'Types of Business',
+			subtitle: 'Atzmaim App for any type of business',
 			preview_text: 'Tap on image for more info',
 			content: {   // * 6 items
 				hair_salons: {
-					title: 'Hair Salons Title',
-					text: 'Hair Salons Text',
+					title: 'Hair Stylists and Salons',
+					text: 'Hair Salons Text Hair Salons Text',
 					alt: 'Hair Salons Alt'
 				},
 				nail_and_makeup_artists: {
-					title: 'nail_and_makeup_artists Title',
-					text: 'nail_and_makeup_artists Text',
-					alt: 'nail_and_makeup_artists Alt'
+					title: 'nail and makeup artists Title',
+					text: 'nail and makeup artists Text nail and makeup artists Text',
+					alt: 'nail and makeup artists Alt'
 				},
-				installers_and_technicians: {
-					title: 'Installers and technicians Title',
-					text: 'Installers and technicians Text',
-					alt: 'Installers and technicians Alt'
+				massage_centers: {
+					title: 'Massage Centers',
+					text: 'Installers and technicians Text Installers and technicians Text',
+					alt: 'Massage Centers'
 				},
+				cosmetics: {
+					title: 'Cosmetics and Beauty Therapists',
+					text: 'Installers and technicians Text Installers and technicians Text',
+					alt: 'Massage Centers'
+				}
 			}
 		},
 		feedback: {
