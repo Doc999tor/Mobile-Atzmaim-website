@@ -114,7 +114,7 @@ var config = {
 					rating: 3,
 					picture: '1.jpg',  // picture will render jpg and webp
 					picture_web: '1.webp',
-					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
 				{
 					id: 2,
@@ -122,7 +122,7 @@ var config = {
 					rating: 5,
 					picture: '2.jpg',  // picture will render jpg and webp
 					picture_web: '2.webp',
-					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
 				{
 					id: 3,
@@ -130,7 +130,7 @@ var config = {
 					rating: 5,
 					picture: '3.jpg',  // picture will render jpg and webp
 					picture_web: '3.webp',
-					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
 				{
 					id: 4,
@@ -138,7 +138,7 @@ var config = {
 					rating: 5,
 					picture: '1.jpg',  // picture will render jpg and webp
 					picture_web: '1.webp',
-					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
 				{
 					id: 5,
@@ -146,7 +146,7 @@ var config = {
 					rating: 5,
 					picture: '1.jpg',  // picture will render jpg and webp
 					picture_web: '1.webp',
-					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
 				{
 					id: 6,
@@ -154,7 +154,7 @@ var config = {
 					rating: 5,
 					picture: '1.jpg',  // picture will render jpg and webp
 					picture_web: '1.webp',
-					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
 				{
 					id: 7,
@@ -162,16 +162,19 @@ var config = {
 					rating: 5,
 					picture: '1.jpg',  // picture will render jpg and webp
 					picture_web: '1.webp',
-					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!',
+					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				}
 			]
 		},
 		pricing: {
 			currency: '$',
 			data: [
-				{ name: 'basic', icon: "basic.svg", price_monthly: null, price_yearly: null },
-				{ name: 'premium', icon: "premium.svg", price_monthly: 10, price_yearly: 100 },
-				{ name: 'ultimate', icon: "ultimate.svg", price_monthly: 19, price_yearly: 190 }
+				{ name: 'basic', icon: "ic_basic.svg", price_monthly: null, price_yearly: null },
+				{ name: 'premium', icon: "ic_premium.svg", price_monthly: 10, price_yearly: 100 },
+				{ name: 'ultimate', icon: "ic_ultimate.svg", price_monthly: 19, price_yearly: 190 },
+				{ name: 'basic', icon: "ic_basic.svg", price_monthly: null, price_yearly: null },
+				{ name: 'premium', icon: "ic_premium.svg", price_monthly: 10, price_yearly: 100 },
+				{ name: 'ultimate', icon: "ic_ultimate.svg", price_monthly: 19, price_yearly: 190 }
 			]
 		},
 		footer: {}

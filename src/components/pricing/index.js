@@ -1,11 +1,15 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
+import CommonInfo from './component/commonInfo';
 import style from './style.less';
 
-export default () => {
-	return (
-		<div class={style.home}>
-			<h1>Pricing</h1>
-			<p>This is the Pricing component.</p>
-		</div>
-	);
-};
+export default class Pricing extends Component {
+
+
+	render() {
+		return (
+			<div class={style.pricing}>
+				<CommonInfo />
+			</div>
+		);
+	}
+}

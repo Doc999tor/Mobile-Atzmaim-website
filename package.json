@@ -9,28 +9,6 @@
   },
   "license": "MIT",
   "author": "Jason Miller <jason@developit.ca>",
-  "jest": {
-    "setupFiles": [
-      "./test/setup.js"
-    ],
-    "testURL": "http://localhost:8080",
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "identity-obj-proxy",
-      "^react$": "preact-compat",
-      "^react-dom$": "preact-compat"
-    },
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ]
-  },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "@babel/plugin-transform-async-to-generator": "^7.4.4",
