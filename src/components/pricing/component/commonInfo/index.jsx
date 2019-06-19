@@ -1,9 +1,9 @@
 import { h } from 'preact';
-import Price from '../price';
+import SmallPreview from '../smallPreview';
 import styles from '../../../features/component/allFeatures/style.less';
 import style from './style.less';
 
-export default () => {
+export default ({showDetail}) => {
 	return (
 		<div>
 			<section class={styles.top_section}>
@@ -15,7 +15,7 @@ export default () => {
 			</section>
 			<h3 class={style.subtitle}>{config.translations.pricing.subtitle}</h3>
 			<section class={style.pricing_plan}>
-				{config.modules.pricing.data.map(item => <Price name={item.name} icon={item.icon} value={item.price_monthly} />)}
+				{config.modules.pricing.data.map(item => <SmallPreview showDetail={showDetail} name={item.name} icon={item.icon} value={item.price_monthly} />)}
 			</section>
 		</div>
 	);
