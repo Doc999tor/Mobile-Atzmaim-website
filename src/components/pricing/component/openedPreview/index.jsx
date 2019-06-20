@@ -8,11 +8,12 @@ export default class OpenedPreview extends Component {
 	}
 	changeSwitch = () => this.setState({switchBox: !this.state.switchBox})
 	render() {
-		const marker = {'listStyleImage': 'url(' + config.urls.static + 'ic_check_mark.svg' + ')'};
+		const basic = this.props.name === 'basic';
+		const marker = {'listStyleImage': 'url(' + config.urls.static + (basic ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
 		const { name, icon, value } = this.props;
 		const { switchBox } = this.state;
 		return (
-			<div class={style.detail_price}>
+			<div class={style.detail_price  + ' ' + (basic ? style.detail_price_active : '')}>
 				<div class={style.header}>
 					<div class={style.icon_wrap}>
 						<img src={config.urls.static + icon} />

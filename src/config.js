@@ -275,8 +275,8 @@ var config = {
 		feedback: {
 			internal_link_name: 'FEEDBACK',
 			alt_pic: 'User avatar',
-			main_title: 'Feedback from our customers',
-			subtitle: `Here you can leave your feedback about our product. Reviews are publishing instantly`,
+			main_title: 'Customer Reviews',
+			subtitle: 'They chose Atzmaim for their business',
 			leave_btn_label: 'Leave Feedback'
 		},
 		pricing: {

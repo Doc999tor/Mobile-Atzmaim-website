@@ -1,7 +1,15 @@
 @import '~style/helpers';
 
-.home {
-	padding: 56px 20px;
-	min-height: 100%;
-	width: 100%;
+.outer_ltr {
+	position: absolute;
+	top: 2rem;
+	right: -5rem;
+	z-index: 2;
+}
+.outer_rtl {
+	transform: scale(-1, 1);
+	position: absolute;
+	top: 2rem;
+	left: -5rem;
+	z-index: 2;
 }

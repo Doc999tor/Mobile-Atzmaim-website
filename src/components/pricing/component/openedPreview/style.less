@@ -18,7 +18,7 @@
 		color: white;
 		font-size: 15px;
 		font-weight: 500;
-		padding: 0.7rem 0;
+		padding: 0.8rem 0;
 		border-radius: 8px;
 	}
 }
@@ -137,7 +137,17 @@ input:checked + .slider:before {
 }
 .link {
 	display: block;
-	width: 85%;
+	width: 100%;
+}
+.detail_price_active {
+	background-image: linear-gradient(142deg, #591ec0, #6623db 25%, #7d3ee8 48%, #be95ff);
+	color: white;
+	.cost {
+		color: #fdb100;
+	}
+	.paid {
+		background-color:rgba(255, 255, 255, 0.1);
+	}
 }
 body[style="direction: rtl;"] & {
 	.slider:before {
