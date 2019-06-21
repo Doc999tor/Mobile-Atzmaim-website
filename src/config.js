@@ -112,7 +112,7 @@ var config = {
 					id: 1,
 					customer_name: 'Mary Hall',
 					rating: 3,
-					picture: '1.jpg',  // picture will render jpg and webp
+					picture: 'avatar.png',  // picture will render jpg and webp
 					picture_web: '1.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -120,7 +120,7 @@ var config = {
 					id: 2,
 					customer_name: 'Emilia Clark',
 					rating: 5,
-					picture: '2.jpg',  // picture will render jpg and webp
+					picture: 'avatar.png',  // picture will render jpg and webp
 					picture_web: '2.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -128,7 +128,7 @@ var config = {
 					id: 3,
 					customer_name: 'Scarlett Johansson',
 					rating: 5,
-					picture: '3.jpg',  // picture will render jpg and webp
+					picture: 'avatar.png',  // picture will render jpg and webp
 					picture_web: '3.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -136,7 +136,7 @@ var config = {
 					id: 4,
 					customer_name: 'Mary Hall',
 					rating: 5,
-					picture: '1.jpg',  // picture will render jpg and webp
+					picture: 'avatar.png',  // picture will render jpg and webp
 					picture_web: '1.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -144,7 +144,7 @@ var config = {
 					id: 5,
 					customer_name: 'Mary Hall',
 					rating: 5,
-					picture: '1.jpg',  // picture will render jpg and webp
+					picture: 'avatar.png',  // picture will render jpg and webp
 					picture_web: '1.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -152,7 +152,7 @@ var config = {
 					id: 6,
 					customer_name: 'Mary Hall',
 					rating: 5,
-					picture: '1.jpg',  // picture will render jpg and webp
+					picture: 'avatar.png',  // picture will render jpg and webp
 					picture_web: '1.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -160,7 +160,7 @@ var config = {
 					id: 7,
 					customer_name: 'Mary Hall',
 					rating: 5,
-					picture: '1.jpg',  // picture will render jpg and webp
+					picture: 'avatar.png',  // picture will render jpg and webp
 					picture_web: '1.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				}
@@ -189,7 +189,7 @@ var config = {
 		signup: '/signup',
 		old_website: '/text_website.html',
 		static: './assets/media/',
-		media_clients: './assets/clients/',
+		static_clients: './assets/clients/',
 		media_business_types: './dist/business_types/'
 	},
 	translations: {

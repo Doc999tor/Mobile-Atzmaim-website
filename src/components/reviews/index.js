@@ -30,7 +30,7 @@ export default class Reviews extends Component {
 				</section>
 				<h3 class={style.subtitle}>{config.translations.feedback.subtitle}</h3>
 				<section class={style.business_type}>
-					{feedback.map(item => <Feedback name={item.customer_name} rating={item.rating} />)}
+					{feedback.map(item => <Feedback icon={item.picture} name={item.customer_name} rating={item.rating} text={item.text} />)}
 				</section>
 			</div>
 		);
