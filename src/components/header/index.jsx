@@ -5,7 +5,7 @@ import style from './style.less';
 export default class Header extends Component {
 	state = {active: false}
 	menuOnOff = () => {
-		this.setState({ active: !this.state.active })
+		this.setState({ active: !this.state.active });
 	}
 	render() {
 		const { active } =this.state

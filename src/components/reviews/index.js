@@ -1,37 +1,60 @@
 import { h, Component } from 'preact';
 import Feedback from './component';
+import AddFeedback from './component/addFeedback/';
 import page_style from './style.less';
+import selfStyle from './style.less';
 import style from '../for_whom/style.less';
 import styles from '../features/component/allFeatures/style.less';
 
 export default class Reviews extends Component {
 	state = {
+		addFeedback: false,
 		feedback: config.modules.feedback.data
 	}
+	handleToggleForm = () => this.setState({addFeedback: !this.state.addFeedback})
+	onFormSubmit = (name, rating, picture, text) => {
+		console.log(name, rating, picture, text);
+		let obj = {};
+		obj.id = 'Math.random() * 100';
+		obj.customer_name = name;
+		obj.rating = rating;
+		obj.picture = picture;
+		obj.text = text;
+		this.setState(() => ({
+			feedback: [
+				obj,
+				...this.state.feedback
+			]
+		}));
+	}
+
 	render() {
-		const { feedback } = this.state
-		console.log(feedback)
+		const { feedback, addFeedback } = this.state;
 		return (
 			<div class={style.for_whom}>
-				<section class={styles.top_section}>
-					<div class={style.title}>
-						<h2 >{config.translations.feedback.main_title}</h2>
-						<div class={style.actions}>
-							<div class={style.tap}>
-								<img src={config.urls.static + 'ic_reviews_active.svg'} />
+				{addFeedback
+					? <AddFeedback cancel={this.handleToggleForm} onFormSubmit={this.onFormSubmit} />
+					: <div>
+						<section class={styles.top_section}>
+							<div class={style.title}>
+								<h2 >{config.translations.feedback.main_title}</h2>
+								<div class={style.actions}>
+									<div class={style.tap} onClick={this.handleToggleForm}>
+										<img src={config.urls.static + 'ic_reviews_active.svg'} />
+									</div>
+									<p>{config.translations.feedback.leave_btn_label}</p>
+								</div>
 							</div>
-							<p>{config.translations.feedback.leave_btn_label}</p>
-						</div>
-					</div>
-					<div class={styles.background_top}>
-						<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.static + 'bg_top.svg'}/>
-						<img class={config.isRTL ? page_style.outer_rtl : page_style.outer_ltr} src={config.urls.static + 'ill_reviews.svg'}/>
-					</div>
-				</section>
-				<h3 class={style.subtitle}>{config.translations.feedback.subtitle}</h3>
-				<section class={style.business_type}>
-					{feedback.map(item => <Feedback icon={item.picture} name={item.customer_name} rating={item.rating} text={item.text} />)}
-				</section>
+							<div class={styles.background_top}>
+								<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.static + 'bg_top.svg'}/>
+								<img class={config.isRTL ? page_style.outer_rtl : page_style.outer_ltr} src={config.urls.static + 'ill_reviews.svg'}/>
+							</div>
+						</section>
+						<h3 class={style.subtitle}>{config.translations.feedback.subtitle}</h3>
+						<section class={style.business_type}>
+							{feedback.map(item => <Feedback icon={item.picture} name={item.customer_name} rating={item.rating} text={item.text} />)}
+						</section>
+					</div>}
 			</div>
 		);
 	}

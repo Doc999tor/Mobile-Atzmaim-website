@@ -136,7 +136,7 @@ var config = {
 					id: 4,
 					customer_name: 'Mary Hall',
 					rating: 5,
-					picture: 'avatar.png',  // picture will render jpg and webp
+					picture: '',  // picture will render jpg and webp
 					picture_web: '1.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -190,6 +190,8 @@ var config = {
 		old_website: '/text_website.html',
 		static: './assets/media/',
 		static_clients: './assets/clients/',
+		default_path_to_avatar: './assets/clients/',
+		default_avatar: 'default_avatar.jpg',
 		media_business_types: './dist/business_types/'
 	},
 	translations: {
@@ -277,7 +279,12 @@ var config = {
 			alt_pic: 'User avatar',
 			main_title: 'Customer Reviews',
 			subtitle: 'They chose Atzmaim for their business',
-			leave_btn_label: 'Leave Feedback'
+			leave_btn_label: 'Leave Feedback',
+			upload_photo: 'Upload your photo',
+			name_label: 'Full name',
+			text_label: 'Write a review',
+			cancel_label: 'Cancel',
+			submit_label: 'Submit'
 		},
 		pricing: {
 			title: "Plans for Everyone and Any Business",
