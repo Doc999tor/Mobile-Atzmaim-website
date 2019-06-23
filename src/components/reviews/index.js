@@ -14,15 +14,15 @@ export default class Reviews extends Component {
 	handleToggleForm = () => this.setState({addFeedback: !this.state.addFeedback})
 	onFormSubmit = (name, rating, picture, text) => {
 		console.log(name, rating, picture, text);
-		let obj = {};
-		obj.id = 'Math.random() * 100';
-		obj.customer_name = name;
-		obj.rating = rating;
-		obj.picture = picture;
-		obj.text = text;
+		let newFeedback = {};
+		newFeedback.id = 'Math.random() * 100';
+		newFeedback.customer_name = name;
+		newFeedback.rating = rating;
+		newFeedback.picture = picture;
+		newFeedback.text = text;
 		this.setState(() => ({
 			feedback: [
-				obj,
+				newFeedback,
 				...this.state.feedback
 			]
 		}));

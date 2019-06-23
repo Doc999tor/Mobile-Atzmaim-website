@@ -14,9 +14,15 @@
 	border-radius: 15px;
 	box-shadow: 0 8px 12px 0 rgba(41, 41, 204, 0.16);
 }
+.label_wrap {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+}
 .label {
 	display: flex;
 	align-items: center;
+	width: auto;
 }
 .upload {
 	display: flex;
@@ -35,6 +41,30 @@
 	padding-inline-start: 0.5rem;
 	font-size: 0.9rem;
 	font-weight: 500;
+}
+.uploaded_photo {
+	display: block;
+	height: 3.1rem;
+	width: 3.1rem;
+	border-radius: 50%;
+	object-fit: fill;
+}
+.uploaded_text {
+	-moz-padding-start: 0.5rem;
+	-webkit-padding-start: 0.5rem;
+	padding-inline-start: 0.5rem;
+	color: var(--dark-color);
+	font-size: 0.9rem;
+  font-weight: 500;
+}
+.mark {
+	-moz-margin-start: 0.5rem;
+	-webkit-margin-start: 0.5rem;
+	margin-inline-start: 0.5rem;
+}
+.added_photo {
+	display: flex;
+	align-items: center;
 }
 .name {
 	margin-top: 1rem;
@@ -72,9 +102,19 @@
 	padding: 0.7rem;
 	justify-content: space-around;
 }
+.star_box1 {
+	width: 100%;
+	display: flex;
+	margin-top: 1rem;
+	padding: 0.7rem;
+	justify-content: space-around;
+}
 .star {
 	width: 22px;
 	height: 21px;
+}
+.wrap {
+	width: 100%;
 }
 .buttons {
 	width: 100%;
@@ -85,17 +125,23 @@
 		width: 45%;
 		padding: 0.8rem 0;
 		border-radius: 8px;
-		border: solid 2px #7438d9;
+		box-sizing: border-box;
 		outline: none;
+		border: none;
 		font-size: 0.9rem;
 		font-weight: 500;
 	}
+	.cancel {
+		border: solid 2px #7438d9;
+		background-color: white;
+		color: var(--main-bgcolor);
+	}
+	.submit {
+		background-image: linear-gradient(103deg, #995cfa, #591ec0);
+		// background-color: var(--main-bgcolor);
+		color: white;
+	}
 }
-.cancel {
-	background-color: white;
-	color: var(--main-bgcolor);
-}
-.submit {
-	background-color: var(--main-bgcolor);
-	color: white;
+.disabled {
+	opacity: 0.4;
 }

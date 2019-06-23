@@ -284,7 +284,8 @@ var config = {
 			name_label: 'Full name',
 			text_label: 'Write a review',
 			cancel_label: 'Cancel',
-			submit_label: 'Submit'
+			submit_label: 'Submit',
+			uploaded_photo: 'The photo is uploaded'
 		},
 		pricing: {
 			title: "Plans for Everyone and Any Business",
