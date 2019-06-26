@@ -2,7 +2,6 @@ import { h, Component } from 'preact';
 import Feedback from './component';
 import AddFeedback from './component/addFeedback/';
 import page_style from './style.less';
-import selfStyle from './style.less';
 import style from '../for_whom/style.less';
 import styles from '../features/component/allFeatures/style.less';
 
@@ -51,7 +50,7 @@ export default class Reviews extends Component {
 							</div>
 						</section>
 						<h3 class={style.subtitle}>{config.translations.feedback.subtitle}</h3>
-						<section class={style.business_type}>
+						<section class={page_style.reviews_wrap}>
 							{feedback.map(item => <Feedback icon={item.picture} name={item.customer_name} rating={item.rating} text={item.text} />)}
 						</section>
 					</div>}

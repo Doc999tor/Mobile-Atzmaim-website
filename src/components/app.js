@@ -10,10 +10,6 @@ import Pricing from './pricing';
 import Reviews from './reviews';
 
 export default class App extends Component {
-	/** Gets fired when the route changes.
-	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
-	 *	@param {string} event.url	The newly routed URL
-	 */
 	state = {
 		match: ''
 	}
@@ -21,7 +17,6 @@ export default class App extends Component {
 		if (config.isRTL) document.getElementsByTagName('body')[0].style.direction = 'rtl';
 	}
 	handleRoute = e => {
-		console.log('e.url', e.url);
 		this.setState({match: e.url});
 		this.currentUrl = e.url;
 	};

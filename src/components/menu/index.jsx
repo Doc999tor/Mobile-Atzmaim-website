@@ -16,8 +16,8 @@ export default ({close}) => {
 					))}
 				</nav>
 				<div class={style.btn_wrap}>
-					<button>{config.translations.hero.sign_up}</button>
-					<button>{config.translations.hero.log_in}</button>
+					<a class={style.link_btn} href={config.urls.signup}><button>{config.translations.hero.sign_up}</button></a>
+					<a class={style.link_btn} href={config.urls.login}><button>{config.translations.hero.log_in}</button></a>
 				</div>
 				<ul class={style.networks}>
 					{config.urls.social_networks.map(item => (

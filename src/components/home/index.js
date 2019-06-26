@@ -21,7 +21,9 @@ export default () => {
 							</figure>
 						))}
 					</div>
-					<button class={style.button}>{config.translations.home_page.button_text}</button>
+					<a href={config.urls.signup}>
+						<button class={style.button}>{config.translations.home_page.button_text}</button>
+					</a>
 				</div>
 				<div class={style.phone_wrap}>
 					<img src={config.urls.static + 'pic_iphone.png'} />
