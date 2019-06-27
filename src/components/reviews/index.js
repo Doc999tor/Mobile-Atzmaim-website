@@ -12,7 +12,6 @@ export default class Reviews extends Component {
 	}
 	handleToggleForm = () => this.setState({addFeedback: !this.state.addFeedback})
 	onFormSubmit = (name, rating, picture, text) => {
-		console.log(name, rating, picture, text);
 		let newFeedback = {};
 		newFeedback.id = 'Math.random() * 100';
 		newFeedback.customer_name = name;
@@ -30,7 +29,7 @@ export default class Reviews extends Component {
 	render() {
 		const { feedback, addFeedback } = this.state;
 		return (
-			<div class={style.for_whom}>
+			<div id='reviews' class={style.for_whom}>
 				{addFeedback
 					? <AddFeedback cancel={this.handleToggleForm} onFormSubmit={this.onFormSubmit} />
 					: <div>

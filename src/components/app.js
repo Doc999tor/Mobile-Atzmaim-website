@@ -13,9 +13,7 @@ export default class App extends Component {
 	state = {
 		match: ''
 	}
-	componentDidMount = () => {
-		if (config.isRTL) document.getElementsByTagName('body')[0].style.direction = 'rtl';
-	}
+	componentDidMount = () => document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr';
 	handleRoute = e => {
 		this.setState({match: e.url});
 		this.currentUrl = e.url;
@@ -26,13 +24,11 @@ export default class App extends Component {
 		return (
 			<div id="app">
 				<Header />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Features path="/features" />
-					<ForWhom path="/for_whom" />
-					<Pricing path="/pricing" />
-					<Reviews path="/reviews" />
-				</Router>
+				<Home />
+				<Features />
+				<ForWhom />
+				<Pricing />
+				<Reviews />
 				<Navigation match={match} />
 			</div>
 		);

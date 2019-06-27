@@ -3,11 +3,11 @@ var config = {
 	locale: 'en',
 	isRTL: true,
 	navigation: [
-		{ name: 'App info', icon: "ic_smartphone.svg", link: '/' },
-		{ name: 'Features', icon: "ic_features.svg", link: '/features' },
-		{ name: 'For whom', icon: "ic_for_whom.svg", link: '/for_whom' },
-		{ name: 'Pricing', icon: "ic_pricing.svg", link: '/pricing'},
-		{ name: 'Reviews', icon: "ic_reviews.svg", link: '/reviews' }
+		{ name: 'App info', icon: "ic_smartphone.svg", link: '#home' },
+		{ name: 'Features', icon: "ic_features.svg", link: '#features' },
+		{ name: 'For whom', icon: "ic_for_whom.svg", link: '#for_whom' },
+		{ name: 'Pricing', icon: "ic_pricing.svg", link: '#pricing'},
+		{ name: 'Reviews', icon: "ic_reviews.svg", link: '#reviews' }
 	],
 	menu: [
 		{ name: 'about_us', link: '/he/about_us' },

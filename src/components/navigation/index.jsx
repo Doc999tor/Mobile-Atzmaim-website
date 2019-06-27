@@ -1,17 +1,26 @@
-import { h } from 'preact';
-import { Link } from 'preact-router';
+import { h, Component } from 'preact';
 import style from './style.less';
 
-export default ({ match }) => {
-	return (
-		<div class={style.navigation_wrap}>
-			<div class={style.helper}>
-				<nav class={style.navigation}>
-					{config.navigation.map(link =>(
-						<Link class={match === link.link ? style.match : style.link} href={link.link}><img src={config.urls.static + (match === link.link ? link.icon.substr(3) : link.icon)} alt={link.name}/>{link.name}</Link>
-					))}
-				</nav>
+export default class Navigation extends Component {
+	state = {
+		active: '#home'
+	}
+	toggleClass = link => {
+		const currentState = this.state.active;
+		this.setState({ active: link.link });
+	}
+	render() {
+		const { active } =this.state
+		return (
+			<div class={style.navigation_wrap}>
+				<div class={style.helper}>
+					<nav class={style.navigation}>
+						{config.navigation.map(link =>(
+							<a onClick={() => this.toggleClass(link)} class={active === link.link ? style.match : style.link} href={link.link}><img src={config.urls.static + (active === link.link ? link.icon.substr(3) : link.icon)} alt={link.name}/>{link.name}</a>
+						))}
+					</nav>
+				</div>
 			</div>
-		</div>
-	);
-};
+		);
+	}
+}

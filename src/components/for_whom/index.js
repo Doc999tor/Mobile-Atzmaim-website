@@ -5,7 +5,7 @@ import style from './style.less';
 
 export default () => {
 	return (
-		<div class={style.for_whom}>
+		<div id='for_whom' class={style.for_whom}>
 			<section class={styles.top_section}>
 				<div class={style.title}>
 					<h2 >{config.translations.business_types.main_title}</h2>

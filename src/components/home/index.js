@@ -9,7 +9,7 @@ export default () => {
 		}
 	});
 	return (
-		<div class={style.home} style={background}>
+		<div id='home' class={style.home} style={background}>
 			<div class={style.shadow} >
 				<div class={style.content}>
 					<h2>{config.translations.home_page.title}</h2>

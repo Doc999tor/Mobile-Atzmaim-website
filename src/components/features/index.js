@@ -24,7 +24,7 @@ export default class Features extends Component {
 	render() {
 		const { showDetail, selectedFeature } =this.state
 		return (
-			<div class={style.features}>
+			<div id='features' class={style.features}>
 				{!showDetail
 					?	<AllFeatures selectFeature={this.selectFeature} />
 					: <Details backToAll={this.backToAll} selectedFeature={selectedFeature}/>}
