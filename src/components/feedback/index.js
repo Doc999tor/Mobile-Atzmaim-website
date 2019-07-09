@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import Feedback from './component';
 import AddFeedback from './component/addFeedback/';
 import page_style from './style.less';
-import style from '../for_whom/style.less';
+import style from '../feedback/style.less';
 import styles from '../features/component/allFeatures/style.less';
 
 export default class Reviews extends Component {
@@ -29,7 +29,7 @@ export default class Reviews extends Component {
 	render() {
 		const { feedback, addFeedback } = this.state;
 		return (
-			<div id='reviews' class={style.for_whom}>
+			<div id='reviews' class={style.feedback}>
 				{addFeedback
 					? <AddFeedback cancel={this.handleToggleForm} onFormSubmit={this.onFormSubmit} />
 					: <div>
