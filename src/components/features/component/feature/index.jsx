@@ -4,7 +4,7 @@ import style from './style.less';
 export default ({ feature, selectFeature }) => {
 	return (
 		<div onClick={ () => selectFeature(feature) } class={style.feature}>
-			<img src={config.urls.static + feature.icon} />
+			<img src={config.urls.media + feature.icon} />
 			<p>{config.translations.features.content.data[feature.name].name}</p>
 		</div>
 	);

@@ -2,7 +2,7 @@ import { h } from 'preact';
 import style from './style.less';
 
 export default () => {
-	const background = {'backgroundImage': 'url(' + config.urls.static + 'pic_bg.jpg' + ')'};
+	const background = {'backgroundImage': 'url(' + config.urls.media + 'pic_bg.jpg' + ')'};
 	const features = config.modules.features.data.filter(i => {
 		if (config.modules.hero.features.includes(i.name)) {
 			return i;
@@ -16,7 +16,7 @@ export default () => {
 					<div class={style.feature_wrap}>
 						{features.map(i => (
 							<figure class={style.feature}>
-								<p><img src={config.urls.static + i.icon} /></p>
+								<p><img src={config.urls.media + i.icon} /></p>
 								<figcaption>{config.translations.features.content.data[i.name].name}</figcaption>
 							</figure>
 						))}
@@ -26,7 +26,7 @@ export default () => {
 					</a>
 				</div>
 				<div class={style.phone_wrap}>
-					<img src={config.urls.static + 'pic_iphone.png'} />
+					<img src={config.urls.media + 'pic_iphone.png'} />
 				</div>
 			</div>
 		</div>

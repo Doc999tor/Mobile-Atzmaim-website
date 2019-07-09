@@ -10,7 +10,7 @@ export default ({selectedFeature, backToAll}) => {
 				<ExtendedFeature backToAll={backToAll} feature={selectedFeature} />
 			</div>
 			<div class={style.phone_wrap}>
-				<img src={config.urls.static + 'pic_iphone.png'} />
+				<img src={config.urls.media + 'pic_iphone.png'} />
 			</div>
 		</div>
 	);

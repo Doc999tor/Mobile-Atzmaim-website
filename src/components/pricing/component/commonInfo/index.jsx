@@ -17,8 +17,8 @@ export default class CommonInfo extends Component {
 				<section class={styles.top_section}>
 					<h2 >{config.translations.pricing.title}</h2>
 					<div class={styles.background_top}>
-						<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.static + 'bg_top.svg'}/>
-						<img class={config.isRTL ? style.outer_rtl : style.outer_ltr} src={config.urls.static + 'ill_pricing.svg'}/>
+						<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'}/>
+						<img class={config.isRTL ? style.outer_rtl : style.outer_ltr} src={config.urls.media + 'ill_pricing.svg'}/>
 					</div>
 				</section>
 				<h3 class={style.subtitle}>{config.translations.pricing.subtitle}</h3>

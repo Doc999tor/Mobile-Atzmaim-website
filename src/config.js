@@ -3,11 +3,11 @@ var config = {
 	locale: 'en',
 	isRTL: true,
 	navigation: [
-		{ name: 'App info', icon: "ic_smartphone.svg", link: '#home' },
-		{ name: 'Features', icon: "ic_features.svg", link: '#features' },
-		{ name: 'For whom', icon: "ic_for_whom.svg", link: '#for_whom' },
-		{ name: 'Pricing', icon: "ic_pricing.svg", link: '#pricing'},
-		{ name: 'Reviews', icon: "ic_reviews.svg", link: '#reviews' }
+		{ name: 'App info', icon: 'ic_smartphone.svg', link: '#home' },
+		{ name: 'Features', icon: 'ic_features.svg', link: '#features' },
+		{ name: 'For whom', icon: 'ic_for_whom.svg', link: '#for_whom' },
+		{ name: 'Pricing', icon: 'ic_pricing.svg', link: '#pricing'},
+		{ name: 'Reviews', icon: 'ic_reviews.svg', link: '#reviews' }
 	],
 	menu: [
 		{ name: 'about_us', link: '/he/about_us' },
@@ -32,7 +32,7 @@ var config = {
 	],
 	modules: {
 		hero: {
-			features: ['business', 'subscriptions', 'appointments' ]
+			features: ['business', 'subscriptions', 'appointments']
 		},
 		features: {
 			internal_link: {
@@ -86,19 +86,23 @@ var config = {
 			data: [
 				{
 					name: 'hair_salons',
-					icon: 'pic_hair_salons.jpg'
+					icon: 'pic_mask'
 				},
 				{
 					name: 'nail_and_makeup_artists',
-					icon: 'pic_nail_makeup.jpg'
+					icon: 'nail_and_makeup_artists'
+				},
+				{
+					name: 'installers_and_technicians',
+					icon: 'installers_and_technicians'
 				},
 				{
 					name: 'cosmetics',
-					icon: 'pic_cosmetics.jpg'
+					icon: 'cosmetics'
 				},
 				{
 					name: 'massage_centers',
-					icon: 'pic_massage_centers.jpg'
+					icon: 'massage_centers'
 				}
 			]
 		},
@@ -112,7 +116,7 @@ var config = {
 					id: 1,
 					customer_name: 'Mary Hall',
 					rating: 3,
-					picture: 'avatar.png',  // picture will render jpg and webp
+					picture: '1.jpg',  // picture will render jpg and webp
 					picture_web: '1.webp',
 					text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, unde recusandae laudantium, laborum adipisci perferendis sequi id ex officia voluptate hic asperiores soluta fuga nulla est, excepturi? Harum, repellat, commodi!'
 				},
@@ -169,12 +173,12 @@ var config = {
 		pricing: {
 			currency: '$',
 			data: [
-				{ name: 'basic', icon: "ic_basic.svg", price_monthly: null, price_yearly: null },
-				{ name: 'premium', icon: "ic_premium.svg", price_monthly: 10, price_yearly: 100 },
-				{ name: 'ultimate', icon: "ic_ultimate.svg", price_monthly: 19, price_yearly: 190 },
-				{ name: 'basic', icon: "ic_basic.svg", price_monthly: null, price_yearly: null },
-				{ name: 'premium', icon: "ic_premium.svg", price_monthly: 10, price_yearly: 100 },
-				{ name: 'ultimate', icon: "ic_ultimate.svg", price_monthly: 19, price_yearly: 190 }
+				{ name: 'basic', icon: "basic.svg", price_monthly: null, price_yearly: null },
+				{ name: 'premium', icon: "premium.svg", price_monthly: 10, price_yearly: 100 },
+				{ name: 'ultimate', icon: "ultimate.svg", price_monthly: 19, price_yearly: 190 },
+				{ name: 'basic', icon: "basic.svg", price_monthly: null, price_yearly: null },
+				{ name: 'premium', icon: "premium.svg", price_monthly: 10, price_yearly: 100 },
+				{ name: 'ultimate', icon: "ultimate.svg", price_monthly: 19, price_yearly: 190 }
 			]
 		},
 		footer: {}
@@ -188,8 +192,8 @@ var config = {
 		login: '/login',
 		signup: '/signup',
 		old_website: '/text_website.html',
-		static: './assets/media/',
-		static_clients: './assets/clients/',
+		media: './assets/media/',
+		media_clients: './assets/clients/',
 		default_path_to_avatar: './assets/clients/',
 		default_avatar: 'default_avatar.jpg',
 		media_business_types: './dist/business_types/'
@@ -260,6 +264,11 @@ var config = {
 				nail_and_makeup_artists: {
 					title: 'nail and makeup artists Title',
 					text: 'nail and makeup artists Text nail and makeup artists Text',
+					alt: 'nail and makeup artists Alt'
+				},
+				installers_and_technicians: {
+					title: 'installers and technicians',
+					text: 'installers and technicians',
 					alt: 'nail and makeup artists Alt'
 				},
 				massage_centers: {

@@ -40,7 +40,7 @@ export default class AddFeedback extends Component {
 		});
 	}
 	rating = (rating, icon) => (
-		Array.from({ length: rating }).map((r, i) => <img class={style.star} key={i} src={config.urls.static + icon} />)
+		Array.from({ length: rating }).map((r, i) => <img class={style.star} key={i} src={config.urls.media + icon} />)
 	);
 	handleRateApp = rating => this.setState({ rating });
 	handleRenderStars = () => {
@@ -62,14 +62,14 @@ export default class AddFeedback extends Component {
 						{!this.state.imgUrl
 							? <label class={style.label}>
 								<div class={style.upload}>
-									<img class={style.picture} src={config.urls.static + 'ic_upload_photo.svg'} />
+									<img class={style.picture} src={config.urls.media + 'ic_upload_photo.svg'} />
 								</div>
 								<span class={style.upload_text}>{config.translations.feedback.upload_photo}</span>
 								<input accept='image/*' class={style.file} type='file' onChange={this.addFoto} />
 							</label>
 							: <div class={style.added_photo}>
 								<img class={style.uploaded_photo} src={this.state.imgUrl} />
-								<p class={style.uploaded_text}>{config.translations.feedback.uploaded_photo}<img class={style.mark} src={config.urls.static + 'ic_check_mark.svg'} /></p>
+								<p class={style.uploaded_text}>{config.translations.feedback.uploaded_photo}<img class={style.mark} src={config.urls.media + 'ic_check_mark.svg'} /></p>
 							</div> }
 					</div>
 					<input value={name} onInput={this.handleInputChange} autoComplete='off' name='name' class={style.name} type='text' placeholder={config.translations.feedback.name_label} />
@@ -77,7 +77,7 @@ export default class AddFeedback extends Component {
 					<div id='parent' class={style.wrap} >
 						{!rating
 							? <div class={style.star_box}>
-								{rate_app.map(item => <img onClick={() => this.handleRateApp(item.rating)} key={item.id} src={config.urls.static + 'ic_star.svg'} />)}
+								{rate_app.map(item => <img onClick={() => this.handleRateApp(item.rating)} key={item.id} src={config.urls.media + 'ic_star.svg'} />)}
 							</div>
 							: this.handleRenderStars()
 						}

@@ -38,14 +38,14 @@ export default class Reviews extends Component {
 								<h2 >{config.translations.feedback.main_title}</h2>
 								<div class={style.actions}>
 									<div class={style.tap} onClick={this.handleToggleForm}>
-										<img src={config.urls.static + 'ic_reviews_active.svg'} />
+										<img src={config.urls.media + 'ic_reviews_active.svg'} />
 									</div>
 									<p>{config.translations.feedback.leave_btn_label}</p>
 								</div>
 							</div>
 							<div class={styles.background_top}>
-								<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.static + 'bg_top.svg'}/>
-								<img class={config.isRTL ? page_style.outer_rtl : page_style.outer_ltr} src={config.urls.static + 'ill_reviews.svg'}/>
+								<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'}/>
+								<img class={config.isRTL ? page_style.outer_rtl : page_style.outer_ltr} src={config.urls.media + 'ill_reviews.svg'}/>
 							</div>
 						</section>
 						<h3 class={style.subtitle}>{config.translations.feedback.subtitle}</h3>

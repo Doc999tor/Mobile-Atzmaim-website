@@ -9,14 +9,14 @@ export default class OpenedPreview extends Component {
 	changeSwitch = () => this.setState({switchBox: !this.state.switchBox})
 	render() {
 		const basic = this.props.name === 'basic';
-		const marker = {'listStyleImage': 'url(' + config.urls.static + (basic ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
+		const marker = {'listStyleImage': 'url(' + config.urls.media + (basic ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
 		const { name, icon, value } = this.props;
 		const { switchBox } = this.state;
 		return (
 			<div class={style.detail_price  + ' ' + (basic ? style.detail_price_active : '')}>
 				<div class={style.header}>
 					<div class={style.icon_wrap}>
-						<img src={config.urls.static + icon} />
+						<img src={config.urls.media + icon} />
 					</div>
 					<div class={style.header_text}>
 						<p class={style.name}>{config.translations.pricing.data[name].opened_preview.name}</p>

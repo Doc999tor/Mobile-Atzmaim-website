@@ -10,7 +10,7 @@ export default ({close}) => {
 					{config.menu.map(item => (
 						<li class={style.link}>
 							<a href={item.link}>{config.translations.menu[item.name]}
-								<img src={config.urls.static + 'ic_arrow.svg'} />
+								<img src={config.urls.media + 'ic_arrow.svg'} />
 							</a>
 						</li>
 					))}
@@ -21,7 +21,7 @@ export default ({close}) => {
 				</div>
 				<ul class={style.networks}>
 					{config.urls.social_networks.map(item => (
-						<li><a href={item.url}><img src={config.urls.static + item.icon} /></a></li>
+						<li><a href={item.url}><img src={config.urls.media + item.icon} /></a></li>
 					))}
 				</ul>
 			</div>

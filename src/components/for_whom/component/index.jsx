@@ -12,12 +12,12 @@ export default class Bussiness extends Component {
 			<div>
 				{ !showInfo
 					? <figure onClick={this.handleShowInfo} class={style.business}>
-						<p><img src={config.urls.static + icon} /></p>
+						<p><img src={config.urls.media + icon + '.jpg'} /></p>
 						<figcaption>{config.translations.business_types.content[name].title}</figcaption>
 					</figure>
 					: <div class={style.show_info} onClick={this.handleShowInfo}>
 						<div class={style.wrap}>
-							<img src={config.urls.static + icon} />
+							<img src={config.urls.media + icon + '.jpg'} />
 						</div>
 						<div class={style.main_info}>
 							<p class={style.title}>{config.translations.business_types.content[name].title}</p>
