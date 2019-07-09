@@ -9,7 +9,7 @@ export default class Navigation extends Component {
 		const currentState = this.state.active;
 		console.log('state', this.state)
 		console.log('location', location)
-		this.setState({ active: link.link });
+		this.setState({ active: link.link }, () => console.log('callback', this.state));
 	}
 	render() {
 		const { active } =this.state
