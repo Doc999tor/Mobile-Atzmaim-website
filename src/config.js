@@ -162,9 +162,6 @@ const config = {
 				{ name: 'basic', icon: "basic.svg", price_monthly: null, price_yearly: null },
 				{ name: 'premium', icon: "premium.svg", price_monthly: 10, price_yearly: 100 },
 				{ name: 'ultimate', icon: "ultimate.svg", price_monthly: 19, price_yearly: 190 },
-				{ name: 'basic', icon: "basic.svg", price_monthly: null, price_yearly: null },
-				{ name: 'premium', icon: "premium.svg", price_monthly: 10, price_yearly: 100 },
-				{ name: 'ultimate', icon: "ultimate.svg", price_monthly: 19, price_yearly: 190 }
 			]
 		},
 		footer: {}

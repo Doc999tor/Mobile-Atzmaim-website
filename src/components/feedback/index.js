@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import Feedback from './component';
 import AddFeedback from './component/addFeedback/';
 import page_style from './style.less';
-import style from '../feedback/style.less';
+import style from '../business_types/style.less';
 import styles from '../features/component/allFeatures/style.less';
 
 export default class Reviews extends Component {

@@ -20,13 +20,14 @@ export default class App extends Component {
 	      return <BusinessTypes />
 	    case 'feedback':
 	      return <Feedback />
+  	    case 'pricing':
+	      return <Pricing />
 	  }
 	}
 
 	render() {
-		const possibleKeys = [ 'hero', 'features', 'business_types', 'feedback', ];
+		const possibleKeys = [ 'hero', 'features', 'business_types', 'feedback', 'pricing'];
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
-		console.log(componentsForRendering)
 
 		return (
 			<div id="app">
@@ -39,8 +40,3 @@ export default class App extends Component {
 		);
 	}
 }
-				// <Home />
-				// <Features />
-				// <BusinessTypes />
-				// <Pricing />
-				// <Reviews />

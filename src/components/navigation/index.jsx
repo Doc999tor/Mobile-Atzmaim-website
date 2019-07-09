@@ -3,7 +3,7 @@ import style from './style.less';
 
 export default class Navigation extends Component {
 	state = {
-		active: '#hero'
+		active: location.hash ? location.hash : '#hero'
 	}
 	toggleClass = link => {
 		const currentState = this.state.active;
