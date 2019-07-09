@@ -54,7 +54,10 @@ module.exports = {
 					use: [
 						{
 							loader: 'css-loader',
-							options: { modules: true, sourceMap: CSS_MAPS, importLoaders: 1, minimize: true }
+							options: {
+								importLoaders: 1,
+								modules: true,
+								localIdentName: '[local]_[hash:base64:3]', sourceMap: CSS_MAPS, minimize: true }
 						},
 						{
 							loader: 'less-loader',
