@@ -29,32 +29,32 @@ const config = {
 				{
 					name: 'business',
 					preview_pic: 'previews-ic_business.jpg',
-					icon: 'ic_business.svg'
+					icon: 'ic_sync.svg'
 				},
 				{
 					name: 'subscriptions',
 					preview_pic: 'previews-ic_client_subscriptions.jpg',
-					icon: 'ic_client_subscriptions.svg'
+					icon: 'ic_phone_message_feature.svg'
 				},
 				{
 					name: 'appointments',
 					preview_pic: 'previews-ic_calendar.jpg',
-					icon: 'ic_calendar.svg'
+					icon: 'ic_calendar_feature.svg'
 				},
 				{
 					name: 'management',
 					preview_pic: 'previews-ic_clients_management.jpg',
-					icon: 'ic_clients_management.svg'
+					icon: 'ic_management.svg'
 				},
 				{
 					name: 'notifications',
 					preview_pic: 'previews-ic_sms_notifications.jpg',
-					icon: 'ic_sms_notifications.svg'
+					icon: 'ic_phone_message_feature.svg'
 				},
 				{
 					name: 'reminders',
 					preview_pic: 'previews-ic_tasks_reminders.jpg',
-					icon: 'ic_tasks_reminders.svg'
+					icon: 'ic_group_feature.svg'
 				}
 			]
 		},

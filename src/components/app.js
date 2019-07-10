@@ -9,33 +9,23 @@ import Feedback from './feedback';
 
 export default class App extends Component {
 	componentDidMount = () => document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr';
-
-	splitLoadingComponents = moduleName => {
-	  switch (moduleName) {
-	    case 'hero':
-	      return <Hero />
-	    case 'features':
-	      return <Features />
-	    case 'business_types':
-	      return <BusinessTypes />
-	    case 'feedback':
-	      return <Feedback />
-  	    case 'pricing':
-	      return <Pricing />
-	  }
-	}
-
 	render() {
-		const possibleKeys = [ 'hero', 'features', 'business_types', 'feedback', 'pricing'];
-		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
-
+		const objSplitLoadingComponents = {
+			hero: <Hero />,
+			features: <Features />,
+			business_types: <BusinessTypes />,
+			feedback: <Feedback />,
+			pricing: <Pricing />
+		};
+		const possibleKeys = [ 'hero', 'features', 'business_types', 'pricing', 'feedback'];
+		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk]);
 		return (
 			<div id="app">
-			<Header />
-			{
-			  componentsForRendering.map(this.splitLoadingComponents)
-			}
-			<Navigation links={ componentsForRendering } />
+				<Header />
+				{
+					componentsForRendering.map(i => objSplitLoadingComponents[i])
+				}
+				<Navigation links={componentsForRendering} />
 			</div>
 		);
 	}

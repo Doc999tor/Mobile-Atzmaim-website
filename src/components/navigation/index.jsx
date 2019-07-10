@@ -7,7 +7,6 @@ export default class Navigation extends Component {
 	}
 	toggleClass = link => {
 		const currentState = this.state.active;
-		console.log('state', this.state)
 		console.log('location', location)
 		this.setState({ active: link.link }, () => console.log('callback', this.state));
 	}
