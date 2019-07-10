@@ -9,7 +9,7 @@ export default class Features extends Component {
 		showDetail: false
 	}
 	selectFeature = item => {
-		const selectedFeature = config.mobules.features.find(i => i.name === item.name);
+		const selectedFeature = config.modules.features.data.find(i => i.name === item.name);
 		this.setState({
 			showDetail: true,
 			selectedFeature

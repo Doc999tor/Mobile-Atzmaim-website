@@ -29,7 +29,7 @@ export default class Reviews extends Component {
 	render() {
 		const { feedback, addFeedback } = this.state;
 		return (
-			<div id='feedback' class={style.feedback}>
+			<div id='feedback' class={style.business_types}>
 				{addFeedback
 					? <AddFeedback cancel={this.handleToggleForm} onFormSubmit={this.onFormSubmit} />
 					: <div>
