@@ -14,7 +14,7 @@ export default ({selectFeature}) => {
 					</div>
 				</section>
 				<div class={style.features_container}>
-					{config.features.map(item => <Feature selectFeature={selectFeature} feature={item} />)}
+					{config.modules.features.data.map(item => <Feature selectFeature={selectFeature} feature={item} />)}
 				</div>
 			</div>
 		</div>

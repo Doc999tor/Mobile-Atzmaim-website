@@ -1,25 +1,41 @@
 import { h, Component } from 'preact';
 import Header from './header';
-import Home from './home';
+import Hero from './hero';
 import Navigation from './navigation';
 import Features from './features';
-import ForWhom from './for_whom';
+import BusinessTypes from './business_types';
 import Pricing from './pricing';
-import Reviews from './reviews';
+import Feedback from './feedback';
 
 export default class App extends Component {
 	componentDidMount = () => document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr';
 
+	splitLoadingComponents = moduleName => {
+	  switch (moduleName) {
+	    case 'hero':
+	      return <Hero />
+	    case 'features':
+	      return <Features />
+	    case 'business_types':
+	      return <BusinessTypes />
+	    case 'feedback':
+	      return <Feedback />
+  	    case 'pricing':
+	      return <Pricing />
+	  }
+	}
+
 	render() {
+		const possibleKeys = [ 'hero', 'features', 'business_types', 'feedback', 'pricing'];
+		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
+
 		return (
 			<div id="app">
-				<Header />
-				<Home />
-				<Features />
-				<ForWhom />
-				<Pricing />
-				<Reviews />
-				<Navigation />
+			<Header />
+			{
+			  componentsForRendering.map(this.splitLoadingComponents)
+			}
+			<Navigation links={ componentsForRendering } />
 			</div>
 		);
 	}

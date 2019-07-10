@@ -9,7 +9,7 @@ export default class Features extends Component {
 		showDetail: false
 	}
 	selectFeature = item => {
-		const selectedFeature = config.features.find(i => i.name === item.name);
+		const selectedFeature = config.mobules.features.find(i => i.name === item.name);
 		this.setState({
 			showDetail: true,
 			selectedFeature
@@ -22,12 +22,14 @@ export default class Features extends Component {
 		});
 	}
 	render() {
-		const { showDetail, selectedFeature } =this.state
+		const { showDetail, selectedFeature } = this.state
 		return (
 			<div id='features' class={style.features}>
-				{!showDetail
-					?	<AllFeatures selectFeature={this.selectFeature} />
-					: <Details backToAll={this.backToAll} selectedFeature={selectedFeature}/>}
+				{
+					!showDetail
+					? <AllFeatures selectFeature={this.selectFeature} />
+					: <Details backToAll={this.backToAll} selectedFeature={selectedFeature}/>
+				}
 			</div>
 		);
 	}

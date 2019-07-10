@@ -11,7 +11,7 @@ export default class CommonInfo extends Component {
 
 	handleShowDetail = () => this.setState({showDetail: !this.state.showDetail})
 	render() {
-		const { showDetail } =this.state
+		const { showDetail } = this.state
 		return (
 			<div>
 				<section class={styles.top_section}>
