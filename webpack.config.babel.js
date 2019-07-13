@@ -1,8 +1,8 @@
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import path from 'path';
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 const ENV = process.env.NODE_ENV || 'development';
 
 const CSS_MAPS = ENV!=='production';
@@ -46,42 +46,36 @@ module.exports = {
 				use: 'babel-loader'
 			},
 			{
-				// Transform our own .(less|css) files with PostCSS and CSS-modules
-				test: /\.(less|css)$/,
-				include: [path.resolve(__dirname, 'src/components')],
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						{
-							loader: 'css-loader',
-							options: {
-								importLoaders: 1,
-								modules: true,
-								localIdentName: '[local]_[hash:base64:3]', sourceMap: CSS_MAPS, minimize: true }
-						},
-						{
-							loader: 'less-loader',
-							options: { sourceMap: CSS_MAPS }
+				test: /\.css$/,
+				use: [MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							modules: {
+								localIdentName: '[local]_[hash:base64:3]'
+							}
 						}
-					]
-				})
+					}]
 			},
 			{
-				test: /\.(less|css)$/,
-				exclude: [path.resolve(__dirname, 'src/components')],
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: [
-						{
-							loader: 'css-loader',
-							options: { sourceMap: CSS_MAPS, importLoaders: 1, minimize: true }
-						},
-						{
-							loader: 'less-loader',
-							options: { sourceMap: CSS_MAPS }
+				test: /\.less$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: ENV === 'development',
+							reloadAll: true
 						}
-					]
-				})
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							modules: {
+								localIdentName: '[local]_[hash:base64:3]'
+							}
+						}
+					},
+					'less-loader']
 			},
 			{
 				test: /\.json$/,
@@ -99,10 +93,8 @@ module.exports = {
 	},
 	plugins: ([
 		new webpack.NoEmitOnErrorsPlugin(),
-		new ExtractTextPlugin({
-			filename: 'style.css',
-			allChunks: true,
-			disable: ENV !== 'production'
+		new MiniCssExtractPlugin({
+			filename: 'style.css'
 		}),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(ENV)
