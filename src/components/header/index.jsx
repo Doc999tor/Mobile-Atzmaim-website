@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import Menu from '../menu';
-import style from './style.less';
-import './style.less';
+import style from './header.less';
+import './header.less';
 
 export default class Header extends Component {
 	state = {active: false}

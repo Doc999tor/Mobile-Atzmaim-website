@@ -1,6 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": "eslint:recommended",
+  "extends": ["standard", "standard-preact"],
   "plugins": [
     "react",
     "jest"
@@ -10,7 +10,6 @@
     "node": true,
     "mocha": true,
     "es6": true,
-    "jest/globals": true
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -23,9 +22,7 @@
       "pragma": "h"
     }
   },
-  "globals": {
-    "sleep": 1
-  },
+
   "rules": {
     "react/jsx-no-bind": [2, { "ignoreRefs": true }],
     "react/jsx-no-duplicate-props": 2,

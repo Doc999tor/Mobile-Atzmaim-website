@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import OpenedPreview from '../openedPreview';
-import style from './style.less';
+import style from './detail.less';
 
 export default () => {
 	return (

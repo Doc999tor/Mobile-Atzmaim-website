@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import Feature from '../feature';
-import style from './style.less';
+import style from './all.less';
 
 export default ({selectFeature}) => {
 	return (

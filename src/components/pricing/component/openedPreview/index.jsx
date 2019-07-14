@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
-import style from './style.less';
-import './style.less';
+import style from './opened.less';
+import './opened.less';
 
 export default class OpenedPreview extends Component {
 	state = {

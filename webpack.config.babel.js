@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const ENV = process.env.NODE_ENV || 'development';
-
-const CSS_MAPS = ENV!=='production';
 
 module.exports = {
 	context: path.resolve(__dirname, "src"),
@@ -32,13 +32,15 @@ module.exports = {
 		}
 	},
 
+	optimization: {
+    minimizer: [new TerserPlugin()],
+  },
 	module: {
 		rules: [
 			{
 				test: /\.jsx?$/,
 				exclude: path.resolve(__dirname, 'src'),
-				enforce: 'pre',
-				use: 'source-map-loader'
+				enforce: 'pre'
 			},
 			{
 				test: /\.jsx?$/,
@@ -52,7 +54,7 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							modules: {
-								localIdentName: '[local]_[hash:base64:3]'
+								localIdentName: '[name]_[local]'
 							}
 						}
 					}]
@@ -71,7 +73,7 @@ module.exports = {
 						loader: 'css-loader',
 						options: {
 							modules: {
-								localIdentName: '[local]_[hash:base64:3]'
+								localIdentName: '[name]_[local]'
 							}
 						}
 					},
@@ -108,7 +110,8 @@ module.exports = {
 			{ from: './config.js', to: './' },
 			{ from: './assets', to: './assets' },
 			{ from: './favicon.ico', to: './' }
-		])
+		]),
+		new CompressionPlugin()
 	]).concat(ENV==='production' ? [
 		new webpack.optimize.UglifyJsPlugin({
 			output: {
@@ -144,15 +147,12 @@ module.exports = {
 	stats: { colors: true },
 
 	node: {
-		global: true,
 		process: false,
 		Buffer: false,
 		__filename: false,
 		__dirname: false,
 		setImmediate: false
 	},
-
-	devtool: ENV==='production' ? 'source-map' : 'cheap-module-eval-source-map',
 
 	devServer: {
 		port: process.env.PORT || 3000,

@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import style from './style.less';
+import style from './post.less';
 export default ({ icon, name, rating, text }) => {
 	const onError = e => {
 		if (!e.target.src.endsWith(config.urls.default_avatar)) {

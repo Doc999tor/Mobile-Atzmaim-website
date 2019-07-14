@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import style from './style.less';
+import style from './bussiness.less';
 export default class Bussiness extends Component {
 	state = {showInfo: false}
 	handleShowInfo = () => {

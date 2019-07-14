@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import style from './style.less';
+import style from './small.less';
 
 export default ({ name, icon, value, showDetail }) => {
 	const basic = name === 'basic';

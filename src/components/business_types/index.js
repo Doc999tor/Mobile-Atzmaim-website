@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import Bussiness from './component';
-import styles from '../features/component/allFeatures/style.less';
-import style from './style.less';
+import styles from '../features/component/allFeatures/all.less';
+import style from './types.less';
 
 export default () => {
 	return (

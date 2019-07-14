@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import style from './style.less';
+import style from './hero.less';
 
 export default () => {
 	const background = {'backgroundImage': 'url(' + config.urls.media + 'pic_bg.jpg' + ')'};

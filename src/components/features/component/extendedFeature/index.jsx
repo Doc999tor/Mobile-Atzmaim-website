@@ -1,6 +1,6 @@
 import { h } from 'preact';
-import style from './style.less';
-import './style.less';
+import style from './extended.less';
+import './extended.less';
 
 export default ({ feature, backToAll }) => {
 	return (

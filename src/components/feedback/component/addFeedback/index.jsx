@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import style from './style.less';
+import style from './addFeedback.less';
 export default class AddFeedback extends Component {
 	state = {
 		rate_app: [{id: 1, rating: 1},{id: 2, rating: 2},{id: 3, rating: 3},{id: 4, rating: 4},{id: 5, rating: 5}],

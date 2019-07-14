@@ -1,6 +1,6 @@
 import { h } from 'preact';
-import style from './style.less';
-import './style.less';
+import style from './menu.less';
+import './menu.less';
 
 export default ({close}) => {
 	return (

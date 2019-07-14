@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import AllFeatures from './component/allFeatures/index.jsx';
 import Details from './component/details/index.jsx';
-import style from './style.less';
+import style from './features.less';
 
 export default class Features extends Component {
 	state = {

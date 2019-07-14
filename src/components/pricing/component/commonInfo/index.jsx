@@ -1,8 +1,8 @@
 import { h, Component } from 'preact';
 import SmallPreview from '../smallPreview';
 import DetailInfo from '../detailInfo';
-import styles from '../../../features/component/allFeatures/style.less';
-import style from './style.less';
+import styles from '../../../features/component/allFeatures/all.less';
+import style from './common.less';
 
 export default class CommonInfo extends Component {
 	state = {
