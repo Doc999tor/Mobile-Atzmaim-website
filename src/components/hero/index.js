@@ -22,7 +22,8 @@ export default () => {
 					</a>
 				</div>
 				<div class={style.phone_wrap}>
-					<img src={config.urls.media + 'pic_iphone.png'} />
+					<a href={config.urls.media + 'pic_iphone.png'} class='progressive replace'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU1LzgAwADFQFwh4dq+AAAAABJRU5ErkJggg==' class= 'preview'/></a>
+					{/* <a href={config.urls.media + 'pic_iphone.png'} class='progressive replace'><img src={config.urls.media + 'pic_iphone-min.png'} class= 'preview'/></a> */}
 				</div>
 			</div>
 		</div>
