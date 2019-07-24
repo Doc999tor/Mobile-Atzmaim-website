@@ -39,7 +39,7 @@ export default class OpenedPreview extends Component {
 						<li class={style.feature} style={marker}>{item}</li>
 					))}
 				</ul>
-				<a class={style.link} href={config.urls.signup}><button class={style.paid}>{config.translations.pricing.data[name].opened_preview.cta_label}</button></a>
+				<a class={style.link} href={config.urls.signup}><p class={style.paid}>{config.translations.pricing.data[name].opened_preview.cta_label}</p></a>
 			</div>
 		);
 	}

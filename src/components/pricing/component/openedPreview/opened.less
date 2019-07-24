@@ -11,16 +11,6 @@
 	ul {
 		margin-bottom: 1rem;
 	}
-	button {
-		width: 100%;
-		border: none;
-		outline: none;
-		color: white;
-		font-size: 15px;
-		font-weight: 500;
-		padding: 0.8rem 0;
-		border-radius: 8px;
-	}
 }
 .detail_price:last-child {
 	margin-bottom: 4.5rem;
@@ -132,12 +122,22 @@ input:checked + .slider:before {
 }
 .paid {
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
-	background-color: var(--active-color)
+	background-color: var(--active-color);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 0.8rem 0;
+	border-radius: 8px;
 
 }
 .link {
 	display: block;
 	width: 100%;
+	text-decoration: none;
 }
 .detail_price_active {
 	background-image: linear-gradient(142deg, #591ec0, #6623db 25%, #7d3ee8 48%, #be95ff);

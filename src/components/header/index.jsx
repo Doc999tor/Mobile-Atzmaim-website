@@ -15,13 +15,14 @@ export default class Header extends Component {
 				<div>
 					<button class={style.menu_btn} onClick={this.menuOnOff}><img src={config.urls.media + (!active ? 'ic_menu.svg' : 'ic_menu_cross.svg')} alt='menu' /></button>
 					<a class={style.login_link} href={config.urls.login}>
-						<button class={style.login_btn}><img src={config.urls.media + 'ic_lock.svg'} alt='lock' />{config.translations.hero.log_in}</button>
+						<img src={config.urls.media + 'ic_lock.svg'} alt='lock' />
+						<span>{config.translations.hero.log_in}</span>
 					</a>
 				</div>
 				{active && <Menu close={this.menuOnOff} />}
 				<div>
 					<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
-					<h1>{config.translations.hero.main_logo}</h1>
+					<span class={style.logo}>{config.translations.hero.main_logo}</span>
 				</div>
 			</header>
 		);

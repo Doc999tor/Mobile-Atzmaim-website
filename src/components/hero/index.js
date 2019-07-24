@@ -17,8 +17,8 @@ export default () => {
 							</figure>
 						))}
 					</div>
-					<a href={config.urls.signup}>
-						<button class={style.button}>{config.translations.hero_page.button_text}</button>
+					<a class={style.button} href={config.urls.signup}>
+						<span >{config.translations.hero_page.button_text}</span>
 					</a>
 				</div>
 				<div class={style.phone_wrap}>
