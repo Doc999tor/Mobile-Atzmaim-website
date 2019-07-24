@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import AllFeatures from './component/allFeatures/index.jsx';
 import Details from './component/details/index.jsx';
 import style from './features.less';
+import common from '../hero/hero.less'
 
 export default class Features extends Component {
 	state = {
@@ -24,7 +25,7 @@ export default class Features extends Component {
 	render() {
 		const { showDetail, selectedFeature } = this.state
 		return (
-			<div id='features' class={style.features}>
+			<div id='features' class={common.height}>
 				{
 					!showDetail
 					? <AllFeatures selectFeature={this.selectFeature} />

@@ -4,6 +4,7 @@ import AddFeedback from './component/addFeedback/';
 import page_style from './feedback.less';
 import style from '../business_types/types.less';
 import styles from '../features/component/allFeatures/all.less';
+import common from '../hero/hero.less'
 
 export default class Reviews extends Component {
 	state = {
@@ -29,7 +30,7 @@ export default class Reviews extends Component {
 	render() {
 		const { feedback, addFeedback } = this.state;
 		return (
-			<div id='feedback' class={style.business_types}>
+			<div id='feedback' class={common.height}>
 				{addFeedback
 					? <AddFeedback cancel={this.handleToggleForm} onFormSubmit={this.onFormSubmit} />
 					: <div>

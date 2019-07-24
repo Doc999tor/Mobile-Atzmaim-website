@@ -5,7 +5,7 @@ export default () => {
 	const background = {'backgroundImage': 'url(' + config.urls.media + 'pic_bg.jpg' + ')'};
 	const features = config.modules.features.data.filter(i => config.modules.hero.features.includes(i.name));
 	return (
-		<div id='hero' class={style.hero} style={background}>
+		<div id='hero' class={`${style.hero} ${style.height}`} style={background}>
 			<div class={style.shadow} >
 				<div class={style.content}>
 					<h2>{config.translations.hero_page.title}</h2>

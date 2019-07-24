@@ -2,10 +2,11 @@ import { h } from 'preact';
 import Bussiness from './component';
 import styles from '../features/component/allFeatures/all.less';
 import style from './types.less';
+import common from '../hero/hero.less'
 
 export default () => {
 	return (
-		<div id='business_types' class={style.business_types}>
+		<div id='business_types' class={common.height}>
 			<section class={styles.top_section}>
 				<div class={style.title}>
 					<h2 >{config.translations.business_types.main_title}</h2>
