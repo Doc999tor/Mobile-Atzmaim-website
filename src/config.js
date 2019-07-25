@@ -6,25 +6,22 @@ const config = {
 		hero: { icon: 'ic_smartphone.svg', link: '#hero' },
 		features: { icon: 'ic_features.svg', link: '#features' },
 		business_types: { icon: 'ic_for_whom.svg', link: '#business_types' },
+		showcases: { link: '#showcases' },
 		pricing: { icon: 'ic_pricing.svg', link: '#pricing'},
 		feedback: { icon: 'ic_reviews.svg', link: '#feedback' }
 	},
 	menu: [
-		{ name: 'about_us', link: `/${ lang }/about_us` },
-		{ name: 'contact_us', link: `/${ lang }/contact_us` },
-		{ name: 'support', link: `/${ lang }/support`},
-		{ name: 'faq', link: `/${ lang }/faq`},
-		{ name: 'terms_of_use', link: `/${ lang }/terms_of_use` }
+		{ name: 'about_us', link: `/${lang}/about_us` },
+		{ name: 'contact_us', link: `/${lang}/contact_us` },
+		{ name: 'support', link: `/${lang}/support`},
+		{ name: 'faq', link: `/${lang}/faq`},
+		{ name: 'terms_of_use', link: `/${lang}/terms_of_use` }
 	],
 	modules: {
 		hero: {
 			features: ['business', 'subscriptions', 'appointments']
 		},
 		features: {
-			internal_link: {
-				name: 'features',
-				url: 'features'
-			},
 			data: [
 				{
 					name: 'business',
@@ -59,10 +56,6 @@ const config = {
 			]
 		},
 		showcases: {
-			internal_link: {
-				name: 'showcases',
-				url: 'showcases'
-			}
 		},
 		business_types: {
 			internal_link: {
@@ -93,10 +86,6 @@ const config = {
 			]
 		},
 		feedback: {
-			internal_link: {
-				name: 'feedback',
-				url: 'feedback'
-			},
 			data: [
 				{
 					id: 1,
@@ -201,9 +190,10 @@ const config = {
 		navigation: {
 			hero: { name: 'App info' },
 			features: { name: 'Features' },
+			showcases: {name: 'Showcases'},
 			business_types: { name: 'For whom' },
 			pricing: { name: 'Pricing' },
-			feedback: { name: 'Feedback' },
+			feedback: { name: 'Feedback' }
 		},
 		hero: {
 			internal_link_name: 'HERO',
