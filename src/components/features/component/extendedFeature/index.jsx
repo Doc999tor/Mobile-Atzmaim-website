@@ -6,7 +6,9 @@ export default ({ feature, backToAll }) => {
 	return (
 		<div class={style.extended}>
 			<div class={style.top}>
-				<img src={config.urls.media + feature.icon} />
+				<svg class={style.feature_icon}>
+					<use xlinkHref={config.urls.media + 'sprite.svg#' + feature.icon} />
+				</svg>
 				<p>{config.translations.features.content.data[feature.name].name}</p>
 			</div>
 			<p class={style.descr}>{config.translations.features.content.data[feature.name].description}</p>

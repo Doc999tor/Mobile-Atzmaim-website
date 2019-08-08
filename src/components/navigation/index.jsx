@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import style from './nav.less';
+import './nav.less';
 
 export default class Navigation extends Component {
 	state = {
@@ -7,8 +8,7 @@ export default class Navigation extends Component {
 	}
 	toggleClass = link => {
 		const currentState = this.state.active;
-		console.log('location', location)
-		this.setState({ active: link.link }, () => console.log('callback', this.state));
+		this.setState({ active: link.link })
 	}
 	render() {
 		const { active } = this.state
@@ -22,7 +22,9 @@ export default class Navigation extends Component {
 								onClick={() => this.toggleClass(link)}
 								class={active === link.link ? style.match : style.link}
 								href={location.pathname + link.link}>
-								<img src={config.urls.media + (active === link.link ? link.icon.substr(3) : link.icon)} alt={link.name}/>
+								<svg class={active === link.link ? style.img_active : style.img_inactive}>
+                  <use xlinkHref={config.urls.media + 'sprite.svg#' + link.icon} />
+                </svg>
 								{config.translations.navigation[linkName].name}
 							</a>
 						})}

@@ -31,12 +31,12 @@ const config = {
 				{
 					name: 'subscriptions',
 					preview_pic: 'previews-ic_client_subscriptions.jpg',
-					icon: 'ic_phone_message_feature.svg'
+					icon: 'ic_phone_message.svg'
 				},
 				{
 					name: 'appointments',
 					preview_pic: 'previews-ic_calendar.jpg',
-					icon: 'ic_calendar_feature.svg'
+					icon: 'ic_calendar.svg'
 				},
 				{
 					name: 'management',
@@ -46,12 +46,12 @@ const config = {
 				{
 					name: 'notifications',
 					preview_pic: 'previews-ic_sms_notifications.jpg',
-					icon: 'ic_phone_message_feature.svg'
+					icon: 'ic_phone_message.svg'
 				},
 				{
 					name: 'reminders',
 					preview_pic: 'previews-ic_tasks_reminders.jpg',
-					icon: 'ic_group_feature.svg'
+					icon: 'ic_group.svg'
 				}
 			]
 		},

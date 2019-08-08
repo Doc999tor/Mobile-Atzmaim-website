@@ -12,7 +12,11 @@ export default () => {
 					<div class={style.feature_wrap}>
 						{features.map(f => (
 							<figure class={style.feature}>
-								<p><img src={config.urls.media + f.icon} /></p>
+								<p>
+									<svg class={style.feature_icon}>
+										<use xlinkHref={config.urls.media + 'sprite.svg#' + f.icon} />
+									</svg>
+								</p>
 								<figcaption>{config.translations.features.content.data[f.name].name}</figcaption>
 							</figure>
 						))}
@@ -23,7 +27,6 @@ export default () => {
 				</div>
 				<div class={style.phone_wrap}>
 					<a href={config.urls.media + 'pic_iphone.png'} class='progressive replace'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPU1LzgAwADFQFwh4dq+AAAAABJRU5ErkJggg==' class= 'preview'/></a>
-					{/* <a href={config.urls.media + 'pic_iphone.png'} class='progressive replace'><img src={config.urls.media + 'pic_iphone-min.png'} class= 'preview'/></a> */}
 				</div>
 			</div>
 		</div>
