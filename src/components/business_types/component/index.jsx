@@ -13,8 +13,7 @@ export default class Bussiness extends Component {
 			<div>
 				{ !showInfo
 					? <figure onClick={this.handleShowInfo} class={style.business}>
-						<p><a href={config.urls.media + icon + '.jpg'} class='progressive replace'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcvHi9DwAGKQJD0JDfYwAAAABJRU5ErkJggg==' class= 'preview'/></a></p>
-						{/* <p><a href={config.urls.media + icon + '.jpg'} class='progressive replace'><img src={config.urls.media + 'pic_cosmetics-min.jpg'} class= 'preview'/></a></p> */}
+							<img src={config.urls.media + icon + '.jpg'} />
 						<figcaption>{config.translations.business_types.content[name].title}</figcaption>
 					</figure>
 					: <div class={style.show_info} onClick={this.handleShowInfo}>
