@@ -25,33 +25,33 @@ const config = {
 			data: [
 				{
 					name: 'business',
-					preview_pic: 'previews-ic_business.jpg',
-					icon: 'ic_sync.svg'
+					preview_pic: 'ic_sync.svg',
+					icon: 'pic_iphone.png'
 				},
 				{
 					name: 'subscriptions',
-					preview_pic: 'previews-ic_client_subscriptions.jpg',
-					icon: 'ic_phone_message.svg'
+					preview_pic: 'ic_phone_message.svg',
+					icon: 'pic_iphone.png'
 				},
 				{
 					name: 'appointments',
-					preview_pic: 'previews-ic_calendar.jpg',
-					icon: 'ic_calendar.svg'
+					preview_pic: 'ic_calendar.svg',
+					icon: 'pic_iphone.png'
 				},
 				{
 					name: 'management',
-					preview_pic: 'previews-ic_clients_management.jpg',
-					icon: 'ic_management.svg'
+					preview_pic: 'ic_management.svg',
+					icon: 'pic_iphone.png'
 				},
 				{
 					name: 'notifications',
-					preview_pic: 'previews-ic_sms_notifications.jpg',
-					icon: 'ic_phone_message.svg'
+					preview_pic: 'ic_phone_message.svg',
+					icon: 'pic_iphone.png'
 				},
 				{
 					name: 'reminders',
-					preview_pic: 'previews-ic_tasks_reminders.jpg',
-					icon: 'ic_group.svg'
+					preview_pic: 'ic_group.svg',
+					icon: 'pic_iphone.png'
 				}
 			]
 		},
