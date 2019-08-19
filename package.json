@@ -49,8 +49,10 @@
   },
   "dependencies": {
     "preact": "^8.4.2",
+    "preact-async-route": "^2.2.1",
     "preact-compat": "^3.19.0",
     "preact-render-to-string": "^4.1.0",
+    "preact-router": "^2.6.1",
     "proptypes": "^1.1.0"
   },
   "main": "webpack.config.babel.js",

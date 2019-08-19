@@ -2,8 +2,9 @@
 @import '../variables.css';
 
 html, body {
-	height: 100%;
-	width: 100%;
+	scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y mandatory;
 	padding: 0;
 	margin: 0;
 	background: var(--sec-color);
@@ -17,6 +18,3 @@ h1, h2, h3, figure, p, ul {
 	box-sizing: border-box;
 }
 
-#app {
-	height: 100%;
-}
