@@ -14,7 +14,7 @@ export default () => {
 							<figure class={style.feature}>
 								<p>
 									<svg class={style.feature_icon}>
-										<use xlinkHref={config.urls.media + 'sprite.svg#' + f.icon} />
+										<use xlinkHref={config.urls.media + 'sprite.svg#' + f.preview_pic} />
 									</svg>
 								</p>
 								<figcaption>{config.translations.features.content.data[f.name].name}</figcaption>

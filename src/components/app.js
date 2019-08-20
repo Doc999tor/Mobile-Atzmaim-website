@@ -12,7 +12,7 @@ export default class App extends Component {
 	    <div id="app">
 				<Header />
 				<Router>
-					<Main path="/" />
+					<Main path={config.baseUrl + '/'} />
 					<AsyncRoute
 						path={config.baseUrl + '/error'}
 						getComponent={ () => import('./error_page').then(module => module.default) }

@@ -162,6 +162,7 @@ const config = {
 			{ name: 'facebook', url: 'https://facebook.com', icon: 'ic_facebook.svg' },
 			{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' }
 		],
+		support: `/${ lang }/support`,
 		login: `/${ lang }/login`,
 		signup: `/${ lang }/signup`,
 		old_website: '/text_website.html',
@@ -182,6 +183,10 @@ const config = {
 		hero_page: {
 			title: 'Calendar App for Business',
 			button_text: 'Try for Free!'
+		},
+		error_page: {
+			title: 'Oops!',
+			text: 'Something went wrong, but we\'re going to fix it! Sorry about that'
 		},
 		head: {
 			title: 'title',
