@@ -17,7 +17,6 @@ export default class Main extends Component {
 	    feedback: <Feedback />,
 	    pricing: <Pricing />
 		}
-		console.log('config.baseUrl + /error', config.baseUrl + '/error')
 	  return (
 	    <div id="main">
 	      {
