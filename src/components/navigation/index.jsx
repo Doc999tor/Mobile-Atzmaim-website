@@ -21,7 +21,7 @@ export default class Navigation extends Component {
 							return <a
 								onClick={() => this.toggleClass(link)}
 								class={active === link.link ? style.match : style.link}
-								href={config.baseUrl + link.link}>
+								href={location.origin + location.pathname + link.link}>
 								<svg class={active === link.link ? style.img_active : style.img_inactive}>
                   <use xlinkHref={config.urls.media + 'sprite.svg#' + link.icon} />
                 </svg>
