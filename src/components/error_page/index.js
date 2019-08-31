@@ -17,9 +17,9 @@ export default () => {
 				</div>
 			</div>
 			<div class={style.background_bottom}>
-				<Link class={`${style.button} ${style.home}`} href={config.baseUrl + '/'}><span><img src={config.urls.media + 'ic_home.svg'} /></span>Back to Homepage</Link>
-				<a class={style.button} href={config.urls.support}><span><img src={config.urls.media + 'ic_support.svg'} /></span>Contact Support</a>
-				<a class={style.button} href={config.urls.signup}><span><img src={config.urls.media + 'ic_join.svg'} /></span>Join Atzmaim Now</a>
+				<Link class={`${style.button} ${style.home}`} href={config.baseUrl}><span><img src={config.urls.media + 'ic_home.svg'} /></span>{config.translations.error_page.home_btn}</Link>
+				<a class={style.button} href={config.urls.support}><span><img src={config.urls.media + 'ic_support.svg'} /></span>{config.translations.error_page.support_btn}</a>
+				<a class={style.button} href={config.urls.signup}><span><img src={config.urls.media + 'ic_join.svg'} /></span>{config.translations.error_page.join_btn}</a>
 			</div>
 		</div>
 	);

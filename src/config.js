@@ -1,6 +1,6 @@
 const lang = 'en'
 const config = {
-	baseUrl: '',
+	baseUrl: '/en/home',
 	locale: lang,
 	isRTL: lang === 'he',
 	navigation: {
@@ -186,7 +186,10 @@ const config = {
 		},
 		error_page: {
 			title: 'Oops!',
-			text: 'Something went wrong, but we\'re going to fix it! Sorry about that'
+			text: 'Something went wrong, but we\'re going to fix it! Sorry about that',
+			home_btn: 'Back to Homepage',
+			support_btn: 'Contact Support',
+			join_btn: 'Join Atzmaim Now'
 		},
 		head: {
 			title: 'title',
