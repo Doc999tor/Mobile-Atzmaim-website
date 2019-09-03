@@ -1,4 +1,4 @@
-const lang = 'en'
+const lang = 'he'
 const config = {
 	baseUrl: '/en/home',
 	locale: lang,
