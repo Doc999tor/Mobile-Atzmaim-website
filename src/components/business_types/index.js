@@ -1,7 +1,7 @@
-import { h } from 'preact';
-import Bussiness from './component';
-import styles from '../features/component/allFeatures/all.less';
-import style from './types.less';
+import { h } from 'preact'
+import Bussiness from './component'
+import styles from '../features/component/allFeatures/all.less'
+import style from './types.less'
 import common from '../hero/hero.less'
 
 export default () => {
@@ -18,8 +18,8 @@ export default () => {
 					</div>
 				</div>
 				<div class={styles.background_top}>
-					<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'}/>
-					<img class={config.isRTL ? style.outer_rtl : style.outer_ltr} src={config.urls.media + 'ill_business_types.svg'}/>
+					<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'} />
+					<img class={config.isRTL ? style.outer_rtl : style.outer_ltr} src={config.urls.media + 'ill_business_types.svg'} />
 				</div>
 			</section>
 			<h3 class={style.subtitle}>{config.translations.business_types.subtitle}</h3>
@@ -27,5 +27,5 @@ export default () => {
 				{config.modules.business_types.data.map(item => <Bussiness name={item.name} icon={item.icon} />)}
 			</section>
 		</div>
-	);
-};
+	)
+}

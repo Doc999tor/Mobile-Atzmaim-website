@@ -15,10 +15,13 @@
 .phone_wrap {
 	display: flex;
 	width: 55%;
+	overflow: hidden;
 	align-items: center;
 	justify-content: center;
 	img {
+		position: relative;
 		width: 90%;
+		height: 80%;
 		object-fit: none;
 	}
 }
@@ -67,7 +70,7 @@
 	font-weight: 500;
 	font-size: 0.9rem;
 	margin-top: 1rem;
-	transition: 0.5s ease-out
+	transition: 0.3s ease-out
 }
 .back_img {
 	-moz-margin-end: 0.5rem;
@@ -76,12 +79,14 @@
 }
 
 .max {
-	height: 80%;
-	transition: 0.3s ease-out
+	opacity: 1;
+	top: 0rem;
+	transition: 0.1s ease-out
 }
 .min {
-	height: 0%;
-	transition: 0.5s ease-out
+	top: 33rem;
+	opacity: 0;
+	transition: 0.1s ease-out
 }
 .min_bth {
 	background-color: transparent;
@@ -92,7 +97,7 @@
 	color: var(--dark-color);
 	font-weight: 500;
 	font-size: 0.9rem;
-	transition: 0.5s ease-out;
+	transition: 0.3s ease-out;
 	height: 0%;
 }
 body[style="direction: rtl;"] & {

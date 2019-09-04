@@ -1,34 +1,28 @@
-import { h, Component } from 'preact';
-import style from './bussiness.less';
-import './bussiness.less';
+import { h, Component } from 'preact'
+import style from './bussiness.less'
 export default class Bussiness extends Component {
-	state = {showInfo: false}
-	handleShowInfo = () => {
-		this.setState({ showInfo: !this.state.showInfo });
+	state = {
+		animation: false
 	}
-	render() {
+
+	init = () => setTimeout(() => this.setState({ animation: !this.state.animation }), 100)
+
+	render () {
 		const { name, icon } = this.props
-		const { showInfo } =this.state
+		const { animation } = this.state
 		return (
-			<div>
-				{ !showInfo
-					? <figure onClick={this.handleShowInfo} class={style.business}>
-							<img src={config.urls.media + icon + '.jpg'} />
-						<figcaption>{config.translations.business_types.content[name].title}</figcaption>
-					</figure>
-					: <div class={style.show_info} onClick={this.handleShowInfo}>
-						<div class={style.wrap}>
-							<img src={config.urls.media + icon + '.jpg'} />
-						</div>
-						<div class={style.main_info}>
-							<p class={style.title}>{config.translations.business_types.content[name].title}</p>
-							<div class={style.line}/>
-							<p class={style.text}>{config.translations.business_types.content[name].text}</p>
-						</div>
-					</div>
-				}
+			<div class={this.state.animation ? style.main2 : style.main} onClick={this.init}>
+				<div class={this.state.animation ? style.sub2 : style.sub}>
+					<img src={config.urls.media + icon + '.jpg'} />
+				</div>
+				<div class={this.state.animation ? style.bottom_info2 : style.bottom_info}>
+					<p class={style.title}>{config.translations.business_types.content[name].title}</p>
+					{animation &&	<div class={style.extend1}>
+						<div class={style.line} />
+						<p class={style.text}>{config.translations.business_types.content[name].text}</p>
+					</div>}
+				</div>
 			</div>
-		);
+		)
 	}
 }
-
