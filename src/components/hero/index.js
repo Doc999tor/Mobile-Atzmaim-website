@@ -3,13 +3,7 @@ import style from './hero.less'
 
 export default class Hero extends Component {
 	componentDidMount = () => {
-		setTimeout(() => this.props.startAnimation(), 500)
-	}
-
-	shouldComponentUpdate (nextProps, nextState) {
-		if (!nextProps.animation && !nextProps.activeLink === 'hero') {
-			return false
-		}
+		setTimeout(() => this.props.startAnimation(), 300)
 	}
 
 	render () {
@@ -18,11 +12,11 @@ export default class Hero extends Component {
 		const features = config.modules.features.data.filter(i => config.modules.hero.features.includes(i.name))
 		return (
 			<div id='hero' class={`${style.hero} ${style.height}`} >
-				{animation ? <div class={style.full} style={background}>
-					<div class={style.shadow} >
-						<div class={style.content}>
-							<h2>{config.translations.hero_page.title}</h2>
-							<div class={style.feature_wrap}>
+				<div class={style.full} style={animation ? background : ''}>
+					<div class={`${style.common} ${animation ? style.shadow : style.bgr}`} >
+						<div class={`${style.content} ${animation && style.padding_end}`}>
+							{animation && <h2>{config.translations.hero_page.title}</h2>}
+							{animation && <div class={style.feature_wrap}>
 								{features.map(f => (
 									<figure class={style.feature}>
 										<p>
@@ -33,21 +27,18 @@ export default class Hero extends Component {
 										<figcaption>{config.translations.features.content.data[f.name].name}</figcaption>
 									</figure>
 								))}
-							</div>
-							<a class={style.button} href={config.urls.signup}>
+							</div>}
+							{animation && <a class={style.button} href={config.urls.signup}>
 								<span >{config.translations.hero_page.button_text}</span>
-							</a>
+							</a>}
 						</div>
 						<div class={style.phone_wrap}>
-							<img src={config.urls.media + 'pic_iphone.png'} />
+							{!animation
+								? <img class={style.black_phone} src={config.urls.media + 'black_phone.png'} />
+								: <img class={`${style.start_p} ${animation && style.end_p}`} src={config.urls.media + 'pic_iphone.png'} />}
 						</div>
 					</div>
-				</div> : <div class={`${style.full} ${style.bgr}`} >
-					<div class={style.empty} />
-					<div class={style.img_cont}>
-						<img src={config.urls.media + 'black_phone.png'} />
-					</div>
-				</div>}
+				</div>
 			</div>
 		)
 	}
