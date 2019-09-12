@@ -1,6 +1,6 @@
-const lang = 'en'
+const lang = 'he'
 const config = {
-	baseUrl: '/en/home',
+	baseUrl: '',
 	locale: lang,
 	isRTL: lang === 'he',
 	navigation: {

@@ -7,22 +7,45 @@ import Pricing from '../pricing'
 import Feedback from '../feedback'
 
 export default class Main extends Component {
-	render() {
-		const possibleKeys = [ 'hero', 'features', 'business_types', 'pricing', 'feedback']
+	state = {
+		animation: false,
+		activeLink: 'hero'
+	}
+
+	handleClickNav = val => {
+		this.setState({ activeLink: val,
+			animation: false
+		 }, () => {
+			 setTimeout(() => {
+				this.setState({
+					animation: true
+				})
+			 }, 200)
+		})
+	}
+
+	startAnimation = () => {
+		this.setState({
+			animation: true
+		})
+	}
+
+	render () {
+		const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
-	    hero: <Hero />,
+	    hero: <Hero startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    features: <Features />,
 	    business_types: <BusinessTypes />,
 	    feedback: <Feedback />,
 	    pricing: <Pricing />
 		}
 	  return (
-	    <div id="main">
+	    <div id='main'>
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}
-	      <Navigation links={componentsForRendering} />
+	      <Navigation handleClickNav={this.handleClickNav} links={componentsForRendering} />
 	    </div>
 	  )
 	}

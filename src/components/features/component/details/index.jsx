@@ -26,7 +26,6 @@ export default class Details extends Component {
 	            <p>{config.translations.features.content.data[selectedFeature.name].name}</p>
 	          </div>
 	          <p class={style.descr}>{config.translations.features.content.data[selectedFeature.name].description}</p>
-	          {/* <button class={style.back_button} onClick={backToAll}><img class={style.back_img} src={config.urls.media + 'ic_arrow_back.svg'} />{config.translations.features.back_to_features}</button> */}
 	          <button class={this.state.animation ? style.back_button : style.min_bth} onClick={backToAll}><img class={style.back_img} src={config.urls.media + 'ic_arrow_back.svg'} />{config.translations.features.back_to_features}</button>
 	        </div>
 	      </div>
