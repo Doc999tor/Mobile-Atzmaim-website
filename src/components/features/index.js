@@ -31,7 +31,7 @@ export default class Features extends Component {
 			<div id='features' class={common.height}>
 				{
 					!showDetail
-						? <AllFeatures selectFeature={this.selectFeature} animations={animations} />
+						? <AllFeatures {...this.props} selectFeature={this.selectFeature} animations={animations} />
 						: <Details backToAll={this.backToAll} selectedFeature={selectedFeature} />
 				}
 			</div>

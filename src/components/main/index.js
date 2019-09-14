@@ -35,7 +35,7 @@ export default class Main extends Component {
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
 	    hero: <Hero startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    features: <Features />,
+	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes />,
 	    feedback: <Feedback />,
 	    pricing: <Pricing />
