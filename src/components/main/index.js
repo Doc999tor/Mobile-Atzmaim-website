@@ -20,7 +20,7 @@ export default class Main extends Component {
 				this.setState({
 					animation: true
 				})
-			 }, 300)
+			 }, 400)
 		})
 	}
 
