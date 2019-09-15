@@ -48,18 +48,32 @@
 		position: absolute;
 	}
 }
-.blank_woman_l{
+.blank_woman_l {
 	top: 2.8rem;
 	right: 1.2rem;
+}
+.blank_woman_r {
+	top: 2.8rem;
+	left: 1rem;
 }
 
 .blank_phone_l {
 	top: 1.6rem;
 	right: 1.4rem;
 }
+.blank_phone_r {
+	top: 1.5rem;
+	left: 2.3rem;
+}
 .wmn {
 	top: 2.8rem;
 	right: 1.2rem;
+	opacity: 0;
+}
+.wmn_r {
+	transform: scale(-1, 1);
+	top: 2.8rem;
+	left: 1rem;
 	opacity: 0;
 }
 .active_woman_l {
@@ -70,14 +84,36 @@
 	transition: all 0.2s;
 	z-index: 2;
 }
+.active_woman_r {
+	transform: scale(-1, 1);
+	top: 2.8rem;
+	left: 2rem;
+	opacity: 1;
+	transition-timing-function: ease-out !important;
+	transition: all 0.2s;
+	z-index: 2;
+}
 .phone_begin {
 	top: 1rem;
 	right: -1.8rem;
 	opacity: 0;
 }
+.phone_begin_r {
+	top: 1rem;
+	left: -1rem;
+	opacity: 0;
+}
 .phone_act{
 	top: 1.5rem;
 	right: -1.5rem;
+	transition: all 0.6s;
+	opacity: 1;
+	z-index: 2;
+}
+.phone_act_r{
+	transform: scale(-1, 1);
+	top: 1.5rem;
+	left: -1rem;
 	transition: all 0.6s;
 	opacity: 1;
 	z-index: 2;
@@ -101,7 +137,6 @@
 }
 .inner_rtl {
 	transform: scale(-1, 1);
-	// position: absolute;
 	transition-timing-function: ease-out;
 	transition: all 0.6s;
 	top: -3rem;
@@ -109,16 +144,18 @@
 	opacity: 1;
 }
 .outer_ltr {
-	position: absolute;
 	top: 2rem;
 	right: -1rem;
 	height: 100%;
 	transition: all 0.2s ease-out;
 	z-index: 2;
 }
+.bgr {
+	background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(222,218,224,1) 100%);
+}
 .end {
 	height: 0%;
-	right: -7rem;
+	left: -7rem;
 	transition: all 0.2s ease-out;
 	z-index: 2;
 }
