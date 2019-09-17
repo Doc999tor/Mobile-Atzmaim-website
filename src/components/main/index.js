@@ -36,7 +36,7 @@ export default class Main extends Component {
 	  const objSplitLoadingComponents = {
 	    hero: <Hero startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
-	    business_types: <BusinessTypes />,
+	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback />,
 	    pricing: <Pricing />
 		}
