@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import { h, Fragment } from 'preact'
 import Bussiness from './component'
 import styles from '../features/component/allFeatures/all.less'
 import style from './types.less'
@@ -21,18 +21,21 @@ export default ({ animation }) => {
 				</div>
 				<div class={styles.background_top}>
 				{!animation
-						? <img class={config.isRTL ? `${styles.scale} ${styles.start_bg}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} />
-						: <img class={config.isRTL ? `${animation && styles.inner_rtl} ` : `${animation && styles.inner_ltr}`} src={config.urls.media + 'bg_top.svg'} />}
+						? <Fragment>
+							<img class={config.isRTL ? `${styles.scale} ${styles.start_bg}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} />
+							<img class={config.isRTL ? style.inactive_people_rtl : style.city_ltr} src={config.urls.media + 'city.svg'} />
+						</Fragment>
+						: <Fragment>
+							<img class={config.isRTL ? `${animation && styles.inner_rtl} ` : `${animation && styles.inner_ltr}`} src={config.urls.media + 'bg_top.svg'} />
+						<img class={config.isRTL ? style.inactive_people_rtl : style.city_fin_ltr} src={config.urls.media + 'city.svg'} />
+						</Fragment>}
 				{
 					!animation && <img class={config.isRTL ? style.inactive_people_rtl : style.inactive_people_ltr} src={config.urls.media + 'business people.svg'} />
 				}
-				{
-					!animation
-						? <img class={config.isRTL ? style.active_start_rtl : style.active_start_ltr} src={config.urls.media + 'business people_active.svg'} />
-						: <img class={config.isRTL ? `${animation && style.active_end_rtl}` : `${animation && style.active_end_ltr}`} src={config.urls.media + 'business people_active.svg'} />
+				{!animation
+					? <img class={config.isRTL ? style.active_start_rtl : style.active_start_ltr} src={config.urls.media + 'business people_active.svg'} />
+					: <img class={config.isRTL ? `${animation && style.active_end_rtl}` : `${animation && style.active_end_ltr}`} src={config.urls.media + 'business people_active.svg'} />
 				}
-					{/* <img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'} /> */}
-					{/* <img class={config.isRTL ? style.outer_rtl : style.outer_ltr} src={config.urls.media + 'ill_business_types.svg'} /> */}
 				</div>
 			</section>
 			<section class={`${style.wrap} ${animation && style.wrap_end}`}>
