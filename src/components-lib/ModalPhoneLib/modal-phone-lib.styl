@@ -77,58 +77,49 @@
         .del-info
           padding-inline-end: 10px
           display flex
+          // border-radius 50%
+          // background-color: 
 .phone-modal-footer
   height 60px
   margin-top 50px
-  display flex
   border-bottom-left-radius 10px
   border-bottom-right-radius 10px
-  p
-    font-size 1rem
-    white-space nowrap
-    padding-inline-end 0.5rem
-    overflow hidden
-    text-overflow ellipsis
-  img
-    -webkit-padding-start 10px
-    -moz-padding-start 10px
-    padding-inline-start: 10px
-  .right
-    -webkit-padding-start 0
-    -moz-padding-start 0
-    padding-inline-start 0
-    transform rotate(180deg)
-  button
-    display display flex
-    height 100%
-    width 50%
-    padding 0
-    background-color white
-    border none
-    text-transform uppercase
+  .btns-wrap
     display flex
     justify-content center
     align-items center
-    transition all 0.3s
+    p
+      font-size 1rem
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+    img
+      -webkit-padding-start 10px
+      -moz-padding-start 10px
+      padding-inline-start: 10px
+    .right
+      -webkit-padding-start 0
+      -moz-padding-start 0
+      padding-inline-start: 0
+      -webkit-padding-end 10px
+      -moz-padding-end 10px
+      padding-inline-end: 10px
+      transform rotate(180deg)
+  button
+    display inline-block
+    height 100%
+    width 50%
+    background-color white
+    border none
+    text-transform uppercase
     &:focus
       outline none
   .skip
+    border-bottom-left-radius 10px
     color #522fa9
-  .send_disabled
-    color #b3b3b3 
-  .send_active
-    color var(--active-color)
-  .img_save_disabled
-    fill #b3b3b3
-    width 22px
-    height 22px
-    transition all 0.3s
-  .img_save_active
-    fill var(--active-color)
-    width 22px
-    height 22px
-    transition all 0.3s
-  .img_skip
-    fill var(--dark-color)
-    width 22px
-    height 22px
+  .send
+    border-bottom-right-radius 10px
+    color #ff358c
+// .Valphone:before
+//   right 25px!important
+//   top 73px!important

@@ -171,7 +171,7 @@ export default class Notes extends React.Component {
               : <div key={i.id} className='note-list '>
                 <div className='left-side'>
                   <div className='date'>
-                    <span className='notes-list-date'>{i.reminder_date ? formatDate(i.reminder_date) : formatDate(i.date)}</span>
+                    <span className='notes-list-date'>{formatDate(i.date)}</span>
                     {i.reminder_date && <div className='notes-list-reminder'>
                       <img src={config.urls.media + 'ic_notifications_active.svg'} />
                     </div>}

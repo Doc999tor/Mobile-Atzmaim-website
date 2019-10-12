@@ -4,25 +4,27 @@ import {default as validatePhone} from '../validate-phone.js'
 import './modal-phone-lib.styl'
 
 export default class PhoneModal extends React.Component {
+  static propTypes = {
+    isVisibleModalPhone: PropTypes.bool.isRequired,
+    toglePhoneModal: PropTypes.func.isRequired,
+    sendlink: PropTypes.func
+  }
   state = {
     inputValue: '',
     deniedPhone: false
   }
-
   delInfo = () => {
-    this.setState({ isValidation: '', inputValue: '' })
+    this.setState({isValidation: '', inputValue: ''})
   }
-
   back = () => {
-    this.setState({ isValidation: '', inputValue: '' })
+    this.setState({isValidation: '', inputValue: ''})
     if (this.props.blur) {
       this.props.deniedPhone()
       this.props.hideModal()
     } else {
-      this.props.closeModal ? this.props.closeModal() : this.props.cancelSave()
+      this.props.closeModal ? this.props.closeModal() : this.props.cancelEmpty()
     }
   }
-
   normalizePhones = phones => {
     if (phones && phones.length) {
       let normalizeArray = phones.map((phone, index) => ({ id: index, number: phone.number || phone }))
@@ -31,45 +33,40 @@ export default class PhoneModal extends React.Component {
       return []
     }
   }
-
   save = () => {
     if (this.props.getPhone) {
       let arrPhones = []
       arrPhones.push(this.state.inputValue)
       this.normalizePhones(arrPhones)
-      this.props.cancelSave()
     }
     else if (this.props.reminders) this.props.create(this.state.inputValue)
     else if (this.props.blur) {
-      config.data[config.urls.fields.phone] = validatePhone(this.state.inputValue) ? `[${JSON.stringify(this.state.inputValue)}]` : null
+      config.data[config.urls.fields.phone] = this.state.inputValue ? `[${JSON.stringify(this.state.inputValue)}]` : null
       this.props.getPhoneNumber(this.state.inputValue)
       this.props.hideModal()
     } else {
-      config.data[config.urls.fields.phone] = validatePhone(this.state.inputValue) ? `[${JSON.stringify(this.state.inputValue)}]` : null
+      config.data[config.urls.fields.phone] = this.state.inputValue ? `[${JSON.stringify(this.state.inputValue)}]` : null
       this.props.create()
     }
-    this.setState({ isValidation: '', inputValue: '' })
+    this.setState({isValidation: '', inputValue: ''})
     if (this.state.isValidation) {
       this.props.cancel && this.props.cancel()
-    } else this.props.cancelSave ? this.props.cancelSave() : this.props.closeModal()
+    } else this.props.cancelEmpty()
   }
-
   checkPhone = e => {
-    this.setState({ inputValue: e, isValidation: '' })
+    this.setState({inputValue: e, isValidation: ''})
     if (e !== '' && e.length >= 3) validatePhone(e) ? this.setState({isValidation: true}) : this.setState({isValidation: false})
   }
-
   skip = () => {
     if (this.props.blur) {
       this.props.hideModal()
     } else if (this.props.addClient && !this.props.blur) {
       this.save()
     } else {
-      this.props.cancelSave ? this.props.cancelSave() : this.props.closeModal()
+      this.props.cancelEmpty() || this.props.closeModal()
     }
-    this.setState({ inputValue: '', isValidation: '' })
+    this.setState({ inputValue: '' })
   }
-
   componentDidUpdate = () => this.props.isVisibleModalPhone && this.refs.modal_phone.focus()
   render () {
     return (
@@ -108,20 +105,19 @@ export default class PhoneModal extends React.Component {
           </div>
         </div>
         <div className='phone-modal-footer'>
-          <button className='skip'
-            onClick={this.skip}>
-            <p>{this.props.text.cancel_modal}</p>
-            <svg className={`img_skip ${(config.isRTL || config.data.isRTL) && 'right'}`}>
-              <use xlinkHref={config.urls.media + 'sprite.svg#skip'} />
-            </svg>
+          <button className={config.isRTL ? 'send' : 'skip'} onClick={this.skip}>
+            <div className='btns-wrap'>
+              <p>{this.props.text.cancel_modal}</p>
+              <img className={(config.isRTL || config.data.isRTL) && 'right'} src={config.urls.media + 'skip-forward.svg'} />
+            </div>
           </button>
-          <button className={(!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3 ? 'send_disabled' : 'send_active')}
-            disabled={!validatePhone(this.state.inputValue) || this.state.inputValue?.length < 3}
+          <button className={config.isRTL ? 'skip' : 'send'}
+            // disabled={!validatePhone(this.state.inputValue)}
             onClick={this.save}>
-            <p>{this.props.text.save}</p>
-            <svg className={!validatePhone(this.state.inputValue) || this.state.inputValue ?.length < 3 ? 'img_save_disabled' : 'img_save_active'}>
-              <use xlinkHref={config.urls.media + 'sprite.svg#save'} />
-            </svg>
+            <div className='btns-wrap'>
+              <p>{this.props.text.save}</p>
+              <img src={config.urls.media + 'save.svg'} />
+            </div>
           </button>
         </div>
       </Modal>
