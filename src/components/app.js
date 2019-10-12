@@ -2,7 +2,7 @@ import { Router, route } from 'preact-router';
 import AsyncRoute from 'preact-async-route';
 import { h, Component } from 'preact'
 import qs from 'qs'
-import Header from './header'
+// import Header from './header'
 import Main from './main'
 import ErrorPage from './error_page'
 
@@ -15,7 +15,7 @@ export default class App extends Component {
 	render() {
 	  return (
 	    <div id="app">
-				<Header />
+				{/* <Header /> */}
 				<Router>
 					<Main path={config.baseUrl + '/'} />
 					<AsyncRoute

@@ -5,11 +5,11 @@ import './menu.less';
 export default ({close}) => {
 	return (
 		<section onClick={close}  class={style.background}>
-			<div onClick={e => e.stopPropagation()} class={style.menu_wrap}>
+			<div onClick={e => e.stopPropagation()} class={style.menu_wrap_mb}>
 				<nav>
-					{config.menu.map(item => (
+					{config.menu_mobile.map(item => (
 						<li class={style.link}>
-							<a href={item.link}>{config.translations.menu[item.name]}
+							<a href={item.link}>{config.translations.menu_mobile[item.name]}
 								<img src={config.urls.media + 'ic_arrow.svg'} />
 							</a>
 						</li>

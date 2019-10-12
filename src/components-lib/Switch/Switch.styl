@@ -1,0 +1,25 @@
+.switch
+    border 1px solid #ccc
+    width 50px
+    height 26px
+    border-radius 13px
+    display inline-block
+    &.on
+        background green
+        .right
+            right 23px
+        .left
+            left 23px
+    &.disabled
+        cursor not-allowed
+.switch-toggle
+    border 1px solid #999
+    box-shadow 1px 1px 1px #ccc
+    width 25px
+    height 24px
+    right 0
+    left 0
+    border-radius 12px
+    background white
+    position relative
+    transition 0.2s ease-in-out

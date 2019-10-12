@@ -1,10 +1,12 @@
 import { h } from 'preact';
 import { Link } from 'preact-router';
+import Header from '../header'
 import style from './error.less';
 
 export default () => {
 	return (
 		<div id='error' class={style.error} >
+			<Header />
 			<div class={style.top_section}>
 				<div class={style.title}>
 					<h2 >{config.translations.error_page.title}</h2>

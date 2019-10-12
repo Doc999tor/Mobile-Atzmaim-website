@@ -28,7 +28,11 @@ module.exports = {
 			components: path.resolve(__dirname, "src/components"),    // used for tests
 			style: path.resolve(__dirname, "src/style"),
 			'react': 'preact-compat',
-			'react-dom': 'preact-compat'
+			'react-dom': 'preact-compat',
+			// Not necessary unless you consume a module using `createClass`
+			'create-react-class': 'preact-compat/lib/create-react-class',
+			// Not necessary unless you consume a module requiring `react-dom-factories`
+			'react-dom-factories': 'preact-compat/lib/react-dom-factories'
 		}
 	},
 
@@ -78,6 +82,18 @@ module.exports = {
 						}
 					},
 					'less-loader']
+			},
+			{
+				test: /\.styl$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							hmr: ENV === 'development',
+							reloadAll: true
+						}
+					},
+					'css-loader', 'stylus-loader']
 			},
 			{
 				test: /\.json$/,

@@ -3,6 +3,7 @@ import Hero from '../hero'
 import Navigation from '../navigation'
 import Features from '../features'
 import BusinessTypes from '../business_types'
+import Header from '../header'
 import Pricing from '../pricing'
 import Feedback from '../feedback'
 
@@ -38,10 +39,11 @@ export default class Main extends Component {
 	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback />,
-	    pricing: <Pricing />
+	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (
 	    <div id='main'>
+				<Header mobile />
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}

@@ -1,4 +1,4 @@
-const lang = 'he'
+const lang = 'en'
 const config = {
 	baseUrl: '',
 	locale: lang,
@@ -11,12 +11,32 @@ const config = {
 		pricing: { icon: 'ic_pricing.svg', link: '#pricing'},
 		feedback: { icon: 'ic_reviews.svg', link: '#feedback' }
 	},
-	menu: [
+	user: {
+    // admin, senior, junior, readonly, untrusted
+    business_logo: 'public/business_data/1/logo.jpg',
+    business_name: 'Beauty and cosmetics salons',
+    business_address: '11301 West Olympic Boulevard, Apt.100',
+    permission_level: 'admin',
+    business_id: 123,
+    worker_id: 1
+  },
+	menu_mobile: [
 		{ name: 'about_us', link: `/${lang}/about_us` },
 		{ name: 'contact_us', link: `/${lang}/contact_us` },
 		{ name: 'support', link: `/${lang}/support`},
 		{ name: 'faq', link: `/${lang}/faq`},
 		{ name: 'terms_of_use', link: `/${lang}/terms_of_use` }
+	],
+	menu: [
+		{ text: 'calendar', link: `/${lang}/calendar`, icon: 'calendar.jpg' },
+		{ text: 'clients_list', link: `/${lang}/clients_list`, icon: 'clients_list.jpg' },
+		{ text: 'reminders', link: `/${lang}/reminders`, icon: 'reminders.jpg' },
+		{ text: 'groups', link: `/${lang}/groups`, icon: 'groups.jpg' },
+		{ text: 'services', link: `/${lang}/services`, icon: 'services.jpg' },
+		{ text: 'support', link: `/${lang}/support`, icon: 'support.jpg' },
+		{ text: 'suggest_feature', link: `/${lang}/suggest_feature`, icon: 'suggest_feature.jpg' },
+		{ text: 'rate_us', link: `/${lang}/rate_us`, icon: 'rate_us.jpg' },
+		{ text: 'logout', link: `/${lang}/logout`, icon: 'logout.jpg' }
 	],
 	modules: {
 		hero: {
@@ -162,6 +182,7 @@ const config = {
 			{ name: 'facebook', url: 'https://facebook.com', icon: 'ic_facebook.svg' },
 			{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' }
 		],
+		menu_icons: './assets/menu/',
 		support: `/${ lang }/support`,
 		login: `/${ lang }/login`,
 		signup: `/${ lang }/signup`,
@@ -174,6 +195,17 @@ const config = {
 	},
 	translations: {
 		menu: {
+      calendar: 'Calendar',
+      clients_list: 'Clients list',
+      reminders: 'Reminders',
+      groups: 'Groups',
+      services: 'Services',
+      support: 'Support',
+      suggest_feature: 'Suggest a feature',
+      rate_us: 'Rate us',
+      logout: 'Log out'
+    },
+		menu_mobile: {
 			about_us: 'About Us',
 			contact_us: 'Contact Us',
 			support: 'Support',
