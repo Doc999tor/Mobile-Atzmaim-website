@@ -1,27 +1,17 @@
-import { h, Component } from 'preact';
-import Menu from '../menu';
-import { default as Menu1 } from '../../components-lib/Menu/Menu.jsx'
-import style from './header.less';
-import './header.less';
+import { h, Component } from 'preact'
+import Menu from '../menu'
+import { default as MenuApp } from '../Menu/Menu.jsx'
+import style from './header.less'
+import './header.less'
 
 export default class Header extends Component {
 	state = {active: false}
-	menuOnOff = () => {
-		this.setState({ active: !this.state.active });
-	}
-	// menuOnOff1 = () => {
-  //   this.setState(state => ({
-  //     active: !state.isActive
-  //   }))
-  //   document.querySelector('body').classList.toggle('no-scroll')
-  // }
 
-  closeMenu = () => {
-		console.log('object')
-    this.setState({active: false})
-    // document.querySelector('body').classList.remove('no-scroll')
-  }
-	render() {
+	menuOnOff = () => {
+		this.setState({ active: !this.state.active })
+	}
+
+	render () {
 		const { active } =this.state
 		return (
 			<header class={style.header}>
@@ -34,7 +24,7 @@ export default class Header extends Component {
 				</div>
 				{this.props.mobile
 					? active && <Menu close={this.menuOnOff} />
-					: active && <Menu1 closeMenu={this.menuOnOff} />}
+					: active && <MenuApp closeMenu={this.menuOnOff} />}
 				<div class={style.cont}>
 					<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
 					<span class={style.logo}>{config.translations.hero.main_logo}</span>

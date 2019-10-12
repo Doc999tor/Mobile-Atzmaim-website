@@ -1,12 +1,9 @@
-import { h } from 'preact'
+import { h, Component } from 'preact'
 import './Menu.styl'
 
-export default class Menu extends React.Component {
-  static propTypes = {
-    closeMenu: PropTypes.func.isRequired
-  }
+export default class Menu extends Component {
 
-  render () {
+	render () {
     const bgrImg = {
       backgroundImage: `url('${config.urls.menu_icons}photo-bgr.png')`
     }
