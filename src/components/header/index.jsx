@@ -1,11 +1,12 @@
 import { h, Component } from 'preact'
 import Menu from '../menu'
-import { default as MenuApp } from '../Menu/Menu.jsx'
+// import { default as MenuApp } from '../Menu/Menu.jsx'
+import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
 import style from './header.less'
 import './header.less'
 
 export default class Header extends Component {
-	state = {active: false}
+	state = { active: false }
 
 	menuOnOff = () => {
 		this.setState({ active: !this.state.active })
