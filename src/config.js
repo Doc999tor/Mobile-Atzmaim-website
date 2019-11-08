@@ -7,9 +7,9 @@ const config = {
 	navigation: {
 		hero: { icon: 'ic_smartphone.svg', link: '#hero' },
 		features: { icon: 'ic_features.svg', link: '#features' },
-		business_types: { icon: 'ic_for_whom.svg', link: '#business_types' },
+		business_types: { icon: 'ic_business.svg', link: '#business_types' },
 		showcases: { link: '#showcases' },
-		pricing: { icon: 'ic_pricing.svg', link: '#pricing'},
+		pricing: { icon: 'ic_pricing.svg', link: '#pricing' },
 		feedback: { icon: 'ic_reviews.svg', link: '#feedback' }
 	},
 	user: {
@@ -41,38 +41,38 @@ const config = {
 	],
 	modules: {
 		hero: {
-			features: ['business', 'subscriptions', 'appointments']
+			features: ['business', 'reminders', 'notifications']
 		},
 		features: {
 			data: [
 				{
 					name: 'business',
-					preview_pic: 'ic_sync.svg',
-					icon: 'pic_iphone.png'
-				},
-				{
-					name: 'subscriptions',
-					preview_pic: 'ic_phone_message.svg',
-					icon: 'pic_iphone.png'
-				},
-				{
-					name: 'appointments',
 					preview_pic: 'ic_calendar.svg',
 					icon: 'pic_iphone.png'
 				},
 				{
+					name: 'subscriptions',
+					preview_pic: 'ic_bell.svg',
+					icon: 'pic_iphone.png'
+				},
+				{
+					name: 'appointments',
+					preview_pic: 'ic_client.svg',
+					icon: 'pic_iphone.png'
+				},
+				{
 					name: 'management',
-					preview_pic: 'ic_management.svg',
+					preview_pic: 'ic_gallery.svg',
 					icon: 'pic_iphone.png'
 				},
 				{
 					name: 'notifications',
-					preview_pic: 'ic_phone_message.svg',
+					preview_pic: 'ic_sms.svg',
 					icon: 'pic_iphone.png'
 				},
 				{
 					name: 'reminders',
-					preview_pic: 'ic_group.svg',
+					preview_pic: 'ic_client_classify.svg',
 					icon: 'pic_iphone.png'
 				}
 			]
@@ -184,6 +184,8 @@ const config = {
 			{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' }
 		],
 		menu_icons: './assets/menu/',
+		features_icons: './assets/features/',
+		navigation_icons: './assets/navigation/',
 		support: `/${ lang }/support`,
 		login: `/${ lang }/login`,
 		signup: `/${ lang }/signup`,

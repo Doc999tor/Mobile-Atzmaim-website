@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <style>
+            .cls-1{fill:#6353f4}
+        </style>
+    </defs>
+    <g id="ic_calendar" transform="translate(0 -6)">
+        <g id="Group_3756" data-name="Group 3756" transform="translate(0 6)">
+            <path id="Path_12913" d="M279 282.438a2.5 2.5 0 0 0 2.5 2.5h2.938a2.5 2.5 0 0 0 2.5-2.5V279.5a2.5 2.5 0 0 0-2.5-2.5H281.5a2.5 2.5 0 0 0-2.5 2.5zm2.5-2.937h2.938v2.937H281.5z" class="cls-1" data-name="Path 12913" transform="translate(-261.563 -259.688)"/>
+            <circle id="Ellipse_284" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 284" transform="translate(22.875 11.875)"/>
+            <circle id="Ellipse_285" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 285" transform="translate(17.437 11.875)"/>
+            <path id="Path_12914" d="M30.75 25.75c.69 0 1.25 1.94 1.25 1.25V7.5a5.006 5.006 0 0 0-5-5h-1.625V1.25a1.25 1.25 0 1 0-2.5 0V2.5h-5.687V1.25a1.25 1.25 0 0 0-2.5 0V2.5H9.063V1.25a1.25 1.25 0 0 0-2.5 0V2.5H5a5.006 5.006 0 0 0-5 5V27a5.006 5.006 0 0 0 5 5h22a5.006 5.006 0 0 0 5-5 1.25 1.25 0 0 0-2.5 0 2.5 2.5 0 0 1-2.5 2.5H5A2.5 2.5 0 0 1 2.5 27V7.5A2.5 2.5 0 0 1 5 5h1.562v1.25a1.25 1.25 0 0 0 2.5 0V5h5.625v1.25a1.25 1.25 0 0 0 2.5 0V5h5.688v1.25a1.25 1.25 0 1 0 2.5 0V5H27a2.5 2.5 0 0 1 2.5 2.5V27c0 .69.56-1.25 1.25-1.25z" class="cls-1" data-name="Path 12914"/>
+            <circle id="Ellipse_286" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 286" transform="translate(6.562 22.75)"/>
+            <circle id="Ellipse_287" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 287" transform="translate(6.562 11.875)"/>
+            <circle id="Ellipse_288" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 288" transform="translate(6.562 17.312)"/>
+            <circle id="Ellipse_289" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 289" transform="translate(12 17.312)"/>
+            <circle id="Ellipse_290" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 290" transform="translate(12 11.875)"/>
+            <circle id="Ellipse_291" cx="1.25" cy="1.25" r="1.25" class="cls-1" data-name="Ellipse 291" transform="translate(12 22.75)"/>
+        </g>
+    </g>
+</svg>
