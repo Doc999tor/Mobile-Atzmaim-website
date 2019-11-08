@@ -1,6 +1,7 @@
 const lang = 'en'
 const config = {
 	baseUrl: '',
+	js_framework: 'preact',
 	locale: lang,
 	isRTL: lang === 'he',
 	navigation: {
