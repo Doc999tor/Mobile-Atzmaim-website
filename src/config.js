@@ -194,7 +194,7 @@ const config = {
 		media_clients: './assets/clients/',
 		default_path_to_avatar: './assets/clients/',
 		default_avatar: 'default_avatar.jpg',
-		media_business_types: './dist/business_types/'
+		media_business_types: './assets/business_types/'
 	},
 	translations: {
 		menu: {
