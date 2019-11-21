@@ -36,6 +36,11 @@ const config = {
 		{ text: 'services', link: `/${lang}/services`, icon: 'services.jpg' },
 		{ text: 'support', link: `/${lang}/support`, icon: 'support.jpg' },
 		{ text: 'suggest_feature', link: `/${lang}/suggest_feature`, icon: 'suggest_feature.jpg' },
+		{ text: 'reminders', link: `/${lang}/reminders`, icon: 'reminders.jpg' },
+		{ text: 'groups', link: `/${lang}/groups`, icon: 'groups.jpg' },
+		{ text: 'services', link: `/${lang}/services`, icon: 'services.jpg' },
+		{ text: 'support', link: `/${lang}/support`, icon: 'support.jpg' },
+		{ text: 'suggest_feature', link: `/${lang}/suggest_feature`, icon: 'suggest_feature.jpg' },
 		{ text: 'rate_us', link: `/${lang}/rate_us`, icon: 'rate_us.jpg' },
 		{ text: 'logout', link: `/${lang}/logout`, icon: 'logout.jpg' }
 	],

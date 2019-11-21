@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import Menu from '../menu'
-// import { default as MenuApp } from '../Menu/Menu.jsx'
 import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
 import style from './header.less'
 import './header.less'
@@ -9,7 +9,14 @@ export default class Header extends Component {
 	state = { active: false }
 
 	menuOnOff = () => {
-		this.setState({ active: !this.state.active })
+		this.setState({ active: !this.state.active }, () => {
+			disableBodyScroll(document.querySelector('#menu_modal'))
+		})
+	}
+
+	closeMenu = () => {
+		this.setState({ active: false })
+		clearAllBodyScrollLocks()
 	}
 
 	render () {
@@ -25,7 +32,7 @@ export default class Header extends Component {
 				</div>
 				{this.props.mobile
 					? active && <Menu close={this.menuOnOff} />
-					: active && <MenuApp closeMenu={this.menuOnOff} />}
+					: active && <MenuApp closeMenu={this.closeMenu} />}
 				<div class={style.cont}>
 					<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
 					<span class={style.logo}>{config.translations.hero.main_logo}</span>
