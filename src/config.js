@@ -52,33 +52,34 @@ const config = {
 			data: [
 				{
 					name: 'business',
-					preview_pic: 'ic_calendar.svg',
-					icon: 'pic_iphone.png'
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_calendar.svg'
+					// icon: 'pic_iphone.png'
 				},
 				{
 					name: 'subscriptions',
-					preview_pic: 'ic_bell.svg',
-					icon: 'pic_iphone.png'
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_bell.svg'
 				},
 				{
 					name: 'appointments',
-					preview_pic: 'ic_client.svg',
-					icon: 'pic_iphone.png'
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_client.svg'
 				},
 				{
 					name: 'management',
-					preview_pic: 'ic_gallery.svg',
-					icon: 'pic_iphone.png'
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_gallery.svg'
 				},
 				{
 					name: 'notifications',
-					preview_pic: 'ic_sms.svg',
-					icon: 'pic_iphone.png'
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_sms.svg'
 				},
 				{
 					name: 'reminders',
-					preview_pic: 'ic_client_classify.svg',
-					icon: 'pic_iphone.png'
+					preview_pic: 'pic_iphone.png',
+					icon: 'ic_client_classify.svg'
 				}
 			]
 		},
@@ -189,14 +190,14 @@ const config = {
 			{ name: 'instagram', url: 'https://instagram.com', icon: 'ic_instagram.svg' }
 		],
 		menu_icons: './assets/menu/',
-		features_icons: './assets/features/',
-		navigation_icons: './assets/navigation/',
 		support: `/${ lang }/support`,
 		login: `/${ lang }/login`,
 		signup: `/${ lang }/signup`,
 		old_website: '/text_website.html',
 		media: './assets/media/',
 		media_clients: './assets/clients/',
+		media_features: './assets/features/',
+		media_navigation: './assets/navigation/',
 		default_path_to_avatar: './assets/clients/',
 		default_avatar: 'default_avatar.jpg',
 		media_business_types: './assets/business_types/'

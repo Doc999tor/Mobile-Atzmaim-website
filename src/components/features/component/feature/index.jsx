@@ -6,7 +6,7 @@ export default ({ feature, selectFeature }) => {
 		<div onClick={() => selectFeature(feature)} class={style.feature}>
 			<p>
 				<svg class={style.feature_icon}>
-					<use xlinkHref={config.urls.features_icons + feature.preview_pic + '#' + feature.preview_pic.slice(0, -4)} />
+					<use xlinkHref={config.urls.media_features + feature.icon + '#' + feature.icon.slice(0, -4)} />
 				</svg>
 			</p>
 			<p class={style.text}>{config.translations.features.content.data[feature.name].name}</p>

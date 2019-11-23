@@ -20,9 +20,9 @@ export default class Details extends Component {
 	        <h2>{config.translations.features.content.title}</h2>
 	        <div class={style.extended}>
 	          <div class={this.state.animation ? style.top : style.min}>
-	            <svg class={style.feature_icon}>
-	              <use xlinkHref={config.urls.media + 'sprite.svg#' + selectedFeature.preview_pic} />
-			          </svg>
+							<svg class={style.feature_icon}>
+								<use xlinkHref={config.urls.media_features + selectedFeature.icon + '#' + selectedFeature.icon.slice(0, -4)} />
+							</svg>
 	            <p>{config.translations.features.content.data[selectedFeature.name].name}</p>
 	          </div>
 	          <p class={style.descr}>{config.translations.features.content.data[selectedFeature.name].description}</p>
@@ -30,7 +30,7 @@ export default class Details extends Component {
 	        </div>
 	      </div>
 	      <div class={style.phone_wrap}>
-	        <img class={this.state.animation ? style.max : style.min} src={config.urls.media + selectedFeature.icon} />
+	        <img class={this.state.animation ? style.max : style.min} src={config.urls.media + selectedFeature.preview_pic} />
 	      </div>
 	    </div>
 	  )

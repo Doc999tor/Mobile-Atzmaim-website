@@ -21,7 +21,7 @@ export default class Hero extends Component {
 									<figure class={style.feature}>
 										<p>
 											<svg class={style.feature_icon}>
-												<use xlinkHref={config.urls.features_icons + f.preview_pic + '#' + f.preview_pic.slice(0, -4)} />
+												<use xlinkHref={config.urls.media_features + f.preview_pic + '#' + f.preview_pic.slice(0, -4)} />
 											</svg>
 										</p>
 										<figcaption>{config.translations.features.content.data[f.name].name}</figcaption>
