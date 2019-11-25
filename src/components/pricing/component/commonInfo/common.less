@@ -1,12 +1,10 @@
 .outer_ltr {
-	position: absolute;
 	top: 0.5rem;
 	right: -3.8rem;
 	z-index: 2;
 }
 .outer_rtl {
 	transform: scale(-1, 1);
-	position: absolute;
 	top: 0.5rem;
 	left: -3.8rem;
 	z-index: 2;
@@ -15,6 +13,66 @@
 	-moz-padding-start: 1rem;
 	-webkit-padding-start: 1rem;
 	padding-inline-start: 1rem;
+}
+.man_ltr {
+	top: 2.9rem;
+	right: 10rem;
+}
+.man_rtl {
+	transform: scale(-1, 1);
+	top: 2.9rem;
+	left: 10rem;
+}
+.man_start_ltr {
+	top: 2.9rem;
+	right: 10rem;
+	opacity: 0;
+}
+.man_end_ltr {
+	top: 2.9rem;
+	right: 9rem;
+	opacity: 1;
+	transition: all 0.2s;
+	z-index: 2;
+}
+.man_start_rtl {
+	transform: scale(-1, 1);
+	top: 2.9rem;
+	left: 10rem;
+	opacity: 0;
+}
+.man_end_rtl {
+	transform: scale(-1, 1);
+	top: 2.9rem;
+	left: 9rem;
+	opacity: 1;
+	transition: all 0.2s;
+	z-index: 2;
+}
+.coin_ltr {
+	top: 3.5rem;
+	right: -2rem;
+	z-index: 3;
+	transition: opacity 0.3s ease-in;
+}
+.coin_rtl {
+	transform: scale(-1, 1);
+	top: 3.5rem;
+	left: -2rem;
+	z-index: 3;
+}
+.coin_start_rtl {
+	transform: scale(-1, 1);
+	top: 3.5rem;
+	left: -2rem;
+	z-index: 3;
+	opacity: 0;
+}
+.coin_start_ltr {
+	top: 3.5rem;
+	right: -2rem;
+	z-index: 3;
+	opacity: 0;
 }
 .pricing_plan {
 	padding: 1.3rem 0 1rem;
