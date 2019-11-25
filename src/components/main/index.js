@@ -38,7 +38,7 @@ export default class Main extends Component {
 	    hero: <Hero startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    feedback: <Feedback />,
+	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (

@@ -1,15 +1,59 @@
 @import '~style/helpers';
 .outer_ltr {
-	position: absolute;
-	top: 2rem;
-	right: -5rem;
+	top: 3.5rem;
+	right: 7rem;
 	z-index: 2;
 }
 .outer_rtl {
 	transform: scale(-1, 1);
-	position: absolute;
+	top: 3.5rem;
+	left: 7rem;
+	z-index: 2;
+}
+.city_rtl {
+	transform: scale(-1, 1);
 	top: 2rem;
-	left: -5rem;
+	right: -5rem;
+	z-index: 2;
+}
+.city_ltr {
+	top: 2rem;
+	right: -5rem;
+	z-index: 2;
+}
+.woman_start_rtl {
+	transform: scale(-1, 1);
+	top: 2rem;
+	right: -7rem;
+	opacity: 0;
+	z-index: 2;
+}
+.woman_ltr {
+	top: 3.5rem;
+	right: 7rem;
+}
+.woman_rtl {
+	transform: scale(-1, 1);
+	top: 3.5rem;
+	left: 7rem;
+}
+.woman_start_ltr {
+	top: 3.5rem;
+	right: 7rem;
+	opacity: 0;
+	z-index: 2;
+}
+.woman_end_rtl {
+	transform: scale(-1, 1);
+	transition: all 0.2s;
+	top: 3.5rem;
+	left: 9rem;
+	z-index: 2;
+}
+.woman_end_ltr {
+	transition: all 0.2s;
+	top: 3.5rem;
+	right: 9rem;
 	z-index: 2;
 }
 .reviews_wrap {
