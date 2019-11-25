@@ -1,18 +1,19 @@
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const ENV = process.env.NODE_ENV || 'development';
+const webpack = require('webpack')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const ENV = process.env.NODE_ENV || 'development'
 
 module.exports = {
-	context: path.resolve(__dirname, "src"),
+	context: path.resolve(__dirname, 'src'),
 	entry: './index.js',
 
 	output: {
-		path: path.resolve(__dirname, "build"),
+		path: path.resolve(__dirname, 'build'),
 		publicPath: '/',
 		filename: 'bundle.js'
 	},
@@ -20,25 +21,19 @@ module.exports = {
 	resolve: {
 		extensions: ['.jsx', '.js', '.json', '.less'],
 		modules: [
-			path.resolve(__dirname, "src/lib"),
-			path.resolve(__dirname, "node_modules"),
+			path.resolve(__dirname, 'src/lib'),
+			path.resolve(__dirname, 'node_modules'),
 			'node_modules'
 		],
 		alias: {
-			components: path.resolve(__dirname, "src/components"),    // used for tests
-			style: path.resolve(__dirname, "src/style"),
-			'react': 'preact-compat',
-			'react-dom': 'preact-compat',
-			// Not necessary unless you consume a module using `createClass`
-			'create-react-class': 'preact-compat/lib/create-react-class',
-			// Not necessary unless you consume a module requiring `react-dom-factories`
-			'react-dom-factories': 'preact-compat/lib/react-dom-factories'
+			components: path.resolve(__dirname, 'src/components'),    // used for tests
+			style: path.resolve(__dirname, 'src/style')
 		}
 	},
 
 	optimization: {
-    minimizer: [new TerserPlugin()],
-  },
+		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
+	},
 	module: {
 		rules: [
 			{
@@ -105,7 +100,7 @@ module.exports = {
 			},
 			{
 				test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-				use: ENV==='production' ? 'file-loader' : 'url-loader'
+				use: ENV === 'production' ? 'file-loader' : 'url-loader'
 			}
 		]
 	},
@@ -182,4 +177,4 @@ module.exports = {
 
 		}
 	}
-};
+}
