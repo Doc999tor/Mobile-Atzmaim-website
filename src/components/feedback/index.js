@@ -42,7 +42,7 @@ export default class Reviews extends Component {
 								<h2 >{config.translations.feedback.main_title}</h2>
 								<div class={style.actions}>
 									<div class={style.tap} onClick={this.handleToggleForm}>
-										<img src={config.urls.media + 'ic_reviews_active.svg'} />
+										<img src={config.urls.media + 'ic_reviews_active.svg'} alt='reviews' />
 									</div>
 									<p>{config.translations.feedback.leave_btn_label}</p>
 								</div>
@@ -50,20 +50,20 @@ export default class Reviews extends Component {
 							<div class={styles.background_top}>
 								{!animation
 									? <Fragment>
-										<img class={config.isRTL ? `${styles.scale} ${styles.start_bg}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} />
-										<img class={config.isRTL ? page_style.outer_rtl : page_style.outer_ltr} src={config.urls.media + 'woman.svg'} />
+										<img class={config.isRTL ? `${styles.scale} ${styles.start_bg}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
+										<img class={config.isRTL ? page_style.outer_rtl : page_style.outer_ltr} src={config.urls.media + 'woman.svg'} alt='woman' />
 									</Fragment>
 									: <Fragment>
-										<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'} />
-										<img class={config.isRTL ? page_style.city_rtl : page_style.city_ltr} src={config.urls.media + 'big_city.svg'} />
+										<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'} alt='background' />
+										<img class={config.isRTL ? page_style.city_rtl : page_style.city_ltr} src={config.urls.media + 'big_city.svg'} alt='big city' />
 									</Fragment>
 								}
 								{
-									!animation && <img class={config.isRTL ? page_style.woman_rtl : page_style.woman_ltr} src={config.urls.media + 'woman.svg'} />
+									!animation && <img class={config.isRTL ? page_style.woman_rtl : page_style.woman_ltr} src={config.urls.media + 'woman.svg'} alt='woman' />
 								}
 								{!animation
-									? <img class={config.isRTL ? page_style.woman_start_rtl : page_style.woman_start_ltr} src={config.urls.media + 'woman_call.svg'} />
-									: <img class={config.isRTL ? `${animation && page_style.woman_end_rtl}` : `${animation && page_style.woman_end_ltr}`} src={config.urls.media + 'woman_call.svg'} />
+									? <img class={config.isRTL ? page_style.woman_start_rtl : page_style.woman_start_ltr} src={config.urls.media + 'woman_call.svg'} alt='woman' />
+									: <img class={config.isRTL ? `${animation && page_style.woman_end_rtl}` : `${animation && page_style.woman_end_ltr}`} src={config.urls.media + 'woman_call.svg'} alt='woman' />
 								}
 							</div>
 						</section>

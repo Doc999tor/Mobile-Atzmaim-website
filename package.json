@@ -4,7 +4,7 @@
   "description": "Preact",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot",
-    "optimize": "svgo -f ./build/assets/media",
+    "optimize": "svgo -r ./build/assets",
     "build": "webpack --mode production",
     "build_watch": "http-server ./build"
   },

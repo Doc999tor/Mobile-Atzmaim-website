@@ -6,7 +6,7 @@ export default ({ name, icon, value, showDetail }) => {
 	return (
 		<div class={style.price + ' ' + (basic ? style.active : '')} onClick={showDetail}>
 			<div class={style.icon_wrap}>
-				<img src={config.urls.media + icon} />
+				<img src={config.urls.media + icon} alt={icon} />
 			</div>
 			<div class={style.price_info}>
 				<p class={style.price_name}>{config.translations.pricing.data[name].small_preview.name}</p>

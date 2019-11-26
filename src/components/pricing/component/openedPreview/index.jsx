@@ -16,7 +16,7 @@ export default class OpenedPreview extends Component {
 			<div class={style.detail_price  + ' ' + (basic ? style.detail_price_active : '')}>
 				<div class={style.header}>
 					<div class={style.icon_wrap}>
-						<img src={config.urls.media + icon} />
+						<img src={config.urls.media + icon} alt={icon} />
 					</div>
 					<div class={style.header_text}>
 						<p class={style.name}>{config.translations.pricing.data[name].opened_preview.name}</p>

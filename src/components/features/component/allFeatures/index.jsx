@@ -15,19 +15,19 @@ export default ({ selectFeature, animations, secondAnimation, activeLink }) => {
 				</div>
 				<div class={style.background_top}>
 					{!secondAnimation
-						? <img class={config.isRTL ? `${style.scale} ${style.start_bg}` : style.start_bg} src={config.urls.media + 'bg_top.svg'} />
-						: <img class={config.isRTL ? `${secondAnimation && style.inner_rtl}` : `${secondAnimation && style.inner_ltr}`} src={config.urls.media + 'bg_top.svg'} />}
+						? <img class={config.isRTL ? `${style.scale} ${style.start_bg}` : style.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
+						: <img class={config.isRTL ? `${secondAnimation && style.inner_rtl}` : `${secondAnimation && style.inner_ltr}`} src={config.urls.media + 'bg_top.svg'} alt='background' />}
 					{!secondAnimation
-						 ? <img class={config.isRTL ? `${style.phone_begin_r} ${style.scale}` : style.phone_begin} src={config.urls.media + 'active_phone.svg'} />
-						 : <img class={config.isRTL ? `${secondAnimation && secondP}` : `${secondAnimation && firstP}`} src={config.urls.media + 'active_phone.svg'} />}
+						 ? <img class={config.isRTL ? `${style.phone_begin_r} ${style.scale}` : style.phone_begin} src={config.urls.media + 'active_phone.svg'} alt='phone on' />
+						 : <img class={config.isRTL ? `${secondAnimation && secondP}` : `${secondAnimation && firstP}`} src={config.urls.media + 'active_phone.svg'} alt='phone on' />}
 					{!secondAnimation && <Fragment>
-						<img class={config.isRTL ? `${style.scale} ${style.blank_phone_r}` : style.blank_phone_l} src={config.urls.media + 'phone_fch.svg'} />
-						<img class={config.isRTL ? `${style.scale} ${style.blank_woman_r}` : style.blank_woman_l} src={config.urls.media + 'woman_fch.svg'} />
+						<img class={config.isRTL ? `${style.scale} ${style.blank_phone_r}` : style.blank_phone_l} src={config.urls.media + 'phone_fch.svg'} alt='phone off' />
+						<img class={config.isRTL ? `${style.scale} ${style.blank_woman_r}` : style.blank_woman_l} src={config.urls.media + 'woman_fch.svg'} alt='woman' />
 					</Fragment>
 					}
 					{!secondAnimation
-						? <img class={config.isRTL ? style.wmn_r : style.wmn} src={config.urls.media + 'active_woman.svg'} />
-						: <img class={config.isRTL ? `${secondAnimation && secondW}` : `${secondAnimation && firstW}`} src={config.urls.media + 'active_woman.svg'} />}
+						? <img class={config.isRTL ? style.wmn_r : style.wmn} src={config.urls.media + 'active_woman.svg'} alt='woman' />
+						: <img class={config.isRTL ? `${secondAnimation && secondW}` : `${secondAnimation && firstW}`} src={config.urls.media + 'active_woman.svg'} alt='woman' />}
 				</div>
 			</section>
 			<div class={`${style.wrap} ${secondAnimation && style.wrap_fix}` }>

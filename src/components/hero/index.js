@@ -34,8 +34,8 @@ export default class Hero extends Component {
 						</div>
 						<div class={style.phone_wrap}>
 							{!animation
-								? <img class={style.black_phone} src={config.urls.media + 'black_phone.png'} />
-								: <img class={`${style.start_p} ${animation && style.end_p}`} src={config.urls.media + 'pic_iphone.png'} />}
+								? <img class={style.black_phone} src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
+								: <img class={`${style.start_p} ${animation && style.end_p}`} src={config.urls.media + 'pic_iphone.png'} height='366' width='183' loading='lazy' alt='phone animation' />}
 						</div>
 					</div>
 				</div>

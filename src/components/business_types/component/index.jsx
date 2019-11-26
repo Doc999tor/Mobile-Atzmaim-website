@@ -15,7 +15,7 @@ export default class Bussiness extends Component {
 				<div class={this.state.animation ? style.sub2 : style.sub}>
 					<picture>
 						<source srcSet={config.urls.media_business_types + icon + '.webp'} alt={config.translations.business_types.content[name].title} />
-						<img src={config.urls.media_business_types + icon + '.jpg'} loading='lazy' alt={config.translations.business_types.content[name].title} />
+						<img src={config.urls.media_business_types + icon + '.jpg'} width='272' height='167' loading='lazy' alt={config.translations.business_types.content[name].title} />
 					</picture>
 				</div>
 				<div class={this.state.animation ? style.bottom_info2 : style.bottom_info}>
