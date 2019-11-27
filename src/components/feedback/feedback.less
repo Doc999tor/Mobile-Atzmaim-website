@@ -11,20 +11,37 @@
 	z-index: 2;
 }
 .city_rtl {
-	transform: scale(-1, 1);
+	top: 2rem;
+	left: -5rem;
+	z-index: 2;
+	transform: rotate3d(0, 1, 0, 180deg);
+	transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+.city_start_ltr {
 	top: 2rem;
 	right: -5rem;
 	z-index: 2;
+	opacity: 0;
+	transform: rotate3d(1, 0, 0, 90deg);
+}
+.city_start_rtl {
+	top: 2rem;
+	left: -5rem;
+	z-index: 2;
+	opacity: 0;
+	transform: rotate3d(0, 1, 1, 180deg)
 }
 .city_ltr {
 	top: 2rem;
 	right: -5rem;
 	z-index: 2;
+	transform: rotate3d(0, 0, 0, 60deg);
+	transition: opacity 0.3s ease-in, transform 0.3s ease-in;
 }
 .woman_start_rtl {
 	transform: scale(-1, 1);
-	top: 2rem;
-	right: -7rem;
+	top: 3.5rem;
+	left: 7rem;
 	opacity: 0;
 	z-index: 2;
 }
@@ -45,13 +62,13 @@
 }
 .woman_end_rtl {
 	transform: scale(-1, 1);
-	transition: all 0.2s;
+	transition: all 0.3s;
 	top: 3.5rem;
 	left: 9rem;
 	z-index: 2;
 }
 .woman_end_ltr {
-	transition: all 0.2s;
+	transition: all 0.3s;
 	top: 3.5rem;
 	right: 9rem;
 	z-index: 2;

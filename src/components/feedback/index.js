@@ -55,11 +55,14 @@ export default class Reviews extends Component {
 									</Fragment>
 									: <Fragment>
 										<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'} alt='background' />
-										<img class={config.isRTL ? page_style.city_rtl : page_style.city_ltr} src={config.urls.media + 'big_city.svg'} alt='big city' />
 									</Fragment>
 								}
 								{
 									!animation && <img class={config.isRTL ? page_style.woman_rtl : page_style.woman_ltr} src={config.urls.media + 'woman.svg'} alt='woman' />
+								}
+								{!animation
+									? <img class={config.isRTL ? page_style.city_start_rtl : page_style.city_start_ltr} src={config.urls.media + 'big_city.svg'} alt='big city' />
+									: <img class={config.isRTL ? page_style.city_rtl : page_style.city_ltr} src={config.urls.media + 'big_city.svg'} alt='big city' />
 								}
 								{!animation
 									? <img class={config.isRTL ? page_style.woman_start_rtl : page_style.woman_start_ltr} src={config.urls.media + 'woman_call.svg'} alt='woman' />

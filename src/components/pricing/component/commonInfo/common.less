@@ -1,13 +1,31 @@
+.outer_start_ltr {
+	top: 0.5rem;
+	right: -3.8rem;
+	z-index: 2;
+	opacity: 0;
+	transform: rotate3d(1, 0, 0, 25deg);
+}
+.outer_start_rtl {
+	top: 0.5rem;
+	left: -3.8rem;
+	z-index: 2;
+	opacity: 0;
+	transform: rotate3d(0, 1, 1, 180deg);
+}
+
 .outer_ltr {
 	top: 0.5rem;
 	right: -3.8rem;
 	z-index: 2;
+	transform: rotate3d(0, 0, 0, 0deg);
+	transition: opacity 0.3s ease-in, transform 0.3s ease-in;
 }
 .outer_rtl {
-	transform: scale(-1, 1);
 	top: 0.5rem;
 	left: -3.8rem;
 	z-index: 2;
+	transform: rotate3d(0, 1, 0, -180deg);
+	transition: opacity 0.3s ease-in, transform 0.3s ease-in;
 }
 .subtitle {
 	-moz-padding-start: 1rem;
@@ -53,16 +71,18 @@
 	top: 3.5rem;
 	right: -2rem;
 	z-index: 3;
-	transition: opacity 0.3s ease-in;
+	transform: rotate3d(0, 0, 0, 60deg);
+	transition: opacity 0.3s ease-in, transform 0.3s ease-in;
 }
 .coin_rtl {
-	transform: scale(-1, 1);
 	top: 3.5rem;
 	left: -2rem;
 	z-index: 3;
+	transform: rotate3d(0, 0, 0, 0deg);
+	transition: opacity 0.3s ease-in, transform 0.3s ease-in;
 }
 .coin_start_rtl {
-	transform: scale(-1, 1);
+	transform: rotate3d(0, 1, 0, 90deg);
 	top: 3.5rem;
 	left: -2rem;
 	z-index: 3;
@@ -72,6 +92,7 @@
 	top: 3.5rem;
 	right: -2rem;
 	z-index: 3;
+	transform: rotate3d(0, 1, 0, 60deg);
 	opacity: 0;
 }
 .pricing_plan {

@@ -21,11 +21,11 @@ export default ({ animation }) => {
 					{!animation
 						? <Fragment>
 							<img class={config.isRTL ? `${styles.scale} ${styles.start_bg}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
-							<img class={config.isRTL ? style.inactive_people_rtl : style.city_ltr} src={config.urls.media + 'city.svg'} alt='city' />
+							<img class={config.isRTL ? style.city_rtl : style.city_ltr} src={config.urls.media + 'city.svg'} alt='city' />
 						</Fragment>
 						: <Fragment>
 							<img class={config.isRTL ? `${animation && styles.inner_rtl} ` : `${animation && styles.inner_ltr}`} src={config.urls.media + 'bg_top.svg'} alt='background' />
-							<img class={config.isRTL ? style.inactive_people_rtl : style.city_fin_ltr} src={config.urls.media + 'city.svg'} alt='city' />
+							<img class={config.isRTL ? style.city_fin_rtl : style.city_fin_ltr} src={config.urls.media + 'city.svg'} alt='city' />
 						</Fragment>}
 					{
 						!animation && <img class={config.isRTL ? style.inactive_people_rtl : style.inactive_people_ltr} src={config.urls.media + 'business people.svg'} alt='business people' />
