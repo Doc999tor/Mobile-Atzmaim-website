@@ -1,8 +1,7 @@
-import { h } from 'preact';
-import style from './menu.less';
-import './menu.less';
+import { h } from 'preact'
+import style from './menu.less'
 
-export default ({close}) => {
+export default ({ close }) => {
 	return (
 		<section onClick={close}  class={style.background}>
 			<div onClick={e => e.stopPropagation()} class={style.menu_wrap_mb}>
@@ -10,7 +9,7 @@ export default ({close}) => {
 					{config.menu_mobile.map(item => (
 						<li class={style.link}>
 							<a href={item.link}>{config.translations.menu_mobile[item.name]}
-								<img src={config.urls.media + 'ic_arrow.svg'} alt='arrow' />
+								<img class={config.isRTL && style.scale} src={config.urls.media + 'ic_arrow.svg'} alt='arrow' />
 							</a>
 						</li>
 					))}
