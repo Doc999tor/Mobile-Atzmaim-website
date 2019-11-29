@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --experimental-modules index.js",
+    "start": "node index.js",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,9 +15,9 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "express": "^4.17.1",
-    "preact": "^8.2.9",
-    "preact-render-to-string": "^3.7.0",
-    "preact-router": "^2.6.1"
+    "preact": "^10.0.5",
+    "preact-render-to-string": "^5.1.1",
+    "preact-router": "^3.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
