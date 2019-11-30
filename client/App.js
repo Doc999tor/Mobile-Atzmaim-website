@@ -3,14 +3,12 @@ import Router from 'preact-router';
 import Home from './Home';
 import Error from './Error';
 
-const App = ({ url }) => (
+export const App = () => (
   <div>
-    <h2>Hello from SSR-Preact</h2>
-    <Router url={url}>
+    <h2 class='home'>Hello from SSR-Preact</h2>
+    <Router>
       <Home path="/" />
       <Error path="/error" />
     </Router>
   </div>
 );
-
-export default App;
