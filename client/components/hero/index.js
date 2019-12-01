@@ -13,9 +13,9 @@ export default class Hero extends Component {
 		return (
 			<div id='hero' class='hero height' >
 				<div class='full' style={animation ? background : ''}>
-					<div class={'common' + (animation ? ' shadow' : ' bgr')} >
-						<div class={'content' + (animation && ' padding_end')}>
-							{animation && <h2>{config.translations.hero_page.title}</h2>}
+					<div class={'common ' + (animation ? ' shadow' : ' bgr')} >
+						<div class={'content ' + (animation && 'padding_end')}>
+							{animation && <h2 class='hero_title'>{config.translations.hero_page.title}</h2>}
 							{animation && <div class='feature_wrap'>
 								{features.map(f => (
 									<figure class='feature'>
@@ -24,7 +24,7 @@ export default class Hero extends Component {
 												<use xlinkHref={config.urls.media_features + f.icon + '#' + f.icon.slice(0, -4)} />
 											</svg>
 										</p>
-										<figcaption>{config.translations.features.content.data[f.name].name}</figcaption>
+										<figcaption class='feature_label'>{config.translations.features.content.data[f.name].name}</figcaption>
 									</figure>
 								))}
 							</div>}
@@ -35,7 +35,7 @@ export default class Hero extends Component {
 						<div class='phone_wrap'>
 							{!animation
 								? <img class='black_phone' src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-								: <img class={'start_p' + (animation && ' end_p')} src={config.urls.media + 'pic_iphone.png'} height='366' width='183' loading='lazy' alt='phone animation' />}
+								: <img class={'start_p ' + (animation && ' end_p')} src={config.urls.media + 'pic_iphone.png'} height='366' width='183' loading='lazy' alt='phone animation' />}
 						</div>
 					</div>
 				</div>
