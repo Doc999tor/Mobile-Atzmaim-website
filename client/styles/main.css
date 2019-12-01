@@ -1,5 +1,7 @@
 @import '../../variables.css';
-@import './hero.less';
+@import './header.css';
+@import './hero.css';
+@import './nav.css';
 
 html, body {
 	scroll-snap-type: mandatory;

@@ -1,10 +1,10 @@
 import { h, Component } from 'preact'
 import { config }from '../../../config.js';
 import Hero from '../hero'
-// import Navigation from '../navigation'
+import Navigation from '../navigation'
 // import Features from '../features'
 // import BusinessTypes from '../business_types'
-// import Header from '../header'
+import Header from '../header'
 // import Pricing from '../pricing'
 // import Feedback from '../feedback'
 
@@ -44,11 +44,11 @@ export default class Main extends Component {
 		}
 	  return (
 	    <div id='main'>
-				{/* <Header mobile /> */}
+				<Header mobile />
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}
-	      {/* <Navigation handleClickNav={this.handleClickNav} links={componentsForRendering} /> */}
+	      <Navigation handleClickNav={this.handleClickNav} links={componentsForRendering} />
 	    </div>
 	  )
 	}
