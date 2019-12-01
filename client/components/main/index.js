@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import { config }from '../../../config.js';
 import Hero from '../hero'
 import Navigation from '../navigation'
-// import Features from '../features'
+import Features from '../features'
 // import BusinessTypes from '../business_types'
 import Header from '../header'
 // import Pricing from '../pricing'
@@ -37,7 +37,7 @@ export default class Main extends Component {
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
 	    hero: <Hero startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
-	  //   features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
+	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	  //   business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	  //   feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
 	  //   pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
