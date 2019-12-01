@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-transform-react-jsx": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
@@ -28,8 +29,13 @@
     "@babel/runtime": "^7.7.4",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "qs": "^6.9.1",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }

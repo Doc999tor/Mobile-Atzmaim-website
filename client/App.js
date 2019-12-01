@@ -1,14 +1,20 @@
-import { h } from 'preact';
-import Router from 'preact-router';
-import Home from './Home';
-import Error from './Error';
+import { Router, route } from 'preact-router';
+import { config }from '../config.js';
+import { h, Component } from 'preact';
+import qs from 'qs';
+// import Header from './header'
+import Main from './components/main'
+// import ErrorPage from './error_page'
 
 export const App = () => (
-  <div>
-    <h2 class='home'>Hello from SSR-Preact</h2>
-    <Router>
-      <Home path="/" />
-      <Error path="/error" />
-    </Router>
-  </div>
-);
+	    <div id="app">
+				<Router>
+					<Main path={config.baseUrl + '/'} />
+          {/* <ErrorPage path={config.baseUrl + '/error'} /> */}
+					{/* <AsyncRoute
+						path={config.baseUrl + '/error'}
+						getComponent={ () => import('./error_page').then(module => module.default) } */}
+					{/* /> */}
+				</Router>
+	    </div>
+	  )

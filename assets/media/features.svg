@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+    <defs>
+        <style>
+            .cls-1{fill:none;opacity:0}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="ic_features" transform="translate(-97 -554)">
+        <path id="border" d="M0 0h22v22H0z" class="cls-1" transform="translate(97 554)"/>
+        <g id="ic_features-2" data-name="ic_features" transform="translate(-63 -2)">
+            <path id="features" d="M8.193 20a.947.947 0 0 1-.7-.316.888.888 0 0 1-.211-.709l.781-6.249H.91a.908.908 0 0 1-.7-1.49L9.3.33A.885.885 0 0 1 9.99 0a.949.949 0 0 1 .7.316.889.889 0 0 1 .212.709l-.781 6.248h7.152a.909.909 0 0 1 .7 1.491L8.882 19.67a.886.886 0 0 1-.689.33zm.522-16.125l-5.863 7.034h6.24a.909.909 0 0 1 .9 1.022l-.522 4.194 5.863-7.033H9.092a.909.909 0 0 1-.9-1.022z" class="cls-2" transform="translate(162.001 557)"/>
+        </g>
+    </g>
+</svg>

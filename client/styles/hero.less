@@ -1,0 +1,132 @@
+.hero {
+	background-position: 20% 100%;
+	background-repeat: repeat;
+}
+.height {
+	padding: 3.5rem 0 0;
+	height: 100vh;
+	width: 100%;
+	height: 100vh;
+	scroll-snap-align: start;
+}
+.full {
+	height: 100%;
+}
+
+.black_phone {
+	top: 2.6rem;
+}
+.start_p {
+	top: 2.6rem;
+	opacity: 0;
+	height: 0;
+	transition-timing-function: ease-out;
+	transition: all 0.6s
+}
+.end_p {
+	transition-timing-function: ease-out;
+	transition: all 0.6s;
+	opacity: 1;
+	height: auto;
+	top: 1.4rem;
+}
+
+.common {
+	display: flex;
+	-moz-padding-start: 1rem;
+	-webkit-padding-start: 1rem;
+	padding-inline-start: 1rem;
+	-moz-padding-end: 0.4rem;
+	-webkit-padding-end: 0.4rem;
+	padding-inline-end: 0.4rem;
+	min-height: 100%;
+	width: 100%;
+}
+.bgr {
+	opacity: 1;
+	transition: all 0.3s ease-out;
+	background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(222,218,224,1) 100%);
+}
+.feature_icon {
+	fill: #fff;
+	height: 34px;
+	width: 34px;
+}
+.padding_start {
+	-moz-padding-start: 2rem;
+	-webkit-padding-start: 2rem;
+	padding-inline-start: 2rem;
+	transition-timing-function: ease-out;
+	transition: all 0.6s;
+}
+.shadow {
+	background-image: linear-gradient(145deg, #4f2da7, #4f2da7 22%, rgba(79, 45, 167, 0.85) 39%, rgba(79, 45, 167, 0.65) 61%, rgba(79, 45, 167, 0.3));
+}
+
+.phone_wrap {
+	position: relative;
+	padding-top: 1.4rem;
+	width: 55%;
+	justify-content: center;
+	overflow: hidden;
+	img {
+		position: absolute;
+		left: 4%;
+	}
+}
+.content {
+	transition-timing-function: ease-out;
+	transition: all 0.6s;
+	width: 45%;
+	padding-top: 1.4rem;
+	display: flex;
+	-moz-padding-start: 2rem;
+	-webkit-padding-start: 2rem;
+	padding-inline-start: 2rem;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0;
+	h2 {
+		font-size: 32px;
+  	font-weight: bold;
+		color: var(--white-color);
+	}
+}
+.padding_end {
+	-moz-padding-start: 0;
+	-webkit-padding-start: 0;
+	padding-inline-start: 0;
+	opacity: 1;
+}
+.feature_wrap {
+	padding: 1rem 0;
+}
+.feature {
+	display: flex;
+	align-items: center;
+	padding-top: 1rem;
+	p {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	figcaption {
+		font-size: 0.9rem;
+		font-weight: 500;
+		-moz-padding-start: 0.5rem;
+		-webkit-padding-start: 0.5rem;
+		padding-inline-start: 0.5rem;
+		color: var(--white-color)
+	}
+}
+.button {
+	margin-top: 1rem;
+	text-decoration: none;
+	padding: 0.8rem 1.5rem;
+	background-color: var(--active-color);
+	font-size: 0.9rem;
+  font-weight: 500;
+	color: var(--white-color);
+	border-radius: 50px;
+	box-shadow: 0 10px 15px 0 rgba(255, 0, 170, 0.45);
+}

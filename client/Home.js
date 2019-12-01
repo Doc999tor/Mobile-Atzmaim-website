@@ -5,7 +5,7 @@ import { h } from 'preact';
 // import './home.css'
 
 const Home = () => (
-  <p class='h'>Welcome to Atzmaim</p>
+  <p class='home'>Welcome to Atzmaim</p>
 )
 
 export default Home;
