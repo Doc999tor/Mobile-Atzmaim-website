@@ -4,12 +4,14 @@
 @import './commonInfo.css';
 @import './bussiness.css';
 @import './details.less';
+@import './feedback.css';
 @import './pricing.css';
 @import './feature.css';
 @import './opened.less';
 @import './header.css';
 @import './detail.css';
 @import './small.css';
+@import './post.css';
 @import './hero.css';
 @import './nav.css';
 
