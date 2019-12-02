@@ -1,10 +1,15 @@
 @import './business_types.css';
 @import '../../variables.css';
 @import './allFeatures.css';
+@import './commonInfo.css';
 @import './bussiness.css';
 @import './details.less';
+@import './pricing.css';
 @import './feature.css';
+@import './opened.less';
 @import './header.css';
+@import './detail.css';
+@import './small.css';
 @import './hero.css';
 @import './nav.css';
 

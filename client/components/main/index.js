@@ -5,7 +5,7 @@ import Navigation from '../navigation'
 import Features from '../features'
 import Header from '../header'
 import Hero from '../hero'
-// import Pricing from '../pricing'
+import Pricing from '../pricing'
 // import Feedback from '../feedback'
 
 export default class Main extends Component {
@@ -40,7 +40,7 @@ export default class Main extends Component {
 	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	  //   feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
-	  //   pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
+	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (
 	    <div id='main'>

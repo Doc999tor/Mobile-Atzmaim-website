@@ -1,5 +1,5 @@
 import { h, Component } from 'preact'
-import { config }from '../../../../config.js';
+import { config }from '../../../../config.js'
 export default class Bussiness extends Component {
 	state = {
 		animation: false
