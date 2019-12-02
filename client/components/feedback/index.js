@@ -1,5 +1,6 @@
 import { h, Fragment, Component } from 'preact'
 import { config }from '../../../config.js'
+import AddFeedback from './component/addFeedback'
 import Feedback from './component/post'
 
 export default class Reviews extends Component {
