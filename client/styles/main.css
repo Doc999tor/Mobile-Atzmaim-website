@@ -1,5 +1,6 @@
 @import '../../variables.css';
 @import './allFeatures.css';
+@import './details.less';
 @import './feature.css';
 @import './header.css';
 @import './hero.css';

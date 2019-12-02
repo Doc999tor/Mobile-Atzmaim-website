@@ -1,8 +1,7 @@
 import { h, Component } from 'preact'
 import AllFeatures from './component/allFeatures'
 import { config }from '../../../config.js'
-// import Details from './component/details/index.jsx'
-// import common from '../hero/hero.less'
+import Details from './component/details'
 
 export default class Features extends Component {
 	state = {

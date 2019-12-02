@@ -1,6 +1,5 @@
 import { h } from 'preact'
 import { config }from '../../../../../config.js'
-// import style from './feature.less'
 
 export default ({ feature, selectFeature }) => {
 	return (

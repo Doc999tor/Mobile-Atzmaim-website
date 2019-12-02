@@ -1,7 +1,6 @@
 import { h, Fragment } from 'preact'
 import { config }from '../../../../../config.js';
 import Feature from '../feature'
-// import style from './all.less'
 
 export default ({ selectFeature, animations, secondAnimation, activeLink }) => {
 	const firstP = animations ? `phone_act start` : 'phone_act'
