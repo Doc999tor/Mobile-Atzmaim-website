@@ -1,5 +1,7 @@
+@import './business_types.css';
 @import '../../variables.css';
 @import './allFeatures.css';
+@import './bussiness.css';
 @import './details.less';
 @import './feature.css';
 @import './header.css';
