@@ -1,7 +1,7 @@
 import { h, Component } from 'preact'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-// import Menu from '../menu'
-import { config }from '../../../config.js';
+import Menu from '../menu'
+import { config }from '../../../config.js'
 // import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
 // import style from './header.less'
 // import './header.less'
@@ -31,9 +31,10 @@ export default class Header extends Component {
 						<span>{config.translations.hero.log_in}</span>
 					</a>
 				</div>
-				{/* {this.props.mobile
+				{this.props.mobile
 					? active && <Menu close={this.closeMenu} />
-					: active && <MenuApp closeMenu={this.closeMenu} />} */}
+					: active && <div></div>}
+					{/* : active && <MenuApp closeMenu={this.closeMenu} />} */}
 				<div class='header_cont'>
 					<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
 					<span class='header_logo'>{config.translations.hero.main_logo}</span>
