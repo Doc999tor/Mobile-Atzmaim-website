@@ -3,8 +3,6 @@ import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import Menu from '../menu'
 import { config }from '../../../config.js'
 // import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
-// import style from './header.less'
-// import './header.less'
 
 export default class Header extends Component {
 	state = { active: false }
@@ -33,8 +31,8 @@ export default class Header extends Component {
 				</div>
 				{this.props.mobile
 					? active && <Menu close={this.closeMenu} />
-					: active && <div></div>}
-					{/* : active && <MenuApp closeMenu={this.closeMenu} />} */}
+					: active && <Menu close={this.closeMenu} />}
+					{/* // : active && <MenuApp closeMenu={this.closeMenu} />} */}
 				<div class='header_cont'>
 					<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
 					<span class='header_logo'>{config.translations.hero.main_logo}</span>
