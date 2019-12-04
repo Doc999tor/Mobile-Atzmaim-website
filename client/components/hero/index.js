@@ -1,6 +1,5 @@
 import { h, Component } from 'preact'
 import { config }from '../../../config.js';
-// import style from './hero.less'
 
 export default class Hero extends Component {
 	componentDidMount = () => {
