@@ -30,6 +30,7 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-require-ignore": "^0.1.1",
     "body-scroll-lock": "^2.6.4",
+    "copy-webpack-plugin": "^5.0.5",
     "css-loader": "^3.2.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",

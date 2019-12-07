@@ -2,6 +2,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const ENV = process.env.NODE_ENV || 'development'
 module.exports = {
@@ -67,6 +68,10 @@ module.exports = {
   plugins: ([
     new MiniCssExtractPlugin({
 			filename: 'style.css'
-		})
+		}),
+		new CopyWebpackPlugin([
+			{ from: './components-lib/Home_website', to: './components-lib/Home_website' },
+			{ from: './assets', to: './assets' }
+		])
   ])
 };
