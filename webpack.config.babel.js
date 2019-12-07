@@ -9,8 +9,7 @@ const path = require('path')
 const ENV = process.env.NODE_ENV || 'development'
 
 module.exports = {
-	context: path.resolve(__dirname, 'src'),
-	entry: './index.js',
+	entry: './src/index.js',
 
 	output: {
 		path: path.resolve(__dirname, 'build'),
@@ -21,13 +20,13 @@ module.exports = {
 	resolve: {
 		extensions: ['.jsx', '.js', '.json', '.less'],
 		modules: [
-			path.resolve(__dirname, 'src/lib'),
+			path.resolve(__dirname, './src/lib'),
 			path.resolve(__dirname, 'node_modules'),
 			'node_modules'
 		],
 		alias: {
-			components: path.resolve(__dirname, 'src/components'),    // used for tests
-			style: path.resolve(__dirname, 'src/style')
+			components: path.resolve(__dirname, './src/components'),    // used for tests
+			style: path.resolve(__dirname, './src/style')
 		}
 	},
 
@@ -38,7 +37,7 @@ module.exports = {
 		rules: [
 			{
 				test: /\.jsx?$/,
-				exclude: path.resolve(__dirname, 'src'),
+				exclude: path.resolve(__dirname, './src'),
 				enforce: 'pre'
 			},
 			{
@@ -120,7 +119,8 @@ module.exports = {
 			{ from: './manifest.json', to: './' },
 			{ from: './config.js', to: './' },
 			{ from: './assets', to: './assets' },
-			{ from: './favicon.ico', to: './' }
+			{ from: './favicon.ico', to: './' },
+			{ from: './components-lib/Home_website', to: './components-lib/Home_website' }
 		]),
 		new CompressionPlugin()
 	]).concat(ENV==='production' ? [
@@ -168,13 +168,8 @@ module.exports = {
 	devServer: {
 		port: process.env.PORT || 3000,
 		host: 'localhost',
-		publicPath: '/',
-		contentBase: './src',
 		historyApiFallback: true,
 		open: true,
-		openPage: '',
-		proxy: {
-
-		}
+		openPage: ''
 	}
 }

@@ -20,7 +20,7 @@ export default ({ close }) => {
 				</div>
 				<ul class={style.networks}>
 					{config.urls.social_networks.map(item => (
-						<li><a href={item.url}><img src={config.urls.media + item.icon} alt={item.icon} /></a></li>
+						<li><a href={item.url}><img src={config.urls.media_social_networks + item.icon} alt={item.icon} /></a></li>
 					))}
 				</ul>
 			</div>

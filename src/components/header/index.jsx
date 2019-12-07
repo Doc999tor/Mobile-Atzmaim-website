@@ -34,10 +34,10 @@ export default class Header extends Component {
 					? active && <Menu close={this.closeMenu} />
 					: active && <MenuApp closeMenu={this.closeMenu} />}
 				<div class={style.cont}>
-					<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
+					<img src={config.urls.media_logo + 'ic_logo.svg'} alt='Logo' />
 					<span class={style.logo}>{config.translations.hero.main_logo}</span>
 				</div>
 			</header>
-		);
+		)
 	}
 }
