@@ -1,11 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
     <defs>
         <style>
-            .cls-1{fill:none;opacity:0}.cls-2{fill:#717b83}
+            .cls-2{fill:#717b83}
         </style>
     </defs>
     <g id="ic_pricing" transform="translate(-241 -554)">
-        <path id="border" d="M0 0h22v22H0z" class="cls-1" transform="translate(241 554)"/>
         <g id="ic_pricing-2" data-name="ic_pricing" transform="translate(44 16)">
             <path id="Union_25" d="M14.546 20H5.455A5.461 5.461 0 0 1 0 14.546V5.455A5.461 5.461 0 0 1 5.455 0h9.091A5.461 5.461 0 0 1 20 5.455v9.091A5.46 5.46 0 0 1 14.546 20zM5.455 1.818a3.641 3.641 0 0 0-3.637 3.637v9.091a3.641 3.641 0 0 0 3.637 3.636h9.091a3.64 3.64 0 0 0 3.636-3.636V5.455a3.641 3.641 0 0 0-3.636-3.637z" class="cls-2" data-name="Union 25" transform="translate(198 539)"/>
             <g id="dollar-symbol" transform="translate(88.348 543)">
