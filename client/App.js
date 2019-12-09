@@ -1,5 +1,5 @@
 import { Router, route } from 'preact-router'
-import { config }from '../config.js'
+import { config }from '../components-lib/Home_website/config_ssr.js'
 import { h, Component } from 'preact'
 import qs from 'qs'
 import Main from './components/main'

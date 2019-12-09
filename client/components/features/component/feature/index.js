@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import { config }from '../../../../../config.js'
+import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 
 export default ({ feature, selectFeature }) => {
 	return (

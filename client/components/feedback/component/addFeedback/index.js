@@ -1,5 +1,5 @@
 import { h, Component } from 'preact'
-import { config }from '../../../../../config.js'
+import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 // import style from './addFeedback.less';
 export default class AddFeedback extends Component {
 	state = {

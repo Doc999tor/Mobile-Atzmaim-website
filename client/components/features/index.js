@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 import AllFeatures from './component/allFeatures'
-import { config }from '../../../config.js'
+import { config }from '../../../components-lib/Home_website/config_ssr.js'
 import Details from './component/details'
 
 export default class Features extends Component {

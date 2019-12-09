@@ -1,7 +1,7 @@
 import { h, Component } from 'preact'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import Menu from '../menu'
-import { config }from '../../../config.js'
+import { config } from '../../../components-lib/Home_website/config_ssr.js'
 import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
 
 export default class Header extends Component {

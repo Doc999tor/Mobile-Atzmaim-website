@@ -1,7 +1,6 @@
 import { h } from 'preact'
-import { config }from '../../../../../config.js'
+import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 import OpenedPreview from '../openedPreview'
-// import style from './detail.less'
 
 export default () => {
 	return (

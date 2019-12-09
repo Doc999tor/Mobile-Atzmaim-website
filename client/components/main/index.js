@@ -1,6 +1,6 @@
 import { h, Component } from 'preact'
 import BusinessTypes from '../business_types'
-import { config }from '../../../config.js'
+import { config } from '../../../components-lib/Home_website/config_ssr.js'
 import Navigation from '../navigation'
 import Features from '../features'
 import Header from '../header'

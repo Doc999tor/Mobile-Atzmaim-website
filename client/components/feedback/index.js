@@ -1,5 +1,5 @@
 import { h, Fragment, Component } from 'preact'
-import { config }from '../../../config.js'
+import { config } from '../../../components-lib/Home_website/config_ssr.js'
 import AddFeedback from './component/addFeedback'
 import Feedback from './component/post'
 

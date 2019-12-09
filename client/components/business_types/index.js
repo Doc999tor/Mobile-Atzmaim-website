@@ -1,5 +1,5 @@
 import { h, Fragment } from 'preact'
-import { config }from '../../../config.js'
+import { config } from '../../../components-lib/Home_website/config_ssr.js'
 import Bussiness from './component'
 // import styles from '../features/component/allFeatures/all.less'
 // import style from './types.less'

@@ -1,10 +1,7 @@
 import { h, Fragment, Component } from 'preact'
-import { config }from '../../../../../config.js'
+import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 import SmallPreview from '../smallPreview'
 import DetailInfo from '../detailInfo'
-// import styles from '../../../features/component/allFeatures/all.less'
-// import typesStyl from '../../../business_types/types.less'
-// import style from './common.less'
 
 export default class CommonInfo extends Component {
 	state = {
