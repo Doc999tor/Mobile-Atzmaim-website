@@ -26,7 +26,8 @@ module.exports = {
 		],
 		alias: {
 			components: path.resolve(__dirname, './src/components'),    // used for tests
-			style: path.resolve(__dirname, './src/style')
+			style: path.resolve(__dirname, './src/style'),
+			home_website: path.resolve(__dirname, './components-lib/Home_website')
 		}
 	},
 
@@ -44,6 +45,10 @@ module.exports = {
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: 'babel-loader'
+			},
+			{
+				test: /\.svg$/i,
+				use: 'raw-loader'
 			},
 			{
 				test: /\.css$/,
