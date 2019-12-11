@@ -30,7 +30,7 @@ export default class Details extends Component {
 	        </div>
 	      </div>
 	      <div class={style.phone_wrap}>
-	        <img class={this.state.animation ? style.max : style.min} height='366' width='183' loading='lazy' src={config.urls.media + selectedFeature.preview_pic} alt='preview image' />
+	        <img class={this.state.animation ? style.max : style.min} height='366' width='183' loading='lazy' src={config.urls.media_features + selectedFeature.preview_pic} alt='preview image' />
 	      </div>
 	    </div>
 	  )
