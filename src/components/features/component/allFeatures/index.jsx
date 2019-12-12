@@ -32,7 +32,11 @@ export default ({ iconsData, selectFeature, animations, secondAnimation, activeL
 			</section>
 			<div class={`${style.wrap} ${secondAnimation && style.wrap_fix}` }>
 				{secondAnimation && <div class={style.features_container}>
-					{config.modules.features.data.map(item => <Feature selectFeature={selectFeature} feature={item} iconsData={iconsData} />)}
+					{config.modules.features.data.map(item => {
+						const svgObj = iconsData.find(i => item.name === i.name)
+						return <Feature selectFeature={selectFeature} feature={item} svgObj={svgObj} />
+					})}
+					{/* {config.modules.features.data.map(item => <Feature selectFeature={selectFeature} feature={item} iconsData={iconsData} />)} */}
 				</div>}
 			</div>
 		</div>

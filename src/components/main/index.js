@@ -15,10 +15,19 @@ export default class Main extends Component {
 	}
 
 	componentDidMount = () => {
-		fetch(`/components-lib/Home_website/features/ic_calendar.svg`)
-			.then(response => response.text())
-			.then(svg => this.setState({ svg, svgData: [...svg] })
-			)
+		const arr = []
+		const promises = config.modules.features.data.map(feature => {
+			return fetch(`/components-lib/Home_website/features/${feature.icon}`)
+				.then(response => response.text())
+				.then(svg => arr.push({ name: feature.name, svg }))
+		})
+		Promise.all(promises).then(() => {
+			this.setState({
+				svgData: [...arr]
+			})
+		}, reason => {
+			console.log(reason)
+		})
 	}
 
 	handleClickNav = val => {
