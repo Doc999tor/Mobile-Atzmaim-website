@@ -10,7 +10,15 @@ import Feedback from '../feedback'
 export default class Main extends Component {
 	state = {
 		animation: false,
-		activeLink: 'hero'
+		activeLink: 'hero',
+		svgData: []
+	}
+
+	componentDidMount = () => {
+		fetch(`/components-lib/Home_website/features/ic_calendar.svg`)
+			.then(response => response.text())
+			.then(svg => this.setState({ svg, svgData: [...svg] })
+			)
 	}
 
 	handleClickNav = val => {
@@ -35,8 +43,8 @@ export default class Main extends Component {
 		const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
-	    hero: <Hero startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
+	    hero: <Hero iconsData={this.state.svgData} startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
+	    features: <Features iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
