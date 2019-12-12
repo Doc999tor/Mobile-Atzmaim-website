@@ -2,7 +2,7 @@ import { h, Fragment } from 'preact'
 import Feature from '../feature'
 import style from './all.less'
 
-export default ({ selectFeature, animations, secondAnimation, activeLink }) => {
+export default ({ iconsData, selectFeature, animations, secondAnimation, activeLink }) => {
 	const firstP = animations ? `${style.phone_act} ${style.start}` : style.phone_act
 	const firstW = animations ? `${style.active_woman_l} ${style.start}` : style.active_woman_l
 	const secondP = animations ? `${style.phone_act_r} ${style.end}` : style.phone_act_r
@@ -32,7 +32,10 @@ export default ({ selectFeature, animations, secondAnimation, activeLink }) => {
 			</section>
 			<div class={`${style.wrap} ${secondAnimation && style.wrap_fix}` }>
 				{secondAnimation && <div class={style.features_container}>
-					{config.modules.features.data.map(item => <Feature selectFeature={selectFeature} feature={item} />)}
+					{config.modules.features.data.map(item => {
+						const svgObj = iconsData.find(i => item.name === i.name)
+						return <Feature selectFeature={selectFeature} feature={item} svgObj={svgObj} />
+					})}
 				</div>}
 			</div>
 		</div>

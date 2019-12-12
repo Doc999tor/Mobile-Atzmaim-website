@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import style from './hero.less'
+import { Icon } from '../icon'
 
 export default class Hero extends Component {
 	componentDidMount = () => {
@@ -7,7 +8,7 @@ export default class Hero extends Component {
 	}
 
 	render () {
-		const { animation } = this.props
+		const { animation, iconsData } = this.props
 		const background = { backgroundImage: 'url(' + config.urls.media + 'pic_bg.jpg' + ')' }
 		const features = config.modules.features.data.filter(i => config.modules.hero.features.includes(i.name))
 		return (
@@ -17,16 +18,15 @@ export default class Hero extends Component {
 						<div class={`${style.content} ${animation && (config.isRTL ? style.padding_animation_rtl : style.padding_animation_ltr)}`}>
 							{animation && <h2>{config.translations.hero_page.title}</h2>}
 							{animation && <div class={style.feature_wrap}>
-								{features.map(f => (
-									<figure class={style.feature}>
-										<p>
-											<svg class={style.feature_icon}>
-												<use xlinkHref={config.urls.media_features + f.icon + '#' + f.icon.slice(0, -4)} />
-											</svg>
-										</p>
-										<figcaption>{config.translations.features.content.data[f.name].name}</figcaption>
-									</figure>
-								))}
+								{features.map(f => {
+									const svgObj = iconsData.find(i => f.name === i.name)
+									return (
+										<figure class={style.feature}>
+											{svgObj && svgObj.svg && <Icon icon={svgObj.svg} className={style.feature_icon} />}
+											<figcaption>{config.translations.features.content.data[f.name].name}</figcaption>
+										</figure>
+									)
+								})}
 							</div>}
 							{animation && <a class={style.button} href={config.urls.signup}>
 								<span >{config.translations.hero_page.button_text}</span>

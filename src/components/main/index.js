@@ -10,7 +10,24 @@ import Feedback from '../feedback'
 export default class Main extends Component {
 	state = {
 		animation: false,
-		activeLink: 'hero'
+		activeLink: 'hero',
+		svgData: []
+	}
+
+	componentDidMount = () => {
+		const arr = []
+		const promises = config.modules.features.data.map(feature => {
+			return fetch(`${config.urls.media_features}${feature.icon}`)
+				.then(response => response.text())
+				.then(svg => arr.push({ name: feature.name, svg }))
+		})
+		Promise.all(promises).then(() => {
+			this.setState({
+				svgData: [...arr]
+			})
+		}, reason => {
+			console.log(reason)
+		})
 	}
 
 	handleClickNav = val => {
@@ -35,8 +52,8 @@ export default class Main extends Component {
 		const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
-	    hero: <Hero startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    features: <Features secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
+	    hero: <Hero iconsData={this.state.svgData} startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
+	    features: <Features iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
