@@ -17,8 +17,10 @@ export default class Main extends Component {
 	componentDidMount = () => {
 		const arr = []
 		const promises = config.modules.features.data.map(feature => {
-			return fetch(`${config.urls.media_features}${feature.icon}`)
-				.then(response => response.text())
+			return fetch(`${config.urls.media_features}a${feature.icon}`)
+				.then(response => {
+					if (status === 200) return response.text()
+				})
 				.then(svg => arr.push({ name: feature.name, svg }))
 		})
 		Promise.all(promises).then(() => {
