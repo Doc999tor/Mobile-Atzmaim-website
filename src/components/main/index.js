@@ -17,7 +17,7 @@ export default class Main extends Component {
 	componentDidMount = () => {
 		const arr = []
 		const promises = config.modules.features.data.map(feature => {
-			return fetch(`/components-lib/Home_website/features/${feature.icon}`)
+			return fetch(`${config.urls.media_features}${feature.icon}`)
 				.then(response => response.text())
 				.then(svg => arr.push({ name: feature.name, svg }))
 		})
