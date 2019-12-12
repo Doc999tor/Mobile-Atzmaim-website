@@ -36,7 +36,6 @@ export default ({ iconsData, selectFeature, animations, secondAnimation, activeL
 						const svgObj = iconsData.find(i => item.name === i.name)
 						return <Feature selectFeature={selectFeature} feature={item} svgObj={svgObj} />
 					})}
-					{/* {config.modules.features.data.map(item => <Feature selectFeature={selectFeature} feature={item} iconsData={iconsData} />)} */}
 				</div>}
 			</div>
 		</div>

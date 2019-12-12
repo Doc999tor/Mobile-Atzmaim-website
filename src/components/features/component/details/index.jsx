@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import style from './details.less'
+import { Icon } from '../../../icon'
 
 export default class Details extends Component {
 	state = {
@@ -13,16 +14,14 @@ export default class Details extends Component {
 	}
 
 	render () {
-	  const { selectedFeature, backToAll } = this.props
+	  const { selectedFeature, svgObj, backToAll } = this.props
 	  return (
 	    <div class={style.details}>
 	      <div class={style.main}>
 	        <h2>{config.translations.features.content.title}</h2>
 	        <div class={style.extended}>
 	          <div class={this.state.animation ? style.top : style.min}>
-							<svg class={style.feature_icon}>
-								<use xlinkHref={config.urls.media_features + selectedFeature.icon + '#' + selectedFeature.icon.slice(0, -4)} />
-							</svg>
+							{svgObj && svgObj.svg && <Icon icon={svgObj.svg} class={style.icon} />}
 	            <p>{config.translations.features.content.data[selectedFeature.name].name}</p>
 	          </div>
 	          <p class={style.descr}>{config.translations.features.content.data[selectedFeature.name].description}</p>

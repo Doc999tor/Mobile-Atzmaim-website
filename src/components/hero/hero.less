@@ -41,9 +41,12 @@
 	width: 100%;
 }
 .feature_icon {
-	fill: #fff;
-	height: 34px;
-	width: 34px;
+	display: flex;
+	svg {
+		path, g, circle {
+			fill: var(--white-color) !important;
+		}
+	}
 }
 
 .shadow {
