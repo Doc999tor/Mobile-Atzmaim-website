@@ -10,7 +10,7 @@ export default ({ iconsData, selectFeature, animations, secondAnimation, activeL
 	return (
 		<div class={`${style.container} ${!secondAnimation && style.bgr}`}>
 			<section class={style.top_section}>
-				<div class={`${style.text} ${secondAnimation && style.text_end}`}>
+				<div class={`${style.text} ${secondAnimation && (config.isRTL ? style.text_end_rtl : style.text_end_ltr)}`}>
 					{secondAnimation && <h2>{config.translations.features.content.title}</h2>}
 				</div>
 				<div class={style.background_top}>
@@ -30,7 +30,7 @@ export default ({ iconsData, selectFeature, animations, secondAnimation, activeL
 						: <img class={config.isRTL ? `${secondAnimation && secondW}` : `${secondAnimation && firstW}`} src={config.urls.media + 'active_woman.svg'} alt='woman' />}
 				</div>
 			</section>
-			<div class={`${style.wrap} ${secondAnimation && style.wrap_fix}` }>
+			<div class={`${style.wrap} ${secondAnimation && (config.isRTL ? style.wrap_rtl : style.wrap_ltr)}`}>
 				{secondAnimation && <div class={style.features_container}>
 					{config.modules.features.data.map(item => {
 						const svgObj = iconsData.find(i => item.name === i.name)

@@ -35,8 +35,8 @@
 	font-weight: 500;
 	font-size: 0.7rem;
 	color: var(--main-color);
-	img {
-		margin-bottom: 0.3rem;
+	svg {
+		margin-bottom: 0.1rem;
 	}
 }
 .img_active {
@@ -54,17 +54,27 @@
 .match {
 	display: flex;
 	flex-grow: 1;
-	padding: 0.7rem 0;
 	width: 4.5rem;
 	border-radius: 8px 8px 0 0;
+	padding: 0.7rem 0;
 	flex-direction: column;
 	align-items: center;
 	text-decoration: none;
 	color: white;
 	font-size: 0.7rem;
 	font-weight: 500;
+	animation: avtiveTab 0.2s ease-in;
 	background-image: linear-gradient(129deg, #be95ff, #5333ed);
-	img {
-		margin-bottom: 0.4rem;
+	svg {
+		margin-bottom: 0.2rem;
+	}
+}
+@keyframes avtiveTab {
+	from {
+		height: 0;
+		padding: 0;
+	}
+	to {
+		height: auto;
 	}
 }
