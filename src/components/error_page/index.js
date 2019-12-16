@@ -1,12 +1,12 @@
-import { h } from 'preact';
-import { Link } from 'preact-router';
+import { h } from 'preact'
+import { Link } from 'preact-router'
 import Header from '../header'
-import style from './error.less';
+import style from './error.less'
 
-export default () => {
+export default ({ referer }) => {
 	return (
 		<div id='error' class={style.error} >
-			<Header />
+			<Header referer={referer} />
 			<div class={style.top_section}>
 				<div class={style.title}>
 					<h2 >{config.translations.error_page.title}</h2>
@@ -24,5 +24,5 @@ export default () => {
 				<a class={style.button} href={config.urls.signup}><span><img src={config.urls.media + 'ic_join.svg'} alt={config.translations.error_page.join_btn} /></span>{config.translations.error_page.join_btn}</a>
 			</div>
 		</div>
-	);
-};
+	)
+}

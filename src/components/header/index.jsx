@@ -30,7 +30,7 @@ export default class Header extends Component {
 						<span>{config.translations.hero.log_in}</span>
 					</a>
 				</div>
-				{this.props.mobile
+				{this.props.referer !== 'application'
 					? active && <Menu close={this.closeMenu} />
 					: active && <MenuApp closeMenu={this.closeMenu} />}
 				<div class={style.cont}>

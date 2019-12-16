@@ -64,7 +64,7 @@ export default class Main extends Component {
 		}
 	  return (
 	    <div id='main'>
-				<Header mobile />
+				<Header />
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}
