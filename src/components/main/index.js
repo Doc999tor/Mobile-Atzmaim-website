@@ -6,6 +6,7 @@ import BusinessTypes from '../business_types'
 import Header from '../header'
 import Pricing from '../pricing'
 import Feedback from '../feedback'
+import style from './main.less'
 
 export default class Main extends Component {
 	state = {
@@ -63,7 +64,7 @@ export default class Main extends Component {
 	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (
-	    <div id='main'>
+	    <div id='main' class={style.main}>
 				<Header />
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
