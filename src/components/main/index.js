@@ -54,7 +54,8 @@ export default class Main extends Component {
 	}
 
 	render () {
-		const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
+		const possibleKeys = ['hero', 'features']
+		// const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
 	    hero: <Hero iconsData={this.state.svgData} startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
