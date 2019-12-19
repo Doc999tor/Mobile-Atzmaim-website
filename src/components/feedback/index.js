@@ -59,7 +59,7 @@ export default class Reviews extends Component {
 									</Fragment>}
 							</div>
 						</section>
-						<section class={`${style.wrap} ${page_style.feedback_wrap}  ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
+						<section class={`${style.wrap} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 							{animation && <div>
 								<h3 class={style.subtitle}>{config.translations.feedback.subtitle}</h3>
 								<div class={page_style.reviews_wrap}>
