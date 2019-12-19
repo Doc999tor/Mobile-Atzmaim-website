@@ -25,16 +25,16 @@ export default class AllFeatures extends Component {
 						{secondAnimation && <h2>{config.translations.features.content.title}</h2>}
 					</div>
 					<div class={style.background_top}>
-						{!secondAnimation && <Fragment>
-							<img class={config.isRTL ? `${style.scale} ${style.blank_phone_r}` : style.blank_phone_l} src={config.urls.media + 'phone_fch.svg'} alt='phone off' />
-							<img class={config.isRTL ? `${style.scale} ${style.blank_woman_r}` : style.blank_woman_l} src={config.urls.media + 'woman_fch.svg'} alt='woman' />
-						</Fragment>
-						}
-						{secondAnimation && <Fragment>
-							<img class={config.isRTL ? `${style.scale} ${style.start_bg_rtl}` : style.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
-							<img class={config.isRTL ? secondP : firstP} src={config.urls.media + 'active_phone.svg'} alt='phone on' />
-							<img class={config.isRTL ? secondW : firstW} src={config.urls.media + 'active_woman.svg'} alt='woman' />
-						</Fragment>}
+						{!secondAnimation
+							? <Fragment>
+								<img class={config.isRTL ? `${style.scale} ${style.blank_phone_r}` : style.blank_phone_l} src={config.urls.media + 'phone_fch.svg'} alt='phone off' />
+								<img class={config.isRTL ? `${style.scale} ${style.blank_woman_r}` : style.blank_woman_l} src={config.urls.media + 'woman_fch.svg'} alt='woman' />
+							</Fragment>
+							: <Fragment>
+								<img class={config.isRTL ? `${style.scale} ${style.start_bg_rtl}` : style.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
+								<img class={config.isRTL ? secondP : firstP} src={config.urls.media + 'active_phone.svg'} alt='phone on' />
+								<img class={config.isRTL ? secondW : firstW} src={config.urls.media + 'active_woman.svg'} alt='woman' />
+							</Fragment>}
 					</div>
 				</section>
 				<div class={`${style.wrap} ${secondAnimation && (config.isRTL ? staticWrapRtl : staticWrapLtr)}`}>
