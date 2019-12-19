@@ -54,7 +54,7 @@ export default class Main extends Component {
 	}
 
 	render () {
-		const possibleKeys = ['hero', 'features']
+		const possibleKeys = ['hero', 'features', 'business_types']
 		// const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {

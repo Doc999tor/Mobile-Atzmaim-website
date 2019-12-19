@@ -32,10 +32,9 @@
 	from {
 		opacity: 0;
 		padding-right: 0;
-		padding-left: 1.6rem;
+		padding-left: 2.6rem;
 	}
 	to {
-		opacity: 1;
 		padding-left: 0.8rem;
 		padding-right: 0.8rem;
 	}
@@ -43,11 +42,10 @@
 @keyframes titleAnimation_rtl {
 	from {
 		opacity: 0;
-		padding-right: 1.6rem;
+		padding-right: 2.6rem;
 		padding-left: 0;
 	}
 	to {
-		opacity: 1;
 		padding-left: 0.8rem;
 		padding-right: 0.8rem;
 	}
@@ -138,12 +136,6 @@
 	z-index: 2;
 	transform: scale(-1, 1);
 	animation: moveAvtivePhone_rtl 0.6s ease-out forwards;
-}
-.start_bg {
-	opacity: 0;
-	top: -3rem;
-	right: -4rem;
-	z-index: 1;
 }
 .scale {
 	transform: scale(-1, 1);
@@ -242,32 +234,6 @@
 	min-width: 100vw;
 	display: flex;
 	justify-content: center;
-}
-.wrap_ltr {
-	animation: containerAnimation_ltl 0.6s ease-out ;
-}
-.wrap_rtl {
-	animation: containerAnimation_rtl 0.6s ease-out;
-}
-@keyframes containerAnimation_ltl {
-	from {
-		opacity: 0;
-		padding-left: 1.6rem;
-	}
-	to {
-		opacity: 1;
-		padding: 0;
-	}
-}
-@keyframes containerAnimation_rtl {
-	from {
-		opacity: 0;
-		padding-right: 1.6rem;
-	}
-	to {
-		opacity: 1;
-		padding: 0;
-	}
 }
 .features_container {
 	display: flex;

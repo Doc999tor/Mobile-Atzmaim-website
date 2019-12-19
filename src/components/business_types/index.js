@@ -8,7 +8,7 @@ export default ({ animation }) => {
 	return (
 		<div id='business_types' class={common.height}>
 			<section class={styles.top_section}>
-				<div class={`${styles.text} ${animation && styles.text_end}`}>
+				<div class={`${styles.text} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 					{animation && <h2 >{config.translations.business_types.main_title}</h2>}
 					{animation && <div class={style.actions}>
 						<div class={style.tap}>
@@ -19,24 +19,15 @@ export default ({ animation }) => {
 				</div>
 				<div class={styles.background_top}>
 					{!animation
-						? <Fragment>
-							<img class={config.isRTL ? `${styles.scale} ${styles.start_bg}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
-							<img class={config.isRTL ? style.city_rtl : style.city_ltr} src={config.urls.media + 'city.svg'} alt='city' />
-						</Fragment>
+						? <img class={config.isRTL ? style.inactive_people_rtl : style.inactive_people_ltr} src={config.urls.media + 'business people.svg'} alt='business people' />
 						: <Fragment>
-							<img class={config.isRTL ? `${animation && styles.inner_rtl} ` : `${animation && styles.inner_ltr}`} src={config.urls.media + 'bg_top.svg'} alt='background' />
-							<img class={config.isRTL ? style.city_fin_rtl : style.city_fin_ltr} src={config.urls.media + 'city.svg'} alt='city' />
+							<img class={config.isRTL ? `${styles.scale} ${styles.start_bg_rtl}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
+							<img class={config.isRTL ? style.city_rtl : style.city_ltr} src={config.urls.media + 'city.svg'} alt='city' />
+							<img class={config.isRTL ? style.active_people_rtl : style.active_people_ltr} src={config.urls.media + 'business people_active.svg'} alt='business people' />
 						</Fragment>}
-					{
-						!animation && <img class={config.isRTL ? style.inactive_people_rtl : style.inactive_people_ltr} src={config.urls.media + 'business people.svg'} alt='business people' />
-					}
-					{!animation
-						? <img class={config.isRTL ? style.active_start_rtl : style.active_start_ltr} src={config.urls.media + 'business people_active.svg'} alt='business people' />
-						: <img class={config.isRTL ? `${animation && style.active_end_rtl}` : `${animation && style.active_end_ltr}`} src={config.urls.media + 'business people_active.svg'} alt='business people' />
-					}
 				</div>
 			</section>
-			<section class={`${style.wrap} ${animation && style.wrap_end}`}>
+			<section class={`${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 				{animation && <div>
 					<h3 class={style.subtitle}>{config.translations.business_types.subtitle}</h3>
 					<div class={style.business_type}>

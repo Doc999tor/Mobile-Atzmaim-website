@@ -13,8 +13,8 @@ export default class AllFeatures extends Component {
 		const firstW = animations ? style.discover_woman : style.active_woman_l
 		const secondP = animations ? style.discover_phone_rtl : style.phone_act_r
 		const secondW = animations ? style.discover_woman_rtl : style.active_woman_r
-		const staticWrapRtl = animations ? style.static_wrap : style.wrap_rtl
-		const staticWrapLtr = animations ? style.static_wrap : style.wrap_ltr
+		const staticWrapRtl = animations ? '' : style.text_end_rtl
+		const staticWrapLtr = animations ? '' : style.text_end_ltr
 		const staticTitleRtl = animations ? style.static_title : style.text_end_rtl
 		const staticTitleLtr = animations ? style.static_title : style.text_end_ltr
 
