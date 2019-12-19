@@ -34,7 +34,6 @@
 		padding-left: 1.6rem;
 	}
 	to {
-		opacity: 1;
 		padding-left: 0.8rem;
 		padding-right: 0.8rem;
 	}
@@ -46,7 +45,6 @@
 		padding-left: 0;
 	}
 	to {
-		opacity: 1;
 		padding-left: 0.8rem;
 		padding-right: 0.8rem;
 	}
@@ -77,134 +75,170 @@
 	top: 1.5rem;
 	left: 2.3rem;
 }
-.wmn {
-	top: 2.8rem;
-	right: 1.2rem;
-	opacity: 0;
+.static_title {
+	padding-left: 0.8rem;
+	padding-right: 0.8rem;
 }
-.wmn_r {
-	transform: scale(-1, 1);
-	top: 2.8rem;
-	left: 1rem;
-	opacity: 0;
-}
+
 .active_woman_l {
 	top: 2.8rem;
-	right: 2rem;
-	opacity: 1;
-	transition: right 0.3s ease-out;
 	z-index: 2;
+	animation: moveActiveWomen_ltr 0.6s ease-out forwards;
+}
+@keyframes moveActiveWomen_ltr {
+	from {
+		right: 1.2rem;
+	}
+	to {
+		right: 2rem;
+	}
+}
+@keyframes moveActiveWomen_rtl {
+	from {
+		left: 1rem;
+	}
+	to {
+		left: 2rem;
+	}
 }
 .active_woman_r {
 	transform: scale(-1, 1);
 	top: 2.8rem;
-	left: 2rem;
-	opacity: 1;
-	transition: left 0.3s ease-out;
+	animation: moveActiveWomen_rtl 0.6s ease-out forwards;
 	z-index: 2;
 }
-.phone_begin {
-	top: 1rem;
-	right: -1.8rem;
-	opacity: 0;
+@keyframes moveAvtivePhone_ltr {
+	from {
+		top: 1rem;
+		right: -1.8rem;
+	}
+	to {
+		top: 1.5rem;
+		right: -1.5rem;
+	}
 }
-.phone_begin_r {
-	top: 1rem;
-	left: -1rem;
-	opacity: 0;
+@keyframes moveAvtivePhone_rtl {
+	from {
+		top: 1rem;
+		left: -1rem;
+	}
+	to {
+		top: 1.5rem;
+		left: -1rem;
+	}
 }
 .phone_act{
-	top: 1.5rem;
-	right: -1.5rem;
-	transition: all 0.3s;
-	opacity: 1;
 	z-index: 2;
+	animation: moveAvtivePhone_ltr 0.6s ease-out forwards;
 }
 .phone_act_r{
-	transform: scale(-1, 1);
-	top: 1.5rem;
-	left: -1rem;
-	transition: all 0.3s;
-	opacity: 1;
 	z-index: 2;
-}
-.start_bg {
-	opacity: 0;
-	top: -3rem;
-	right: -4rem;
-	z-index: 1;
+	transform: scale(-1, 1);
+	animation: moveAvtivePhone_rtl 0.6s ease-out forwards;
 }
 .scale {
 	transform: scale(-1, 1);
 }
-.inner_ltr {
-	z-index: 1;
+.start_bg {
 	top: -3rem;
 	right: -4rem;
-	transition: opacity 0.6s ease-out;
-	opacity: 1;
+	z-index: 1;
+	animation: topBacground 0.6s ease-out forwards;
 }
-.inner_rtl {
-	transform: scale(-1, 1);
-	transition: opacity 0.6s ease-out;
+@keyframes topBacground {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.start_bg_rtl {
 	top: -3rem;
 	left: -4rem;
-	opacity: 1;
+	z-index: 1;
+	animation: topBacground 0.6s ease-out forwards;
 }
-.bgr {
-	background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(222,218,224,1) 100%);
-}
-.end {
-	height: 0%;
-	left: -7rem;
-	transition: all 0.3s ease-out;
+
+.discover_phone {
 	z-index: 2;
-}
-.start {
-	height: 0%;
 	top: 0;
-	right: -11rem;
-	transition: all 0.3s ease-out;
-	z-index: 2;
+	animation: discover_phone 0.6s ease-out forwards;
 }
+.discover_woman {
+	z-index: 2;
+	top: 0;
+	animation: discover_woman 0.6s ease-out forwards;
+}
+.discover_phone_rtl {
+	transform: scale(-1, 1);
+	z-index: 2;
+	top: 0;
+	animation: discover_phone_rtl 0.6s ease-out forwards;
+}
+.discover_woman_rtl {
+	z-index: 2;
+	top: 0;
+	animation: discover_woman_rtl 0.6s ease-out forwards;
+}
+
+@keyframes discover_phone {
+	from {
+		top: 14rem;
+		right: -11rem;
+		height: 0%;
+	}
+	to {
+		top: 1.5rem;
+		right: -1.5rem;
+		height: 100%;
+	}
+}
+@keyframes discover_woman {
+	from {
+		top: 14rem;
+		right: -11rem;
+	}
+	to {
+		top: 2.8rem;
+		right: 2rem;
+	}
+}
+@keyframes discover_phone_rtl {
+	from {
+		top: 14rem;
+		left: -11rem;
+		height: 0%;
+	}
+	to {
+		top: 1.5rem;
+		left: -1rem;
+		height: 100%;
+	}
+}
+@keyframes discover_woman_rtl {
+	from {
+		top: 14rem;
+		left: -11rem;
+		transform: scale3d(0,0,1);
+	}
+	to {
+		transform: scale3d(-1,1,1);
+		top: 2.8rem;
+		left: 2rem;
+	}
+}
+
 .wrap {
-	min-width: 100%;
+	min-width: 100vw;
 	display: flex;
 	justify-content: center;
-}
-.wrap_ltr {
-	transition: all 0.3s ease-out;
-	animation: containerAnimation_ltl 0.6s ease-out;
-}
-.wrap_rtl {
-	transition: all 0.3s ease-out;
-	animation: containerAnimation_rtl 0.6s ease-out;
-}
-@keyframes containerAnimation_ltl {
-	from {
-		opacity: 0;
-		padding-left: 1.6rem;
-	}
-	to {
-		opacity: 1;
-		padding: 0;
-	}
-}
-@keyframes containerAnimation_rtl {
-	from {
-		opacity: 0;
-		padding-right: 1.6rem;
-	}
-	to {
-		opacity: 1;
-		padding: 0;
-	}
 }
 .features_container {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	width: 92%;
+	width: 92vw;
 	max-height: 35vh;
 	margin-bottom: 4rem;
 	scroll-snap-type: x mandatory;

@@ -38,39 +38,28 @@ export default class Reviews extends Component {
 					? <AddFeedback cancel={this.handleToggleForm} onFormSubmit={this.onFormSubmit} />
 					: <div>
 						<section class={styles.top_section}>
-							<div class={`${styles.text} ${animation && styles.text_end}`}>
-								<h2 >{config.translations.feedback.main_title}</h2>
-								<div class={style.actions}>
-									<div class={style.tap} onClick={this.handleToggleForm}>
-										<img src={config.urls.media + 'ic_reviews_active.svg'} alt='reviews' />
+							<div class={`${styles.text} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
+								{animation && <Fragment>
+									<h2 >{config.translations.feedback.main_title}</h2>
+									<div class={style.actions}>
+										<div class={style.tap} onClick={this.handleToggleForm}>
+											<img src={config.urls.media + 'ic_reviews_active.svg'} alt='reviews' />
+										</div>
+										<p>{config.translations.feedback.leave_btn_label}</p>
 									</div>
-									<p>{config.translations.feedback.leave_btn_label}</p>
-								</div>
+								</Fragment>}
 							</div>
 							<div class={styles.background_top}>
 								{!animation
-									? <Fragment>
-										<img class={config.isRTL ? `${styles.scale} ${styles.start_bg}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
-										<img class={config.isRTL ? page_style.outer_rtl : page_style.outer_ltr} src={config.urls.media + 'woman.svg'} alt='woman' />
-									</Fragment>
+									? <img class={config.isRTL ? page_style.woman_rtl : page_style.woman_ltr} src={config.urls.media + 'woman.svg'} alt='woman' />
 									: <Fragment>
-										<img class={config.isRTL ? styles.inner_rtl : styles.inner_ltr} src={config.urls.media + 'bg_top.svg'} alt='background' />
-									</Fragment>
-								}
-								{
-									!animation && <img class={config.isRTL ? page_style.woman_rtl : page_style.woman_ltr} src={config.urls.media + 'woman.svg'} alt='woman' />
-								}
-								{!animation
-									? <img class={config.isRTL ? page_style.city_start_rtl : page_style.city_start_ltr} src={config.urls.media + 'big_city.svg'} alt='big city' />
-									: <img class={config.isRTL ? page_style.city_rtl : page_style.city_ltr} src={config.urls.media + 'big_city.svg'} alt='big city' />
-								}
-								{!animation
-									? <img class={config.isRTL ? page_style.woman_start_rtl : page_style.woman_start_ltr} src={config.urls.media + 'woman_call.svg'} alt='woman' />
-									: <img class={config.isRTL ? `${animation && page_style.woman_end_rtl}` : `${animation && page_style.woman_end_ltr}`} src={config.urls.media + 'woman_call.svg'} alt='woman' />
-								}
+										<img class={config.isRTL ? `${styles.scale} ${styles.start_bg_rtl}` : styles.start_bg} src={config.urls.media + 'bg_top.svg'} alt='background' />
+										<img class={config.isRTL ? page_style.woman_active_rtl : page_style.woman_active_ltr} src={config.urls.media + 'woman_call.svg'} alt='woman' />
+										<img class={config.isRTL ? page_style.city_active_rtl : page_style.city_active_ltr} src={config.urls.media + 'big_city.svg'} alt='big city' />
+									</Fragment>}
 							</div>
 						</section>
-						<section class={`${style.wrap} ${animation && style.wrap_end}`}>
+						<section class={`${style.wrap} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 							{animation && <div>
 								<h3 class={style.subtitle}>{config.translations.feedback.subtitle}</h3>
 								<div class={page_style.reviews_wrap}>
