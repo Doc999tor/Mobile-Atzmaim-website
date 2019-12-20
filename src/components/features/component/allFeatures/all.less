@@ -19,7 +19,7 @@
 .text {
 	min-width: 44%;
 	width: 44%;
-	padding: 1.2rem 0 2.5rem;
+	padding: 1.2rem 0.8rem 2.5rem;
 }
 .text_end_ltr {
 	animation: titleAnimation_ltr 0.6s ease-out forwards;
@@ -30,23 +30,13 @@
 @keyframes titleAnimation_ltr {
 	from {
 		opacity: 0;
-		padding-right: 0;
-		padding-left: 1.6rem;
-	}
-	to {
-		padding-left: 0.8rem;
-		padding-right: 0.8rem;
+		transform: translate(1.5rem, 0);
 	}
 }
 @keyframes titleAnimation_rtl {
 	from {
 		opacity: 0;
-		padding-right: 1.6rem;
-		padding-left: 0;
-	}
-	to {
-		padding-left: 0.8rem;
-		padding-right: 0.8rem;
+		transform: translate(-1.5rem, 0px);
 	}
 }
 .background_top {

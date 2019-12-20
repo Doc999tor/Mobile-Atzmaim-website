@@ -32,7 +32,7 @@ export default class CommonInfo extends Component {
 							</Fragment>}
 					</div>
 				</section>
-				<section class={`${typesStyl.wrap} ${animation && styles.static_wrap}`}>
+				<section class={`${typesStyl.wrap} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 					{animation && <div>
 						<h3 class={style.subtitle}>{config.translations.pricing.subtitle}</h3>
 						{!showDetail

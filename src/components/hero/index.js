@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import style from './hero.less'
+import styles from '../features/component/allFeatures/all.less'
 import { Icon } from '../icon'
 
 export default class Hero extends Component {
@@ -15,7 +16,7 @@ export default class Hero extends Component {
 			<div id='hero' class={style.height} >
 				<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>
 					<div class={`${style.common} ${animation && (style.shadow + ' ' + style.test)}`} >
-						<div class={`${style.content} ${animation && (config.isRTL ? style.padding_animation_rtl : style.padding_animation_ltr)}`}>
+						<div class={`${style.content} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 							{animation && <h2>{config.translations.hero_page.title}</h2>}
 							{animation && <div class={style.feature_wrap}>
 								{features.map(f => {
