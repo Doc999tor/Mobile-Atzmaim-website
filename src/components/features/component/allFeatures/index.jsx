@@ -13,8 +13,7 @@ export default class AllFeatures extends Component {
 		const firstW = animations ? style.discover_woman : style.active_woman_l
 		const secondP = animations ? style.discover_phone_rtl : style.phone_act_r
 		const secondW = animations ? style.discover_woman_rtl : style.active_woman_r
-		const staticWrapRtl = animations ? '' : style.text_end_rtl
-		const staticWrapLtr = animations ? '' : style.text_end_ltr
+		const staticWrap = animations ? '' : style.static_wrap
 		const staticTitleRtl = animations ? style.static_title : style.text_end_rtl
 		const staticTitleLtr = animations ? style.static_title : style.text_end_ltr
 
@@ -37,7 +36,7 @@ export default class AllFeatures extends Component {
 							</Fragment>}
 					</div>
 				</section>
-				<div class={`${style.wrap} ${secondAnimation && (config.isRTL ? staticWrapRtl : staticWrapLtr)}`}>
+				<div class={`${style.wrap} ${secondAnimation && staticWrap}`}>
 					{secondAnimation && <div class={style.features_container}>
 						{config.modules.features.data.map(item => {
 							const svgObj = iconsData.find(i => item.name === i.name)

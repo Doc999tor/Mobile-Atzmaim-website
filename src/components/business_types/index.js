@@ -27,7 +27,7 @@ export default ({ animation }) => {
 						</Fragment>}
 				</div>
 			</section>
-			<section class={`${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
+			<section class={`${animation && styles.static_wrap}`}>
 				{animation && <div>
 					<h3 class={style.subtitle}>{config.translations.business_types.subtitle}</h3>
 					<div class={style.business_type}>
