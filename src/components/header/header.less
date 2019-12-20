@@ -66,3 +66,40 @@
 			transform: scale(-1, 1);
 		}
 	}
+.alive_button {
+	display: flex;
+	position: relative;
+	height: 0.9rem;
+	width: 1.6rem;
+	flex-direction: column;
+	justify-content: space-between;
+	div {
+		background-color: var(--white-color);
+		height: .2rem;
+		overflow: hidden;
+		border-radius: 2rem;
+		transition: transform 0.2s ease-out, width 0.2s ease-out;
+	}
+}
+.active_b {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 1.6rem;
+}
+.stick_top {
+	width: 1.6rem;
+}
+.stick_bottom {
+	width: 0.8rem
+}
+.alive_stick_top {
+	position: absolute;
+	transform: rotate(-45deg);
+	width: 1.3rem
+}
+.alive_stick_bottom {
+	position: absolute;
+	transform: rotate(45deg);
+	width: 1.3rem
+}

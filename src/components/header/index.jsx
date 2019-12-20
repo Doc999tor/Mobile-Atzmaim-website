@@ -25,7 +25,10 @@ export default class Header extends Component {
 			<div class={style.header_wrap}>
 				<header class={style.header}>
 					<div class={style.cont}>
-						<button class={style.menu_btn} onClick={active ? this.closeMenu : this.menuOnOff}><img src={config.urls.media + (!active ? 'ic_menu.svg' : 'ic_menu_cross.svg')} alt='menu' /></button>
+						<div class={`${style.alive_button} ${active && style.active_b}`} onClick={active ? this.closeMenu : this.menuOnOff}>
+							<div class={`${style.stick_top} ${active && style.alive_stick_top}`} />
+							<div class={`${style.stick_bottom} ${active && style.alive_stick_bottom}`} />
+						</div>
 						<a class={style.login_link} href={config.urls.login}>
 							<img src={config.urls.media + 'ic_lock.svg'} alt='lock' />
 							<span>{config.translations.hero.log_in}</span>
