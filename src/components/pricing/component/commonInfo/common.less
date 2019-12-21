@@ -2,15 +2,13 @@
 	top: 0.5rem;
 	left: -3.8rem;
 	z-index: 2;
-	animation: screen_active_rtl 0.6s ease-out forwards;
+	transform: rotate3d(0, 1, 0, -180deg);
+	animation: screen_active_rtl 0.6s ease-out;
 }
 @keyframes screen_active_rtl {
- from {
+ 0% {
 	opacity: 0;
 	transform: rotate3d(0, 1, 1, 180deg);
- }
- to {
-	transform: rotate3d(0, 1, 0, -180deg);
  }
 }
 .screen_active_ltr {
@@ -20,12 +18,9 @@
 	animation: screen_active_ltr 0.6s ease-out forwards;
 }
 @keyframes screen_active_ltr {
- from {
+ 0% {
 	opacity: 0;
-	transform: rotate3d(1, 0, 0, 25deg);
- }
- to {
-	transform: rotate3d(0, 0, 0, 0deg);
+	transform: rotate3d(1, 0, 0, 35deg);
  }
 }
 .subtitle {
@@ -44,59 +39,43 @@
 }
 .man_active_ltr {
 	top: 2.9rem;
+	right: 8.5rem;
 	z-index: 2;
-	animation: man_active_ltr 0.6s ease-out forwards;
+	animation: man_active_ltr 0.6s ease-out;
 }
 @keyframes man_active_ltr {
-	from {
-		right: 9rem;
-	}
-	to {
-		right: 8.5rem;
+	0% {
+		transform: translate(-0.5rem, 0);
 	}
 }
 .man_active_rtl {
 	top: 2.9rem;
+	left: 8.5rem;
 	transform: scale(-1, 1);
 	z-index: 2;
-	animation: man_active_rtl 0.6s ease-out forwards;
+	animation: man_active_rtl 0.6s ease-out;
 }
 @keyframes man_active_rtl {
-	from {
-		left: 9rem;
-	}
-	to {
-		left: 8.5rem;
+	0% {
+		transform: translate(0.5rem, 0) scale(-1, 1);
 	}
 }
 .coin_ltr {
 	top: 3.5rem;
 	right: -2rem;
 	z-index: 3;
-	animation: coin_ltr 0.6s ease-out forwards;
-}
-@keyframes coin_ltr {
-	from {
-		transform: rotate3d(0, 1, 0, 60deg);
-		opacity: 0;
-	}
-	to {
-		transform: rotate3d(0, 0, 0, 60deg);
-	}
+	animation: coin 0.6s ease-out forwards;
 }
 .coin_rtl {
 	top: 3.5rem;
 	left: -2rem;
 	z-index: 3;
-	animation: coin_rtl 0.6s ease-out forwards;
+	animation: coin 0.6s ease-out forwards;
 }
-@keyframes coin_rtl {
-	from {
+@keyframes coin {
+	0% {
 		transform: rotate3d(0, 1, 0, 60deg);
 		opacity: 0;
-	}
-	to {
-		transform: rotate3d(0, 0, 0, 0deg);
 	}
 }
 .pricing_plan {
