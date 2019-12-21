@@ -25,7 +25,7 @@
 	}
 }
 .black_phone {
-	top: 2.6rem;
+	margin-top: 2.6rem;
 }
 
 .common {
@@ -66,15 +66,11 @@
 }
 }
 .phone_wrap {
-	position: relative;
 	padding-top: 1.4rem;
 	width: 55%;
+	display: flex;
 	justify-content: center;
 	overflow: hidden;
-	img {
-		position: absolute;
-		left: 4%;
-	}
 }
 .content {
 	width: 45%;
@@ -125,38 +121,8 @@
 	animation: phone_animation 0.5s ease-out;
 }
 
-.padding_animation_ltr {
-	animation: padding_animation_ltr 0.5s ease-out;
-}
-.padding_animation_rtl {
-	animation: padding_animation_rtl 0.5s ease-out;
-}
-
 @keyframes phone_animation {
-	from {
-		top: 2.6rem;
-	}
-	to {
-		top: 1.4rem;
-	}
-}
-@keyframes padding_animation_ltr {
-	from {
-		padding-left: 2rem;
-		opacity: 0;
-	}
-	to {
-		padding-left: 0rem;
-		opacity: 1;
-	}
-}
-@keyframes padding_animation_rtl {
-	from {
-		padding-right: 2rem;
-		opacity: 0;
-	}
-	to {
-		padding-right: 0rem;
-		opacity: 1;
+	0% {
+		transform: translate(0, 2.6rem);
 	}
 }

@@ -32,28 +32,24 @@
 .woman_active_rtl {
 	transform: scale(-1, 1);
 	top: 3.5rem;
+	left: 9rem;
 	z-index: 2;
 	animation: woman_active_rtl 0.6s ease-out forwards;
 }
 @keyframes woman_active_rtl {
-	from {
-		left: 7rem;
-	}
-	to {
-		left: 9rem;
+	0% {
+		transform: translate(-2rem, 0) scale(-1, 1);
 	}
 }
 .woman_active_ltr {
 	top: 3.5rem;
+	right: 9rem;
 	z-index: 2;
 	animation: woman_active_ltr 0.6s ease-out forwards;
 }
 @keyframes woman_active_ltr {
-	from {
-		right: 7rem;
-	}
-	to {
-		right: 9rem;
+	0% {
+		transform: translate(2rem, 0);
 	}
 }
 
