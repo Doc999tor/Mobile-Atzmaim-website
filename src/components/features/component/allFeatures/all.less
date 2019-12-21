@@ -73,56 +73,49 @@
 .active_woman_l {
 	top: 2.8rem;
 	z-index: 2;
+	right: 2rem;
 	animation: moveActiveWomen_ltr 0.6s ease-out forwards;
 }
 @keyframes moveActiveWomen_ltr {
-	from {
-		right: 1.2rem;
-	}
-	to {
-		right: 2rem;
+	0% {
+		transform: translate(1.2rem, 0px)
 	}
 }
 @keyframes moveActiveWomen_rtl {
-	from {
-		left: 1rem;
+	0% {
+		transform: scale(-1, 1) translate(1rem, 0px);
 	}
-	to {
-		left: 2rem;
-	}
+
 }
 .active_woman_r {
 	transform: scale(-1, 1);
 	top: 2.8rem;
+	left: 2rem;
 	animation: moveActiveWomen_rtl 0.6s ease-out forwards;
 	z-index: 2;
 }
 @keyframes moveAvtivePhone_ltr {
-	from {
-		top: 1rem;
-		right: -1.8rem;
-	}
-	to {
-		top: 1.5rem;
-		right: -1.5rem;
+	0% {
+		opacity: 0;
+		transform: translate(0.2rem, -1rem)
 	}
 }
 @keyframes moveAvtivePhone_rtl {
-	from {
-		top: 1rem;
-		left: -1rem;
-	}
-	to {
-		top: 1.5rem;
-		left: -1rem;
+	0% {
+		opacity: 0;
+		transform: scale(-1, 1) translate(-0.3rem, -0.8rem)
 	}
 }
 .phone_act{
 	z-index: 2;
+	top: 1.5rem;
+	right: -1.5rem;
 	animation: moveAvtivePhone_ltr 0.6s ease-out forwards;
 }
 .phone_act_r{
 	z-index: 2;
+	top: 1.5rem;
+	left: -1rem;
 	transform: scale(-1, 1);
 	animation: moveAvtivePhone_rtl 0.6s ease-out forwards;
 }
@@ -162,69 +155,40 @@
 .discover_phone {
 	z-index: 2;
 	top: 0;
-	animation: discover_phone 0.6s ease-out forwards;
+	animation: discover 0.6s ease-out forwards;
 }
 .discover_woman {
 	z-index: 2;
-	top: 0;
-	animation: discover_woman 0.6s ease-out forwards;
+	top: 2.8rem;
+	right: 2rem;
+	animation: discover 0.6s ease-out;
 }
 .discover_phone_rtl {
 	transform: scale(-1, 1);
 	z-index: 2;
-	top: 0;
-	animation: discover_phone_rtl 0.6s ease-out forwards;
+	top: 1.5rem;
+	left: -1rem;
+	animation: discover_rtl 0.6s ease-out;
 }
 .discover_woman_rtl {
 	z-index: 2;
-	top: 0;
-	animation: discover_woman_rtl 0.6s ease-out forwards;
+	top: 2.8rem;
+	transform: scale(-1, 1);
+	left: 2rem;
+	animation: discover_rtl 0.6s ease-out;
 }
 
-@keyframes discover_phone {
-	from {
-		top: 14rem;
-		right: -11rem;
-		height: 0%;
-	}
-	to {
-		top: 1.5rem;
-		right: -1.5rem;
-		height: 100%;
+@keyframes discover {
+	0% {
+		opacity: 0;
+		transform: translate3d(6rem, 0, 0) rotate3d(-5, 0, -1, 90deg);
 	}
 }
-@keyframes discover_woman {
-	from {
-		top: 14rem;
-		right: -11rem;
-	}
-	to {
-		top: 2.8rem;
-		right: 2rem;
-	}
-}
-@keyframes discover_phone_rtl {
-	from {
-		top: 14rem;
-		left: -11rem;
-		height: 0%;
-	}
-	to {
-		top: 1.5rem;
-		left: -1rem;
-		height: 100%;
-	}
-}
-@keyframes discover_woman_rtl {
-	from {
-		top: 14rem;
-		left: -11rem;
-		transform: scale3d(0,0,1);
-	}
-	to {
-		transform: scale3d(-1,1,1);
-		top: 2.8rem;
-		left: 2rem;
+
+@keyframes discover_rtl {
+	0% {
+		opacity: 0;
+		transform: scale(-1, 1) translate3d(6rem, 0, 0) rotate3d(-5, 0, -1, 90deg);
 	}
 }
 
