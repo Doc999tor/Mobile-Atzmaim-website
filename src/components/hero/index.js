@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import style from './hero.less'
 import styles from '../features/component/allFeatures/all.less'
 import { Icon } from '../icon'
-
+import Slideshow from '../carousel/slideshow.jsx'
 export default class Hero extends Component {
 	componentDidMount = () => {
 		setTimeout(() => this.props.startAnimation(), 300)
@@ -13,7 +13,7 @@ export default class Hero extends Component {
 		const background = { backgroundImage: 'url(' + config.urls.media + 'pic_bg.jpg' + ')' }
 		const features = config.modules.features.data.filter(i => config.modules.hero.features.includes(i.name))
 		return (
-			<div id='hero' class={style.height} >
+			<div id='hero' className={style.height} >
 				<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>
 					<div class={`${style.common} ${animation && (style.shadow + ' ' + style.test)}`} >
 						<div class={`${style.content} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
@@ -36,7 +36,8 @@ export default class Hero extends Component {
 						<div class={style.phone_wrap}>
 							{!animation
 								? <img class={style.black_phone} src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-								: <img class={animation && style.phone_animation} src={config.urls.media + 'pic_iphone.png'} height='366' width='183' loading='lazy' alt='phone animation' />}
+								: <Slideshow cycleSpeed={config.modules.hero.gallery_speed} />
+							}
 						</div>
 					</div>
 				</div>
