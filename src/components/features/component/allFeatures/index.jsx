@@ -3,6 +3,11 @@ import Feature from '../feature'
 import style from './all.less'
 
 export default class AllFeatures extends Component {
+
+	shouldComponentUpdate = (nextProps, nextState) => {
+		if (nextProps.secondAnimation === this.props.secondAnimation) return false
+	}
+
 	render () {
 		const { iconsData, selectFeature, animations, secondAnimation, activeLink } = this.props
 		const firstP = animations ? style.discover_phone : style.phone_act
