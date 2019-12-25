@@ -3,10 +3,6 @@ import Feature from '../feature'
 import style from './all.less'
 
 export default class AllFeatures extends Component {
-	shouldComponentUpdate = (nextProps, nextState) => {
-		if (nextProps.secondAnimation === this.props.secondAnimation) return false
-	}
-
 	render () {
 		const { iconsData, selectFeature, animations, secondAnimation, activeLink } = this.props
 		const firstP = animations ? style.discover_phone : style.phone_act
@@ -15,7 +11,6 @@ export default class AllFeatures extends Component {
 		const secondW = animations ? style.discover_woman_rtl : style.active_woman_r
 		const staticBgrL = animations ? style.static_bd : style.start_bg
 		const staticBgrR = animations ? style.static_bd_rtl : style.start_bg_rtl
-		const staticWrap = animations ? '' : style.static_wrap
 		const staticTitleRtl = animations ? style.static_title : style.text_end_rtl
 		const staticTitleLtr = animations ? style.static_title : style.text_end_ltr
 

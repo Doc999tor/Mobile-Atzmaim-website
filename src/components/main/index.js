@@ -35,6 +35,10 @@ export default class Main extends Component {
 		})
 	}
 
+	shouldComponentUpdate = (nextProps, nextState) => {
+		if (nextState.animation === this.state.animation) return false
+	}
+
 	handleClickNav = val => {
 		this.setState({ activeLink: val,
 			animation: false
