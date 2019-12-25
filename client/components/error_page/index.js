@@ -3,10 +3,10 @@ import { config } from '../../../components-lib/Home_website/config_ssr.js'
 import { Link } from 'preact-router'
 import Header from '../header'
 
-export default () => {
+export default ({ referer }) => {
 	return (
 		<div id='error' class='error' >
-			<Header />
+			<Header referer={referer} />
 			<div class='error_top_section'>
 				<div class='error_title'>
 					<h2 >{config.translations.error_page.title}</h2>

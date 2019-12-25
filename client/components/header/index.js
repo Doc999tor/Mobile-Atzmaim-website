@@ -23,13 +23,16 @@ export default class Header extends Component {
 		return (
 			<header id='header' class='header'>
 				<div class='header_cont'>
-					<button class='menu_btn' onClick={active ? this.closeMenu : this.menuOnOff}><img src={config.urls.media + (!active ? 'ic_menu.svg' : 'ic_menu_cross.svg')} alt='menu' /></button>
+					<div class={`alive_button ${active ? 'active_b' : ''}`} onClick={active ? this.closeMenu : this.menuOnOff}>
+						<div class={`stick_top ${active ? 'alive_stick_top' : ''}`} />
+						<div class={`stick_bottom ${active ? 'alive_stick_bottom' : ''}`} />
+					</div>
 					<a class='login_link' href={config.urls.login}>
 						<img src={config.urls.media + 'ic_lock.svg'} alt='lock' />
 						<span>{config.translations.hero.log_in}</span>
 					</a>
 				</div>
-				{this.props.mobile
+				{this.props.referer !== 'application'
 					? active && <Menu close={this.closeMenu} />
 					: active && <MenuApp closeMenu={this.closeMenu} />}
 				<div class='header_cont'>

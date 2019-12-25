@@ -14,6 +14,30 @@ export default class Main extends Component {
 		activeLink: 'hero'
 	}
 
+	componentDidMount = () => {
+		const arr = []
+		const promises = config.modules.features.data.map(feature => {
+			return fetch(`${config.urls.media_features}${feature.icon}`)
+				.then(response => {
+					if (response.status === 200) return response.text()
+				})
+				.then(svg => {
+					arr.push({ name: feature.name, svg })
+				})
+		})
+		Promise.all(promises).then(() => {
+			this.setState({
+				svgData: [...arr]
+			})
+		}, reason => {
+			console.log(reason)
+		})
+	}
+
+	shouldComponentUpdate = (nextProps, nextState) => {
+		if (nextState.animation === this.state.animation) return false
+	}
+
 	handleClickNav = val => {
 		this.setState({ activeLink: val,
 			animation: false
@@ -43,8 +67,8 @@ export default class Main extends Component {
 	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (
-	    <div id='main'>
-				<Header mobile />
+	    <div id='main' class='main'>
+				<Header />
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}
