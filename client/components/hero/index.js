@@ -1,5 +1,6 @@
 import { h, Component } from 'preact'
 import { Icon } from '../icon'
+import Slideshow from '../carousel'
 import { config } from '../../../components-lib/Home_website/config_ssr.js';
 
 export default class Hero extends Component {
@@ -33,7 +34,7 @@ export default class Hero extends Component {
 						<div class='phone_wrap'>
 							{!animation
 								? <img class='black_phone' src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-								: <img class='phone_animation' src={config.urls.media + 'pic_iphone.png'} height='366' width='183' loading='lazy' alt='phone animation' />}
+								: <Slideshow cycleSpeed={config.modules.hero.gallery_speed} />}
 						</div>
 					</div>
 				</div>

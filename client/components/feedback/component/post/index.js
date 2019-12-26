@@ -11,7 +11,7 @@ export default ({ icon, name, rating, text }) => {
 	</div>)
 	return (
 		<div class='client_feedback'>
-			<div class='client_info'>
+			<div class='post_client_info'>
 				<img class='post_picture' height='64' width='64' alt={icon} src={config.urls.media_clients + icon} onError={onError} />
 				<div class='post_wrap'>
 					<p>{name}</p>
