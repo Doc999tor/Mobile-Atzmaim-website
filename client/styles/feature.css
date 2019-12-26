@@ -3,18 +3,36 @@
 	display: flex;
 	align-items: center;
 	background-color: white;
-	width: 48%;
+	width: 44.5vw;
+	height: 3.2rem;
 	padding: 0.6rem 0;
 	-moz-padding-start: 0.6rem;
 	-webkit-padding-start: 0.6rem;
 	padding-inline-start: 0.6rem;
+	-moz-margin-end: 3%;
+	-webkit-margin-end: 3%;
+	margin-inline-end: 3%;
+	scroll-snap-align: end;
 	border-radius: 15px;
   box-shadow: 0 6px 8px 0 rgba(41, 41, 204, 0.16);
 }
-.feature_icon {
-	fill: #6353f4;
+.text_wrap {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.single_feature_icon {
+	display: flex;
+}
+.single_feature_icon	svg {
+	width: 32px;
 	height: 32px;
-	width: 34px;
+}
+.single_feature_icon svg path, g, circle {
+	fill: var(--main-bgcolor) !important;
+	stroke: var(--main-bgcolor) !important;
 }
 .feature_text {
 	padding: 0 0.6rem;
