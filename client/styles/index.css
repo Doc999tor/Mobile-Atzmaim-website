@@ -40,3 +40,21 @@ h1, h2, h3, figure, p, ul {
 	left: 0;
 	right: 0;
 }
+.topSection_ltr {
+	animation: topSection_ltr 0.6s ease-out forwards;
+}
+.topSection_rtl {
+	animation: topSection_rtl 0.6s ease-out forwards;
+}
+@keyframes topSection_ltr {
+	from {
+		opacity: 0;
+		transform: translate(1.5rem, 0);
+	}
+}
+@keyframes topSection_rtl {
+	from {
+		opacity: 0;
+		transform: translate(-1.5rem, 0px);
+	}
+}
