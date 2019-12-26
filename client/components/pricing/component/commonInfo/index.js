@@ -16,38 +16,21 @@ export default class CommonInfo extends Component {
 		return (
 			<div>
 				<section class='top_section'>
-					<div class={`text ${animation && 'text_end'}`}>
+					<div class={`text ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
 						{animation && <h2>{config.translations.pricing.title}</h2>}
 					</div>
 					<div class='background_top'>
 						{!animation
-							? <Fragment>
-								<img class={config.isRTL ? `scale start_bg` : 'start_bg'} src={config.urls.media + 'bg_top.svg'} alt='background' />
-								<img class={config.isRTL ? 'outer_rtl' : 'outer_ltr'} src={config.urls.media + 'man_active.svg'} alt='man' />
-							</Fragment>
+							? <img class={config.isRTL ? 'man_rtl' : 'man_ltr'} src={config.urls.media + 'man.svg'} alt='man' />
 							: <Fragment>
-								<img class={config.isRTL ? 'inner_rtl' : 'inner_ltr'} src={config.urls.media + 'bg_top.svg'} alt='background' />
-							</Fragment>
-						}
-
-						{
-							!animation && <img class={config.isRTL ? 'man_rtl' : 'man_ltr'} src={config.urls.media + 'man.svg'} alt='man' />
-						}
-						{!animation
-							? <img class={config.isRTL ? 'man_start_rtl' : 'man_start_ltr'} src={config.urls.media + 'man.svg'} alt='man' />
-							: <img class={config.isRTL ? `${animation && 'man_end_rtl'}` : `${animation && 'man_end_ltr'}`} src={config.urls.media + 'man_active.svg'} alt='man' />
-						}
-						{!animation
-							? <img class={config.isRTL ? 'coin_start_rtl' : 'coin_start_ltr'} src={config.urls.media + 'coin.svg'} alt='coin' />
-							: <img class={config.isRTL ? 'coin_rtl' : 'coin_ltr'} src={config.urls.media + 'coin.svg'} alt='coin' />
-						}
-						{!animation
-							? <img class={config.isRTL ? 'outer_start_rtl' : 'outer_start_ltr'} src={config.urls.media + 'screen.svg'} alt='screen' />
-							: <img class={config.isRTL ? 'outer_rtl' : 'outer_ltr'} src={config.urls.media + 'screen.svg'} alt='screen' />
-						}
+								<img class={config.isRTL ? `scale start_bg_rtl` : 'start_bg'} src={config.urls.media + 'bg_top.svg'} alt='background' />
+								<img class={config.isRTL ? 'man_active_rtl' : 'man_active_ltr'} src={config.urls.media + 'man_active.svg'} alt='man' />
+								<img class={config.isRTL ? 'screen_active_rtl' : 'screen_active_ltr'} src={config.urls.media + 'screen.svg'} alt='screen' />
+								<img class={config.isRTL ? 'coin_rtl' : 'coin_ltr'} src={config.urls.media + 'coin.svg'} alt='coin' />
+							</Fragment>}
 					</div>
 				</section>
-				<section class={`types_wrap ${animation && 'types_wrap_end'}`}>
+				<section class={`types_wrap ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
 					{animation && <div>
 						<h3 class='price_subtitle'>{config.translations.pricing.subtitle}</h3>
 						{!showDetail

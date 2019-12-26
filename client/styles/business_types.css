@@ -38,66 +38,64 @@
 .city_ltr {
 	top: 1.5rem;
 	right: -1.2rem;
-	opacity: 0;
-	transform: rotate3d(1, 0, 0, 90deg);
+	z-index: 2;
+	animation: city_ltr 0.6s ease-out forwards;
 }
 .city_rtl {
 	top: 1.5rem;
-	right: -1.2rem;
-	opacity: 0;
-	transform: rotate3d(0, 1, 1, 180deg)
-}
-.city_fin_ltr {
-	top: 1.5rem;
-	right: -1.2rem;
-	opacity: 1;
-	z-index: 2;
-	transform: rotate3d(0, 0, 0, 60deg);
-	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-.city_fin_rtl {
-	top: 1.5rem;
 	left: -1.2rem;
-	opacity: 1;
 	z-index: 2;
-	transform: rotate3d(0, 1, 0, 180deg);
-	transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+	animation: city_rtl 0.6s ease-out forwards;
+}
+@keyframes city_rtl {
+	from {
+		opacity: 0;
+		transform: rotate3d(0, 1, 1, 180deg)
+	}
+	to {
+		transform: rotate3d(0, 1, 0, 180deg);
+	}
+}
+@keyframes city_ltr {
+	from {
+		opacity: 0;
+		transform: rotate3d(1, 0, 0, 90deg)
+	}
+	to {
+		transform: rotate3d(0, 0, 0, 60deg);
+	}
 }
 .inactive_people_ltr {
 	top: 3.9rem;
 	right: 3.1rem;
 }
-.active_start_ltr {
+.active_people_ltr {
 	top: 3.9rem;
-	right: 3.1rem;
-	opacity: 0;
-}
-.active_end_ltr {
-	top: 3.9rem;
-	right: 3.8rem;
-	opacity: 1;
-	transition: right 0.3s ease-out;
+	right: 4rem;
 	z-index: 2;
-
+	animation: active_people_ltr 0.6s ease-out forwards;
+}
+@keyframes active_people_ltr {
+	0% {
+		transform: translate(0.8rem, 0px);
+	}
 }
 .inactive_people_rtl {
 	transform: scale(-1, 1);
 	top: 3.9rem;
 	left: 3.1rem;
 }
-.active_start_rtl {
+.active_people_rtl {
 	transform: scale(-1, 1);
 	top: 3.9rem;
-	left: 3.1rem;
-	opacity: 0;
-}
-.active_end_rtl {
-	transform: scale(-1, 1);
-	top: 3.9rem;
-	left: 3.8rem;
-	opacity: 1;
-	transition: left 0.3s ease-out;
+	left: 4rem;
 	z-index: 2;
+	animation: active_people_rtl 0.6s ease-out forwards;
+}
+@keyframes active_people_rtl {
+	0% {
+		transform: translate(-0.8rem, 0px) scale(-1, 1);
+	}
 }
 .subtitle {
 	-moz-padding-start: 1rem;
@@ -112,16 +110,4 @@
 	overflow-x: auto;
 	display: flex;
 	margin-bottom: 4.5rem;
-}
-.types_wrap {
-	-moz-padding-start: 0.8rem;
-	-webkit-padding-start: 0.8rem;
-	padding-inline-start: 0.8rem;
-	opacity: 0;
-}
-.types_wrap_end {
-	padding: 0;
-	opacity: 1;
-	transition-timing-function: ease-out !important;
-	transition: all 0.3s;
 }
