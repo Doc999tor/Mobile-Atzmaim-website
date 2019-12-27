@@ -13,7 +13,7 @@ export default ({ referer }) => {
 					<p>{config.translations.error_page.text}</p>
 				</div>
 				<div class='error_background_top'>
-					<img class={config.isRTL ? 'error_inner_rtl' : 'inner_ltr'} src={config.urls.media + 'bg_top.svg'} alt='background' />
+				<img class={config.isRTL ? `scale static_bg_rtl` : 'static_bg'} src={config.urls.media + 'bg_top.svg'} alt='background' />
 					<img class={config.isRTL ? 'error_outer_rtl' : 'error_outer_ltr'} src={config.urls.media + 'ill_robot.svg'} alt='robot' />
 					<img class={config.isRTL ? 'question_rtl' : 'question_ltr'} src={config.urls.media + 'ic_question.svg'} alt='question image' />
 				</div>
