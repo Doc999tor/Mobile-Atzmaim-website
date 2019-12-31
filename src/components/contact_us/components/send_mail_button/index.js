@@ -1,5 +1,5 @@
 import { h } from 'preact'
-import style from './sendMail.less'
+import style from './sendButton.less'
 
 export default ({ openForm }) => {
 	return (
