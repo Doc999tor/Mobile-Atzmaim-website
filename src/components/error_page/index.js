@@ -1,12 +1,10 @@
 import { h } from 'preact'
 import { Link } from 'preact-router'
-import Header from '../header'
 import style from './error.less'
 
 export default ({ referer }) => {
 	return (
 		<div id='error' class={style.error} >
-			<Header referer={referer} />
 			<div class={style.error_wrap}>
 				<div class={style.top_section}>
 					<div class={style.title}>
