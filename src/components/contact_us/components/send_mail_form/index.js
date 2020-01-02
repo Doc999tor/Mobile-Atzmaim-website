@@ -16,8 +16,10 @@ export default class SendMailForm extends Component {
 				<input class={style.contact_input} type='text' />
 				<p class={style.text_label}>{config.translations.contact_us.send_form.message_label}</p>
 				<textarea class={style.textarea} />
-				<button type='button' onClick={this.props.onCloseMailForm}>{config.translations.contact_us.send_form.cancel_btn_label}</button>
-				<button type='submit'>{config.translations.contact_us.send_form.send_btn_label}</button>
+				<div class={style.btn_wrap}>
+					<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}><img src={config.urls.media + 'ic_cancel.svg'} />{config.translations.contact_us.send_form.cancel_btn_label}</button>
+					<button class={style.send} type='submit'><img src={config.urls.media + 'ic_send.svg'} />{config.translations.contact_us.send_form.send_btn_label}</button>
+				</div>
 			</form>
 		)
 	}

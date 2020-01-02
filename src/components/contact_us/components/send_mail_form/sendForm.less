@@ -7,6 +7,7 @@
 .title {
 	font-size: 2rem;
 	font-weight: 900;
+	padding-bottom: 1rem;
 }
 .text_label {
 	width: 100%;
@@ -18,25 +19,53 @@
 	padding-inline-start: 1rem;
 }
 .contact_input {
+	margin-bottom: 1rem;
+}
+.textarea {
+	height: 25vh;
+}
+.contact_input, .textarea {
 	width: 94%;
 	padding: 0.7rem;
 	outline: none;
 	font-size: 0.9rem;
-	border-radius: 8px;
+	font-family: inherit;
 	border: solid 1px #a1a7b5;
-	margin-bottom: 1rem;
+	border-radius: 8px;
+	transition: border-color 0.3s;
 }
 .contact_input:focus, .textarea:focus {
 	border-color: var(--dark-color);
-	transition: 0.3s;
+	transition: border-color 0.3s;
 }
-.textarea {
-	width: 94%;
-	font-size: 0.9rem;
-	padding: 0.7rem;
-	font-family: inherit;
-	height: 25vh;
-	outline: none;
-	border-radius: 8px;
-	border: solid 1px #a1a7b5;
+.btn_wrap {
+	padding-top: 3.1rem;
+	display: flex;
+	justify-content: space-between;
+	width: 92%;
+	button {
+		border: none;
+		outline: none;
+		padding: 1.2rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50px;
+		font-weight: 500;
+		font-size: 1.1rem;
+		background-color: transparent;
+		width: 48%;
+		img {
+			display: block;
+			margin-inline-end: 0.4rem;
+		}
+	}
+}
+.cancel {
+	border: 2px solid var(--dark-color) !important;
+	color: var(--dark-color)
+}
+.send {
+	background-image: linear-gradient(103deg, #995cfa 0%, #591ec0 108%);
+	color: var(--white-color)
 }
