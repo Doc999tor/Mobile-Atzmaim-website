@@ -1,4 +1,5 @@
 import { h, Component, Fragment } from 'preact'
+import { route } from 'preact-router'
 import SendModal from '../send_mail_modal'
 import style from './sendForm.less'
 
@@ -17,6 +18,11 @@ export default class SendMailForm extends Component {
 			setTimeout(() => {
 				this.setState({
 					sending: false
+				}, () => {
+					setTimeout(() => {
+					this.handleCloseModal()
+					route(config.baseUrl + '/', true)
+				}, 600)
 				})
 			}, 2000)
 		})
@@ -50,7 +56,7 @@ export default class SendMailForm extends Component {
 							<button class={style.send} type='submit'><img src={config.urls.media + 'ic_send.svg'} />{config.translations.contact_us.send_form.send_btn_label}</button>
 						</div>
 					</form>
-					: <SendModal sending={sending} closeModal={this.handleCloseModal} />
+					: <SendModal sending={sending} />
 				}
 			</Fragment>
 		)

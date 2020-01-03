@@ -1,11 +1,10 @@
 import { h } from 'preact'
 import style from './sendModal.less'
 
-export default ({ closeModal, sending }) => {
-	const	bodyClick = e => e.stopPropagation()
+export default ({ sending }) => {
 	return (
-		<div class={style.backgroud} onClick={closeModal}>
-			<div class={style.body} onClick={bodyClick}>
+		<div class={style.backgroud}>
+			<div class={style.body}>
 				{sending
 					? <div class={style.sending}>
 						<img class={style.plane} src={config.urls.media + 'paper_plane.svg'} />
