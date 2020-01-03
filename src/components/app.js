@@ -1,13 +1,14 @@
 import { Router, route } from 'preact-router'
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import AsyncRoute from 'preact-async-route'
 import { h, Component } from 'preact'
 import qs from 'qs'
 import Header from './header'
-import Main from './main'
 
 export default class App extends Component {
 	state = {
-		referer: 'home_page'
+		referer: 'home_page',
+		active: false
 	}
 
 	componentDidMount = () => {
@@ -20,20 +21,42 @@ export default class App extends Component {
 		}
 	}
 
+	menuOnOff = () => {
+		this.setState({ active: !this.state.active }, () => {
+			disableBodyScroll(document.querySelector('#menu_modal'))
+		})
+	}
+
+	closeMenu = () => {
+		this.setState({ active: false })
+		clearAllBodyScrollLocks()
+	}
+
+	getMain = (url, cb, props) => import('./main').then(module => module.default)
+
+	getError = (url, cb, props) => import('./error_page').then(module => module.default)
+
+	getContactUs = (url, cb, props) => import('./contact_us').then(module => module.default)
+
 	render () {
 	  return (
 	    <div id='app'>
-				<Header referer={this.state.referer} />
+				<Header active={this.state.active} menuOnOff={this.menuOnOff} closeMenu={this.closeMenu} referer={this.state.referer} />
 				<Router>
-					<Main path={config.baseUrl + '/'} />
+					<AsyncRoute
+						path={config.baseUrl + '/'}
+						getComponent={this.getMain}
+					/>
 					<AsyncRoute
 						path={config.baseUrl + '/error'}
 						referer={this.state.referer}
-						getComponent={ () => import('./error_page').then(module => module.default) }
+						getComponent={this.getError}
 					/>
 					<AsyncRoute
+						active={this.state.active}
+						closeMenu={this.closeMenu}
 						path={config.urls.contact_us}
-						getComponent={ () => import('./contact_us').then(module => module.default) }
+						getComponent={this.getContactUs}
 					/>
 				</Router>
 	    </div>
