@@ -3,7 +3,6 @@ import Hero from '../hero'
 import Navigation from '../navigation'
 import Features from '../features'
 import BusinessTypes from '../business_types'
-import Header from '../header'
 import Pricing from '../pricing'
 import Feedback from '../feedback'
 import style from './main.less'
@@ -69,7 +68,6 @@ export default class Main extends Component {
 		}
 	  return (
 	    <div id='main' class={style.main}>
-				<Header />
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}
