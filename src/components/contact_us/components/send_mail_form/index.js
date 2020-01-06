@@ -16,11 +16,12 @@ export default class SendMailForm extends Component {
 	}
 
  contactDetail = createRef()
+
  textArea = createRef()
 
-	componentDidMount() {
-		this.contactDetail.current.focus()
-	}
+ componentDidMount () {
+ 	this.contactDetail.current.focus()
+ }
 
 	handleSendMailForm = e => {
 		e.preventDefault()
@@ -35,16 +36,18 @@ export default class SendMailForm extends Component {
 								sending: false
 							}, () => {
 								setTimeout(() => {
-								this.handleCloseModal()
-								route(config.baseUrl + '/', true)
-							}, 700)
+									this.handleCloseModal()
+									route(config.baseUrl + '/', true)
+								}, 700)
 							})
 						}
 					})
 				}, 2000)
 			})
-		} else {
-			mail ? this.contactDetail.current.focus() : this.textArea.current.focus()
+		} else if (!valid || !contact) {
+			this.contactDetail.current.focus()
+		} else if (!mail) {
+			this.textArea.current.focus()
 		}
 	}
 
@@ -72,13 +75,13 @@ export default class SendMailForm extends Component {
 	}
 
 	render () {
-		const { send, sending } = this.state
+		const { valid, send, sending } = this.state
 		return (
 			<Fragment>
 				{!send
 					? <form id='send_form' onSubmit={this.handleSendMailForm} class={style.container}>
 						<h2 class={style.title}>{config.translations.contact_us.send_form.main_title}</h2>
-						<p class={style.text_label}>{config.translations.contact_us.send_form.phone_mail_label}</p>
+						<p class={style.text_label + (!valid ? ` ${style.not_valid_label}` : '')}>{config.translations.contact_us.send_form.phone_mail_label}</p>
 						<input ref={this.contactDetail} name='contact' onBlur={this.handleValidation} onInput={this.handleCangeInput} class={`${style.contact_input} ${!this.state.valid ? style.not_valid : ''}`} type='text' />
 						<p class={style.text_label}>{config.translations.contact_us.send_form.message_label}</p>
 						<textarea ref={this.textArea} name='mail' onInput={this.handleCangeInput} class={style.textarea} />
