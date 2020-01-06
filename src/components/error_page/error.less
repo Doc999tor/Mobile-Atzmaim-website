@@ -13,6 +13,9 @@
 .top_section {
 	display: flex;
 }
+.top_section .height {
+	min-height: 16rem;
+}
 .title {
 	width: 44%;
 	padding: 0.9rem 0 2rem;
@@ -34,47 +37,81 @@
 	overflow: hidden;
 	min-height: 100%;
 	width: 56%;
+	img {
+		position: absolute;
+	}
 }
 .inner_ltr {
-	position: absolute;
 	top: -3rem;
 	right: -4rem;
 	z-index: 1;
 }
 .inner_rtl {
 	transform: scale(-1, 1);
-	position: absolute;
 	top: -3rem;
 	left: -4rem;
 }
 .outer_ltr {
-	position: absolute;
-	top: 4rem;
+	top: 4.2rem;
 	right: 3rem;
 	z-index: 2;
+	animation: robot_animation 1.5s alternate ease-out infinite;
 }
 .outer_rtl {
 	transform: scale(-1, 1);
-	position: absolute;
-	top: 4rem;
+	top: 4.2rem;
 	left: 3rem;
 	z-index: 2;
+	animation: robot_animation 1.5s alternate ease-out infinite;
+}
+@keyframes robot_animation {
+	0% {
+		transform: translateY(0.5rem);
+	}
 }
 .question_ltr {
-	position: absolute;
 	top: 1rem;
 	right: 0.5rem;
 	z-index: 2;
+	opacity: 0.65;
+	animation: question_animation 1.5s alternate ease-out infinite;
 }
 .question_rtl {
 	transform: scale(-1, 1);
-	position: absolute;
 	top: 1rem;
 	left: 0.5rem;
 	z-index: 2;
+	opacity: 0.65;
+	animation: question_animation 1.5s alternate ease-out infinite;
 }
+.robot_shadow_rtl {
+	top: 13.5rem;
+	left: 3.2rem;
+}
+.robot_shadow_ltr {
+	top: 13.5rem;
+	right: 3.2rem;
+}
+.shadow {
+	opacity: 0.15;
+	-webkit-filter: blur(6px);
+	filter: blur(6px);
+	animation: shadow_animation 1.5s alternate ease-out infinite;
+}
+
+@keyframes shadow_animation {
+	0% {
+		opacity: 0.5;
+	}
+}
+@keyframes question_animation {
+	0% {
+		opacity: 0.2;
+	}
+}
+
 .background_bottom {
-	padding-top: 2rem;
+	padding-top: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

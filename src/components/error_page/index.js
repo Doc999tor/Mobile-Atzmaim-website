@@ -7,7 +7,7 @@ export default ({ referer }) => {
 		<div id='error' class={style.error} >
 			<div class={style.error_wrap}>
 				<div class={style.top_section}>
-					<div class={style.title}>
+					<div class={`${style.title} ${style.height}`}>
 						<h2 >{config.translations.error_page.title}</h2>
 						<p>{config.translations.error_page.text}</p>
 					</div>
@@ -15,6 +15,7 @@ export default ({ referer }) => {
 						<img class={config.isRTL ? style.inner_rtl : style.inner_ltr} src={config.urls.media + 'bg_top.svg'} alt='background' />
 						<img class={config.isRTL ? style.outer_rtl : style.outer_ltr} src={config.urls.media + 'ill_robot.svg'} alt='robot' />
 						<img class={config.isRTL ? style.question_rtl : style.question_ltr} src={config.urls.media + 'question.svg'} alt='question image' />
+						<img class={config.isRTL ? `${style.robot_shadow_rtl} ${style.shadow}` : `${style.robot_shadow_ltr} ${style.shadow}`} src={config.urls.media + 'robot_shadow.svg'} alt='robot_shadow image' />
 					</div>
 				</div>
 				<div class={style.background_bottom}>
