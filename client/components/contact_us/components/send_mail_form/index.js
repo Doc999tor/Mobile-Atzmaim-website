@@ -1,9 +1,9 @@
 import { h, Component, Fragment, createRef } from 'preact'
 import { route } from 'preact-router'
 import { postService } from '../../../../services/send_mail.js'
-import { default as validatePhone } from 'project_components/validate-phone'
-import { getCurrentFormatTime } from '../../../../helpers/helpers'
-import { config }from 'home_website/config_ssr.js'
+import { default as validatePhone } from '../../../../../components-lib/validate-phone'
+import { getCurrentFormatTime } from '../../../../helpers/helpers.js'
+import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 import SendModal from '../send_mail_modal'
 
 export default class SendMailForm extends Component {

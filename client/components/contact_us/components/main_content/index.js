@@ -1,7 +1,7 @@
 import { h } from 'preact'
 import Messenger from '../messenger'
 import SendButton from '../send_mail_button'
-import { config }from 'home_website/config_ssr.js'
+import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 
 export default ({ onOpenMailForm }) => {
 	return (
