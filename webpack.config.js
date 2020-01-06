@@ -15,7 +15,8 @@ module.exports = {
 	resolve: {
 		extensions: ['.jsx', '.js', '.json', '.less'],
 		alias: {
-			home_website: path.resolve(__dirname, './components-lib/Home_website')
+			home_website: path.resolve(__dirname, './components-lib/Home_website'),
+			project_components: path.resolve('./components-lib')
 		}
 	},
   optimization: {

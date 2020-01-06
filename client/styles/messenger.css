@@ -1,0 +1,25 @@
+.messenger_item {
+	box-sizing: border-box;
+	padding: 0.4rem;
+	width: 48%;
+	display: flex;
+	align-items: center;
+	border-radius: 50px;
+	text-decoration: none;
+	box-shadow: 0 6px 8px 0 rgba(41, 41, 204, 0.16);
+	margin: 0.5rem 0;
+	background-color: var(--white-color);
+}
+.messenger_icon_wrap {
+	display: block;
+	width: 40px;
+	height: 40px;
+}
+.messenger_name {
+	color: var(--main-color);
+	font-weight: 500;
+	font-size: 1.1rem;
+	-moz-padding-start: 0.6rem;
+	-webkit-padding-start: 0.6rem;
+	padding-inline-start: 0.6rem;
+}

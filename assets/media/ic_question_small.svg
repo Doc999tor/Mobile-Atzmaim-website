@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13" height="20.5" viewBox="0 0 13 20.5">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#fff;stroke-miterlimit:10;stroke-width:.5px}
+        </style>
+    </defs>
+    <g id="ic_question" transform="translate(-33.75 -256.75)">
+        <path id="Fill_1567" d="M12.5 6.25a6.25 6.25 0 1 0-12.5 0 1.25 1.25 0 0 0 2.5 0A3.75 3.75 0 1 1 6.25 10 1.249 1.249 0 0 0 5 11.25v2.5a1.25 1.25 0 1 0 2.5 0v-1.378a6.258 6.258 0 0 0 5-6.122" class="cls-1" data-name="Fill 1567" transform="translate(34 257)"/>
+        <path id="Fill_1569" d="M1.25 0A1.25 1.25 0 1 0 2.5 1.25 1.249 1.249 0 0 0 1.25 0" class="cls-1" data-name="Fill 1569" transform="translate(39 274.5)"/>
+    </g>
+</svg>

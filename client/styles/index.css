@@ -3,8 +3,13 @@
 @import './addFeedback.css';
 @import './allFeatures.css';
 @import './commonInfo.css';
+@import './sendButton.css';
+@import './contactUs.css';
+@import './messenger.css';
 @import './bussiness.css';
+@import './sendModal.css';
 @import './details.less';
+@import './sendForm.css';
 @import './feedback.css';
 @import './carousel.css';
 @import './pricing.css';
