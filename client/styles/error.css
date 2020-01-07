@@ -21,6 +21,9 @@
 	-webkit-padding-start: 1rem;
 	padding-inline-start: 1rem;
 }
+.error_top_section .error_height {
+	min-height: 16rem;
+}
 .error_title h2 {
 	font-size: 3.1rem;
 }
@@ -39,26 +42,67 @@
 	position: absolute;
 }
 .error_outer_ltr {
-	top: 4rem;
+	top: 4.2rem;
 	right: 3rem;
 	z-index: 2;
+	animation: robot_animation 1.5s alternate ease-out infinite;
 }
 .error_outer_rtl {
 	transform: scale(-1, 1);
-	top: 4rem;
+	top: 4.2rem;
 	left: 3rem;
 	z-index: 2;
+	animation: robot_animation_rtl 1.5s alternate ease-out infinite;
+}
+@keyframes robot_animation {
+	0% {
+		transform: translateY(0.5rem);
+	}
+}
+@keyframes robot_animation_rtl {
+	0% {
+		transform: translateY(0.5rem) scale(-1, 1);
+	}
 }
 .question_ltr {
 	top: 1rem;
 	right: 0.5rem;
+	opacity: 0.65;
 	z-index: 2;
+	animation: question_animation 1.5s alternate ease-out infinite;
 }
 .question_rtl {
 	transform: scale(-1, 1);
 	top: 1rem;
 	left: 0.5rem;
+	opacity: 0.65;
 	z-index: 2;
+	animation: question_animation 1.5s alternate ease-out infinite;
+}
+.robot_shadow_rtl {
+	top: 13.5rem;
+	left: 3.2rem;
+}
+.robot_shadow_ltr {
+	top: 13.5rem;
+	right: 3.2rem;
+}
+.self_shadow {
+	opacity: 0.15;
+	-webkit-filter: blur(6px);
+	filter: blur(6px);
+	animation: shadow_animation 1.5s alternate ease-out infinite;
+}
+
+@keyframes shadow_animation {
+	0% {
+		opacity: 0.5;
+	}
+}
+@keyframes question_animation {
+	0% {
+		opacity: 0.2;
+	}
 }
 .error_background_bottom {
 	padding-top: 2rem;
