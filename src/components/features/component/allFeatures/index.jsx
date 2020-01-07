@@ -3,9 +3,12 @@ import Feature from '../feature'
 import style from './all.less'
 
 export default class AllFeatures extends Component {
-
 	shouldComponentUpdate = (nextProps, nextState) => {
 		if (nextProps.secondAnimation === this.props.secondAnimation) return false
+		let svgObject = document.getElementById('svg-object').contentDocument
+		let svg = svgObject.getElementById('Path_9426')
+		svg.classList.remove('hand')
+		nextProps.secondAnimation && svg.classList.add('hand')
 	}
 
 	render () {
@@ -26,15 +29,16 @@ export default class AllFeatures extends Component {
 						{secondAnimation && <h2>{config.translations.features.content.title}</h2>}
 					</div>
 					<div class={style.background_top}>
+						<object id='svg-object' class={config.isRTL ? secondW : (secondAnimation ? firstW : style.blank_woman_l)} data={config.urls.media + 'woman_features.svg'} type="image/svg+xml"></object>
 						{!secondAnimation
 							? <Fragment>
 								<img class={config.isRTL ? `${style.scale} ${style.blank_phone_r}` : style.blank_phone_l} src={config.urls.media + 'phone_fch.svg'} alt='phone off' />
-								<img class={config.isRTL ? `${style.scale} ${style.blank_woman_r}` : style.blank_woman_l} src={config.urls.media + 'woman_fch.svg'} alt='woman' />
+								{/* <img class={config.isRTL ? `${style.scale} ${style.blank_woman_r}` : style.blank_woman_l} src={config.urls.media + 'woman_fch.svg'} alt='woman' /> */}
 							</Fragment>
 							: <Fragment>
 								<img class={config.isRTL ? `${style.scale} ${staticBgrR}` : staticBgrL} src={config.urls.media + 'bg_top.svg'} alt='background' />
 								<img class={config.isRTL ? secondP : firstP} src={config.urls.media + 'active_phone.svg'} alt='phone on' />
-								<img class={config.isRTL ? secondW : firstW} src={config.urls.media + 'active_woman.svg'} alt='woman' />
+								{/* <img class={config.isRTL ? secondW : firstW} src={config.urls.media + 'active_woman.svg'} alt='woman' /> */}
 							</Fragment>}
 					</div>
 				</section>
