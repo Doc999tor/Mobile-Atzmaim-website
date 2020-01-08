@@ -3,11 +3,12 @@ import Feature from '../feature'
 import style from './all.less'
 
 export default class AllFeatures extends Component {
+
 	shouldComponentUpdate = (nextProps, nextState) => {
 		if (nextProps.secondAnimation === this.props.secondAnimation) return false
 		let svgObject = document.getElementById('svg-object').contentDocument
 		let svg = svgObject.getElementById('Path_9426')
-		svg.classList.remove('hand')
+		svg && svg.classList.remove('hand')
 		nextProps.secondAnimation && svg.classList.add('hand')
 	}
 
@@ -29,7 +30,7 @@ export default class AllFeatures extends Component {
 						{secondAnimation && <h2>{config.translations.features.content.title}</h2>}
 					</div>
 					<div class={style.background_top}>
-						<object id='svg-object' class={config.isRTL ? secondW : (secondAnimation ? firstW : style.blank_woman_l)} data={config.urls.media + 'woman_features.svg'} type="image/svg+xml"></object>
+						<object id='svg-object' class={config.isRTL ? (secondAnimation ? secondW : `${style.scale} ${style.blank_woman_r}`) : (secondAnimation ? firstW : style.blank_woman_l)} data={config.urls.media + 'woman_features.svg'} type="image/svg+xml"></object>
 						{!secondAnimation
 							? <Fragment>
 								<img class={config.isRTL ? `${style.scale} ${style.blank_phone_r}` : style.blank_phone_l} src={config.urls.media + 'phone_fch.svg'} alt='phone off' />

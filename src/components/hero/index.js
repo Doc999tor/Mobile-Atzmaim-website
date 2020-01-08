@@ -15,7 +15,7 @@ export default class Hero extends Component {
 		return (
 			<div id='hero' className={style.height} >
 				<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>
-					<div class={`${style.common} ${animation && (style.shadow + ' ' + style.test)}`} >
+					<div class={`${style.common} ${animation ? style.shadow : ''}`} >
 						<div class={`${style.content} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 							{animation && <h2>{config.translations.hero_page.title}</h2>}
 							{animation && <div class={style.feature_wrap}>
