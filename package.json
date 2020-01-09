@@ -16,6 +16,7 @@
     "chalk": "^3.0.0",
     "express": "^4.17.1",
     "preact": "^10.0.5",
+    "preact-async-route": "^2.2.1",
     "preact-render-to-string": "^5.1.1",
     "preact-router": "^3.1.0"
   },
@@ -29,6 +30,7 @@
     "@babel/register": "^7.7.4",
     "@babel/runtime": "^7.7.4",
     "babel-loader": "^8.0.6",
+    "babel-plugin-dynamic-import-node-sync": "^2.0.1",
     "babel-plugin-transform-require-ignore": "^0.1.1",
     "body-scroll-lock": "^2.6.4",
     "copy-webpack-plugin": "^5.0.5",

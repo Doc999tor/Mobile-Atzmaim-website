@@ -10,7 +10,7 @@ const port = 8080;
 app.use(express.static(path.join(__dirname, "dist")));
 app.listen(port);
 app.get('*', (req, res) => {
-  let html = render(<App />);
+  let html = render(h(App, {url: req.url}));
   res.send(`
   <!DOCTYPE html>
   <html lang="en">
