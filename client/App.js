@@ -1,6 +1,5 @@
 import { h, Component } from 'preact'
 import { Router, route } from 'preact-router'
-// import AsyncRoute from 'preact-async-route'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import qs from 'qs'
 import { config }from '../components-lib/Home_website/config_ssr.js'
@@ -36,21 +35,9 @@ export class App extends Component {
 		clearAllBodyScrollLocks()
 	}
 
-	// getMain = (url, cb, props) => {
-	// 	const component = import('./components/main')
-	// 	cb({component: component.default})
-	// }
-	// getError = (url, cb, props) => {
-	// 	const component = import('./components/error_page')
-	// 	cb({component: component.default})
-	// }
-	// getContactUs = (url, cb, props) => {
-	// 	const component = import('./components/contact_us')
-	// 	cb({component: component.default})
-	// }
 	render () {
 		return (
-		<div id="app">
+		<div id="content">
 				<Header active={this.state.active}
 					menuOnOff={this.menuOnOff}
 					closeMenu={this.closeMenu}
@@ -59,20 +46,6 @@ export class App extends Component {
 					<Main path={config.baseUrl + '/'} />
           <ErrorPage referer={this.state.referer} path={config.baseUrl + '/error'} />
 					<ContactUs path={config.urls.contact_us} active={this.state.active} closeMenu={this.closeMenu} />
-					{/* <AsyncRoute
-						path={config.baseUrl + '/'}
-						getComponent={this.getMain} />
-          <AsyncRoute
-						referer={this.state.referer}
-						path={config.baseUrl + '/error'}
-						getComponent={this.getError}
-					/>
-					<AsyncRoute
-						path={config.urls.contact_us}
-						active={this.state.active}
-						closeMenu={this.closeMenu}
-						getComponent={this.getContactUs}
-					/> */}
 				</Router>
 	    </div>
 		)

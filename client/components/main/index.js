@@ -3,7 +3,6 @@ import BusinessTypes from '../business_types'
 import { config } from '../../../components-lib/Home_website/config_ssr.js'
 import Navigation from '../navigation'
 import Features from '../features'
-// import Header from '../header'
 import Hero from '../hero'
 import Pricing from '../pricing'
 import Feedback from '../feedback'
@@ -69,7 +68,6 @@ export default class Main extends Component {
 		}
 	  return (
 	    <div id='main' class='main'>
-				{/* <Header /> */}
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}
