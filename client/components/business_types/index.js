@@ -7,13 +7,13 @@ export default ({ animation }) => {
 		<div id='business_types' class='height'>
 			<section class='top_section'>
 				<div class={`text ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
-					{animation && <h2 >{config.translations.business_types.main_title}</h2>}
-					{animation && <div class='types_actions'>
+					<h2 class={!animation ? 'hidden_content' : ''}>{config.translations.business_types.main_title}</h2>
+					 <div class={!animation ? 'hidden_content' : 'types_actions'}>
 						<div class='types_tap'>
 							<img src={config.urls.media + 'ic_tap.svg'} alt='tap icon' />
 						</div>
 						<p>{config.translations.business_types.preview_text}</p>
-					</div>}
+					</div>
 				</div>
 				<div class='background_top'>
 					{!animation
@@ -26,12 +26,12 @@ export default ({ animation }) => {
 				</div>
 			</section>
 			<section class={animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}>
-				{animation && <div>
+				<div class={!animation ? 'hidden_content' : ''}>
 					<h3 class='subtitle'>{config.translations.business_types.subtitle}</h3>
 					<div class='business_type'>
 						{config.modules.business_types.data.map(item => <Bussiness name={item.name} icon={item.icon} />)}
 					</div>
-				</div>}
+				</div>
 			</section>
 		</div>
 	)

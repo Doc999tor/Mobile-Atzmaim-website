@@ -17,7 +17,7 @@ export default class CommonInfo extends Component {
 			<div>
 				<section class='top_section'>
 					<div class={`text ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
-						{animation && <h2>{config.translations.pricing.title}</h2>}
+						<h2 class={!animation ? 'hidden_content' : ''}>{config.translations.pricing.title}</h2>
 					</div>
 					<div class='background_top'>
 						{!animation
@@ -31,14 +31,14 @@ export default class CommonInfo extends Component {
 					</div>
 				</section>
 				<section class={`types_wrap ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
-					{animation && <div>
+					<div class={!animation ? 'hidden_content' : ''}>
 						<h3 class='price_subtitle'>{config.translations.pricing.subtitle}</h3>
 						{!showDetail
 							? <section class={'pricing_plan'}>
 								{config.modules.pricing.data.map(item => <SmallPreview showDetail={this.handleShowDetail} name={item.name} icon={item.icon} value={item.price_monthly} />)}
 							</section>
 							: <DetailInfo />}
-					</div>}
+					</div>
 				</section>
 			</div>
 		)

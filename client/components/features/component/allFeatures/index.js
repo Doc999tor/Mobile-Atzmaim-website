@@ -22,7 +22,7 @@ export default class AllFeatures extends Component {
 			<div class={`container ${!secondAnimation && 'bgr'}`}>
 				<section class='top_section'>
 					<div class={`text ${secondAnimation && (config.isRTL ? staticTitleRtl : staticTitleLtr)}`}>
-						{secondAnimation && <h2>{config.translations.features.content.title}</h2>}
+						<h2 class={!secondAnimation ? 'hidden_content' : ''}>{config.translations.features.content.title}</h2>
 					</div>
 					<div class='background_top'>
 						{!secondAnimation
@@ -38,7 +38,7 @@ export default class AllFeatures extends Component {
 					</div>
 				</section>
 				<div class={`wrap ${secondAnimation && (config.isRTL ? staticTitleRtl : staticTitleLtr)}` }>
-					{secondAnimation && <div class='features_container'>
+					{<div class={!secondAnimation ? 'hidden_content' : 'features_container'}>
 						{config.modules.features.data.map(item => {
 							const svgObj = iconsData.find(i => item.name === i.name)
 							return <Feature selectFeature={selectFeature} feature={item} svgObj={svgObj} />

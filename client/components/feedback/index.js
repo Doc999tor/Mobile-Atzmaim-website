@@ -36,15 +36,13 @@ export default class Reviews extends Component {
 					: <div>
 						<section class='top_section'>
 							<div class={`text ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
-								{animation && <Fragment>
-									<h2 >{config.translations.feedback.main_title}</h2>
-									<div class='types_actions'>
-										<div class='types_tap' onClick={this.handleToggleForm}>
-											<img src={config.urls.media + 'ic_reviews_active.svg'} alt='reviews' />
-										</div>
-										<p>{config.translations.feedback.leave_btn_label}</p>
+								<h2 class={!animation ? 'hidden_content' : ''}>{config.translations.feedback.main_title}</h2>
+								<div class={!animation ? 'hidden_content' : 'types_actions'}>
+									<div class='types_tap' onClick={this.handleToggleForm}>
+										<img src={config.urls.media + 'ic_reviews_active.svg'} alt='reviews' />
 									</div>
-								</Fragment>}
+									<p>{config.translations.feedback.leave_btn_label}</p>
+								</div>
 							</div>
 							<div class='background_top'>
 								{!animation
@@ -58,12 +56,12 @@ export default class Reviews extends Component {
 							</div>
 						</section>
 						<section class={`types_wrap ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
-							{animation && <div>
+							<div class={!animation ? 'hidden_content' : ''}>
 								<h3 class='subtitle'>{config.translations.feedback.subtitle}</h3>
 								<div class='reviews_wrap'>
 									{feedback.map(item => <Feedback icon={item.picture} name={item.customer_name} rating={item.rating} text={item.text} />)}
 								</div>
-							</div>}
+							</div>
 						</section>
 					</div>}
 			</div>

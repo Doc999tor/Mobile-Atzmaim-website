@@ -37,7 +37,7 @@ export class App extends Component {
 
 	render () {
 		return (
-		<div id="content">
+		<div id="app">
 				<Header active={this.state.active}
 					menuOnOff={this.menuOnOff}
 					closeMenu={this.closeMenu}

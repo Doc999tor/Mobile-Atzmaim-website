@@ -52,6 +52,9 @@ h1, h2, h3, figure, p, ul {
 .topSection_rtl {
 	animation: topSection_rtl 0.6s ease-out forwards;
 }
+.hidden_content {
+	opacity: 0;
+}
 @keyframes topSection_ltr {
 	from {
 		opacity: 0;
