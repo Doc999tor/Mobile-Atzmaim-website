@@ -11,6 +11,10 @@ export default class ChangeLang extends Component {
 
 	handleChangeLanguage = (e, value) => {
 		e.preventDefault()
+		if (value === this.state.activeLang) {
+			this.closedPopup()
+			return
+		}
 		this.setState({
 			activeLang: value,
 			open: false
