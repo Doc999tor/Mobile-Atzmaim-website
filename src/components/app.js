@@ -54,7 +54,6 @@ export default class App extends Component {
 					/>
 					<AsyncRoute
 						active={this.state.active}
-						closeMenu={this.closeMenu}
 						path={config.urls.contact_us}
 						getComponent={this.getContactUs}
 					/>
