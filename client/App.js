@@ -38,14 +38,15 @@ export class App extends Component {
 	render () {
 		return (
 		<div id="app">
-				<Header active={this.state.active}
+				<Header
+					active={this.state.active}
 					menuOnOff={this.menuOnOff}
 					closeMenu={this.closeMenu}
 					referer={this.state.referer} />
 				<Router>
 					<Main path={config.baseUrl + '/'} />
           <ErrorPage referer={this.state.referer} path={config.baseUrl + '/error'} />
-					<ContactUs path={config.urls.contact_us} active={this.state.active} closeMenu={this.closeMenu} />
+					<ContactUs path={config.urls.contact_us} active={this.state.active} />
 				</Router>
 	    </div>
 		)

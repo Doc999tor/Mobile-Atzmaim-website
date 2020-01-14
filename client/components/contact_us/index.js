@@ -7,8 +7,6 @@ export default class ContactUs extends Component {
 		openMailForm: false
 	}
 
-	componentDidMount = () => this.props.closeMenu()
-
 	handleOpenMailForm = () => this.setState({ openMailForm: true })
 
 	handleCloseMailForm = () => this.setState({ openMailForm: false })

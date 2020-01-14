@@ -4,7 +4,7 @@
 	height: 100%;
 	top: 3.5rem;
 	left: 0;
-	background: rgba(0, 0, 0, 0.8);
+	background-color: var(--main-bgcolor);
 	animation: alive_background 0.1s ease-out forwards;
 }
 @keyframes alive_background {
@@ -86,6 +86,16 @@
 }
 .networks a {
 	display: block;
+}
+.lang_btn {
+	justify-content: center;
+	background-color: transparent;
+	border: none;
+}
+.lang_img {
+	-moz-padding-end: 0.7rem;
+	-webkit-padding-end: 0.7rem;
+	padding-inline-end: 0.7rem;
 }
 
 
