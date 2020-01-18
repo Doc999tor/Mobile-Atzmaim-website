@@ -59,7 +59,7 @@ export default class Reviews extends Component {
 							<div class={!animation ? 'hidden_content' : ''}>
 								<h3 class='subtitle'>{config.translations.feedback.subtitle}</h3>
 								<div class='reviews_wrap'>
-									{feedback.map(item => <Feedback icon={item.picture} name={item.customer_name} rating={item.rating} text={item.text} />)}
+									{feedback.map(item => <Feedback icon={item.picture_web} name={item.customer_name} rating={item.rating} text={item.text} />)}
 								</div>
 							</div>
 						</section>

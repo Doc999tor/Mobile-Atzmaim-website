@@ -14,6 +14,7 @@ export default class ContactUs extends Component {
 	render () {
 		const { openMailForm } = this.state
 		const background = { backgroundColor: 'white' }
+		console.log('contact_us', this.props)
 		return (
 			<div id='contact_us' class='height' style={openMailForm ? background : ''}>
 				{!openMailForm

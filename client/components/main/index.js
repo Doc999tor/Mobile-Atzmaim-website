@@ -66,6 +66,7 @@ export default class Main extends Component {
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
+		console.log('main', this.props)
 	  return (
 	    <div id='main' class='main'>
 	      {
