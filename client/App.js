@@ -8,6 +8,7 @@ import Main from './components/main'
 import ErrorPage from './components/error_page'
 import ContactUs from './components/contact_us'
 
+
 export class App extends Component {
 	state = {
 		referer: 'home_page',
@@ -35,7 +36,7 @@ export class App extends Component {
 		clearAllBodyScrollLocks()
 	}
 
-	render () {
+	render (props) {
 		return (
 		<div id="app">
 				<Header
@@ -43,7 +44,7 @@ export class App extends Component {
 					menuOnOff={this.menuOnOff}
 					closeMenu={this.closeMenu}
 					referer={this.state.referer} />
-				<Router>
+				<Router {...props}>
 					<Main path={config.baseUrl + '/'} />
           <ErrorPage referer={this.state.referer} path={config.baseUrl + '/error'} />
 					<ContactUs path={config.urls.contact_us} active={this.state.active} />
