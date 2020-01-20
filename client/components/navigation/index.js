@@ -1,11 +1,8 @@
 import { h, Component } from 'preact'
 import { config } from '../../../components-lib/Home_website/config_ssr.js'
-// import style from './nav.less'
-// import './nav.less'
 
 export default class Navigation extends Component {
 	state = {
-		// active: location.hash ? location.hash : '#hero'
 		active: '#hero'
 	}
 
@@ -25,7 +22,7 @@ export default class Navigation extends Component {
   							onClick={() => this.toggleClass(link, linkName)}
   							class={active === link.link ? 'match_nav' : 'link_nav'}
 								href={config.baseUrl + link.link}
-								// href={location.origin + location.pathname + link.link}
+								native
 								>
 								<svg class={active === link.link ? 'img_active_nav' : 'img_inactive_nav'}>
 									<use xlinkHref={config.urls.media_navigation + link.icon + '#' + link.icon.slice(0, -4)} />
