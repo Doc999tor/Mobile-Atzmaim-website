@@ -24,7 +24,7 @@ export default class Navigation extends Component {
 							return <a
   							onClick={() => this.toggleClass(link, linkName)}
   							class={active === link.link ? 'match_nav' : 'link_nav'}
-								href={link.link}
+								href={config.baseUrl + link.link}
 								// href={location.origin + location.pathname + link.link}
 								>
 								<svg class={active === link.link ? 'img_active_nav' : 'img_inactive_nav'}>

@@ -21,12 +21,7 @@ module.exports = {
       {
         test:  /\.(js|jsx?)$/,
         exclude: /node_modules/,
-				use:{
-          loader: 'babel-loader',
-          options: {
-            plugins: ['dynamic-import-node-sync']
-          }
-        }
+				use: 'babel-loader'
       },
       {
 				test: /\.css$/,
@@ -76,7 +71,8 @@ module.exports = {
 		}),
 		new CopyWebpackPlugin([
 			{ from: './components-lib/Home_website', to: './components-lib/Home_website' },
-			{ from: './assets', to: './assets' }
+			{ from: './assets', to: './assets' },
+			{ from: './favicon.ico', to: './favicon.ico'}
 		])
 	])
 };

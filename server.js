@@ -9,31 +9,23 @@ const mustacheExpress = require('mustache-express');
 
 const app = express();
 const port = 8080;
+const home_page = config.baseUrl
+const contact_page = config.urls.contact_us
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', process.cwd() + '/views');
 app.use(express.static(path.join(__dirname, "dist")));
-app.get('*', (req, res) => {
-  console.log('empty', req.url);
-  console.log(config.baseUrl, req.url, config.baseUrl===req.url );
+
+app.get(home_page, (req, res, next) => {
   res.render('index', {
     ssr: render(h(App, {url: req.url})),
   });
 });
-app.get('/en/home', (req, res, next) => {
-  console.log('home', req.url);
-  console.log(config.baseUrl, req.url, config.baseUrl===req.url );
-  res.render('index', {
-    ssr: render(h(App, {url: req.url})),
-  });
-});
-app.get('/en/contact_us', (req, res) => {
-  console.log('contact_us', req.url);
-  // res.send('contact_us page')
+app.get(contact_page, (req, res) => {
   res.render('contact_us', {
     ssr: render(h(App, {url: req.url})),
   });
 });
 app.listen(port);
 
-console.log(chalk.green(`Server started at http://localhost:${port}`));
+console.log(chalk.green(`Server started at http://localhost:${port}${home_page}`));
