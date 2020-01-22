@@ -33,17 +33,6 @@ export default class Slideshow extends Component {
   	})
   };
 
-  prev = () => {
-  	const current = this.state.current
-  	let previousSlide = current - 1
-  	if (previousSlide < 0) {
-  		previousSlide = config.modules.hero.gallery.length - 1
-  	}
-  	this.setState({
-  		current: previousSlide
-  	})
-  };
-
   isActive = (slide) => {
   	return this.state.current === slide
   };
