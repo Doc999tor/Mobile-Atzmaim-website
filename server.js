@@ -10,18 +10,17 @@ const mustacheExpress = require('mustache-express');
 const app = express();
 const port = 8080;
 const home_page = config.baseUrl
-const contact_page = config.urls.contact_us
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', process.cwd() + '/views');
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.get(home_page, (req, res, next) => {
+app.get('/:lang/home', (req, res) => {
   res.render('index', {
     ssr: render(h(App, {url: req.url})),
   });
 });
-app.get(contact_page, (req, res) => {
+app.get('/:lang/contact_us', (req, res) => {
   res.render('contact_us', {
     ssr: render(h(App, {url: req.url})),
   });
