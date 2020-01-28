@@ -1,6 +1,5 @@
 import { h, Component } from 'preact'
 import Slide from './slide.js'
-import { config } from '../../../components-lib/Home_website/config_ssr.js'
 
 export default class Slideshow extends Component {
   state = {
@@ -21,6 +20,7 @@ export default class Slideshow extends Component {
   };
 
   next = () => {
+		const config = this.props.config
   	const current = this.state.current
   	let nextSlide = current + 1
 
@@ -34,6 +34,7 @@ export default class Slideshow extends Component {
   };
 
   prev = () => {
+		const config = this.props.config
   	const current = this.state.current
   	let previousSlide = current - 1
   	if (previousSlide < 0) {
@@ -56,10 +57,10 @@ export default class Slideshow extends Component {
   	this.stopRotation()
   }
 
-  render () {
+  render ({ translations, config }) {
   	const generateSlides = (
   		config.modules.hero.gallery.map((slideName, i) => (
-  			<Slide name={slideName} current={this.isActive(i)} key={i} />)
+  			<Slide config={config} name={slideName} current={this.isActive(i)} key={i} />)
   		)
   	)
   	return (

@@ -33,7 +33,7 @@ export default class Hero extends Component {
 						<div class='phone_wrap'>
 							{!animation
 								? <img class='black_phone' src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-								: <Slideshow cycleSpeed={config.modules.hero.gallery_speed} />}
+								: <Slideshow translations={translations} config={config} cycleSpeed={config.modules.hero.gallery_speed} />}
 						</div>
 					</div>
 				</div>

@@ -1,8 +1,8 @@
 import { h } from 'preact'
 import CommonInfo from './component/commonInfo'
 
-export default ({ animation }) => (
+export default ({ animation, translations, config }) => (
 	<div id='pricing' class='pricing'>
-		<CommonInfo animation={animation} />
+		<CommonInfo translations={translations} config={config} animation={animation} />
 	</div>
 )

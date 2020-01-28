@@ -1,6 +1,5 @@
 import { h, Component } from 'preact'
 import AllFeatures from './component/allFeatures'
-import { config }from '../../../components-lib/Home_website/config_ssr.js'
 import Details from './component/details'
 
 export default class Features extends Component {
@@ -12,6 +11,7 @@ export default class Features extends Component {
 	}
 
 	selectFeature = item => {
+		const config = this.props.config
 		const selectedFeature = config.modules.features.data.find(i => i.name === item.name)
 		const svgObj = this.props.iconsData.find(i => item.name === i.name)
 		this.setState({
@@ -28,14 +28,14 @@ export default class Features extends Component {
 		}, () => setTimeout(() => this.setState({ animations: false }), 100))
 	}
 
-	render () {
+	render ({ translations, config }) {
 		const { showDetail, selectedFeature, svgObj, animations } = this.state
 		return (
 			<div id='features' class='height'>
 				{
 					!showDetail
-						? <AllFeatures {...this.props} selectFeature={this.selectFeature} animations={animations} />
-						: <Details backToAll={this.backToAll} svgObj={svgObj} selectedFeature={selectedFeature} />
+						? <AllFeatures {...this.props} translations={translations} config={config} selectFeature={this.selectFeature} animations={animations} />
+						: <Details backToAll={this.backToAll} translations={translations} config={config} svgObj={svgObj} selectedFeature={selectedFeature} />
 				}
 			</div>
 		)

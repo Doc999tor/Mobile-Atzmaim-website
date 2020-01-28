@@ -1,5 +1,4 @@
 import { h, Fragment, Component } from 'preact'
-import { config }from '../../../../../components-lib/Home_website/config_ssr.js';
 import Feature from '../feature'
 
 export default class AllFeatures extends Component {
@@ -8,8 +7,7 @@ export default class AllFeatures extends Component {
 		if (nextProps.secondAnimation === this.props.secondAnimation) return false
 	}
 
-	render () {
-		const { iconsData, selectFeature, animations, secondAnimation, activeLink } = this.props
+	render ({ translations, config, iconsData, selectFeature, animations, secondAnimation, activeLink }) {
 		const firstP = animations ? 'discover_phone' : 'phone_act'
 		const firstW = animations ? 'discover_woman' : 'active_woman_l'
 		const secondP = animations ? 'discover_phone_rtl' : 'phone_act_r'
@@ -22,7 +20,7 @@ export default class AllFeatures extends Component {
 			<div class={`container ${!secondAnimation && 'bgr'}`}>
 				<section class='top_section'>
 					<div class={`text ${secondAnimation && (config.isRTL ? staticTitleRtl : staticTitleLtr)}`}>
-						<h2 class={!secondAnimation ? 'hidden_content' : ''}>{config.translations.features.content.title}</h2>
+						<h2 class={!secondAnimation ? 'hidden_content' : ''}>{translations.features.content.title}</h2>
 					</div>
 					<div class='background_top'>
 						{!secondAnimation
@@ -41,7 +39,7 @@ export default class AllFeatures extends Component {
 					{<div class={!secondAnimation ? 'hidden_content' : 'features_container'}>
 						{config.modules.features.data.map(item => {
 							const svgObj = iconsData.find(i => item.name === i.name)
-							return <Feature selectFeature={selectFeature} feature={item} svgObj={svgObj} />
+							return <Feature translations={translations} selectFeature={selectFeature} feature={item} svgObj={svgObj} />
 						})}
 					</div>}
 				</div>

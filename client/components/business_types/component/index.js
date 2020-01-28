@@ -1,5 +1,5 @@
 import { h, Component } from 'preact'
-import { config }from '../../../../components-lib/Home_website/config_ssr.js'
+
 export default class Bussiness extends Component {
 	state = {
 		animation: false
@@ -7,22 +7,22 @@ export default class Bussiness extends Component {
 
 	init = () => setTimeout(() => this.setState({ animation: !this.state.animation }), 100)
 
-	render () {
+	render ({ translations, config }) {
 		const { name, icon } = this.props
 		const { animation } = this.state
 		return (
 			<div class={`busn_common ${this.state.animation ? 'busn_main2' : 'busn_main'}`} onClick={this.init}>
 				<div class={this.state.animation ? 'busn_sub2' : 'busn_sub'}>
 					<picture>
-						<source srcSet={config.urls.media_business_types + icon + '.webp'} alt={config.translations.business_types.content[name].title} />
-						<img class='busn_img' src={config.urls.media_business_types + icon + '.jpg'} width='272' height='167' loading='lazy' alt={config.translations.business_types.content[name].title} />
+						<source srcSet={config.urls.media_business_types + icon + '.webp'} alt={translations.business_types.content[name].title} />
+						<img class='busn_img' src={config.urls.media_business_types + icon + '.jpg'} width='272' height='167' loading='lazy' alt={translations.business_types.content[name].title} />
 					</picture>
 				</div>
 				<div class={this.state.animation ? 'busn_bottom_info2' : 'busn_bottom_info'}>
-					<p class='busn_title'>{config.translations.business_types.content[name].title}</p>
+					<p class='busn_title'>{translations.business_types.content[name].title}</p>
 					{animation &&	<div>
 						<div class='busn_line' />
-						<p class='busn_text'>{config.translations.business_types.content[name].text}</p>
+						<p class='busn_text'>{translations.business_types.content[name].text}</p>
 					</div>}
 				</div>
 			</div>

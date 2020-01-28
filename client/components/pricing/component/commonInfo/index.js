@@ -1,5 +1,4 @@
 import { h, Fragment, Component } from 'preact'
-import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 import SmallPreview from '../smallPreview'
 import DetailInfo from '../detailInfo'
 
@@ -10,14 +9,13 @@ export default class CommonInfo extends Component {
 
 	handleShowDetail = () => this.setState({ showDetail: !this.state.showDetail })
 
-	render () {
-		const { animation } = this.props
+	render ({animation, translations, config}) {
 		const { showDetail } = this.state
 		return (
 			<div>
 				<section class='top_section'>
 					<div class={`text ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
-						<h2 class={!animation ? 'hidden_content' : ''}>{config.translations.pricing.title}</h2>
+						<h2 class={!animation ? 'hidden_content' : ''}>{translations.pricing.title}</h2>
 					</div>
 					<div class='background_top'>
 						{!animation
@@ -32,12 +30,12 @@ export default class CommonInfo extends Component {
 				</section>
 				<section class={`types_wrap ${animation && (config.isRTL ? 'topSection_rtl' :'topSection_ltr')}`}>
 					<div class={!animation ? 'hidden_content' : ''}>
-						<h3 class='price_subtitle'>{config.translations.pricing.subtitle}</h3>
+						<h3 class='price_subtitle'>{translations.pricing.subtitle}</h3>
 						{!showDetail
 							? <section class={'pricing_plan'}>
-								{config.modules.pricing.data.map(item => <SmallPreview showDetail={this.handleShowDetail} name={item.name} icon={item.icon} value={item.price_monthly} />)}
+								{config.modules.pricing.data.map(item => <SmallPreview translations={translations} config={config} showDetail={this.handleShowDetail} name={item.name} icon={item.icon} value={item.price_monthly} />)}
 							</section>
-							: <DetailInfo />}
+							: <DetailInfo translations={translations} config={config} />}
 					</div>
 				</section>
 			</div>

@@ -1,7 +1,6 @@
 import { h } from 'preact'
-import { config } from '../../../components-lib/Home_website/config_ssr.js'
 
-export default ({ name, current }) => {
+export default ({ name, current, config }) => {
 	return (
 		<div class={`carousel_slide ${current ? 'active_slide' : ''}`}>
 			<picture>
