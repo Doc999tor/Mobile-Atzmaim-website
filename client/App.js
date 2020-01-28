@@ -2,7 +2,6 @@ import { h, Component } from 'preact'
 import { Router, route } from 'preact-router'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import qs from 'qs'
-import { config }from '../components-lib/Home_website/config_ssr.js'
 import Header from './components/header'
 import Main from './components/main'
 import ErrorPage from './components/error_page'
@@ -14,14 +13,16 @@ export class App extends Component {
 		referer: 'home_page',
 		active: false
 	}
-
+	
 	componentDidMount = () => {
-		document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr'
-		const obj = qs.parse(location.search.slice(1))
-		if (obj.page === 'error') {
-			if (obj.referer) {
-				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
-			} else route(config.baseUrl + '/error', true)
+		if (config) {
+			document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr'
+			const obj = qs.parse(location.search.slice(1))
+			if (obj.page === 'error') {
+				if (obj.referer) {
+					this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
+				} else route(config.baseUrl + '/error', true)
+			}
 		}
 	}
 
@@ -37,17 +38,21 @@ export class App extends Component {
 	}
 
 	render (props) {
+		let internalConfig = props.config || config
+		const translations = props.translations || local_translations
 		return (
 		<div id="app">
 				<Header
+					translations={translations}
+					config={internalConfig}
 					active={this.state.active}
 					menuOnOff={this.menuOnOff}
 					closeMenu={this.closeMenu}
 					referer={this.state.referer} />
 				<Router {...props}>
-					<Main path={config.baseUrl + '/'} />
-          <ErrorPage referer={this.state.referer} path={config.baseUrl + '/error'} />
-					<ContactUs path={config.urls.contact_us} active={this.state.active} />
+					<Main translations={translations} config={internalConfig} path={internalConfig.baseUrl + '/'} />
+          <ErrorPage translations={translations} config={internalConfig} referer={this.state.referer} path={internalConfig.baseUrl + '/error'} />
+					<ContactUs translations={translations} config={internalConfig} path={internalConfig.urls.contact_us} active={this.state.active} />
 				</Router>
 	    </div>
 		)

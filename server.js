@@ -1,5 +1,6 @@
 const express = require("express");
-const { config } = require("./components-lib/Home_website/config_ssr.js")
+const { configFn } = require("./components-lib/Home_website/config_ssr.js")
+const { all_translations } = require("./components-lib/Home_website/all.js")
 const { h } = require("preact");
 const render = require('preact-render-to-string');
 const path = require("path");
@@ -9,15 +10,21 @@ const mustacheExpress = require('mustache-express');
 
 const app = express();
 const port = 8080;
-const home_page = config.baseUrl
+const home_page = configFn().baseUrl
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', process.cwd() + '/views');
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.get('/:lang/home', (req, res) => {
+app.get('/:lang/home', async (req, res) => {
+  const { lang } = req.params
+  let translations = JSON.stringify(all_translations[lang])
+  let globalConfig = JSON.stringify(configFn(lang))
+  let config = configFn(lang)
   res.render('index', {
-    ssr: render(h(App, {url: req.url})),
+    ssr: render(h(App, {url: req.url, translations: all_translations[lang], config })),
+    translations,
+    globalConfig
   });
 });
 app.get('/:lang/contact_us', (req, res) => {

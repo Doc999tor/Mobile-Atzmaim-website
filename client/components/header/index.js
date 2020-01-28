@@ -1,7 +1,6 @@
 import { h, Component } from 'preact'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import Menu from '../menu'
-import { config } from '../../../components-lib/Home_website/config_ssr.js'
 import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
 
 export default class Header extends Component {
@@ -18,7 +17,7 @@ export default class Header extends Component {
 		clearAllBodyScrollLocks()
 	}
 
-	render () {
+	render ({translations, config}) {
 		const { active } = this.state
 		return (
 			<div class='header_wrap'>
@@ -30,7 +29,7 @@ export default class Header extends Component {
 						</div>
 						<a class='login_link' href={config.urls.login}>
 							<img src={config.urls.media + 'ic_lock.svg'} alt='lock' />
-							<span>{config.translations.hero.log_in}</span>
+							<span>{translations.hero.log_in}</span>
 						</a>
 					</div>
 					{this.props.referer !== 'application'
@@ -38,7 +37,7 @@ export default class Header extends Component {
 						: active && <MenuApp closeMenu={this.closeMenu} />}
 					<div class='header_cont'>
 						<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
-						<span class='header_logo'>{config.translations.hero.main_logo}</span>
+						<span class='header_logo'>{translations.hero.main_logo}</span>
 					</div>
 				</header>
 			</div>
