@@ -11,14 +11,14 @@ export default class ContactUs extends Component {
 
 	handleCloseMailForm = () => this.setState({ openMailForm: false })
 
-	render () {
+	render ({ translations, config }) {
 		const { openMailForm } = this.state
 		const background = { backgroundColor: 'white' }
 		return (
 			<div id='contact_us' class='height' style={openMailForm ? background : ''}>
 				{!openMailForm
-					? <MainContent onOpenMailForm={this.handleOpenMailForm} />
-					: <SendMailForm onCloseMailForm={this.handleCloseMailForm} />}
+					? <MainContent translations={translations} config={config} onOpenMailForm={this.handleOpenMailForm} />
+					: <SendMailForm translations={translations} config={config} onCloseMailForm={this.handleCloseMailForm} />}
 			</div>
 		)
 	}

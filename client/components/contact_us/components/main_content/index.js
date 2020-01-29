@@ -1,20 +1,19 @@
 import { h } from 'preact'
 import Messenger from '../messenger'
 import SendButton from '../send_mail_button'
-import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 
-export default ({ onOpenMailForm }) => {
+export default ({ onOpenMailForm, translations, config }) => {
 	return (
 		<div id='main_content'>
 			<section class='top_section'>
 				<div class='top_title'>
-					<h2 >{config.translations.contact_us.main_title}</h2>
+					<h2 >{translations.contact_us.main_title}</h2>
 					<a class='phone' href={`tel:${config.modules.contact_us.phone_number}`}>{config.modules.contact_us.phone_number}</a>
 					<div class='contact_actions'>
 						<div class='tap'>
 							<img src={config.urls.media + 'ic_question_small.svg'} alt='tap icon' />
 						</div>
-						<p>{config.translations.contact_us.preview_text}</p>
+						<p>{translations.contact_us.preview_text}</p>
 					</div>
 				</div>
 				<div class='background_top'>
@@ -23,11 +22,11 @@ export default ({ onOpenMailForm }) => {
 				</div>
 			</section>
 			<section class='bottom_section'>
-				<h3 class='contact_subtitle'> {config.translations.contact_us.subtitle}</h3>
+				<h3 class='contact_subtitle'> {translations.contact_us.subtitle}</h3>
 				<div class='contact_container'>
-					{config.modules.contact_us.data.map(item => <Messenger messenger={item} />)}
+					{config.modules.contact_us.data.map(item => <Messenger translations={translations} config={config} messenger={item} />)}
 				</div>
-				<SendButton openForm={onOpenMailForm} />
+				<SendButton translations={translations} config={config} openForm={onOpenMailForm} />
 			</section>
 		</div>
 	)

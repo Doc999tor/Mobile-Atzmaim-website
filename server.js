@@ -30,8 +30,16 @@ app.get('/:lang/home', async (req, res) => {
   });
 });
 app.get('/:lang/contact_us', (req, res) => {
+  const { lang } = req.params
+  let translations = JSON.stringify(all_translations[lang])
+  let globalConfig = JSON.stringify(configFn(lang))
+  let globalLang = JSON.stringify(lang)
+  let config = configFn(lang)
   res.render('contact_us', {
-    ssr: render(h(App, {url: req.url})),
+    ssr: render(h(App, {url: req.url, translations: all_translations[lang], config, lang})),
+    translations,
+    globalConfig,
+    globalLang
   });
 });
 app.listen(port);

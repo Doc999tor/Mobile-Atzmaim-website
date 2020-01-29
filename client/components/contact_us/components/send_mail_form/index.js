@@ -3,7 +3,6 @@ import { route } from 'preact-router'
 import { postService } from '../../../../services/send_mail.js'
 import { default as validatePhone } from '../../../../../components-lib/validate-phone'
 import { getCurrentFormatTime } from '../../../../helpers/helpers.js'
-import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
 import SendModal from '../send_mail_modal'
 
 export default class SendMailForm extends Component {
@@ -24,6 +23,7 @@ export default class SendMailForm extends Component {
 
 	handleSendMailForm = e => {
 		e.preventDefault()
+		const { config } = this.props
 		const { contact, mail, valid } = this.state
 		if (contact && mail && valid) {
 			this.setState({ send: true, sending: true }, () => {
@@ -71,23 +71,23 @@ export default class SendMailForm extends Component {
 		}
 	}
 
-	render () {
+	render ({ translations, config }) {
 		const { send, sending } = this.state
 		return (
 			<Fragment>
 				{!send
 					? <form id='send_form' onSubmit={this.handleSendMailForm} class='send_form_container'>
-						<h2 class='send_form_title'>{config.translations.contact_us.send_form.main_title}</h2>
-						<p class='input_label'>{config.translations.contact_us.send_form.phone_mail_label}</p>
+						<h2 class='send_form_title'>{translations.contact_us.send_form.main_title}</h2>
+						<p class='input_label'>{translations.contact_us.send_form.phone_mail_label}</p>
 						<input ref={this.contactDetail} name='contact' onBlur={this.handleValidation} onInput={this.handleCangeInput} class={`contact_input ${!this.state.valid ? 'not_valid' : ''}`} type='text' />
-						<p class='input_label'>{config.translations.contact_us.send_form.message_label}</p>
+						<p class='input_label'>{translations.contact_us.send_form.message_label}</p>
 						<textarea ref={this.textArea} name='mail' onInput={this.handleCangeInput} class='textarea' />
 						<div class='send_form_btn_wrap'>
-							<button class='send_form_cancel' type='button' onClick={this.props.onCloseMailForm}><img src={config.urls.media + 'ic_cancel.svg'} />{config.translations.contact_us.send_form.cancel_btn_label}</button>
-							<button class='send_form_send' type='submit'><img src={config.urls.media + 'ic_send.svg'} />{config.translations.contact_us.send_form.send_btn_label}</button>
+							<button class='send_form_cancel' type='button' onClick={this.props.onCloseMailForm}><img src={config.urls.media + 'ic_cancel.svg'} />{translations.contact_us.send_form.cancel_btn_label}</button>
+							<button class='send_form_send' type='submit'><img src={config.urls.media + 'ic_send.svg'} />{translations.contact_us.send_form.send_btn_label}</button>
 						</div>
 					</form>
-					: <SendModal sending={sending} />
+					: <SendModal translations={translations} config={config} sending={sending} />
 				}
 			</Fragment>
 		)
