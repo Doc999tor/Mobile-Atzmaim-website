@@ -34,7 +34,7 @@ export default class Header extends Component {
 					</div>
 					{this.props.referer !== 'application'
 						? active && <Menu translations={translations} config={config} lang={lang} close={this.closeMenu} />
-						: active && <MenuApp closeMenu={this.closeMenu} />}
+						: active && <MenuApp translations={translations} commonConfig={config} closeMenu={this.closeMenu} />}
 					<div class='header_cont'>
 						<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
 						<span class='header_logo'>{translations.hero.main_logo}</span>
