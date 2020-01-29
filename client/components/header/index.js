@@ -17,7 +17,7 @@ export default class Header extends Component {
 		clearAllBodyScrollLocks()
 	}
 
-	render ({translations, config}) {
+	render ({translations, config, lang}) {
 		const { active } = this.state
 		return (
 			<div class='header_wrap'>
@@ -33,7 +33,7 @@ export default class Header extends Component {
 						</a>
 					</div>
 					{this.props.referer !== 'application'
-						? active && <Menu close={this.closeMenu} />
+						? active && <Menu translations={translations} config={config} lang={lang} close={this.closeMenu} />
 						: active && <MenuApp closeMenu={this.closeMenu} />}
 					<div class='header_cont'>
 						<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />

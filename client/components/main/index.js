@@ -70,7 +70,7 @@ export default class Main extends Component {
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}
-	      <Navigation handleClickNav={this.handleClickNav} links={componentsForRendering} />
+	      <Navigation translations={translations} config={config} handleClickNav={this.handleClickNav} links={componentsForRendering} />
 	    </div>
 	  )
 	}

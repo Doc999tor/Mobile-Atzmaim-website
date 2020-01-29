@@ -1,9 +1,8 @@
 import { h, Component } from 'preact'
-import { lang, config } from '../../../components-lib/Home_website/config_ssr.js'
 
 export default class ChangeLang extends Component {
 	state = {
-		activeLang: lang,
+		activeLang: this.props.lang,
 		open: true
 	}
 
@@ -29,13 +28,13 @@ export default class ChangeLang extends Component {
 		}, 300))
 	}
 
-	render ({ close }, { activeLang, open }) {
+	render ({ config, translations, close }, { activeLang, open }) {
 		return (
 			<div id='lang' onClick={this.closedPopup} class='lang_wrapper'>
 				<ul onClick={this.handlestopPropagation} class={`lang_list ${!open ? 'lang_closed' : ''}`} >
-					{Object.keys(config.translations.languages).map(item => (
+					{Object.keys(translations.languages).map(item => (
 						<li key={item}>
-							<a onClick={e => this.handleChangeLanguage(e, item)} href={`/${item}/home`} class={`lang_link ${activeLang === item ? 'lang_active' : ''}`}>{config.translations.languages[item]}<img class={activeLang === item ? 'lang_check_mark' : 'lang_mark'} src={config.urls.media + 'ic_selected.svg'} /></a>
+							<a onClick={e => this.handleChangeLanguage(e, item)} href={`/${item}/home`} class={`lang_link ${activeLang === item ? 'lang_active' : ''}`}>{translations.languages[item]}<img class={activeLang === item ? 'lang_check_mark' : 'lang_mark'} src={config.urls.media + 'ic_selected.svg'} /></a>
 						</li>
 					))}
 				</ul>

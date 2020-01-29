@@ -1,6 +1,6 @@
 import { h } from 'preact'
-import { config }from '../../../../../components-lib/Home_website/config_ssr.js'
-export default ({ icon, name, rating, text }) => {
+
+export default ({ config, icon, name, rating, text }) => {
 	const onError = e => {
 		if (!e.target.src.endsWith(config.urls.default_avatar)) {
 			e.target.src = config.urls.default_path_to_avatar + config.urls.default_avatar
@@ -12,7 +12,7 @@ export default ({ icon, name, rating, text }) => {
 	return (
 		<div class='client_feedback'>
 			<div class='post_client_info'>
-				<img class='post_picture' height='64' width='64' alt={icon} src={config.urls.media + 'coin.svg'} onError={onError} />
+				<img class='post_picture' height='64' width='64' alt={icon} src={config.urls.media_clients + icon} onError={onError} />
 				<div class='post_wrap'>
 					<p>{name}</p>
 					<div>{Rating(rating)}</div>

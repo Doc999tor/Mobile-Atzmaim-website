@@ -1,5 +1,4 @@
 import { h, Component } from 'preact'
-import { config } from '../../../components-lib/Home_website/config_ssr.js'
 
 export default class Navigation extends Component {
 	state = {
@@ -10,13 +9,13 @@ export default class Navigation extends Component {
 		this.setState({ active: link.link }, () => this.props.handleClickNav(linkName))
 	}
 
-	render () {
+	render ({translations, config, links}) {
 		const { active } = this.state
 		return (
 			<div class='navigation_wrap'>
 				<div class='helper_nav'>
 					<nav class='navigation'>
-						{this.props.links.map(linkName => {
+						{links.map(linkName => {
 							const link = config.navigation[linkName]
 							return <a
   							onClick={() => this.toggleClass(link, linkName)}
@@ -27,7 +26,7 @@ export default class Navigation extends Component {
 								<svg class={active === link.link ? 'img_active_nav' : 'img_inactive_nav'}>
 									<use xlinkHref={config.urls.media_navigation + link.icon + '#' + link.icon.slice(0, -4)} />
 								</svg>
-								{config.translations.navigation[linkName].name}
+								{translations.navigation[linkName].name}
 							</a>
 						})}
 					</nav>

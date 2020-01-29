@@ -38,13 +38,15 @@ export class App extends Component {
 	}
 
 	render (props) {
-		let internalConfig = props.config || config
+		const internalConfig = props.config || config
 		const translations = props.translations || local_translations
+		const internalLang = props.lang || local_lang
 		return (
 		<div id="app">
 				<Header
 					translations={translations}
 					config={internalConfig}
+					lang={internalLang}
 					active={this.state.active}
 					menuOnOff={this.menuOnOff}
 					closeMenu={this.closeMenu}
