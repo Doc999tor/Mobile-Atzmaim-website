@@ -19,7 +19,7 @@ export default class ChangeLang extends Component {
 			activeLang: value,
 			open: false
 		}, () => setTimeout(() => {
-			location.href = `/${this.state.activeLang}/home`
+			location.href = config.urls.home_page.replace('{lang}', this.state.activeLang)
 		}, 300))
 	}
 
@@ -35,7 +35,7 @@ export default class ChangeLang extends Component {
 				<ul onClick={this.handlestopPropagation} class={`${style.list} ${!open ? style.closed : ''}`} >
 					{Object.keys(config.translations.languages).map(item => (
 						<li key={item}>
-							<a onClick={e => this.handleChangeLanguage(e, item)} href={`/${item}/home`} class={`${style.link} ${activeLang === item ? style.active : ''}`}>{config.translations.languages[item]}<img class={activeLang === item ? style.check_mark : style.mark} src={config.urls.media + 'ic_selected.svg'} /></a>
+							<a onClick={e => this.handleChangeLanguage(e, item)} href={config.urls.home_page.replace('{lang}', item)} class={`${style.link} ${activeLang === item ? style.active : ''}`}>{config.translations.languages[item]}<img class={activeLang === item ? style.check_mark : style.mark} src={config.urls.media + 'ic_selected.svg'} /></a>
 						</li>
 					))}
 				</ul>
