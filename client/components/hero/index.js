@@ -27,7 +27,7 @@ export default class Hero extends Component {
 								)})}
 							</div>
 							<a class={!animation ? 'hidden_content' :'button'} href={config.urls.signup}>
-								<span >{translations.hero_page.button_text}</span>
+								<span class='hero_btn_label'>{translations.hero_page.button_text}</span>
 							</a>
 						</div>
 						<div class='phone_wrap'>

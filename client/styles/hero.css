@@ -103,6 +103,7 @@
 	color: var(--white-color)
 }
 .button {
+	display: flex;
 	margin-top: 1rem;
 	text-decoration: none;
 	padding: 0.8rem 1.5rem;
@@ -112,6 +113,9 @@
 	color: var(--white-color);
 	border-radius: 50px;
 	box-shadow: 0 10px 15px 0 rgba(255, 0, 170, 0.45);
+}
+.hero_btn_label {
+	text-align: center;
 }
 .phone_animation {
 	animation: phone_animation 0.5s ease-out;

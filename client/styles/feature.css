@@ -4,7 +4,7 @@
 	align-items: center;
 	background-color: white;
 	width: 44.5vw;
-	height: 3.2rem;
+	height: 4rem;
 	padding: 0.6rem 0;
 	-moz-padding-start: 0.6rem;
 	-webkit-padding-start: 0.6rem;
@@ -20,7 +20,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
-	-webkit-line-clamp: 2;
+	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 }
 .single_feature_icon {
@@ -38,4 +38,5 @@
 	padding: 0 0.6rem;
 	font-size: 0.9rem;
 	font-weight: 500;
+	line-height: 1.21
 }
