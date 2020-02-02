@@ -30,7 +30,7 @@ export default class Hero extends Component {
 								})}
 							</div>}
 							{animation && <a class={style.button} href={config.urls.signup}>
-								<span >{config.translations.hero_page.button_text}</span>
+								<span class={style.button_label} >{config.translations.hero_page.button_text}</span>
 							</a>}
 						</div>
 						<div class={style.phone_wrap}>
