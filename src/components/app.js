@@ -1,4 +1,4 @@
-import { Router } from 'preact-router'
+// import { Router } from 'preact-router'
 // import { Router, route } from 'preact-router'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 // import AsyncRoute from 'preact-async-route'
@@ -43,14 +43,14 @@ export default class App extends Component {
 	// getContactUs = (url, cb, props) => import('./contact_us').then(module => module.default)
 
 	render () {
-		console.log('App', config)
+		console.log('1 App', config)
 	  return (
 	    <div id='app'>
 				<Header active={this.state.active} menuOnOff={this.menuOnOff} closeMenu={this.closeMenu} referer={this.state.referer} />
-				<Router>
-					<Main path={config.baseUrl + '/'} />
-					<ErrorPage path={config.baseUrl + '/error'} referer={this.state.referer} />
-					<ContactUs path={config.urls.contact_us} active={this.state.active} />
+					<Main />
+				{/* <Router> */}
+					{/* <ErrorPage path={config.baseUrl + '/error'} referer={this.state.referer} /> */}
+					{/* <ContactUs path={config.urls.contact_us} active={this.state.active} /> */}
 					{/* <AsyncRoute
 						path={config.baseUrl + '/'}
 						getComponent={this.getMain}
@@ -66,7 +66,7 @@ export default class App extends Component {
 						getComponent={this.getContactUs}
 					/> */}
 
-				</Router>
+				{/* </Router> */}
 	    </div>
 	  )
 	}
