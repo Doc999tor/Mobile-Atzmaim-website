@@ -1,10 +1,13 @@
+// import { Router } from 'preact-router'
 import { Router, route } from 'preact-router'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-import AsyncRoute from 'preact-async-route'
+// import AsyncRoute from 'preact-async-route'
 import { h, Component } from 'preact'
-import qs from 'qs'
+// import qs from 'qs'
 import Header from './header'
-// import Redirect from './redirect'
+import Main from './main'
+// import ErrorPage from './error_page'
+// import ContactUs from './contact_us'
 
 export default class App extends Component {
 	state = {
@@ -14,21 +17,29 @@ export default class App extends Component {
 
 	componentDidMount = () => {
 		document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr'
-		const obj = qs.parse(location.search.slice(1))
-		// console.log('object')
-		if (obj.page === 'error') {
-			if (obj.referer) {
-				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
-			} else route(config.baseUrl + '/error', true)
+		// location
+		console.log(location)
+		if (location.pathname !== config.baseUrl && location.pathname !== config.baseUrl + '/error' && location.pathname !== config.urls.contact_us) {
+			console.log('redirect')
+			route(config.baseUrl, true)
 		}
+		// const obj = qs.parse(location.search.slice(1))
+		// if (obj.page === 'error') {
+		// 	if (obj.referer) {
+		// 		this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
+		// 	} else route(config.baseUrl + '/error', true)
+		// }
+		// const obj = qs.parse(location.search.slice(1))
+		// if (obj.page === 'error') {
+		// 	if (obj.referer) {
+		// 		this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
+		// 	} else route(config.baseUrl + '/error', true)
+		// }
 	}
 
 	handleRoute = e => {
-		if (e.url !== config.baseUrl && e.url !== config.baseUrl + '/error' && e.url !== config.urls.contact_us) {
-			console.log('e.url', e.url)
-			route(config.baseUrl, true)
-		}
-}
+    console.log('e.url', e.url)
+  }
 
 	menuOnOff = () => {
 		this.setState({ active: !this.state.active }, () => {
@@ -41,19 +52,23 @@ export default class App extends Component {
 		clearAllBodyScrollLocks()
 	}
 
-	getMain = (url, cb, props) => import('./main').then(module => module.default)
+	// getMain = (url, cb, props) => import('./main').then(module => module.default)
 
-	getError = (url, cb, props) => import('./error_page').then(module => module.default)
 
-	getContactUs = (url, cb, props) => import('./contact_us').then(module => module.default)
+	// getError = (url, cb, props) => import('./error_page').then(module => module.default)
+
+	// getContactUs = (url, cb, props) => import('./contact_us').then(module => module.default)
 
 	render () {
 	  return (
 	    <div id='app'>
 				<Header active={this.state.active} menuOnOff={this.menuOnOff} closeMenu={this.closeMenu} referer={this.state.referer} />
 				<Router onChange={this.handleRoute}>
-					<AsyncRoute
-						path={config.baseUrl}
+				<Main path={config.baseUrl + '/'} />
+				{/* <ErrorPage path={config.baseUrl + '/error'} referer={this.state.referer} /> */}
+					{/* <ContactUs path={config.urls.contact_us} active={this.state.active} /> */}
+					{/* <AsyncRoute
+						path={config.baseUrl + '/'}
 						getComponent={this.getMain}
 					/>
 					<AsyncRoute
@@ -65,8 +80,8 @@ export default class App extends Component {
 						active={this.state.active}
 						path={config.urls.contact_us}
 						getComponent={this.getContactUs}
-					/>
-					{/* <Redirect path='/' to={config.baseUrl} /> */}
+					/> */}
+
 				</Router>
 	    </div>
 	  )
