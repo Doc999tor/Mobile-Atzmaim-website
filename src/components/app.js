@@ -2,7 +2,7 @@ import { Router, route } from 'preact-router'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import AsyncRoute from 'preact-async-route'
 import { h, Component } from 'preact'
-import qs from 'qs'
+// import qs from 'qs'
 import Header from './header'
 
 export default class App extends Component {
@@ -13,12 +13,12 @@ export default class App extends Component {
 
 	componentDidMount = () => {
 		document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr'
-		const obj = qs.parse(location.search.slice(1))
-		if (obj.page === 'error') {
-			if (obj.referer) {
-				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
-			} else route(config.baseUrl + '/error', true)
-		}
+		// const obj = qs.parse(location.search.slice(1))
+		// if (obj.page === 'error') {
+		// 	if (obj.referer) {
+		// 		this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
+		// 	} else route(config.baseUrl + '/error', true)
+		// }
 	}
 
 	menuOnOff = () => {
