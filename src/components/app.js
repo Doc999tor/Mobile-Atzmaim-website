@@ -4,7 +4,7 @@ import AsyncRoute from 'preact-async-route'
 import { h, Component } from 'preact'
 import qs from 'qs'
 import Header from './header'
-import Redirect from './redirect'
+// import Redirect from './redirect'
 
 export default class App extends Component {
 	state = {
@@ -15,6 +15,7 @@ export default class App extends Component {
 	componentDidMount = () => {
 		document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr'
 		const obj = qs.parse(location.search.slice(1))
+		console.log('object')
 		if (obj.page === 'error') {
 			if (obj.referer) {
 				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
@@ -23,8 +24,11 @@ export default class App extends Component {
 	}
 
 	handleRoute = e => {
-    console.log('e.url', e.url)
-  }
+		console.log('e.url', e.url)
+		if (e.url !== config.baseUrl || e.url !== config.baseUrl + '/error' || config.urls.contact_us) {
+			route(config.baseUrl, true)
+		}
+}
 
 	menuOnOff = () => {
 		this.setState({ active: !this.state.active }, () => {
@@ -62,7 +66,7 @@ export default class App extends Component {
 						path={config.urls.contact_us}
 						getComponent={this.getContactUs}
 					/>
-					<Redirect path='/' to={config.baseUrl} />
+					{/* <Redirect path='/' to={config.baseUrl} /> */}
 				</Router>
 	    </div>
 	  )
