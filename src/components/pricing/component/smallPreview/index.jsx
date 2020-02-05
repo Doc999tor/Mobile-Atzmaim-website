@@ -2,6 +2,8 @@ import { h } from 'preact';
 import style from './small.less';
 
 export default ({ name, icon, value, showDetail }) => {
+	console.log('showDetail')
+
 	const basic = name === 'basic';
 	return (
 		<div class={style.price + ' ' + (basic ? style.active : '')} onClick={showDetail}>

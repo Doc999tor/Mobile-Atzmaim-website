@@ -8,6 +8,7 @@ export default class OpenedPreview extends Component {
 	}
 	changeSwitch = () => this.setState({switchBox: !this.state.switchBox})
 	render() {
+		console.log('CommonInfo pricing')
 		const basic = this.props.name === 'basic';
 		const marker = {'listStyleImage': 'url(' + config.urls.media + (basic ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
 		const { name, icon, value } = this.props;

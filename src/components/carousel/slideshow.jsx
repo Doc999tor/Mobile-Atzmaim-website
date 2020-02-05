@@ -24,7 +24,7 @@ export default class Slideshow extends Component {
   	const current = this.state.current
   	let nextSlide = current + 1
 
-  	if (nextSlide > config.modules.hero.gallery.length - 1) {
+  	if (config.modules.hero.gallery && nextSlide > config.modules.hero.gallery.length - 1) {
   		nextSlide = 0
   	}
 
@@ -47,7 +47,7 @@ export default class Slideshow extends Component {
 
   render () {
   	const generateSlides = (
-  		config.modules.hero.gallery.map((slideName, i) => (
+  		config.modules.hero.gallery && config.modules.hero.gallery.map((slideName, i) => (
   			<Slide name={slideName} current={this.isActive(i)} key={i} />)
   		)
   	)

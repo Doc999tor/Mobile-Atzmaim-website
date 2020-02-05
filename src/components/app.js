@@ -39,6 +39,7 @@ export default class App extends Component {
 	getContactUs = (url, cb, props) => import('./contact_us').then(module => module.default)
 
 	render () {
+		console.log('App', config)
 	  return (
 	    <div id='app'>
 				<Header active={this.state.active} menuOnOff={this.menuOnOff} closeMenu={this.closeMenu} referer={this.state.referer} />

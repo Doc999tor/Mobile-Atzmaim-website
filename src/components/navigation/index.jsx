@@ -1,6 +1,5 @@
 import { h, Component } from 'preact'
 import style from './nav.less'
-// import './nav.less'
 
 export default class Navigation extends Component {
 	state = {
