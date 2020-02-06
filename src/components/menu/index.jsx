@@ -30,7 +30,7 @@ export default class Menu extends Component {
 							<li><a href={item.url}><img src={config.urls.media_social_networks + item.icon} alt={item.icon} /></a></li>
 						))}
 					</ul>
-					<button onClick={this.handleChangeLanguages} type='button' class={style.lang_btn}><img class={style.lang_img} src={config.urls.media + 'ic_language.svg'} alt='language image' />{config.translations.languages[lang]}</button>
+					{config.translations.languages && <button onClick={this.handleChangeLanguages} type='button' class={style.lang_btn}><img class={style.lang_img} src={config.urls.media + 'ic_language.svg'} alt='language image' />{config.translations.languages[lang]}</button>}
 					{changeLang && <ChangeLang close={this.handleChangeLanguages} />}
 				</div>
 			</section>
