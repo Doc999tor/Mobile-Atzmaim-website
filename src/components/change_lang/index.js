@@ -19,7 +19,7 @@ export default class ChangeLang extends Component {
 			activeLang: value,
 			open: false
 		}, () => setTimeout(() => {
-			location.href = config.urls.home_page.replace('{lang}', this.state.activeLang)
+			location.href = config.urls.home_page.replace('{lang}', this.state.activeLang) + location.search // for utm marks, '' if there isn't
 		}, 300))
 	}
 
