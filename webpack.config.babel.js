@@ -126,7 +126,7 @@ module.exports = {
 			{ from: './favicon.ico', to: './' },
 			{ from: './components-lib/Home_website', to: './components-lib/Home_website' }
 		]),
-		new CompressionPlugin()
+		// new CompressionPlugin()
 	]).concat(ENV==='production' ? [
 		new webpack.optimize.UglifyJsPlugin({
 			output: {
