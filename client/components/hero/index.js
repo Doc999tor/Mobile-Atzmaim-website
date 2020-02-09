@@ -15,7 +15,7 @@ export default class Hero extends Component {
 				<div class={`full ${animation ? 'backgroundImg' : ''}`} style={animation ? background : ''}>
 					<div class={'common' + (animation ? ' shadow' : '')} >
 						<div class={'content ' + (animation && (config.isRTL ? 'topSection_rtl' : 'topSection_ltr'))}>
-							<h1 class={!animation ? 'hidden_content' : ''}>{translations.hero_page.title}</h1>
+							<h1 class={!animation ? 'hidden_content' : ''}>{translations.hero.main_title}</h1>
 							<div class={animation ? 'feature_wrap' : 'hidden_content'}>
 								{features.map(f => {
 									const svgObj = iconsData.find(i => f.name === i.name)
@@ -27,13 +27,13 @@ export default class Hero extends Component {
 								)})}
 							</div>
 							<a class={!animation ? 'hidden_content' :'button'} href={config.urls.signup}>
-								<span class='hero_btn_label'>{translations.hero_page.button_text}</span>
+								<span class='hero_btn_label'>{translations.hero.button_label}</span>
 							</a>
 						</div>
 						<div class='phone_wrap'>
 							{!animation
 								? <img class='black_phone' src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-								: <Slideshow translations={translations} config={config} cycleSpeed={config.modules.hero.gallery_speed} />}
+								: <Slideshow translations={translations} config={config} cycleSpeed={config.modules.hero.carousel_time} />}
 						</div>
 					</div>
 				</div>

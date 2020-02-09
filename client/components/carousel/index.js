@@ -24,7 +24,7 @@ export default class Slideshow extends Component {
   	const current = this.state.current
   	let nextSlide = current + 1
 
-  	if (nextSlide > config.modules.hero.gallery.length - 1) {
+  	if (config.modules.hero.gallery && nextSlide > config.modules.hero.gallery.length - 1) {
   		nextSlide = 0
   	}
 
@@ -59,14 +59,17 @@ export default class Slideshow extends Component {
 
   render ({ translations, config }) {
   	const generateSlides = (
-  		config.modules.hero.gallery.map((slideName, i) => (
+  		config.modules.hero.gallery && config.modules.hero.gallery.map((slideName, i) => (
   			<Slide config={config} name={slideName} current={this.isActive(i)} key={i} />)
   		)
   	)
   	return (
   		<div class='slideshow__container'>
-				<img src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-  			{generateSlides}
+				<div class='border_container'>
+					<img src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
+					<img class='img_border' src={config.urls.media + 'phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
+					{generateSlides}
+				</div>
   		</div>
   	)
   }
