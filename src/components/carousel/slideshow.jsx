@@ -53,8 +53,11 @@ export default class Slideshow extends Component {
   	)
   	return (
   		<div class={style.slideshow__container}>
-				<img src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-  			{generateSlides}
+  			<div class={style.border_container}>
+  				<img src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
+  				<img class={style.img_border} src={config.urls.media + 'phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
+  				{generateSlides}
+  			</div>
   		</div>
   	)
   }

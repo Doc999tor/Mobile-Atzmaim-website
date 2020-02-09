@@ -17,7 +17,7 @@ export default class Hero extends Component {
 				<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>
 					<div class={`${style.common} ${animation && (style.shadow + ' ' + style.test)}`} >
 						<div class={`${style.content} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
-							{animation && <h2>{config.translations.hero_page.title}</h2>}
+							{animation && <h2>{config.translations.hero.main_title}</h2>}
 							{animation && <div class={style.feature_wrap}>
 								{features.map(f => {
 									const svgObj = iconsData.find(i => f.name === i.name)
@@ -30,13 +30,13 @@ export default class Hero extends Component {
 								})}
 							</div>}
 							{animation && <a class={style.button} href={config.urls.signup}>
-								<span class={style.button_label} >{config.translations.hero_page.button_text}</span>
+								<span class={style.button_label} >{config.translations.hero.button_label}</span>
 							</a>}
 						</div>
 						<div class={style.phone_wrap}>
 							{!animation
 								? <img class={style.black_phone} src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
-								: <Slideshow cycleSpeed={config.modules.hero.gallery_speed} />
+								: <Slideshow cycleSpeed={config.modules.hero.carousel_time} />
 							}
 						</div>
 					</div>
