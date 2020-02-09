@@ -22,6 +22,7 @@ export default class App extends Component {
 				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
 			} else route(config.baseUrl + '/error', true)
 		}
+		if (obj.page === 'contact_us') route(config.urls.contact_us, true)
 	}
 
 	menuOnOff = () => {
