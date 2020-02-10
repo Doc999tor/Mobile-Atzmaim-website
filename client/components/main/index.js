@@ -10,20 +10,12 @@ export default class Main extends Component {
 	state = {
 		animation: false,
 		activeLink: 'hero',
-		svgData: [],
-		features: []
+		svgData: []
 	}
 
 	componentDidMount = () => {
 		const arr = []
-		const featuresArr = []
-		this.props.config.modules.features.data.forEach(el => {
-			return el.forEach(item => {
-				featuresArr.push(item)
-			})
-		})
-		this.setState({features: [...featuresArr]})
-		const promises = featuresArr.map(feature => {
+		const promises = this.props.config.modules.features.data.map(feature => {
 			return fetch(`${this.props.config.urls.media_features}${feature.icon}`)
 				.then(response => {
 					if (response.status === 200) return response.text()
@@ -68,7 +60,7 @@ export default class Main extends Component {
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
 	    hero: <Hero translations={translations} config={config} iconsData={this.state.svgData} startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    features: <Features features={this.state.features} translations={translations} config={config} iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
+	    features: <Features translations={translations} config={config} iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes translations={translations} config={config} animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback translations={translations} config={config} animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    pricing: <Pricing translations={translations} config={config} animation={this.state.animation} activeLink={this.state.activeLink} />

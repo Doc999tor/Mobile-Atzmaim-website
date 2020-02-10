@@ -11,7 +11,7 @@ export default class Features extends Component {
 	}
 
 	selectFeature = item => {
-		const selectedFeature = this.props.features.find(i => i.name === item.name)
+		const selectedFeature = this.props.config.modules.features.data.find(i => i.name === item.name)
 		const svgObj = this.props.iconsData.find(i => item.name === i.name)
 		this.setState({
 			animations: true,
