@@ -11,13 +11,7 @@ export default class Hero extends Component {
 	render () {
 		const { animation, iconsData } = this.props
 		const background = { backgroundImage: 'url(' + config.urls.media + 'pic_bg.jpg' + ')' }
-		const featuresArr = []
-		config.modules.features.data.forEach(el => {
-			return el.forEach(item => {
-				featuresArr.push(item)
-			})
-		})
-		const features = featuresArr.filter(i => config.modules.hero.features.includes(i.name))
+		const features = config.modules.features.data.filter(i => config.modules.hero.features.includes(i.name))
 		return (
 			<div id='hero' className={style.height} >
 				<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>

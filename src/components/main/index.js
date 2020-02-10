@@ -11,22 +11,12 @@ export default class Main extends Component {
 	state = {
 		animation: false,
 		activeLink: 'hero',
-		svgData: [],
-		features: []
+		svgData: []
 	}
 
 	componentDidMount = () => {
 		const arr = []
-		const featuresArr = []
-		config.modules.features.data.forEach(el => {
-			return el.forEach(item => {
-				featuresArr.push(item)
-			})
-		})
-		this.setState({
-			features: [...featuresArr]
-		})
-		const promises = featuresArr.map(feature => {
+		const promises = config.modules.features.data.map(feature => {
 			return fetch(`${config.urls.media_features}${feature.icon}`)
 				.then(response => {
 					if (response.status === 200) return response.text()
@@ -71,7 +61,7 @@ export default class Main extends Component {
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
 	    hero: <Hero iconsData={this.state.svgData} startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    features: <Features features={this.state.features} iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
+	    features: <Features iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
