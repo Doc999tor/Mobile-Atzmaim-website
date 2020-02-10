@@ -15,7 +15,13 @@ export default class Main extends Component {
 
 	componentDidMount = () => {
 		const arr = []
-		const promises = this.props.config.modules.features.data.map(feature => {
+		const featuresArr = []
+		this.props.config.config.modules.features.data.forEach(el => {
+			return el.forEach(item => {
+				featuresArr.push(item)
+			})
+		})
+		const promises = featuresArr.map(feature => {
 			return fetch(`${this.props.config.urls.media_features}${feature.icon}`)
 				.then(response => {
 					if (response.status === 200) return response.text()
