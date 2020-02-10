@@ -37,11 +37,9 @@ export default class AllFeatures extends Component {
 				</section>
 				<div class={`wrap ${secondAnimation && (config.isRTL ? staticTitleRtl : staticTitleLtr)}` }>
 					{<div class={!secondAnimation ? 'hidden_content' : 'features_container'}>
-					{config.modules.features.data.map(arr => {
-							return arr.map(item => {
-								const svgObj = iconsData.find(i => item.name === i.name)
-								return <Feature selectFeature={selectFeature} feature={item} svgObj={svgObj} />
-							})
+					{this.props.features.map(item => {
+							const svgObj = iconsData.find(i => item.name === i.name)
+							return <Feature translations={translations} selectFeature={selectFeature} feature={item} svgObj={svgObj} />
 						})}
 					</div>}
 				</div>

@@ -15,7 +15,7 @@ export default class Hero extends Component {
 				featuresArr.push(item)
 			})
 		})
-		const features = config.modules.features.data.filter(i => config.modules.hero.features.includes(i.name))
+		const features = featuresArr.filter(i => config.modules.hero.features.includes(i.name))
 		return (
 			<div id='hero' class='height' >
 				<div class={`full ${animation ? 'backgroundImg' : ''}`} style={animation ? background : ''}>
