@@ -17,11 +17,12 @@
 
 .slide {
 	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	overflow: hidden;
 	height: 95%;
 	width: 95%;
-	padding-top: 0.5rem;
-	padding-inline-start: 0.5rem;
 	border-radius: 1.5rem;
   top: 0;
   right: 0;
@@ -29,6 +30,13 @@
   bottom: 0;
   opacity: 0;
   transition: opacity 1s;
+}
+
+.img {
+	object-fit: fill;
+	padding-top: 1.1rem;
+	padding-inline-start: 0.3rem;
+	width: 96%;
 }
 
 .active {
