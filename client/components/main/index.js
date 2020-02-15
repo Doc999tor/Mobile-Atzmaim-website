@@ -34,7 +34,7 @@ export default class Main extends Component {
 	}
 
 	shouldComponentUpdate = (nextProps, nextState) => {
-		if (nextState.animation === this.state.animation) return false
+		if (nextState.animation === this.state.animation  && this.state.svgData.length > 0) return false
 	}
 
 	handleClickNav = val => {

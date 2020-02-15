@@ -3,18 +3,24 @@
 	display: flex;
 	align-items: center;
 	background-color: white;
-	width: 44.5vw;
+	width: 40vw;
 	height: 4rem;
 	padding: 0.6rem 0;
 	-moz-padding-start: 0.6rem;
 	-webkit-padding-start: 0.6rem;
 	padding-inline-start: 0.6rem;
-	-moz-margin-end: 3%;
-	-webkit-margin-end: 3%;
-	margin-inline-end: 3%;
+	-moz-margin-end: 1.5%;
+	-webkit-margin-end: 1.5%;
+	margin-inline-end: 1.5%;
+	-moz-margin-start: 1.5%;
+	-webkit-margin-start: 1.5%;
+	margin-inline-start: 1.5%;
 	scroll-snap-align: end;
 	border-radius: 15px;
   box-shadow: 0 6px 8px 0 rgba(41, 41, 204, 0.16);
+}
+body[style="direction: rtl;"] .feature {
+	scroll-snap-align: start;
 }
 .text_wrap {
 	overflow: hidden;
