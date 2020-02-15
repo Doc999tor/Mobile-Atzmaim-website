@@ -34,6 +34,7 @@
 	padding-top: 1.1rem;
 	padding-inline-start: 0.3rem;
 	width: 96%;
+	object-fit: contain;
 }
 .active_slide {
   opacity: 1;
