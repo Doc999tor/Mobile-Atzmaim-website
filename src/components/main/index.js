@@ -32,6 +32,12 @@ export default class Main extends Component {
 		}, reason => {
 			console.log(reason)
 		})
+		const blockID = location.hash && location.hash.substr(1)
+		if (blockID) {
+			setTimeout(() => {
+				document.getElementById(blockID).scrollIntoView({ block: 'start' })
+			}, 0)
+		}
 	}
 
 	shouldComponentUpdate = (nextProps, nextState) => {
