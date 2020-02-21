@@ -34,6 +34,7 @@
 	text-decoration: none;
 	font-weight: 500;
 	font-size: 0.7rem;
+	transition: padding 0.2s;
 	color: var(--main-color);
 	svg {
 		margin-bottom: 0.1rem;
@@ -63,18 +64,15 @@
 	color: white;
 	font-size: 0.7rem;
 	font-weight: 500;
-	animation: avtiveTab 0.2s ease-in;
+	animation: avtiveTab 0.3s ease-out;
 	background-image: linear-gradient(129deg, #be95ff, #5333ed);
 	svg {
 		margin-bottom: 0.2rem;
 	}
 }
 @keyframes avtiveTab {
-	from {
-		height: 0;
+	0% {
+		transform: translateY(0.7rem);
 		padding: 0;
-	}
-	to {
-		height: auto;
 	}
 }
