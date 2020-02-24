@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -28,11 +27,12 @@ module.exports = {
 			components: path.resolve(__dirname, './src/components'),    // used for tests
 			style: path.resolve(__dirname, './src/style'),
 			home_website: path.resolve(__dirname, './components-lib/Home_website')
-		}
+		},
 	},
+	devtool: 'source-map',
 
 	optimization: {
-		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
+		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin({sourceMap: true})]
 	},
 	module: {
 		rules: [
@@ -125,39 +125,8 @@ module.exports = {
 			{ from: './assets', to: './assets' },
 			{ from: './favicon.ico', to: './' },
 			{ from: './components-lib/Home_website', to: './components-lib/Home_website' }
-		]),
-		// new CompressionPlugin()
-	]).concat(ENV==='production' ? [
-		new webpack.optimize.UglifyJsPlugin({
-			output: {
-				comments: false
-			},
-			compress: {
-				unsafe_comps: true,
-				properties: true,
-				keep_fargs: false,
-				pure_getters: true,
-				collapse_vars: true,
-				unsafe: true,
-				warnings: false,
-				screw_ie8: true,
-				sequences: true,
-				dead_code: true,
-				drop_debugger: true,
-				comparisons: true,
-				conditionals: true,
-				evaluate: true,
-				booleans: true,
-				loops: true,
-				unused: true,
-				hoist_funs: true,
-				if_return: true,
-				join_vars: true,
-				cascade: true,
-				drop_console: true
-			}
-		}),
-	] : []),
+		])
+	]),
 
 	stats: { colors: true },
 

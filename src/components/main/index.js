@@ -1,4 +1,6 @@
 import { h, Component } from 'preact'
+import { route } from 'preact-router'
+import qs from 'qs'
 import Hero from '../hero'
 import Navigation from '../navigation'
 import Features from '../features'
@@ -15,6 +17,13 @@ export default class Main extends Component {
 	}
 
 	componentDidMount = () => {
+		const obj = qs.parse(location.search.slice(1))
+		if (obj.page === 'error') {
+			if (obj.referer) {
+				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
+			} else route(config.baseUrl + '/error', true)
+		}
+		if (obj.page === 'contact_us') route(config.baseUrl + '/contact_us', true)
 		const arr = []
 		const promises = config.modules.features.data.map(feature => {
 			return fetch(`${config.urls.media_features}${feature.icon}`)

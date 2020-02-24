@@ -1,4 +1,4 @@
-import { Router, route } from 'preact-router'
+import { Router } from 'preact-router'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 // import AsyncRoute from 'preact-async-route'
 import { h, Component } from 'preact'
@@ -14,15 +14,8 @@ export default class App extends Component {
 		active: false
 	}
 
-	componentDidMount = () => {
+	componentDidMount () {
 		document.getElementsByTagName('body')[0].style.direction = config.isRTL ? 'rtl' : 'ltr'
-		const obj = qs.parse(location.search.slice(1))
-		if (obj.page === 'error') {
-			if (obj.referer) {
-				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
-			} else route(config.baseUrl + '/error', true)
-		}
-		if (obj.page === 'contact_us') route(config.urls.contact_us, true)
 	}
 
 	menuOnOff = () => {
@@ -49,7 +42,7 @@ export default class App extends Component {
 				<Router>
 					<Main path={config.baseUrl} />
 					<ErrorPage path={config.baseUrl + '/error'} referer={this.state.referer} />
-					{config.urls.contact_us && <ContactUs path={config.urls.contact_us} active={this.state.active} />}
+					{config.urls.contact_us && <ContactUs path={config.baseUrl + '/contact_us'} active={this.state.active} />}
 					{/* <AsyncRoute
 						path={config.baseUrl + '/'}
 						getComponent={this.getMain}
