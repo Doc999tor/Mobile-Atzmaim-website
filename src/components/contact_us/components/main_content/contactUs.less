@@ -16,7 +16,6 @@
 	margin-top: 1.5rem;
 	display: flex;
 	align-items: center;
-	max-width: 85%;
 	p {
 		font-size: 1rem;
 		font-weight: 500;
@@ -63,4 +62,10 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 0.7rem 1rem 0.5rem;
+}
+body[style="direction: rtl;"] & {
+	.phone {
+		direction: ltr;
+		text-align: end;
+	}
 }

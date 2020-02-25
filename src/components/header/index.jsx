@@ -1,10 +1,16 @@
 import { h } from 'preact'
+import { route } from 'preact-router'
 import Menu from '../menu'
 import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
 import style from './header.less'
 import './header.less'
 
 export default ({ active, referer, closeMenu, menuOnOff }) => {
+	const goHome = () => {
+		route(config.baseUrl || '/', true)
+		const hero = document.getElementById('hero')
+		hero && hero.scrollIntoView({ block: 'start' })
+	}
 	return (
 		<div class={style.header_wrap}>
 			<header class={style.header}>
@@ -21,7 +27,7 @@ export default ({ active, referer, closeMenu, menuOnOff }) => {
 				{referer !== 'application'
 					? active && <Menu close={closeMenu} />
 					: active && <MenuApp closeMenu={closeMenu} />}
-				<div class={style.cont}>
+				<div class={style.cont} onClick={goHome}>
 					<img src={config.urls.media_logo + 'ic_logo.svg'} alt='Logo' />
 					<span class={style.logo}>{config.translations.hero.main_logo}</span>
 				</div>

@@ -4,10 +4,12 @@
 	width: 100%;
 }
 .main {
-	min-width: 44%;
-	width: 44%;
+	flex-grow: 1;
 	h2 {
-    padding: 1.2rem .8rem 2rem;
+		padding: 1.2rem 0 2rem;
+		-moz-padding-start: 0.8rem;
+		-webkit-padding-start: 0.8rem;
+		padding-inline-start: 0.8rem;
 		font-size: 2rem;
 		min-height: 14rem;
 		font-weight: bold;
@@ -17,7 +19,7 @@
 .phone_wrap {
 	display: flex;
 	padding-top: 1.8rem;
-	width: 55%;
+	min-width: 52%;
 	overflow: hidden;
 	justify-content: center;
 	img {
