@@ -40,13 +40,17 @@ body[style="direction: rtl;"] {
 .icon {
 	display: flex;
 	svg {
-		width: 32px;
-		height: 32px;
+		width: 2rem;
+		height: 2rem;
 	}
 	svg {
-		path, g, circle {
+		path, g, circle, text {
 			fill: var(--main-bgcolor) !important;
 			stroke: var(--main-bgcolor) !important;
+		}
+		text {
+			direction: ltr;
+			font-weight: 500;
 		}
 	}
 }

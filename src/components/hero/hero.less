@@ -38,13 +38,17 @@
 .feature_icon {
 	display: flex;
 	svg {
-		width: 32px;
-		height: 32px;
+		width: 2rem;
+		height: 2rem;
 	}
 	svg {
-		path, g, circle {
+		path, g, circle, text {
 			fill: var(--white-color) !important;
 			stroke: var(--white-color) !important;
+		}
+		text {
+			direction: ltr;
+			font-weight: 500;
 		}
 	}
 }
