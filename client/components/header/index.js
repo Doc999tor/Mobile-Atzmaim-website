@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import { route } from 'preact-router'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import Menu from '../menu'
 import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
@@ -15,6 +16,12 @@ export default class Header extends Component {
 	closeMenu = () => {
 		this.setState({ active: false })
 		clearAllBodyScrollLocks()
+	}
+
+	goHome = () => {
+		route(config.baseUrl || '/', true)
+		const hero = document.getElementById('hero')
+		hero && hero.scrollIntoView({ block: 'start' })
 	}
 
 	render ({translations, config, lang}) {
@@ -35,7 +42,7 @@ export default class Header extends Component {
 					{this.props.referer !== 'application'
 						? active && <Menu translations={translations} config={config} lang={lang} close={this.closeMenu} />
 						: active && <MenuApp translations={translations} commonConfig={config} closeMenu={this.closeMenu} />}
-					<div class='header_cont'>
+					<div class='header_cont' onClick={this.goHome}>
 						<img src={config.urls.media + 'ic_logo.svg'} alt='Logo' />
 						<span class='header_logo'>{translations.hero.main_logo}</span>
 					</div>

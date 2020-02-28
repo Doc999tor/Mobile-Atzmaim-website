@@ -43,12 +43,16 @@
 	display: flex;
 }
 .feature_icon svg {
-	width: 32px;
-	height: 32px;
+	width: 2rem;
+	height: 2rem;
 }
-.feature_icon svg path, g, circle {
+.feature_icon svg path, g, circle, text {
 	fill: var(--white-color) !important;
 	stroke: var(--white-color) !important;
+}
+.feature_icon svg text {
+	direction: ltr;
+	font-weight: 500;
 }
 .shadow {
 	animation: bgr_shadow 0.5s ease-out;

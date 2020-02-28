@@ -29,7 +29,7 @@ app.get('/:lang/home', async (req, res) => {
     globalLang
   });
 });
-app.get('/:lang/contact_us', (req, res) => {
+app.get('/:lang/home/contact_us', (req, res) => {
   const { lang } = req.params
   let translations = JSON.stringify(all_translations[lang])
   let globalConfig = JSON.stringify(configFn(lang))

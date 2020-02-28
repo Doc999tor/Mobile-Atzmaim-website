@@ -1,5 +1,5 @@
 .screen_active_rtl {
-	top: 0.5rem;
+	top: -0.5rem;
 	left: -3.8rem;
 	z-index: 2;
 	transform: rotate3d(0, 1, 0, -180deg);
@@ -12,7 +12,7 @@
  }
 }
 .screen_active_ltr {
-	top: 0.5rem;
+	top: -0.5rem;
 	right: -3.8rem;
 	z-index: 2;
 	animation: screen_active_ltr 0.6s ease-out forwards;
@@ -30,16 +30,16 @@
 }
 .man_ltr {
 	top: 2.9rem;
-	right: 9rem;
+	right: 8.7rem;
 }
 .man_rtl {
 	transform: scale(-1, 1);
 	top: 2.9rem;
-	left: 9rem;
+	left: 8.7rem;
 }
 .man_active_ltr {
 	top: 2.9rem;
-	right: 8.5rem;
+	right: 8.2rem;
 	z-index: 2;
 	animation: man_active_ltr 0.6s ease-out;
 }
@@ -50,7 +50,7 @@
 }
 .man_active_rtl {
 	top: 2.9rem;
-	left: 8.5rem;
+	left: 8.2rem;
 	transform: scale(-1, 1);
 	z-index: 2;
 	animation: man_active_rtl 0.6s ease-out;
@@ -61,13 +61,13 @@
 	}
 }
 .coin_ltr {
-	top: 3.5rem;
+	top: 2.2rem;
 	right: -2rem;
 	z-index: 3;
 	animation: coin 0.6s ease-out forwards;
 }
 .coin_rtl {
-	top: 3.5rem;
+	top: 2.2rem;
 	left: -2rem;
 	z-index: 3;
 	animation: coin 0.6s ease-out forwards;

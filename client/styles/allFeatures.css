@@ -16,9 +16,11 @@
 }
 
 .text {
-	min-width: 44%;
-	width: 44%;
-	padding: 1.2rem 0.8rem 2.5rem;
+	flex-grow: 1;
+	padding: 1.2rem 0 2.5rem;
+	-moz-padding-start: 0.8rem;
+	-webkit-padding-start: 0.8rem;
+	padding-inline-start: 0.8rem;
 }
 .text_end {
 	-moz-padding-start: 0.8rem;
@@ -35,41 +37,41 @@
 	position: relative;
 	overflow: hidden;
 	min-height: 100%;
-	width: 56%;
+	min-width: 52%;
 }
 .background_top	img {
 	position: absolute;
 }
 .blank_woman_l {
-	top: 2.8rem;
+	top: 2.1rem;
 	right: 1.2rem;
 }
 .blank_woman_r {
-	top: 2.8rem;
+	top: 2.1rem;
 	left: 1rem;
 }
 
 .blank_phone_l {
-	top: 1.6rem;
+	top: 1.3rem;
 	right: 1.4rem;
 }
 .blank_phone_r {
-	top: 1.5rem;
-	left: 2.3rem;
+	top: 1.2rem;
+	left: 1.4rem;
 }
 .static_title {
 	/* padding-left: 0.8rem;
 	padding-right: 0.8rem; */
 }
 .active_woman_l {
-	top: 2.8rem;
+	top: 2.1rem;
 	z-index: 2;
 	right: 2rem;
 	animation: moveActiveWomen_ltr 0.6s ease-out forwards;
 }
 @keyframes moveActiveWomen_ltr {
 	0% {
-		transform: translate(1.2rem, 0px)
+		transform: translate(1rem, 0px)
 	}
 }
 @keyframes moveActiveWomen_rtl {
@@ -79,7 +81,7 @@
 }
 .active_woman_r {
 	transform: scale(-1, 1);
-	top: 2.8rem;
+	top: 2.1rem;
 	left: 2rem;
 	animation: moveActiveWomen_rtl 0.6s ease-out forwards;
 	z-index: 2;
@@ -98,25 +100,25 @@
 }
 .phone_act{
 	z-index: 2;
-	top: 1.5rem;
-	right: -1.5rem;
+	top: 1.2rem;
+	right: -1.9rem;
 	animation: moveAvtivePhone_ltr 0.6s ease-out forwards;
 }
 .phone_act_r{
 	z-index: 2;
-	top: 1.5rem;
-	left: -1rem;
+	top: 1.2rem;
+	left: -1.9rem;
 	transform: scale(-1, 1);
 	animation: moveAvtivePhone_rtl 0.6s ease-out forwards;
 }
 .static_bg {
-	top: -3rem;
-	right: -4rem;
+	top: 0rem;
+	right: 0rem;
 	z-index: 1;
 }
 .start_bg {
-	top: -3rem;
-	right: -4rem;
+	top: 0rem;
+	right: 0rem;
 	z-index: 1;
 	animation: topBacground 0.6s ease-out forwards;
 }
@@ -129,13 +131,13 @@
 	}
 }
 .static_bg_rtl {
-	top: -3rem;
-	left: -4rem;
+	top: 0rem;
+	left: 0rem;
 	z-index: 1;
 }
 .start_bg_rtl {
-	top: -3rem;
-	left: -4rem;
+	top: 0rem;
+	left: 0rem;
 	z-index: 1;
 	animation: topBacground 0.6s ease-out forwards;
 }
@@ -144,26 +146,26 @@
 }
 .discover_phone {
 	z-index: 2;
-	top: 1.5rem;
-	right: -1rem;
+	top: 1.2rem;
+	right: -1.9rem;
 	animation: discover 0.6s ease-out forwards;
 }
 .discover_woman {
 	z-index: 2;
-	top: 2.8rem;
+	top: 2.1rem;
 	right: 2rem;
 	animation: discover 0.6s ease-out;
 }
 .discover_phone_rtl {
 	transform: scale(-1, 1);
 	z-index: 2;
-	top: 1.5rem;
-	left: -1rem;
+	top: 1.2rem;
+	left: -1.9rem;
 	animation: discover_rtl 0.6s ease-out;
 }
 .discover_woman_rtl {
 	z-index: 2;
-	top: 2.8rem;
+	top: 2.1rem;
 	transform: scale(-1, 1);
 	left: 2rem;
 	animation: discover_rtl 0.6s ease-out;
@@ -198,7 +200,12 @@
 	flex-wrap: wrap;
 	width: 100%;
 	max-height: 35vh;
-	padding-inline-start: 0.5rem;
+	-moz-margin-start: 0.5rem;
+	-webkit-margin-start: 0.5rem;
+	margin-inline-start: 0.5rem;
+	-moz-margin-end: 0.8rem;
+	-webkit-margin-end: 0.8rem;
+	margin-inline-end: 0.8rem;
 	padding-bottom: 0.5rem;
 	margin-bottom: 4rem;
 	scroll-snap-type: x mandatory;

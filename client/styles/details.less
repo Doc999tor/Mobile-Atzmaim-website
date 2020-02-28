@@ -5,12 +5,14 @@
 }
 
 .details_main {
-	min-width: 44%;
-	width: 44%;
+	flex-grow: 1;
 }
 
 .details_main h2 {
-	padding: 1.2rem .8rem 2rem;
+	padding: 1.2rem 0 2rem;
+	-moz-padding-start: 0.8rem;
+	-webkit-padding-start: 0.8rem;
+	padding-inline-start: 0.8rem;
 	font-size: 2rem;
 	min-height: 14rem;
 	font-weight: bold;
@@ -20,7 +22,7 @@
 .preview_wrap {
 	display: flex;
 	padding-top: 1.8rem;
-	width: 55%;
+	min-width: 52%;
 	overflow: hidden;
 	justify-content: center;
 }
@@ -113,10 +115,14 @@ body[style="direction: rtl;"] & {
 	display: flex;
 }
 .details_icon svg {
-	width: 32px;
-	height: 32px;
+	width: 2rem;
+	height: 2rem;
 }
-.details_icon svg path, g, circle {
+.details_icon svg path, g, circle, text {
 	fill: var(--main-bgcolor) !important;
 	stroke: var(--main-bgcolor) !important;
+}
+.details_icon svg text {
+	direction: ltr;
+	font-weight: 500
 }

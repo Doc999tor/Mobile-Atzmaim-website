@@ -23,6 +23,7 @@ export class App extends Component {
 					this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
 				} else route(config.baseUrl + '/error', true)
 			}
+			if (obj.page === 'contact_us') route(config.urls.contact_us, true)
 		}
 	}
 
@@ -54,7 +55,7 @@ export class App extends Component {
 				<Router {...props}>
 					<Main translations={translations} config={internalConfig} path={internalConfig.baseUrl + '/'} />
           <ErrorPage translations={translations} config={internalConfig} referer={this.state.referer} path={internalConfig.baseUrl + '/error'} />
-					<ContactUs translations={translations} config={internalConfig} path={internalConfig.urls.contact_us} active={this.state.active} />
+					<ContactUs translations={translations} config={internalConfig} path={internalConfig.baseUrl + '/contact_us'} active={this.state.active} />
 				</Router>
 	    </div>
 		)

@@ -16,8 +16,6 @@
 	margin-top: 1.5rem;
 	display: flex;
 	align-items: center;
-	max-width: 85%;
-	
 }
 .contact_actions p {
 	font-size: 1rem;
@@ -37,12 +35,12 @@
   background-image: linear-gradient(133deg, #ff00aa, #ff00aa);
 }
 .contact_img {
-	top: 1.7rem;
+	top: 0.6rem;
 	right: -1.3rem;
 	z-index: 1;
 }
 .contact_img_rtl {
-	top: 1.7rem;
+	top: 0.6rem;
 	left: -1.3rem;
 	z-index: 1;
 }
@@ -64,4 +62,8 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 0.7rem 1rem 0.5rem;
+}
+body[style="direction: rtl;"] .phone {
+	direction: ltr;
+	text-align: end;
 }

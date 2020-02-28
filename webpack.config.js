@@ -13,6 +13,7 @@ module.exports = {
     path: path.join(__dirname, "dist"),
     filename: "[name].js"
 	},
+	devtool: 'source-map',
   optimization: {
 		minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
 	},

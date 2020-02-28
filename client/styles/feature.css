@@ -12,9 +12,9 @@
 	-moz-margin-end: 1.5%;
 	-webkit-margin-end: 1.5%;
 	margin-inline-end: 1.5%;
-	-moz-margin-start: 1.5%;
-	-webkit-margin-start: 1.5%;
-	margin-inline-start: 1.5%;
+	-moz-margin-start: 0.3rem;
+	-webkit-margin-start: 0.3rem;
+	margin-inline-start: 0.3rem;
 	scroll-snap-align: end;
 	border-radius: 15px;
   box-shadow: 0 6px 8px 0 rgba(41, 41, 204, 0.16);
@@ -33,12 +33,16 @@ body[style="direction: rtl;"] .feature {
 	display: flex;
 }
 .single_feature_icon	svg {
-	width: 32px;
-	height: 32px;
+	width: 2rem;
+	height: 2rem;
 }
-.single_feature_icon svg path, g, circle {
+.single_feature_icon svg path, g, circle, text {
 	fill: var(--main-bgcolor) !important;
 	stroke: var(--main-bgcolor) !important;
+}
+.details_icon svg  text {
+	direction: ltr;
+	font-weight: 500;
 }
 .feature_text {
 	padding: 0 0.6rem;
