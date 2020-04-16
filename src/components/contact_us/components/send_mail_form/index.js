@@ -37,7 +37,7 @@ export default class SendMailForm extends Component {
 							}, () => {
 								setTimeout(() => {
 									this.handleCloseModal()
-									route(config.baseUrl + '/', true)
+									window.history.back()
 								}, 700)
 							})
 						}
