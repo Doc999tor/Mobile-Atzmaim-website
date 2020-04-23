@@ -5,7 +5,7 @@ import style from './all.less'
 export default class AllFeatures extends Component {
 
 	shouldComponentUpdate = (nextProps, nextState) => {
-		if (nextProps.secondAnimation === this.props.secondAnimation) return false
+		if (nextProps.secondAnimation === this.props.secondAnimation && this.props.iconsData.length > 0) return false
 	}
 
 	render () {
