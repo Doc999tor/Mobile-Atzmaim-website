@@ -1,8 +1,7 @@
 import { Router } from 'preact-router'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
-// import AsyncRoute from 'preact-async-route'
 import { h, Component } from 'preact'
-import qs from 'qs'
+import Redirect from './redirect'
 import Header from './header'
 import Main from './main'
 import ErrorPage from './error_page'
@@ -29,12 +28,6 @@ export default class App extends Component {
 		clearAllBodyScrollLocks()
 	}
 
-	// getMain = (url, cb, props) => import(/* webpackChunkName: "chunk-main" */'./main').then(module => module.default)
-
-	// getError = (url, cb, props) => import(/* webpackChunkName: "chunk-error" */'./error_page').then(module => module.default)
-
-	// getContactUs = (url, cb, props) => import('./contact_us').then(module => module.default)
-
 	render () {
 	  return (
 	    <div id='app'>
@@ -43,21 +36,7 @@ export default class App extends Component {
 					<Main path={config.baseUrl} />
 					<ErrorPage path={config.baseUrl + '/error'} referer={this.state.referer} />
 					{config.urls.contact_us && <ContactUs path={config.baseUrl + '/contact_us'} active={this.state.active} />}
-					{/* <AsyncRoute
-						path={config.baseUrl + '/'}
-						getComponent={this.getMain}
-					/>
-					<AsyncRoute
-						path={config.baseUrl + '/error'}
-						referer={this.state.referer}
-						getComponent={this.getError}
-					/> */}
-					{/* <AsyncRoute
-						active={this.state.active}
-						path={config.urls.contact_us}
-						getComponent={this.getContactUs}
-					/> */}
-
+					<Redirect path='/' to={config.baseUrl} />
 				</Router>
 	    </div>
 	  )
