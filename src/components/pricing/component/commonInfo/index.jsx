@@ -39,7 +39,7 @@ export default class CommonInfo extends Component {
 							? <section class={style.pricing_plan}>
 								{config.modules.pricing.data.map(item => <SmallPreview showDetail={this.handleShowDetail} name={item.name} icon={item.icon} value={item.price_monthly} />)}
 							</section>
-							: <DetailInfo />}
+							: <DetailInfo handleShowDetail={this.handleShowDetail} />}
 					</div>}
 				</section>
 			</div>
