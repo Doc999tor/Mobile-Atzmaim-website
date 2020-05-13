@@ -4,7 +4,7 @@ import style from './small.less';
 export default ({ name, icon, value, showDetail }) => {
 	const basic = name === 'basic';
 	return (
-		<div class={style.price + ' ' + (basic ? style.active : '')} onClick={showDetail}>
+		<div id={`${name}`} class={style.price + ' ' + (basic ? style.active : '')} onClick={() => showDetail(name)}>
 			<div class={style.icon_wrap}>
 				<img src={config.urls.media + icon} alt={icon} />
 			</div>

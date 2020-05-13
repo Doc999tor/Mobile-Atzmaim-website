@@ -12,6 +12,7 @@ import style from './main.less'
 export default class Main extends Component {
 	state = {
 		animation: false,
+		showDetail: false,
 		activeLink: 'hero',
 		svgData: []
 	}
@@ -49,10 +50,6 @@ export default class Main extends Component {
 		}
 	}
 
-	shouldComponentUpdate = (nextProps, nextState) => {
-		if (nextState.animation === this.state.animation && this.state.svgData.length > 0) return false
-	}
-
 	handleClickNav = val => {
 		this.setState({ activeLink: val,
 			animation: false
@@ -71,6 +68,18 @@ export default class Main extends Component {
 		})
 	}
 
+	handleShowDetail = plan => {
+		this.setState({ showDetail: true }, () => {
+			const chosenPlan = document.getElementById(plan)
+			chosenPlan && chosenPlan.scrollIntoView({ block: 'center' })
+		})
+	}
+
+	handleShowPreview = () => {
+		this.setState({ showDetail: false })
+		document.getElementById('pricing').scrollIntoView({ block: 'start' })
+	}
+
 	render () {
 		const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
@@ -79,10 +88,10 @@ export default class Main extends Component {
 	    features: <Features iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
+	    pricing: <Pricing showDetail={this.state.showDetail} handleShowDetail={this.handleShowDetail} handleShowPreview={this.handleShowPreview} animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (
-	    <div id='main' class={style.main}>
+	    <div id='main' class={style.main + ' ' + (this.state.showDetail ? '' : style.snap_scroll)}>
 	      {
 	        componentsForRendering.map(i => objSplitLoadingComponents[i])
 				}

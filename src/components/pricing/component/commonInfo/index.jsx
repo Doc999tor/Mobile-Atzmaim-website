@@ -2,19 +2,12 @@ import { h, Fragment, Component } from 'preact'
 import SmallPreview from '../smallPreview'
 import DetailInfo from '../detailInfo'
 import styles from '../../../features/component/allFeatures/all.less'
-import typesStyl from '../../../business_types/types.less'
 import style from './common.less'
 
 export default class CommonInfo extends Component {
-	state = {
-		showDetail: false
-	}
-
-	handleShowDetail = () => this.setState({ showDetail: !this.state.showDetail })
 
 	render () {
-		const { animation } = this.props
-		const { showDetail } = this.state
+		const { showDetail, animation, handleShowPreview, handleShowDetail } = this.props
 		return (
 			<div>
 				<section class={styles.top_section}>
@@ -32,14 +25,14 @@ export default class CommonInfo extends Component {
 							</Fragment>}
 					</div>
 				</section>
-				<section class={`${typesStyl.wrap} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
+				<section class={`${style.wrap} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 					{animation && <div>
 						<h3 class={style.subtitle}>{config.translations.pricing.subtitle}</h3>
 						{!showDetail
 							? <section class={style.pricing_plan}>
-								{config.modules.pricing.data.map(item => <SmallPreview showDetail={this.handleShowDetail} name={item.name} icon={item.icon} value={item.price_monthly} />)}
+								{config.modules.pricing.data.map(item => <SmallPreview showDetail={handleShowDetail} name={item.name} icon={item.icon} value={item.price_monthly} />)}
 							</section>
-							: <DetailInfo handleShowDetail={this.handleShowDetail} />}
+							: <DetailInfo handleShowPreview={handleShowPreview} />}
 					</div>}
 				</section>
 			</div>

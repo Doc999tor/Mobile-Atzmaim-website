@@ -12,11 +12,11 @@ export default class OpenedPreview extends Component {
 	render () {
 		const basic = this.props.name === 'basic'
 		const marker = {'listStyleImage': 'url(' + config.urls.media + (basic ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
-		const { name, icon, value, item, handleShowDetail } = this.props
+		const { name, icon, value, item, handleShowPreview } = this.props
 		const { switchBox } = this.state
 		return (
-			<div class={style.detail_price  + ' ' + (basic ? style.detail_price_active : '')}>
-				<div class={style.header} onClick={handleShowDetail}>
+			<div id={`${name}`} class={style.detail_price  + ' ' + (basic ? style.detail_price_active : '')}>
+				<div class={style.header} onClick={handleShowPreview}>
 					<div class={style.icon_wrap}>
 						<img src={config.urls.media + icon} alt={icon} />
 					</div>
