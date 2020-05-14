@@ -84,7 +84,7 @@ export default class Main extends Component {
 		const possibleKeys = ['hero', 'features', 'business_types', 'pricing', 'feedback']
 		const componentsForRendering = possibleKeys.filter(pk => config.modules[pk])
 	  const objSplitLoadingComponents = {
-	    hero: <Hero iconsData={this.state.svgData} startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
+			hero: <Hero iconsData={this.state.svgData} startAnimation={this.startAnimation} animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    features: <Features iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
