@@ -81,9 +81,9 @@ export default class SendMailForm extends Component {
 					? <form id='send_form' onSubmit={this.handleSendMailForm} class={style.container}>
 						<h2 class={style.title}>{config.translations.contact_us.send_form.main_title}</h2>
 						<p class={style.text_label + (!valid ? ` ${style.not_valid_label}` : '')}>{config.translations.contact_us.send_form.phone_mail_label}</p>
-						<input ref={this.contactDetail} name='contact' onBlur={this.handleValidation} onInput={this.handleCangeInput} class={`${style.contact_input} ${!this.state.valid ? style.not_valid : ''}`} type='text' />
+						<input ref={this.contactDetail} placeholder={config.translations.contact_us.send_form.placeholder_contact} name='contact' onBlur={this.handleValidation} onInput={this.handleCangeInput} class={`${style.contact_input} ${!this.state.valid ? style.not_valid : ''}`} type='text' />
 						<p class={style.text_label}>{config.translations.contact_us.send_form.message_label}</p>
-						<textarea ref={this.textArea} name='mail' onInput={this.handleCangeInput} class={style.textarea} />
+						<textarea ref={this.textArea} placeholder={config.translations.contact_us.send_form.placeholder_message} name='mail' onInput={this.handleCangeInput} class={style.textarea} />
 						<div class={style.btn_wrap}>
 							<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}><img src={config.urls.media + 'ic_cancel.svg'} />{config.translations.contact_us.send_form.cancel_btn_label}</button>
 							<button class={style.send} type='submit'><img src={config.urls.media + 'ic_send.svg'} />{config.translations.contact_us.send_form.send_btn_label}</button>
