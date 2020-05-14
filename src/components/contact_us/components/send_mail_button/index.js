@@ -5,7 +5,7 @@ export default ({ openForm }) => {
 	return (
 		<button class={style.button} type='button' onClick={openForm}>
 			<img src={config.urls.media + 'ic_mail.svg'} />
-			<span class={style.label}>{config.translations.contact_us.send_mail_label}</span>
+			<span class={style.label}>{config.translations.contact_us.mobile.create_mail_btn_label}</span>
 		</button>
 	)
 }

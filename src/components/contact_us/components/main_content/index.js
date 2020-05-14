@@ -15,7 +15,7 @@ export default ({ onOpenMailForm }) => {
 						<div class={style.tap}>
 							<img src={config.urls.media + 'ic_question_small.svg'} alt='tap icon' />
 						</div>
-						<p>{config.translations.contact_us.preview_text}</p>
+						<p>{config.translations.contact_us.mobile.preview_text}</p>
 					</div>
 				</div>
 				<div class={styles.background_top}>
@@ -24,7 +24,7 @@ export default ({ onOpenMailForm }) => {
 				</div>
 			</section>
 			<section class={style.bottom_section}>
-				<h3 class={style.subtitle}> {config.translations.contact_us.subtitle}</h3>
+				<h3 class={style.subtitle}> {config.translations.contact_us.mobile.choose_messenger}</h3>
 				<div class={style.container}>
 					{config.modules.contact_us.data.map(item => <Messenger messenger={item} />)}
 				</div>
