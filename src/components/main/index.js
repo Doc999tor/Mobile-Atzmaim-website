@@ -77,7 +77,9 @@ export default class Main extends Component {
 
 	handleShowPreview = () => {
 		this.setState({ showDetail: false })
-		document.getElementById('pricing').scrollIntoView({ block: 'start' })
+		setTimeout(() => {
+			document.getElementById('pricing').scrollIntoView({ block: 'start' })
+		}, 100)
 	}
 
 	render () {
