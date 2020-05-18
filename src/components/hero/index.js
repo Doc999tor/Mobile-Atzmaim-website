@@ -13,7 +13,7 @@ export default class Hero extends Component {
 		const background = { backgroundImage: 'url(' + config.urls.media + 'pic_bg.jpg' + ')' }
 		const features = config.modules.features.data.filter(i => config.modules.hero.features.includes(i.name))
 		return (
-			<div id='hero' className={`${style.height} ${style.hero_page}`} >
+			<div id='hero' className={style.height} >
 				<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>
 					<div class={`${style.common} ${animation && (style.shadow + ' ' + style.test)}`} >
 						<div class={`${style.content} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
