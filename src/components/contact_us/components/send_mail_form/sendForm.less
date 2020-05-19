@@ -3,6 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	padding-top: 1.5rem;
+	--not-valid-color: red;
 }
 .title {
 	font-size: 2rem;
@@ -36,7 +37,6 @@
 }
 .contact_input:focus, .textarea:focus {
 	border-color: var(--dark-color);
-	transition: border-color 0.3s;
 }
 .btn_wrap {
 	padding-top: 3.1rem;
@@ -70,8 +70,12 @@
 	color: var(--white-color)
 }
 .not_valid {
-	border-color: red !important;
+	border-color: var(--not-valid-color) !important;
 }
 .not_valid_label {
-	color: red;
+	color: var(--not-valid-color);
+}
+
+body[style="direction: rtl;"] & {
+	.send img { transform: rotateY(.5turn); }
 }
