@@ -1,4 +1,5 @@
 import { h, Fragment, Component } from 'preact'
+import SignUpBtn from '../../../common_sign_up_btn'
 import Feature from '../feature'
 import style from './all.less'
 
@@ -23,7 +24,8 @@ export default class AllFeatures extends Component {
 			<div class={style.container}>
 				<section class={style.top_section}>
 					<div class={`${style.text} ${secondAnimation && (config.isRTL ? staticTitleRtl : staticTitleLtr)}`}>
-						{secondAnimation && <h2>{config.translations.features.content.title}</h2>}
+						{secondAnimation && <h2>{config.translations.features.main_title}</h2>}
+						{secondAnimation && <SignUpBtn />}
 					</div>
 					<div class={style.background_top}>
 						<img class={config.isRTL

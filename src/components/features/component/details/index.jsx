@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import SignUpBtn from '../../../common_sign_up_btn'
 import style from './details.less'
 import { Icon } from '../../../icon'
 
@@ -6,7 +7,10 @@ export default ({ selectedFeature, svgObj, backToAll }) => {
 	return (
 		<div class={style.details}>
 			<div class={style.main}>
-				<h2>{config.translations.features.content.title}</h2>
+				<div class={style.title_block}>
+					<h2>{config.translations.features.main_title}</h2>
+					<SignUpBtn />
+				</div>
 				<div class={style.extended}>
 					<div class={style.extended_title} onClick={backToAll}>
 						{svgObj && svgObj.svg && <Icon icon={svgObj.svg} class={style.icon} />}

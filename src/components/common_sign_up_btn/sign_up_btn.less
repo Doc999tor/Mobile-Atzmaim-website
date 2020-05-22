@@ -1,0 +1,62 @@
+.button {
+	display: flex;
+	align-items: center;
+	margin-top: 2.875rem;
+	position: relative;
+	align-self: flex-start;
+	text-decoration: none;
+	padding: 0.8rem 2rem;
+	font-size: 1rem;
+	font-weight: 500;
+	overflow: hidden;
+	color: var(--white-color);
+	border-radius: 50px;
+	box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.35);
+	background-image: linear-gradient(to bottom, #ff00aa, #b91d73)
+}
+.button:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -30%;
+	width: 2rem;
+  height: 100%;
+  -webkit-filter: blur(23px);
+  filter: blur(23px);
+	background-color: #ffffff;
+}
+.glowing:before {
+	animation: glow 6s infinite;
+	animation-delay: 1s
+}
+.glowing {
+	box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.35);
+}
+.static:before {
+	display: none;
+}
+.static {
+	display: flex;
+	box-shadow: 0 10px 15px 0 rgba(255, 0, 170, 0.35)
+}
+.button_label {
+	text-align: center;
+}
+
+@keyframes glow {
+	0% {
+		left: -30%;
+	}
+	40% {
+		left: 105%;
+	}
+	50% {
+		left: 105%;
+	}
+	90% {
+		left: -30%;
+	}
+	100% {
+		left: -30%;
+	}
+}
