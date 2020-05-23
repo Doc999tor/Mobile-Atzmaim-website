@@ -208,6 +208,7 @@
 .wrap {
 	min-width: 100vw;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 }
 .features_container {
@@ -223,8 +224,15 @@
 	-webkit-margin-end: 0.8rem;
 	margin-inline-end: 0.8rem;
 	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
 	scroll-snap-type: x mandatory;
 	overflow-x: auto;
+}
+.subtitle {
+	font-size: 1.125rem;
+	-moz-padding-start: 1rem;
+	-webkit-padding-start: 1rem;
+	padding-inline-start: 1rem;
 }
 .static_wrap {
 	animation: topBacground 0.6s ease-out forwards;

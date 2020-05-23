@@ -43,6 +43,7 @@ export default class AllFeatures extends Component {
 					</div>
 				</section>
 				<div class={`${style.wrap} ${secondAnimation && (config.isRTL ? staticTitleRtl : staticTitleLtr)}`}>
+					{secondAnimation && <h3 class={style.subtitle}>{config.translations.features.subtitle}</h3>}
 					{secondAnimation && <div class={style.features_container}>
 						{config.modules.features.data.map(item => {
 							const svgObj = iconsData.find(i => item.name === i.name)
