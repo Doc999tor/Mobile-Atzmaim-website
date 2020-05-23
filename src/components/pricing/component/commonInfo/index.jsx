@@ -1,4 +1,4 @@
-import { h, Fragment, Component } from 'preact'
+import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
 import SmallPreview from '../smallPreview'
 import SignUpBtn from '../../../common_sign_up_btn'

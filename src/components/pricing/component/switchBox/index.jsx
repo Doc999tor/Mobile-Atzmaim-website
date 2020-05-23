@@ -1,13 +1,7 @@
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
 import style from './swichBox.less'
 
-export default ({value, handleChange, handleChooseYearly, handleChooseMonthly }) => {
-	// const [value, setValue] = useState(config.modules.pricing.switch_bill_annually)
-	// const handleChange = () => setValue((currentValue) => !currentValue)
-	// const handleChooseYearly = () => setValue(true)
-	// const handleChooseMonthly = () => setValue(false)
-
+export default ({ value, handleChange, handleChooseYearly, handleChooseMonthly }) => {
 	const countDiscont = (monthly, yearly) => {
 		const total = monthly * 12
 		const percent = Math.round((yearly * 100) / total)
