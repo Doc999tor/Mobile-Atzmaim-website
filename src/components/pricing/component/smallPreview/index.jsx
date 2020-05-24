@@ -1,12 +1,10 @@
 import { h } from 'preact'
-import { route } from 'preact-router'
 import style from './small.less'
 
-export default ({ name, icon, value }) => {
+export default ({ name, icon, value, handleShowOpenPlan }) => {
 	const basic = name === 'basic'
-	const goToPricing = () => route(config.baseUrl + '/pricing')
 	return (
-		<div id={`${name}`} class={style.price + ' ' + (basic ? style.active : '')} onClick={goToPricing}>
+		<div id={`${name}`} class={style.price + ' ' + (basic ? style.active : '')} onClick={() => handleShowOpenPlan(name)}>
 			<div class={style.icon_wrap}>
 				<img src={config.urls.media + icon} alt={icon} />
 			</div>

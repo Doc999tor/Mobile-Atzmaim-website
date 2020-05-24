@@ -1,15 +1,15 @@
 import { h } from 'preact'
-import { useState } from 'preact/hooks'
+import { useEffect } from 'preact/hooks'
 import SwichBox from '../switchBox'
 import OpenedPreview from '../openedPreview'
 import style from './detail.less'
 
-export default () => {
-	const [value, setValue] = useState(config.modules.pricing.switch_bill_annually)
-	const handleChange = () => setValue((currentValue) => !currentValue)
-	const handleChooseYearly = () => setValue(true)
-	const handleChooseMonthly = () => setValue(false)
+export default ({ handleShowOpenPlan, priceName, switchValue, handleChangeSwitch, handleChooseYearly, handleChooseMonthly }) => {
 	const goBack = () => window.history.back()
+	useEffect(() => {
+		const chosenPlan = document.getElementById(priceName)
+		chosenPlan && chosenPlan.scrollIntoView({ block: 'center' })
+	}, [])
 
 	return (
 		<div class={style.detail_info}>
@@ -26,9 +26,9 @@ export default () => {
 			</div>
 			<div class={style.content}>
 				<div className={style.swichBox_wrap}>
-					<SwichBox value={value} handleChange={handleChange} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
+					<SwichBox value={switchValue} handleChange={handleChangeSwitch} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
 				</div>
-				{config.modules.pricing.data.map(item => <OpenedPreview goHome={goBack} value={value} name={item.name} icon={item.icon} item={item} />)}
+				{config.modules.pricing.data.map(item => <OpenedPreview goHome={goBack} value={switchValue} name={item.name} icon={item.icon} item={item} />)}
 			</div>
 		</div>
 	)

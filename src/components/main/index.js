@@ -76,7 +76,7 @@ export default class Main extends Component {
 	    features: <Features iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    pricing: <Pricing animation={this.state.animation} activeLink={this.state.activeLink} />
+	    pricing: <Pricing handleShowOpenPlan={this.props.handleShowOpenPlan} switchValue={this.props.switchValue} handleChangeSwitch={this.props.handleChangeSwitch} handleChooseYearly={this.props.handleChooseYearly} handleChooseMonthly={this.props.handleChooseMonthly} animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (
 	    <div id='main' class={style.main + ' ' + (this.state.showDetail ? '' : style.snap_scroll)}>

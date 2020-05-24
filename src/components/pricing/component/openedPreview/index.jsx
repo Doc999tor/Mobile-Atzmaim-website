@@ -1,8 +1,7 @@
-import { h, Component } from 'preact'
+import { h } from 'preact'
 import style from './opened.less'
-import './opened.less'
 
-const OpenedPreview = ({goHome, name, value, icon, item}) => {
+const OpenedPreview = ({ goHome, name, value, icon, item }) => {
 	const basic = name === 'basic'
 	const marker = {'listStyleImage': 'url(' + config.urls.media + (basic ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
 	return (

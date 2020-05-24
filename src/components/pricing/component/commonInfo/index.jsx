@@ -1,17 +1,11 @@
 import { h, Fragment } from 'preact'
-import { useState } from 'preact/hooks'
 import SmallPreview from '../smallPreview'
 import SignUpBtn from '../../../common_sign_up_btn'
 import SwichBox from '../switchBox'
-import DetailInfo from '../detailInfo'
 import styles from '../../../features/component/allFeatures/all.less'
 import style from './common.less'
 
-const CommonInfo = ({ showDetail, animation, handleShowPreview, handleShowDetail }) => {
-	const [value, setValue] = useState(config.modules.pricing.switch_bill_annually)
-	const handleChange = () => setValue((currentValue) => !currentValue)
-	const handleChooseYearly = () => setValue(true)
-	const handleChooseMonthly = () => setValue(false)
+const CommonInfo = ({ handleShowOpenPlan, animation, switchValue, handleChangeSwitch, handleChooseYearly, handleChooseMonthly }) => {
 	return (
 		<div>
 			<section class={styles.top_section}>
@@ -33,13 +27,11 @@ const CommonInfo = ({ showDetail, animation, handleShowPreview, handleShowDetail
 			<section class={`${style.wrap} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 				{animation && <div>
 					<div className={style.swichBox_wrap}>
-						<SwichBox value={value} handleChange={handleChange} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
+						<SwichBox value={switchValue} handleChange={handleChangeSwitch} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
 					</div>
-					{!showDetail
-						? <section class={style.pricing_plan}>
-							{config.modules.pricing.data.map(item => <SmallPreview showDetail={handleShowDetail} name={item.name} icon={item.icon} value={value ? item.price_yearly : item.price_monthly} />)}
-						</section>
-						: <DetailInfo handleShowPreview={handleShowPreview} />}
+					<section class={style.pricing_plan}>
+						{config.modules.pricing.data.map(item => <SmallPreview handleShowOpenPlan={handleShowOpenPlan} name={item.name} icon={item.icon} value={switchValue ? item.price_yearly : item.price_monthly} />)}
+					</section>
 				</div>}
 			</section>
 		</div>
