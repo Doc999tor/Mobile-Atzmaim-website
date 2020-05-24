@@ -1,5 +1,6 @@
 import { h, Fragment } from 'preact'
 import Bussiness from './component'
+import SignUpBtn from '../common_sign_up_btn'
 import styles from '../features/component/allFeatures/all.less'
 import style from './types.less'
 import common from '../hero/hero.less'
@@ -10,12 +11,7 @@ export default ({ animation }) => {
 			<section class={styles.top_section}>
 				<div class={`${styles.text} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
 					{animation && <h2 >{config.translations.business_types.main_title}</h2>}
-					{animation && <div class={style.actions}>
-						<div class={style.tap}>
-							<img src={config.urls.media + 'ic_tap.svg'} alt='tap icon' />
-						</div>
-						<p>{config.translations.business_types.preview_text}</p>
-					</div>}
+					{animation && <SignUpBtn />}
 				</div>
 				<div class={styles.background_top}>
 					{!animation
@@ -28,11 +24,9 @@ export default ({ animation }) => {
 				</div>
 			</section>
 			<section class={`${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
-				{animation && <div>
-					<h3 class={style.subtitle}>{config.translations.business_types.subtitle}</h3>
-					<div class={style.business_type}>
-						{config.modules.business_types.data.map(item => <Bussiness name={item.name} icon={item.icon} />)}
-					</div>
+				{animation && <h3 class={style.subtitle}>{config.translations.business_types.subtitle}</h3>}
+				{animation && <div class={style.business_type}>
+					{config.modules.business_types.data.map(item => <Bussiness name={item.name} icon={item.icon} />)}
 				</div>}
 			</section>
 		</div>

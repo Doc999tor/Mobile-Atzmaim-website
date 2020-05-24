@@ -2,6 +2,7 @@ import { h, Component } from 'preact'
 import style from './hero.less'
 import styles from '../features/component/allFeatures/all.less'
 import { Icon } from '../icon'
+import SignUpBtn from '../common_sign_up_btn'
 import Slideshow from '../carousel/slideshow.jsx'
 export default class Hero extends Component {
 	componentDidMount = () => {
@@ -29,13 +30,14 @@ export default class Hero extends Component {
 									)
 								})}
 							</div>}
-							{animation && <a class={style.button} href={config.urls.signup}>
+							{animation && <SignUpBtn glow />}
+							{/* {animation && <a class={style.button} href={config.urls.signup}>
 								<span class={style.button_label} >{config.translations.hero.button_label}</span>
-							</a>}
+							</a>} */}
 						</div>
 						<div class={style.phone_wrap}>
 							{!animation
-								? <img class={style.black_phone} src={config.urls.media + 'black_phone.png'} height='366' width='183' loading='lazy' alt='phone animation' />
+								? <img class={style.black_phone} src={config.urls.media + 'phone black.svg'} height='366' width='183' loading='lazy' alt='phone animation' />
 								: <Slideshow cycleSpeed={config.modules.hero.carousel_time} />
 							}
 						</div>
