@@ -15,13 +15,30 @@
 	-moz-margin-start: 0.3rem;
 	-webkit-margin-start: 0.3rem;
 	margin-inline-start: 0.3rem;
-	scroll-snap-align: end;
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
 	border-radius: 15px;
+	position: relative;
   box-shadow: 0 6px 8px 0 rgba(41, 41, 204, 0.16);
+}
+.feature:last-child:after {
+	content: "";
+  width: 1.2rem;
+  height: 1px;
+  position: absolute;
+  top: 0px;
 }
 body[style="direction: rtl;"] {
 	.feature {
-		scroll-snap-align: start;
+		scroll-snap-align: end;
+	}
+	.feature:last-child:after {
+		right: 100%;
+	}
+}
+body[style="direction: ltr;"] {
+	.feature:last-child:after {
+		left: 100%;
 	}
 }
 .text_wrap {

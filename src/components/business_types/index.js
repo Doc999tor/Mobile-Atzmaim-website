@@ -24,11 +24,9 @@ export default ({ animation }) => {
 				</div>
 			</section>
 			<section class={`${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
-				{animation && <div>
-					<h3 class={style.subtitle}>{config.translations.business_types.subtitle}</h3>
-					<div class={style.business_type}>
-						{config.modules.business_types.data.map(item => <Bussiness name={item.name} icon={item.icon} />)}
-					</div>
+				{animation && <h3 class={style.subtitle}>{config.translations.business_types.subtitle}</h3>}
+				{animation && <div class={style.business_type}>
+					{config.modules.business_types.data.map(item => <Bussiness name={item.name} icon={item.icon} />)}
 				</div>}
 			</section>
 		</div>

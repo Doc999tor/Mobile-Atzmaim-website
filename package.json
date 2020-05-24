@@ -3,9 +3,9 @@
   "version": "6.0.0",
   "description": "Preact",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --open --hot",
     "optimize": "svgo -r ./build/assets",
-    "build": "webpack --mode production",
+    "build-p": "webpack --mode production",
     "build_watch": "http-server ./build"
   },
   "license": "MIT",
