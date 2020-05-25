@@ -60,30 +60,14 @@
 	flex-direction: column;
 	align-items: center;
 }
-@keyframes move_content {
-	0% {
-		transform: translateX(100%);
-	}
-}
-@keyframes move_content_rtl {
-	0% {
-		transform: translateX(-100%);
-	}
-}
 body[style="direction: ltr;"] & {
 	.back_img {
 		left: 0;
 		transform: scale(-1, 1);
 	}
-	.content {
-		animation: move_content 1s;
-	}
 }
 body[style="direction: rtl;"] & {
 	.back_img {
 		right: 0;
-	}
-	.content {
-		animation: move_content_rtl 1s;
 	}
 }
