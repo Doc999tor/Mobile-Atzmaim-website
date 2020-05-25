@@ -15,7 +15,7 @@ export default ({ active, referer, closeMenu, menuOnOff }) => {
 		<div class={style.header_wrap}>
 			<header class={style.header}>
 				<div class={style.cont} onClick={goHome}>
-					<img src={config.urls.media_logo + 'logo.svg'} alt='Logo' />
+					<img src={config.urls.media_logo + 'logo.svg'} alt={config.translations.hero.logo_label} />
 				</div>
 				<div class={style.cont}>
 					<a class={style.login_link} href={config.urls.login}>
