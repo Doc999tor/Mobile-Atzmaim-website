@@ -30,7 +30,7 @@ const CommonInfo = ({ handleShowOpenPlan, animation, switchValue, handleChangeSw
 						<SwichBox value={switchValue} handleChange={handleChangeSwitch} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
 					</div>
 					<section class={style.pricing_plan}>
-						{config.modules.pricing.data.map(item => <SmallPreview handleShowOpenPlan={handleShowOpenPlan} name={item.name} icon={item.icon} value={switchValue ? item.price_yearly : item.price_monthly} />)}
+						{config.modules.pricing.data.map(item => <SmallPreview handleShowOpenPlan={handleShowOpenPlan} switchValue={switchValue} name={item.name} icon={item.icon} value={switchValue ? item.price_yearly : item.price_monthly} />)}
 					</section>
 				</div>}
 			</section>
