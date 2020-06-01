@@ -11,7 +11,7 @@ import PricingDetailInfo from '../components/pricing/component/detailInfo'
 export default class App extends Component {
 	state = {
 		referer: 'home_page',
-		switch_value: config.modules.pricing.switch_bill_annually,
+		switch_value: config.modules.pricing?.switch_bill_annually,
 		active: false
 	}
 
