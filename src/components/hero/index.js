@@ -54,8 +54,8 @@ export default class Hero extends Component {
   		<div id='hero' className={style.height} >
   			<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>
   				<div class={`${animation && style.shadow}`} >
-  					{config.modules.hero.gallery.map((slideName, i) => {
-  						const features = config.modules.features.data.filter(item => config.translations.hero.carousel_text[i].features.includes(item.name))
+  					{config.modules.hero.gallery.map((slideItem, i) => {
+  						const features = config.modules.features.data.filter(item => slideItem.features.includes(item.name))
   						return (
   							<div class={`${style.common} ${this.isActive(i) ? style.active : ''}`}>
   								<div class={`${style.content} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
@@ -80,8 +80,8 @@ export default class Hero extends Component {
   										? <img class={style.black_phone} src={config.urls.media + 'black_phone.png'} height='382' width='180' loading='lazy' alt='phone animation' />
   										: <div class={style.border_container}>
   											<picture>
-  												<source class={style.img} srcset={`${config.urls.hero_gallery}${slideName}.webp`} type='image/webp' loading='lazy' />
-  												<img class={style.img} src={`${config.urls.hero_gallery}${slideName}.png`} alt={name} height='363' width='174' loading='lazy' />
+  												<source class={style.img} srcset={`${config.urls.hero_gallery}${slideItem.picture}.webp`} type='image/webp' loading='lazy' />
+  												<img class={style.img} src={`${config.urls.hero_gallery}${slideItem.picture}.png`} alt={name} height='363' width='174' loading='lazy' />
   											</picture>
   											<picture>
   												<source class={style.img_border} srcset={`${config.urls.media}black_phone.png`} type='image/webp' loading='lazy' />

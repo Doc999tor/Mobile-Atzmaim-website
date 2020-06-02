@@ -161,6 +161,14 @@
 		opacity: 1;
 	}
 }
+@keyframes featureAnimationRtl {
+	0% {
+		transform: translateX(30%);
+	}
+	100% {
+		opacity: 1;
+	}
+}
 .active & .feature_icon {
 	animation: iconAnimation 0.3s forwards;
 	animation-delay: 0.8s;
@@ -240,5 +248,13 @@
 	}
 	100% {
 		left: -30%;
+	}
+}
+body[style="direction: rtl;"] {
+	.active {
+		figcaption {
+			animation: featureAnimationRtl 0.3s forwards;
+			animation-delay: 0.8s;
+		}
 	}
 }
