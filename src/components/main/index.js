@@ -18,11 +18,8 @@ export default class Main extends Component {
 
 	componentDidMount = () => {
 		const obj = qs.parse(location.search.slice(1))
-		if (obj.page === 'error') {
-			if (obj.referer) {
-				this.setState({ referer: obj.referer }, () => route(config.baseUrl + '/error', true))
-			} else route(config.baseUrl + '/error', true)
-		}
+		if (obj.referer) this.props.handleChangeReferer(obj.referer)
+		if (obj.page === 'error') route(config.baseUrl + '/error', true)
 		if (obj.page === 'contact_us') route(config.baseUrl + '/contact_us', true)
 		if (obj.page === 'pricing') route(config.baseUrl + '/pricing', true)
 		const arr = []
