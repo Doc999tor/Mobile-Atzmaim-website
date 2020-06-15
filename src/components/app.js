@@ -12,7 +12,8 @@ export default class App extends Component {
 	state = {
 		referer: 'home_page',
 		switch_value: config.modules.pricing?.switch_bill_annually,
-		active: false
+		active: false,
+		closeAnimation: false
 	}
 
 	componentDidMount () {
@@ -20,14 +21,33 @@ export default class App extends Component {
 	}
 
 	menuOnOff = () => {
-		this.setState({ active: !this.state.active }, () => {
-			disableBodyScroll(document.querySelector('#menu_modal'))
-		})
+		const menu = document.getElementById('menu_modal')
+		if (this.state.referer === 'application') {
+			menu.classList.remove('jsx-menu')
+			disableBodyScroll(menu)
+		} else {
+			this.setState({ active: !this.state.active }, () => {
+				disableBodyScroll(menu)
+			})
+		}
 	}
 
 	closeMenu = () => {
-		this.setState({ active: false })
-		clearAllBodyScrollLocks()
+		if (this.state.referer === 'application') {
+			const menu = document.getElementById('menu_modal')
+			this.setState({
+				closeAnimation: true
+			}, () => {
+				setTimeout(() => {
+					this.setState({ closeAnimation: false })
+					menu.classList.add('jsx-menu')
+				}, 310)
+			})
+			clearAllBodyScrollLocks()
+		} else {
+			this.setState({ active: false })
+			clearAllBodyScrollLocks()
+		}
 	}
 
 	handleChangeReferer = referer => this.setState({ referer })
@@ -47,7 +67,7 @@ export default class App extends Component {
 	render () {
 	  return (
 	    <div id='app'>
-				<Header active={this.state.active} menuOnOff={this.menuOnOff} closeMenu={this.closeMenu} referer={this.state.referer} />
+				<Header active={this.state.active} menuOnOff={this.menuOnOff} closeAnimation={this.state.closeAnimation} closeMenu={this.closeMenu} referer={this.state.referer} />
 				<Router>
 					<Main path={config.baseUrl} handleChangeReferer={this.handleChangeReferer} switchValue={this.state.switch_value} handleShowOpenPlan={this.handleShowOpenPlan} handleChangeSwitch={this.handleChangeSwitch} handleChooseYearly={this.handleChooseYearly} handleChooseMonthly={this.handleChooseMonthly} />
 					<ErrorPage path={config.baseUrl + '/error'} referer={this.state.referer} />

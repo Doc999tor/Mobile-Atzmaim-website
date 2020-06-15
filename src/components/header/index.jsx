@@ -5,7 +5,7 @@ import { default as MenuApp } from '../../../components-lib/Menu/Menu.jsx'
 import style from './header.less'
 import './header.less'
 
-export default ({ active, referer, closeMenu, menuOnOff }) => {
+export default ({ active, referer, closeMenu, menuOnOff, closeAnimation }) => {
 	const goHome = () => {
 		route(config.baseUrl || '/', true)
 		const hero = document.getElementById('hero')
@@ -27,9 +27,8 @@ export default ({ active, referer, closeMenu, menuOnOff }) => {
 						<div class={`${style.stick_bottom} ${active && style.alive_stick_bottom}`} />
 					</div>
 				</div>
-				{referer !== 'application'
-					? active && <Menu close={closeMenu} />
-					: active && <MenuApp closeMenu={closeMenu} />}
+				{referer !== 'application' && active && <Menu close={closeMenu} /> }
+				<MenuApp closeAnimation={closeAnimation} closeMenu={closeMenu} />
 			</header>
 		</div>
 	)
