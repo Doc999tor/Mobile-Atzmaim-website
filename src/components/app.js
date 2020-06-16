@@ -22,32 +22,20 @@ export default class App extends Component {
 
 	menuOnOff = () => {
 		const menu = document.getElementById('menu_modal')
-		if (this.state.referer === 'application') {
-			menu.classList.remove('jsx-menu')
+		this.setState({ active: !this.state.active }, () => {
 			disableBodyScroll(menu)
-		} else {
-			this.setState({ active: !this.state.active }, () => {
-				disableBodyScroll(menu)
-			})
-		}
+		})
 	}
 
 	closeMenu = () => {
-		if (this.state.referer === 'application') {
-			const menu = document.getElementById('menu_modal')
-			this.setState({
-				closeAnimation: true
-			}, () => {
-				setTimeout(() => {
-					this.setState({ closeAnimation: false })
-					menu.classList.add('jsx-menu')
-				}, 310)
-			})
-			clearAllBodyScrollLocks()
-		} else {
-			this.setState({ active: false })
-			clearAllBodyScrollLocks()
-		}
+		this.setState({
+			closeAnimation: true
+		}, () => {
+			setTimeout(() => {
+				this.setState({ closeAnimation: false, active: false  })
+			}, 310)
+		})
+		clearAllBodyScrollLocks()
 	}
 
 	handleChangeReferer = referer => this.setState({ referer })

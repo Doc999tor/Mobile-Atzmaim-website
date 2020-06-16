@@ -27,8 +27,10 @@ export default ({ active, referer, closeMenu, menuOnOff, closeAnimation }) => {
 						<div class={`${style.stick_bottom} ${active && style.alive_stick_bottom}`} />
 					</div>
 				</div>
-				{referer !== 'application' && active && <Menu close={closeMenu} /> }
-				<MenuApp closeAnimation={closeAnimation} closeMenu={closeMenu} />
+				{referer !== 'application'
+					? active && <Menu close={closeMenu} />
+					: active && <MenuApp closeAnimation={closeAnimation} closeMenu={closeMenu} />
+				}
 			</header>
 		</div>
 	)
