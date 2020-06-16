@@ -1,6 +1,7 @@
 import { h } from 'preact'
 import Messenger from '../messenger'
 import SendButton from '../send_mail_button'
+import UsefulLink from '../useful_link'
 import styles from '../../../features/component/allFeatures/all.less'
 import style from './contactUs.less'
 
@@ -30,6 +31,15 @@ export default ({ onOpenMailForm }) => {
 				</div>
 				<SendButton openForm={onOpenMailForm} />
 			</section>
+			{config.modules.contact_us.useful_links && <section class={style.useful_links_wrap}>
+				<h2>{config.translations.contact_us.useful_links.main_title}</h2>
+				{config.modules.contact_us.useful_links.map((item, index) => {
+					return (
+						<UsefulLink item={item} index={index} />
+					)
+				})}
+			</section>
+			}
 		</div>
 	)
 }
