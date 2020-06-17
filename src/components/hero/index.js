@@ -60,7 +60,7 @@ export default class Hero extends Component {
   							<div class={`${style.common} ${this.isActive(i) ? style.active : ''}`}>
   								<div class={`${style.content} ${animation && (config.isRTL ? styles.text_end_rtl : styles.text_end_ltr)}`}>
   									<div class={style.texts}>
-  										{animation && <div class={style.title_container}><h2 class={style.title}>{config.translations.hero.carousel_text[i].title}</h2></div>}
+  										{animation && <div class={style.title_container}><h2 class={style.title}>{config.translations.hero.main_title}</h2></div>}
   										{animation && <div>
   											{features && features.map(f => {
   												const svgObj = iconsData.find(i => f.name === i.name)

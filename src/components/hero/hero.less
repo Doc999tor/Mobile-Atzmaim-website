@@ -124,6 +124,8 @@
 	font-weight: 900;
 	color: var(--white-color);
 	opacity: 0;
+	animation: texteAnimation 0.3s forwards;
+	animation-delay: 0.5s;
 }
 @keyframes texteAnimation {
   0% {
@@ -136,11 +138,8 @@
 }
 .active {
 	opacity: 1;
-	h2 {
-		animation: texteAnimation 0.3s forwards;
-		animation-delay: 0.5s;
-	}
 }
+
 .active & .img {
 	transform: translate(-50%, -50.5%) scale(1) !important;
 	opacity: 1;
