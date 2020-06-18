@@ -1,8 +1,8 @@
 import { h, Component, Fragment, createRef } from 'preact'
-import { route } from 'preact-router'
 import { postService } from '../../../../services/send_mail.js'
-import { default as validatePhone } from '../../../../../components-lib/validate-phone'
+import validatePhone from '../../../../../components-lib/validate-phone'
 import { getCurrentFormatTime } from '../../../../helpers/helpers'
+import AttachFile from '../attach_file'
 import SendModal from '../send_mail_modal'
 import style from './sendForm.less'
 
@@ -10,6 +10,7 @@ export default class SendMailForm extends Component {
 	state = {
 		contact: '',
 		mail: '',
+		file: null,
 		valid: true,
 		send: false,
 		sending: false
@@ -23,13 +24,25 @@ export default class SendMailForm extends Component {
  	this.contactDetail.current.focus()
  }
 
+	handleChangeFile = e => {
+		const file = e.target.files[0]
+		this.setState({
+			file
+		})
+	}
+
 	handleSendMailForm = e => {
 		e.preventDefault()
-		const { contact, mail, valid } = this.state
+		const { contact, mail, valid, file } = this.state
 		if (contact && mail && valid) {
 			this.setState({ send: true, sending: true }, () => {
 				setTimeout(() => {
-					const body = `contact_detail=${contact.trim()}&message=${mail.trim()}&added=${getCurrentFormatTime()}`
+					// const body = `contact_detail=${contact.trim()}&message=${mail.trim()}&added=${getCurrentFormatTime()}`
+					const body = new FormData()
+					body.append('contact_detail', contact.trim())
+					body.append('message', mail.trim())
+					body.append('added', getCurrentFormatTime())
+					if (file) body.append('file', file)
 					postService(config.urls.send_mail, body).then(r => {
 						if (r.status === 201) {
 							this.setState({
@@ -84,9 +97,16 @@ export default class SendMailForm extends Component {
 						<input ref={this.contactDetail} placeholder={config.translations.contact_us.placeholder_contact} name='contact' onBlur={this.handleValidation} onInput={this.handleCangeInput} class={`${style.contact_input} ${!this.state.valid ? style.not_valid : ''}`} type='text' />
 						<p class={style.text_label}>{config.translations.contact_us.message_input_label}</p>
 						<textarea ref={this.textArea} placeholder={config.translations.contact_us.placeholder_message} name='mail' onInput={this.handleCangeInput} class={style.textarea} />
+						<AttachFile handleChangeFile={this.handleChangeFile} />
 						<div class={style.btn_wrap}>
-							<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}><img src={config.urls.media + 'ic_cancel.svg'} />{config.translations.contact_us.mobile.send_form_cancel_btn_label}</button>
-							<button class={style.send} type='submit'><img src={config.urls.media + 'ic_send.svg'} />{config.translations.contact_us.mobile.send_form_send_btn_label}</button>
+							<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}>
+								<img src={config.urls.media + 'ic_cancel.svg'} />
+								<span >{config.translations.contact_us.mobile.send_form_cancel_btn_label}</span>
+							</button>
+							<button class={style.send} type='submit'>
+								<img src={config.urls.media + 'ic_send.svg'} />
+								<span>{config.translations.contact_us.mobile.send_form_send_btn_label}</span>
+							</button>
 						</div>
 					</form>
 					: <SendModal sending={sending} />
