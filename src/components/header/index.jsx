@@ -7,7 +7,8 @@ import './header.less'
 
 export default ({ active, referer, closeMenu, menuOnOff, closeAnimation }) => {
 	const goHome = () => {
-		route(config.baseUrl || '/', true)
+		closeMenu()
+		route(config.baseUrl || '/')
 		const hero = document.getElementById('hero')
 		hero && hero.scrollIntoView({ block: 'start' })
 	}
