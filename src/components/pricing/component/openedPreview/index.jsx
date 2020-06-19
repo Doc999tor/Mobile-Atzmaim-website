@@ -1,11 +1,10 @@
 import { h } from 'preact'
 import style from './opened.less'
 
-const OpenedPreview = ({ goHome, name, value, icon, item }) => {
-	const basic = name === 'basic'
-	const marker = {'listStyleImage': 'url(' + config.urls.media + (basic ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
+const OpenedPreview = ({ preferred, goHome, name, value, icon, item }) => {
+	const marker = {'listStyleImage': 'url(' + config.urls.media + (preferred ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
 	return (
-		<div id={`${name}`} class={style.detail_price  + ' ' + (basic ? style.detail_price_active : '')}>
+		<div id={`${name}`} class={style.detail_price + ' ' + (preferred ? style.detail_price_active : '')}>
 			<div class={style.header} onClick={goHome}>
 				<div class={style.icon_wrap}>
 					<img src={config.urls.media + icon} alt={icon} />
@@ -14,7 +13,7 @@ const OpenedPreview = ({ goHome, name, value, icon, item }) => {
 					<p class={style.name}>{config.translations.pricing.data[name].opened_preview.name}</p>
 					<p class={style.type}>{config.translations.pricing.data[name].opened_preview.business_type}</p>
 					<p class={style.cost}><span class={style.value}>{config.translations.pricing.data[name].opened_preview.group_preview_price.replace('{currency}', config.modules.pricing.currency)
-						.replace('{price_value}', value ? item.price_yearly : item.price_monthly)}</span>{value ? config.translations.pricing.data[name].opened_preview.period_year : config.translations.pricing.data[name].opened_preview.period_month}</p>
+						.replace('{price_value}', value ? item.price_yearly : item.price_monthly)}</span>{config.translations.pricing.data[name].opened_preview.period_month}</p>
 				</div>
 			</div>
 			<ul>

@@ -28,7 +28,7 @@ export default ({ handleShowOpenPlan, priceName, switchValue, handleChangeSwitch
 				<div className={style.swichBox_wrap}>
 					<SwichBox value={switchValue} handleChange={handleChangeSwitch} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
 				</div>
-				{config.modules.pricing.data.map(item => <OpenedPreview goHome={goBack} value={switchValue} name={item.name} icon={item.icon} item={item} />)}
+				{config.modules.pricing.data.map(item => <OpenedPreview preferred={item.preferred} goHome={goBack} value={switchValue} name={item.name} icon={item.icon} item={item} />)}
 			</div>
 		</div>
 	)
