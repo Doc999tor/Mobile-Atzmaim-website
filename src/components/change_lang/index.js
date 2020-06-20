@@ -30,7 +30,6 @@ export default class ChangeLang extends Component {
 	}
 
 	render ({ close }, { activeLang, open }) {
-		console.log('config.urls.home_page', config.urls.home_page)
 		return (
 			<div id='lang' onClick={this.closedPopup} class={style.wrapper}>
 				<ul onClick={this.handlestopPropagation} class={`${style.list} ${!open ? style.closed : ''}`} >

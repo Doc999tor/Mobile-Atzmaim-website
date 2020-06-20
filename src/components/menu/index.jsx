@@ -23,7 +23,6 @@ export default class Menu extends Component {
 					</nav>
 					<div class={style.btn_wrap}>
 						<a class={style.link_btn} href={config.urls.signup}>{config.translations.hero.sign_up}</a>
-						<a class={style.link_btn} href={config.urls.login}>{config.translations.hero.log_in}</a>
 					</div>
 					<ul class={style.networks}>
 						{config.urls.social_networks.map(item => (
