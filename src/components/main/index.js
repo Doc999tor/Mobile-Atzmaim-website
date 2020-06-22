@@ -13,6 +13,7 @@ export default class Main extends Component {
 	state = {
 		animation: false,
 		activeLink: 'hero',
+		moduleName: '',
 		svgData: []
 	}
 
@@ -22,6 +23,7 @@ export default class Main extends Component {
 		if (obj.page === 'error') route(config.baseUrl + '/error', true)
 		if (obj.page === 'contact_us') route(config.baseUrl + '/contact_us', true)
 		if (obj.page === 'pricing') route(config.baseUrl + '/pricing', true)
+		obj.module_name && this.props.handleSetModuleName(obj.module_name)
 		const arr = []
 		const promises = config.modules.features.data.map(feature => {
 			return fetch(`${config.urls.media_features}${feature.icon}`)

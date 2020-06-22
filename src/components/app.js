@@ -13,6 +13,7 @@ export default class App extends Component {
 		referer: 'home_page',
 		switch_value: config.modules.pricing?.switch_bill_annually,
 		active: false,
+		moduleName: '',
 		closeAnimation: false
 	}
 
@@ -40,6 +41,8 @@ export default class App extends Component {
 
 	handleChangeReferer = referer => this.setState({ referer })
 
+	handleSetModuleName = value => this.setState({ moduleName: value })
+
 	handleChangeSwitch = () => this.setState(prevState => ({ switch_value: !prevState.switch_value }))
 
 	handleChooseYearly = () => this.setState({ switch_value: true })
@@ -55,9 +58,9 @@ export default class App extends Component {
 	render () {
 	  return (
 	    <div id='app'>
-				<Header active={this.state.active} menuOnOff={this.menuOnOff} closeAnimation={this.state.closeAnimation} closeMenu={this.closeMenu} referer={this.state.referer} />
+				<Header active={this.state.active} moduleName={this.state.moduleName} menuOnOff={this.menuOnOff} closeAnimation={this.state.closeAnimation} closeMenu={this.closeMenu} referer={this.state.referer} />
 				<Router>
-					<Main path={config.baseUrl} handleChangeReferer={this.handleChangeReferer} switchValue={this.state.switch_value} handleShowOpenPlan={this.handleShowOpenPlan} handleChangeSwitch={this.handleChangeSwitch} handleChooseYearly={this.handleChooseYearly} handleChooseMonthly={this.handleChooseMonthly} />
+					<Main path={config.baseUrl} handleSetModuleName={this.handleSetModuleName} handleChangeReferer={this.handleChangeReferer} switchValue={this.state.switch_value} handleShowOpenPlan={this.handleShowOpenPlan} handleChangeSwitch={this.handleChangeSwitch} handleChooseYearly={this.handleChooseYearly} handleChooseMonthly={this.handleChooseMonthly} />
 					<ErrorPage path={config.baseUrl + '/error'} referer={this.state.referer} />
 					<PricingDetailInfo handleShowOpenPlan={this.handleShowOpenPlan} priceName={this.state.priceName} path={config.baseUrl + '/pricing'} switchValue={this.state.switch_value} handleChangeSwitch={this.handleChangeSwitch} handleChooseYearly={this.handleChooseYearly} handleChooseMonthly={this.handleChooseMonthly} />
 					{config.urls.contact_us && <ContactUs path={config.baseUrl + '/contact_us'} active={this.state.active} />}

@@ -36,6 +36,33 @@
 	line-height: 1;
 	color: var(--white-color);
 }
+.buttons {
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	padding: 0;
+	width: 3rem;
+	height: 100%;
+}
+.back_btn {
+	justify-content: flex-start;
+}
+.normal {
+	transform: scale(-1, 1);
+}
+.app_menu_btn {
+	justify-content: flex-end;
+}
+.module_name {
+	color: var(--white-color);
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.back_img {
+	height: 1.1rem;
+}
 .login_link {
 	text-decoration: none;
 	display: flex;
@@ -64,11 +91,16 @@
 		width: 2.5rem;
 	}
 
-	body[style="direction: ltr;"] & {
-		.menu_btn {
-			transform: scale(-1, 1);
-		}
+body[style="direction: ltr;"] & {
+	.back_btn img, .menu_btn {
+		transform: scale(-1, 1);
 	}
+}
+body[style="direction: rtl;"] & {
+	.app_menu_btn img {
+		transform: scale(-1, 1);
+	}
+}
 .alive_button {
 	display: flex;
 	position: relative;
