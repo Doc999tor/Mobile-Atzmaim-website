@@ -10,17 +10,36 @@
 	scroll-snap-stop: always;
 }
 .full {
+	position: relative;
+	overflow: hidden;
 	height: 100%;
-	background-repeat: no-repeat;
-	background-position-x: 46%;
-	background-position-y: 100%;
+}
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }
 .backgroundImg {
-	animation: background_img 0.5s ease-out forwards;
+	animation: bgr_ltr 0.5s;
 }
-@keyframes background_img {
-	from {
-		background-position-y: 95%;
+
+@keyframes bgr_ltr {
+	0% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes bgr_rtl {
+	0% {
+		transform: scale(-1.2, 1.2);
+	}
+	100% {
+		transform: scale(-1, 1);
 	}
 }
 .black_phone {
@@ -253,5 +272,11 @@ body[style="direction: rtl;"] {
 			animation: featureAnimationRtl 0.3s forwards;
 			animation-delay: 0.8s;
 		}
+	}
+	.background {
+		transform: scale(-1, 1);
+	}
+	.backgroundImg {
+		animation: bgr_rtl 0.5s;
 	}
 }

@@ -52,7 +52,11 @@ export default class Hero extends Component {
   	const background = { backgroundImage: 'url(' + config.urls.media + 'pic_bg.jpg' + ')' }
   	return (
   		<div id='hero' className={style.height} >
-  			<div class={`${style.full} ${animation && style.backgroundImg}`} style={animation ? background : ''}>
+  			<div class={`${style.full}`} >
+  				{animation && <picture>
+  					<source class={`${style.background} ${animation ? style.backgroundImg : ''}`} srcSet={`${config.urls.media}pic_bg.webp`} type='image/webp' loading='lazy' />
+  					<img class={`${style.background} ${animation ? style.backgroundImg : ''}`} src={`${config.urls.media}pic_bg.jpg`} alt='background' loading='lazy' />
+  				</picture>}
   				<div class={`${animation && style.shadow}`} >
   					{config.modules.hero.gallery.map((slideItem, i) => {
   						const features = config.modules.features.data.filter(item => slideItem.features.includes(item.name))
