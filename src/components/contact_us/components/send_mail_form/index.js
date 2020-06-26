@@ -10,30 +10,40 @@ export default class SendMailForm extends Component {
 	state = {
 		contact: '',
 		mail: '',
-		file: null,
+		files: {},
 		valid: true,
 		send: false,
 		sending: false
 	}
 
- contactDetail = createRef()
+	contactDetail = createRef()
 
- textArea = createRef()
+	textArea = createRef()
 
- componentDidMount () {
- 	this.contactDetail.current.focus()
- }
+	componentDidMount () {
+		this.contactDetail.current.focus()
+	}
+
+	handleChangeLoading = () => {
+		this.setState(prevState => ({ loading: prevState.loading }))
+	}
 
 	handleChangeFile = e => {
+		// this.andleChangeLoading()
 		const file = e.target.files[0]
+		const newkey = file.name + Date.now()
+		console.log('file', file, newkey)
 		this.setState({
-			file
+			files: { ...this.state.files, [newkey]: file }
+		}, () => {
+			console.log(this.state.files)
+			// this.andleChangeLoading
 		})
 	}
 
 	handleSendMailForm = e => {
 		e.preventDefault()
-		const { contact, mail, valid, file } = this.state
+		const { contact, mail, valid, files } = this.state
 		if (contact && mail && valid) {
 			this.setState({ send: true, sending: true }, () => {
 				setTimeout(() => {
@@ -42,7 +52,7 @@ export default class SendMailForm extends Component {
 					body.append('contact_detail', contact.trim())
 					body.append('message', mail.trim())
 					body.append('added', getCurrentFormatTime())
-					if (file) body.append('file', file)
+					if (files?.length > 0) body.append('file', files)
 					postService(config.urls.send_mail, body).then(r => {
 						if (r.status === 201) {
 							this.setState({
@@ -87,7 +97,7 @@ export default class SendMailForm extends Component {
 	}
 
 	render () {
-		const { valid, send, sending } = this.state
+		const { valid, send, sending, files } = this.state
 		return (
 			<Fragment>
 				{!send
@@ -98,6 +108,22 @@ export default class SendMailForm extends Component {
 						<p class={style.text_label}>{config.translations.contact_us.message_input_label}</p>
 						<textarea ref={this.textArea} placeholder={config.translations.contact_us.placeholder_message} name='mail' onInput={this.handleCangeInput} class={style.textarea} />
 						<AttachFile handleChangeFile={this.handleChangeFile} />
+						<div class={style.files}>{
+							Object.keys(files).map(item => {
+								console.log('item', item)
+								return (<div class={style.item}>
+									<div class={style.icon}>
+										<img src={config.urls.media + 'ic_file.svg'} />
+									</div>
+									<div class={style.name_wrap}>
+										<p class={style.name}>{files[item].name}</p>
+									</div>
+									<button class={style.delete} type='button'>
+										{/* <img src={config.urls.media + 'ic_file.svg'} /> */}
+									</button>
+								</div>)
+							})
+							}</div>
 						<div class={style.btn_wrap}>
 							<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}>
 								<img src={config.urls.media + 'ic_cancel.svg'} />
