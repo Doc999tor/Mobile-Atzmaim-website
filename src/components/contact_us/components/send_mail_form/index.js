@@ -13,7 +13,9 @@ export default class SendMailForm extends Component {
 		files: {},
 		valid: true,
 		send: false,
-		sending: false
+		sending: false,
+		loaded: false,
+		loading: false
 	}
 
 	contactDetail = createRef()
@@ -25,20 +27,33 @@ export default class SendMailForm extends Component {
 	}
 
 	handleChangeLoading = () => {
-		this.setState(prevState => ({ loading: prevState.loading }))
+		this.setState({ loading: true })
 	}
 
 	handleChangeFile = e => {
-		// this.andleChangeLoading()
+		this.handleChangeLoading()
 		const file = e.target.files[0]
 		const newkey = file.name + Date.now()
-		console.log('file', file, newkey)
+		setTimeout(() => {
+			this.setState({ loading: false, loaded: true }, () => {
+				setTimeout(() => {
+					this.setState({
+						loaded: false,
+						files: { ...this.state.files, [newkey]: file }
+					})
+				}, 600)
+			})
+		}, 2500)
+	}
+
+	handleDeleteFile = objKey => {
+		const removableField = objKey
+		const { [removableField]: _, ...finalData } = this.state.files
 		this.setState({
-			files: { ...this.state.files, [newkey]: file }
-		}, () => {
-			console.log(this.state.files)
-			// this.andleChangeLoading
-		})
+			files: {
+				...finalData
+			}
+		}, () => console.log(this.state.files))
 	}
 
 	handleSendMailForm = e => {
@@ -110,20 +125,21 @@ export default class SendMailForm extends Component {
 						<AttachFile handleChangeFile={this.handleChangeFile} />
 						<div class={style.files}>{
 							Object.keys(files).map(item => {
-								console.log('item', item)
 								return (<div class={style.item}>
 									<div class={style.icon}>
 										<img src={config.urls.media + 'ic_file.svg'} />
 									</div>
-									<div class={style.name_wrap}>
-										<p class={style.name}>{files[item].name}</p>
-									</div>
-									<button class={style.delete} type='button'>
+									<p class={style.name}>{files[item].name}</p>
+									<button class={style.delete} onClick={() => this.handleDeleteFile(item)} type='button'>
 										{/* <img src={config.urls.media + 'ic_file.svg'} /> */}
 									</button>
 								</div>)
 							})
 							}</div>
+							<div class={style.loader_wrap}>
+								{this.state.loading && 'loading'}
+								{this.state.loaded && 'DONE'}
+							</div>
 						<div class={style.btn_wrap}>
 							<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}>
 								<img src={config.urls.media + 'ic_cancel.svg'} />
