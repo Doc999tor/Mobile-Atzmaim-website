@@ -73,12 +73,11 @@ export default class SendMailForm extends Component {
 		if (contact && mail && valid) {
 			this.setState({ send: true, sending: true }, () => {
 				setTimeout(() => {
-					// const body = `contact_detail=${contact.trim()}&message=${mail.trim()}&added=${getCurrentFormatTime()}`
 					const body = new FormData()
 					body.append('contact_detail', contact.trim())
 					body.append('message', mail.trim())
 					body.append('added', getCurrentFormatTime())
-					// if (files?.length > 0) body.append('file', files)
+					if (Object.values(files)?.length > 0) body.append('file', Object.values(files))
 					postService(config.urls.send_mail, body).then(r => {
 						if (r.status === 201) {
 							this.setState({
