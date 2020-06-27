@@ -3,6 +3,9 @@ import { postService } from '../../../../services/send_mail.js'
 import validatePhone from '../../../../../components-lib/validate-phone'
 import { getCurrentFormatTime } from '../../../../helpers/helpers'
 import AttachFile from '../attach_file'
+import File from '../file'
+import Loader from '../loader'
+import LabelSuccess from '../labelSuccess'
 import SendModal from '../send_mail_modal'
 import style from './sendForm.less'
 
@@ -34,26 +37,34 @@ export default class SendMailForm extends Component {
 		this.handleChangeLoading()
 		const file = e.target.files[0]
 		const newkey = file.name + Date.now()
-		setTimeout(() => {
-			this.setState({ loading: false, loaded: true }, () => {
-				setTimeout(() => {
-					this.setState({
-						loaded: false,
-						files: { ...this.state.files, [newkey]: file }
-					})
-				}, 600)
-			})
-		}, 2500)
+		const reader = new FileReader()
+		reader.onload = () => {
+			setTimeout(() => {
+				this.setState({
+					loading: false, loaded: true
+				}, () => {
+					setTimeout(() => {
+						this.setState({
+							loaded: false,
+							files: { ...this.state.files, [newkey]: file }
+						})
+					}, 1000)
+				})
+			}, 600)
+		}
+		reader.onerror = () => {
+			console.log(reader.error)
+		}
+		reader.readAsDataURL(file)
 	}
 
 	handleDeleteFile = objKey => {
-		const removableField = objKey
-		const { [removableField]: _, ...finalData } = this.state.files
+		const { [objKey]: _, ...finalData } = this.state.files
 		this.setState({
 			files: {
 				...finalData
 			}
-		}, () => console.log(this.state.files))
+		})
 	}
 
 	handleSendMailForm = e => {
@@ -67,7 +78,7 @@ export default class SendMailForm extends Component {
 					body.append('contact_detail', contact.trim())
 					body.append('message', mail.trim())
 					body.append('added', getCurrentFormatTime())
-					if (files?.length > 0) body.append('file', files)
+					// if (files?.length > 0) body.append('file', files)
 					postService(config.urls.send_mail, body).then(r => {
 						if (r.status === 201) {
 							this.setState({
@@ -125,30 +136,24 @@ export default class SendMailForm extends Component {
 						<AttachFile handleChangeFile={this.handleChangeFile} />
 						<div class={style.files}>{
 							Object.keys(files).map(item => {
-								return (<div class={style.item}>
-									<div class={style.icon}>
-										<img src={config.urls.media + 'ic_file.svg'} />
-									</div>
-									<p class={style.name}>{files[item].name}</p>
-									<button class={style.delete} onClick={() => this.handleDeleteFile(item)} type='button'>
-										{/* <img src={config.urls.media + 'ic_file.svg'} /> */}
-									</button>
-								</div>)
+								return <File files={files} item={item} onDeleteFile={this.handleDeleteFile} />
 							})
-							}</div>
-							<div class={style.loader_wrap}>
-								{this.state.loading && 'loading'}
-								{this.state.loaded && 'DONE'}
+						}</div>
+						<div class={style.loader_wrap}>
+							{this.state.loading && <Loader />}
+							{this.state.loaded && <LabelSuccess />}
+						</div>
+						<div class={style.btn_position}>
+							<div class={style.btn_wrap}>
+								<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}>
+									<img src={config.urls.media + 'ic_cancel.svg'} />
+									<span >{config.translations.contact_us.mobile.send_form_cancel_btn_label}</span>
+								</button>
+								<button class={style.send} type='submit'>
+									<img src={config.urls.media + 'ic_send.svg'} />
+									<span>{config.translations.contact_us.mobile.send_form_send_btn_label}</span>
+								</button>
 							</div>
-						<div class={style.btn_wrap}>
-							<button class={style.cancel} type='button' onClick={this.props.onCloseMailForm}>
-								<img src={config.urls.media + 'ic_cancel.svg'} />
-								<span >{config.translations.contact_us.mobile.send_form_cancel_btn_label}</span>
-							</button>
-							<button class={style.send} type='submit'>
-								<img src={config.urls.media + 'ic_send.svg'} />
-								<span>{config.translations.contact_us.mobile.send_form_send_btn_label}</span>
-							</button>
 						</div>
 					</form>
 					: <SendModal sending={sending} />

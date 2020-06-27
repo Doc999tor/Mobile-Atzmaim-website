@@ -1,0 +1,36 @@
+
+.success {
+	min-width: 2.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.75rem;
+	border-radius: 50%;
+	background-image: linear-gradient(137deg, #3fefa2 15%, #0c9b94 85%);
+	animation: show_mark 0.6s linear;
+}
+@keyframes show_mark {
+	40% {
+		transform: scale(1.3);
+	}
+	80% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+.mark {
+	opacity: 0;
+	animation: check 0.2s linear forwards;
+	animation-delay: 0.2s;
+}
+@keyframes check {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+	}
+}
