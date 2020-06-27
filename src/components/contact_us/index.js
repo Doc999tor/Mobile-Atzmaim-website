@@ -18,7 +18,7 @@ export default class ContactUs extends Component {
 		const background = { backgroundColor: 'white' }
 		return (
 			<div id='contact_us' class={`${common.height} ${style.contact_us}`} style={openMailForm ? background : ''}>
-				{openMailForm
+				{!openMailForm
 					? <MainContent onOpenMailForm={this.handleOpenMailForm} />
 					: <SendMailForm onCloseMailForm={this.handleCloseMailForm} />}
 			</div>
