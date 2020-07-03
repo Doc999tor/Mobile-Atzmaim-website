@@ -1,6 +1,6 @@
 .price {
 	display: flex;
-	width: 31%;
+	width: 32%;
 	flex-direction: column;
 	align-items: center;
 	border-radius: 15px;
@@ -21,7 +21,7 @@
 .for_whom {
 	font-size: 0.75rem;
 	width: 100%;
-	padding: 0 0.3rem;
+	flex-grow: 1;
 	text-align: center;
 }
 .active && .for_whom {
@@ -43,10 +43,11 @@
 	border: solid 1px var(--highlight-color);
 }
 .price_info {
-	padding-top: 0.75rem;
+	padding: 0.75rem 0.4rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	flex-grow: 1;
 }
 .price_name {
 	font-size: 1rem;
