@@ -19,9 +19,9 @@ export default class Main extends Component {
 	componentDidMount = () => {
 		const obj = qs.parse(location.search.slice(1))
 		if (obj.referer) this.props.handleChangeReferer(obj.referer)
-		if (obj.page === 'error') route(config.baseUrl + '/error', true)
-		if (obj.page === 'contact_us') route(config.baseUrl + '/contact_us', true)
-		if (obj.page === 'pricing') route(config.baseUrl + '/pricing', true)
+		if (obj.page === 'error') route(config.baseUrl + config.urls.page_error, true)
+		if (obj.page === 'contact_us') route(config.baseUrl + config.urls.page_contact_us, true)
+		if (obj.page === 'pricing') route(config.baseUrl + config.urls.page_pricing, true)
 		const arr = []
 		const promises = config.modules.features.data.map(feature => {
 			return fetch(`${config.urls.media_features}${feature.icon}`)
