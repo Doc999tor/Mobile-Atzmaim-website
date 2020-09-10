@@ -2,6 +2,7 @@ import { h } from 'preact'
 import { useEffect } from 'preact/hooks'
 import SwichBox from '../switchBox'
 import OpenedPreview from '../openedPreview'
+import AllPlans from '../allplans/allplans'
 import style from './detail.less'
 
 export default ({ handleShowOpenPlan, priceName, switchValue, handleChangeSwitch, handleChooseYearly, handleChooseMonthly }) => {
@@ -25,11 +26,12 @@ export default ({ handleShowOpenPlan, priceName, switchValue, handleChangeSwitch
 				</header>
 			</div>
 			<div class={style.content}>
-				<div className={style.swichBox_wrap}>
+				<div class={style.swichBox_wrap}>
 					<SwichBox value={switchValue} handleChange={handleChangeSwitch} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
 				</div>
 				{config.modules.pricing.data.map(item => <OpenedPreview preferred={item.preferred} goHome={goBack} value={switchValue} name={item.name} icon={item.icon} item={item} />)}
 			</div>
+			{config.translations.pricing.all_plans && <AllPlans />}
 		</div>
 	)
 }

@@ -2,7 +2,7 @@ import { h } from 'preact'
 import style from './opened.less'
 
 const OpenedPreview = ({ preferred, goHome, name, value, icon, item }) => {
-	const marker = {'listStyleImage': 'url(' + config.urls.media + (preferred ? 'ic_check_mark_active.svg' : 'ic_check_mark.svg' ) + ')'};
+	const marker = {'listStyleImage': 'url(' + config.urls.media + (preferred ? 'check_mark_active.svg' : 'check_mark.svg' ) + ')'};
 	return (
 		<div id={`${name}`} class={style.detail_price + ' ' + (preferred ? style.detail_price_active : '')}>
 			<div class={style.header} onClick={goHome}>
@@ -21,6 +21,7 @@ const OpenedPreview = ({ preferred, goHome, name, value, icon, item }) => {
 					<li class={style.feature} style={marker}>{item}</li>
 				))}
 			</ul>
+			{config.translations.pricing.data[name].opened_preview.gift && <div className={style.gift_strip}><img src={config.urls.media + (preferred ? 'gift.svg' : 'gift_active.svg')} alt='gift' /><p>{config.translations.pricing.data[name].opened_preview.gift}</p></div>}
 			<a class={style.link} href={config.urls.signup}><p class={style.paid}>{config.translations.pricing.data[name].opened_preview.cta_label}</p></a>
 		</div>
 	)
