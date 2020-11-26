@@ -18,9 +18,10 @@ export default class Main extends Component {
 
 	componentDidMount = () => {
 		const obj = qs.parse(location.search.slice(1))
+		const parseSearch = location.search && location.search.split('&').filter(i => !i.includes('page=contact_us')).join('&')
 		if (obj.referer) this.props.handleChangeReferer(obj.referer)
 		if (obj.page === 'error') route(config.baseUrl + config.urls.page_error, true)
-		if (obj.page === 'contact_us') route(config.baseUrl + config.urls.page_contact_us, true)
+		if (obj.page === 'contact_us') route(config.baseUrl + config.urls.page_contact_us + `?${parseSearch}`, true)
 		if (obj.page === 'pricing') route(config.baseUrl + config.urls.page_pricing, true)
 		const arr = []
 		const promises = config.modules.features.data.map(feature => {
