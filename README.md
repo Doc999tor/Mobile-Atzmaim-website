@@ -1,5 +1,5 @@
 # Mobile Atzma.im website  
-Public repository for [Atzma.im website](https://atzma.im)
+Public repository for [Lista CRM website](https://lista-crm.com)  
 ## Installation
 **1. Clone this repo:**
 **2. Install the dependencies:**
