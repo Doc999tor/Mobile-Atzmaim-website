@@ -4,6 +4,7 @@ import './style'
 let root
 function init () {
 	const App = require('./components/app').default
+	document.body.setAttribute('dir', config.isRTL ? 'rtl' : 'ltr')
 	root = render(<App />, document.body, root)
 }
 

@@ -2,7 +2,7 @@ import { h } from 'preact'
 import style from './swichBox.less'
 
 export default ({ value, handleChange, handleChooseYearly, handleChooseMonthly }) => {
-	const discontArray = config.modules.pricing.data.map(i => parseInt(i.discount))
+	const discontArray = config.modules.pricing.data.map(i => i.discount && parseInt(i.discount))
 	const maxDiscont = Math.max(...discontArray)
 	return (
 		<div class={style.switch_section}>

@@ -59,7 +59,19 @@ export default class App extends Component {
 				<Router>
 					<Main path={config.baseUrl} handleChangeReferer={this.handleChangeReferer} switchValue={this.state.switch_value} handleShowOpenPlan={this.handleShowOpenPlan} handleChangeSwitch={this.handleChangeSwitch} handleChooseYearly={this.handleChooseYearly} handleChooseMonthly={this.handleChooseMonthly} />
 					<ErrorPage path={config.baseUrl + config.urls.page_error} referer={this.state.referer} />
-					<PricingDetailInfo handleShowOpenPlan={this.handleShowOpenPlan} priceName={this.state.priceName} path={config.baseUrl + config.urls.page_pricing} switchValue={this.state.switch_value} handleChangeSwitch={this.handleChangeSwitch} handleChooseYearly={this.handleChooseYearly} handleChooseMonthly={this.handleChooseMonthly} />
+					<PricingDetailInfo
+						active={this.state.active}
+						menuOnOff={this.menuOnOff}
+						closeAnimation={this.state.closeAnimation}
+						closeMenu={this.closeMenu}
+						handleShowOpenPlan={this.handleShowOpenPlan}
+						priceName={this.state.priceName}
+						path={config.baseUrl + config.urls.page_pricing}
+						switchValue={this.state.switch_value}
+						handleChangeSwitch={this.handleChangeSwitch}
+						handleChooseYearly={this.handleChooseYearly}
+						handleChooseMonthly={this.handleChooseMonthly}
+					/>
 					{config.urls.contact_us && <ContactUs path={config.baseUrl + config.urls.page_contact_us} active={this.state.active} />}
 					<Redirect path='/' to={config.baseUrl} />
 				</Router>
