@@ -5,7 +5,6 @@ import Hero from '../hero'
 import Navigation from '../navigation'
 import Features from '../features'
 import BusinessTypes from '../business_types'
-import Pricing from '../pricing'
 import Feedback from '../feedback'
 import style from './main.less'
 
@@ -74,7 +73,6 @@ export default class Main extends Component {
 	    features: <Features iconsData={this.state.svgData} secondAnimation={this.state.animation} activeLink={this.state.activeLink} />,
 	    business_types: <BusinessTypes animation={this.state.animation} activeLink={this.state.activeLink} />,
 	    feedback: <Feedback animation={this.state.animation} activeLink={this.state.activeLink} />,
-	    pricing: <Pricing handleShowOpenPlan={this.props.handleShowOpenPlan} switchValue={this.props.switchValue} handleChangeSwitch={this.props.handleChangeSwitch} handleChooseYearly={this.props.handleChooseYearly} handleChooseMonthly={this.props.handleChooseMonthly} animation={this.state.animation} activeLink={this.state.activeLink} />
 		}
 	  return (
 	    <div id='main' class={style.main + ' ' + (this.state.showDetail ? '' : style.snap_scroll)}>
