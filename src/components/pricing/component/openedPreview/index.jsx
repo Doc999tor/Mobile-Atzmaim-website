@@ -27,6 +27,11 @@ const OpenedPreview = ({ preferred, goHome, name, value, icon, item, discount })
 						<li class={style.feature} ><img src={config.urls.media + 'check_mark.svg'} alt=''/>{item}</li>
 					))}
 				</ul>
+				<ul class={style.not_included_list}>{
+					config.translations.pricing.data[name].opened_preview?.not_included_features?.map(text => (
+						<li class={style.not_included_features} ><img src={config.urls.media + 'ic_no.svg'} alt='' />{text}</li>
+					))
+					}</ul>
 				<a class={style.link} href={config.urls.signup}><p class={style.paid}>{config.translations.pricing.data[name].opened_preview.cta_label}</p></a>
 				{config.translations.pricing.data[name].opened_preview.gift && <div className={style.gift_strip}><img src={config.urls.media +'gift_active.svg'} alt='gift' /><p>{config.translations.pricing.data[name].opened_preview.gift}</p></div>}
 			</div>
