@@ -99,6 +99,9 @@
 .not_included_list {
 	margin-bottom: 0.875rem;
 }
+.feature_important {
+	font-weight: bold;
+}
 .gift_strip {
 	display: flex;
 	align-items: center;
@@ -121,17 +124,25 @@
 }
 .paid {
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
-	background-image: linear-gradient(to bottom, #ff2fb9, #d7118b 41%, #b00075);
+	background: var(--white-color);
 	width: 100%;
 	min-height: 3.5rem;
+	border: 2px solid var(--active-color);
 	padding: 0 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--white-color);
+	color: var(--active-color);
 	font-size: 1.125rem;
 	font-weight: 500;
 	border-radius: 8px;
+}
+.detail_price_active {
+	.paid {
+		background-image: linear-gradient(to bottom, #ff2fb9, #d7118b 41%, #b00075);
+		border: none;
+		color: var(--white-color);
+	}
 }
 body[dir="ltr"] & {
 	.tag_wrap {
