@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="210" height="184" viewBox="0 0 210 184">
     <defs>
         <style>
-            .cls-1{fill:#fff}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:url(#linear-gradient)}
+            .cls-1{fill:#fff}.cls-2{clip-path:url(#clip-path)}.cls-3{fill:#5A6BD8}
         </style>
         <clipPath id="clip-path">
             <path id="mask" d="M0 0h210v184H0z" class="cls-1" transform="translate(150 136)"/>
         </clipPath>
         <linearGradient id="linear-gradient" x1=".191" x2=".828" y1=".382" y2="1.023" gradientUnits="objectBoundingBox">
             <stop offset="0" stop-color="#995cfa" stop-opacity=".502"/>
-            <stop offset=".704" stop-color="#732beb"/>
             <stop offset="1" stop-color="#591ec0" stop-opacity=".902"/>
         </linearGradient>
     </defs>

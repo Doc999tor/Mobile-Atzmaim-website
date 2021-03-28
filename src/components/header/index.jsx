@@ -7,31 +7,32 @@ import './header.less'
 
 export default ({ active, referer, closeMenu, menuOnOff, closeAnimation }) => {
 	const goHome = () => {
-		closeMenu()
-		route(config.baseUrl || '/')
-		const hero = document.getElementById('hero')
-		hero && hero.scrollIntoView({ block: 'start' })
+		// closeMenu()
+		// route(config.baseUrl || '/')
+		// const hero = document.getElementById('hero')
+		// hero && hero.scrollIntoView({ block: 'start' })
+		history.back()
 	}
 	return (
 		<div class={style.header_wrap}>
 			<header class={style.header}>
 				<div class={style.cont} onClick={goHome}>
-					<img src={config.urls.media_logo + 'logo.svg'} alt={config.translations.hero.logo_label} />
+					<img src={config.urls.media_logo + 'logo.svg'} height="24" alt={config.translations.hero.logo_label} />
 				</div>
 				<div class={style.cont}>
-					<a class={style.login_link} href={config.urls.login}>
+					{/*<a class={style.login_link} href={config.urls.login}>
 						<img src={config.urls.media + 'ic_lock.svg'} alt='lock' />
 						<span>{config.translations.hero.log_in}</span>
-					</a>
-					<div class={`${style.alive_button} ${active && style.active_b}`} onClick={active ? closeMenu : menuOnOff}>
+					</a>*/}
+					{/*<div class={`${style.alive_button} ${active && style.active_b}`} onClick={active ? closeMenu : menuOnOff}>
 						<div class={`${style.stick_top} ${active && style.alive_stick_top}`} />
 						<div class={`${style.stick_bottom} ${active && style.alive_stick_bottom}`} />
-					</div>
+					</div>*/}
 				</div>
-				{referer !== 'application'
+				{/*{referer !== 'application'
 					? active && <Menu close={closeMenu} />
 					: active && <MenuApp closeAnimation={closeAnimation} closeMenu={closeMenu} />
-				}
+				}*/}
 			</header>
 		</div>
 	)
