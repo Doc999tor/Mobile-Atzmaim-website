@@ -56,6 +56,9 @@ export default ({
 					<SwichBox value={switchValue} handleChange={handleChangeSwitch} handleChooseYearly={handleChooseYearly} handleChooseMonthly={handleChooseMonthly} />
 				</div>
 				{config.modules.pricing.data.map(item => <OpenedPreview preferred={item.preferred} goHome={goBack} value={switchValue} name={item.name} icon={item.icon} item={item} discount={item.discount} />)}
+				<p
+  				class={style.contact_us_string}
+  				dangerouslySetInnerHTML={{ __html: config.translations.pricing.contact_us_link_text.replace('{contact_us_link}', `<a class=${style.contact_us_link} target='_blank' href='${config.urls.contact_us}'>${config.translations.pricing.contact_us_link_label}</a>`)}} />
 			</div>
 			{config.translations.pricing.all_plans && <AllPlans />}
 			<FollowUs />
